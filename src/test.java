@@ -5,9 +5,10 @@ public class test {
 
 	public static void main(String[] args) {
 		//String pathExcel = ".\\resources\\ExcelFiles\\testexcel.xlsm";
+		//String pathOntology = ".\\resources\\Ontology\\old version - deprecated\\";
+		
 		String pathExcel = ".\\resources\\ExcelFiles\\CloudServicesSpecifications-Elena-20180114.xlsx";
-		//String pathOntology = ".\\resources\\CloudSocket-OntologyAdnan\\";
-		String pathOntology = ".\\resources\\Questionnaire_v3-Ontology\\";
+		String pathOntology = ".\\resources\\Ontology\\V3\\";
 		
 		Operation op = new Operation();
 		op.parseOntology(pathOntology + "apqc.ttl");

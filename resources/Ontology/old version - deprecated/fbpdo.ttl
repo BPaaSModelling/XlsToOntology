@@ -1,0 +1,303 @@
+# baseURI: http://ikm-group.ch/archimeo/fbpdo
+# prefix: fbpdo
+
+@prefix fbpdo: <http://ikm-group.ch/archimeo/fbpdo#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://ikm-group.ch/archimeo/fbpdo>
+  rdf:type owl:Ontology ;
+  owl:versionInfo "Created with TopBraid Composer" ;
+.
+fbpdo:Action
+  rdf:type owl:Class ;
+  rdfs:label "Action" ;
+  rdfs:subClassOf fbpdo:FunctionalBusinessProcessDescription ;
+.
+fbpdo:Ads
+  rdf:type owl:Class ;
+  rdfs:label "Advertisment" ;
+  rdfs:subClassOf fbpdo:Online ;
+.
+fbpdo:Announce
+  rdf:type owl:Class ;
+  rdfs:label "Announce" ;
+  rdfs:subClassOf fbpdo:Publish ;
+.
+fbpdo:Article
+  rdf:type owl:Class ;
+  rdfs:label "Article" ;
+  rdfs:subClassOf fbpdo:ContentMessage ;
+.
+fbpdo:Audience
+  rdf:type owl:Class ;
+  rdfs:label "Audience" ;
+  rdfs:subClassOf fbpdo:Object ;
+.
+fbpdo:Audio
+  rdf:type owl:Class ;
+  rdfs:label "Audio" ;
+  rdfs:subClassOf fbpdo:Podcast ;
+.
+fbpdo:Banner
+  rdf:type owl:Class ;
+  rdfs:label "Banner" ;
+  rdfs:subClassOf fbpdo:Document ;
+.
+fbpdo:Blog
+  rdf:type owl:Class ;
+  rdfs:label "Blog" ;
+  rdfs:subClassOf fbpdo:Online ;
+.
+fbpdo:Brochure
+  rdf:type owl:Class ;
+  rdfs:label "Brochure" ;
+  rdfs:subClassOf fbpdo:Document ;
+.
+fbpdo:Business_card
+  rdf:type owl:Class ;
+  rdfs:label "Business card" ;
+  rdfs:subClassOf fbpdo:Document ;
+.
+fbpdo:Choose
+  rdf:type owl:Class ;
+  rdfs:label "Choose" ;
+  rdfs:subClassOf fbpdo:Select ;
+.
+fbpdo:Communication_channel
+  rdf:type owl:Class ;
+  rdfs:label "Communication channel" ;
+  rdfs:subClassOf fbpdo:Object ;
+.
+fbpdo:ContentMessage
+  rdf:type owl:Class ;
+  rdfs:label "Content/Message" ;
+  rdfs:subClassOf fbpdo:Object ;
+.
+fbpdo:Create
+  rdf:type owl:Class ;
+  rdfs:label "Create" ;
+  rdfs:subClassOf fbpdo:Develop ;
+.
+fbpdo:Define
+  rdf:type owl:Class ;
+  rdfs:label "Define" ;
+  rdfs:subClassOf fbpdo:Action ;
+.
+fbpdo:Design
+  rdf:type owl:Class ;
+  rdfs:label "Design" ;
+  rdfs:subClassOf fbpdo:Develop ;
+.
+fbpdo:Determine
+  rdf:type owl:Class ;
+  rdfs:label "Determine" ;
+  rdfs:subClassOf fbpdo:Define ;
+.
+fbpdo:Develop
+  rdf:type owl:Class ;
+  rdfs:label "Develop" ;
+  rdfs:subClassOf fbpdo:Action ;
+.
+fbpdo:Document
+  rdf:type owl:Class ;
+  rdfs:label "Document" ;
+  rdfs:subClassOf fbpdo:ContentMessage ;
+.
+fbpdo:Edit
+  rdf:type owl:Class ;
+  rdfs:label "Edit" ;
+  rdfs:subClassOf fbpdo:Action ;
+.
+fbpdo:Email
+  rdf:type owl:Class ;
+  rdfs:label "Email" ;
+  rdfs:subClassOf fbpdo:Online ;
+.
+fbpdo:Facebook
+  rdf:type owl:Class ;
+  rdfs:label "Facebook" ;
+  rdfs:subClassOf fbpdo:Social_media ;
+.
+fbpdo:Flyer
+  rdf:type owl:Class ;
+  rdfs:label "Flyer" ;
+  rdfs:subClassOf fbpdo:Document ;
+.
+fbpdo:FunctionalBusinessProcessDescription
+  rdf:type owl:Class ;
+  rdfs:label "Functional Business Process Description" ;
+  rdfs:subClassOf owl:Thing ;
+.
+fbpdo:Googe_ads
+  rdf:type owl:Class ;
+  rdfs:label "Google Adwords" ;
+  rdfs:subClassOf fbpdo:Ads ;
+.
+fbpdo:Google
+  rdf:type owl:Class ;
+  rdfs:label "Google+" ;
+  rdfs:subClassOf fbpdo:Social_media ;
+.
+fbpdo:Group
+  rdf:type owl:Class ;
+  rdfs:label "Group" ;
+  rdfs:subClassOf fbpdo:Audience ;
+.
+fbpdo:Image
+  rdf:type owl:Class ;
+  rdfs:label "Image" ;
+  rdfs:subClassOf fbpdo:Article ;
+.
+fbpdo:Indentify
+  rdf:type owl:Class ;
+  rdfs:label "Indentify" ;
+  rdfs:subClassOf fbpdo:Define ;
+.
+fbpdo:Instagram
+  rdf:type owl:Class ;
+  rdfs:label "Instagram" ;
+  rdfs:subClassOf fbpdo:Social_media ;
+.
+fbpdo:Invoice
+  rdf:type owl:Class ;
+  rdfs:label "Invoice" ;
+  rdfs:subClassOf fbpdo:Document ;
+.
+fbpdo:Landing_page
+  rdf:type owl:Class ;
+  rdfs:label "Landing page/Website" ;
+  rdfs:subClassOf fbpdo:Document ;
+.
+fbpdo:Letter
+  rdf:type owl:Class ;
+  rdfs:label "Letter" ;
+  rdfs:subClassOf fbpdo:Document ;
+.
+fbpdo:LinkedIn
+  rdf:type owl:Class ;
+  rdfs:label "LinkedIn" ;
+  rdfs:subClassOf fbpdo:Social_media ;
+.
+fbpdo:Magazine
+  rdf:type owl:Class ;
+  rdfs:label "Magazine" ;
+  rdfs:subClassOf fbpdo:Offline ;
+.
+fbpdo:Manage
+  rdf:type owl:Class ;
+  rdfs:label "Manage" ;
+  rdfs:subClassOf fbpdo:Action ;
+.
+fbpdo:Newsletter
+  rdf:type owl:Class ;
+  rdfs:label "Newsletter" ;
+  rdfs:subClassOf fbpdo:Document ;
+.
+fbpdo:Newspaper
+  rdf:type owl:Class ;
+  rdfs:label "Newspaper" ;
+  rdfs:subClassOf fbpdo:Offline ;
+.
+fbpdo:Object
+  rdf:type owl:Class ;
+  rdfs:label "Object" ;
+  rdfs:subClassOf fbpdo:FunctionalBusinessProcessDescription ;
+.
+fbpdo:Offline
+  rdf:type owl:Class ;
+  rdfs:label "Offline communication channel" ;
+  rdfs:subClassOf fbpdo:Communication_channel ;
+.
+fbpdo:Online
+  rdf:type owl:Class ;
+  rdfs:label "Online communication channel" ;
+  rdfs:subClassOf fbpdo:Communication_channel ;
+.
+fbpdo:Podcast
+  rdf:type owl:Class ;
+  rdfs:label "Podcast" ;
+  rdfs:subClassOf fbpdo:ContentMessage ;
+.
+fbpdo:Post
+  rdf:type owl:Class ;
+  rdfs:label "Post" ;
+  rdfs:subClassOf fbpdo:Publish ;
+.
+fbpdo:Poster
+  rdf:type owl:Class ;
+  rdfs:label "Poster" ;
+  rdfs:subClassOf fbpdo:Document ;
+.
+fbpdo:Print
+  rdf:type owl:Class ;
+  rdfs:label "Print" ;
+  rdfs:subClassOf fbpdo:Action ;
+.
+fbpdo:Publish
+  rdf:type owl:Class ;
+  rdfs:label "Publish" ;
+  rdfs:subClassOf fbpdo:Action ;
+.
+fbpdo:Select
+  rdf:type owl:Class ;
+  rdfs:label "Select" ;
+  rdfs:subClassOf fbpdo:Action ;
+.
+fbpdo:Send
+  rdf:type owl:Class ;
+  rdfs:label "Send" ;
+  rdfs:subClassOf fbpdo:Action ;
+.
+fbpdo:Set
+  rdf:type owl:Class ;
+  rdfs:label "Set" ;
+  rdfs:subClassOf fbpdo:Define ;
+.
+fbpdo:Social_media
+  rdf:type owl:Class ;
+  rdfs:label "Social media" ;
+  rdfs:subClassOf fbpdo:Online ;
+.
+fbpdo:Text
+  rdf:type owl:Class ;
+  rdfs:label "Text" ;
+  rdfs:subClassOf fbpdo:Article ;
+.
+fbpdo:Twitter
+  rdf:type owl:Class ;
+  rdfs:label "Twitter" ;
+  rdfs:subClassOf fbpdo:Social_media ;
+.
+fbpdo:Update
+  rdf:type owl:Class ;
+  rdfs:label "Update" ;
+  rdfs:subClassOf fbpdo:Action ;
+.
+fbpdo:Upload
+  rdf:type owl:Class ;
+  rdfs:label "Upload" ;
+  rdfs:subClassOf fbpdo:Action ;
+.
+fbpdo:Video
+  rdf:type owl:Class ;
+  rdfs:label "Video" ;
+  rdfs:subClassOf fbpdo:Podcast ;
+.
+fbpdo:Website
+  rdf:type owl:Class ;
+  rdfs:label "Website" ;
+  rdfs:subClassOf fbpdo:Online ;
+.
+fbpdo:XING
+  rdf:type owl:Class ;
+  rdfs:label "XING" ;
+  rdfs:subClassOf fbpdo:Social_media ;
+.
+fbpdo:Yotube
+  rdf:type owl:Class ;
+  rdfs:label "Youtube" ;
+  rdfs:subClassOf fbpdo:Social_media ;
+.

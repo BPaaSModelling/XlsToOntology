@@ -1,0 +1,843 @@
+# baseURI: http://ikm-group.ch/archiMEO/questiondata
+# imports: http://ikm-group.ch/archiMEO/questionnaire
+# prefix: questiondata
+
+@prefix bpaas: <http://ikm-group.ch/archimeo/bpaas#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix questiondata: <http://ikm-group.ch/archiMEO/questiondata#> .
+@prefix questionnaire: <http://ikm-group.ch/archiMEO/questionnaire#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://ikm-group.ch/archiMEO/bdata#Drive_1>
+  bpaas:cloudServiceHasStoredDataLocation <http://ikm-group.ch/archiMEO/bdata#Africa> ;
+  bpaas:cloudServiceHasStoredDataLocation <http://ikm-group.ch/archiMEO/bdata#Asia> ;
+  bpaas:cloudServiceHasStoredDataLocation <http://ikm-group.ch/archiMEO/bdata#Austria> ;
+  bpaas:cloudServiceHasStoredDataLocation <http://ikm-group.ch/archiMEO/bdata#Brazil> ;
+  bpaas:cloudServiceHasStoredDataLocation <http://ikm-group.ch/archiMEO/bdata#China> ;
+  bpaas:cloudServiceHasStoredDataLocation <http://ikm-group.ch/archiMEO/bdata#EES> ;
+  bpaas:cloudServiceHasStoredDataLocation <http://ikm-group.ch/archiMEO/bdata#EU-US_Privacy_Shield_agreement_locations> ;
+  bpaas:cloudServiceHasStoredDataLocation <http://ikm-group.ch/archiMEO/bdata#Europe> ;
+  bpaas:cloudServiceHasStoredDataLocation <http://ikm-group.ch/archiMEO/bdata#European_Economic_Area_EEA> ;
+  bpaas:cloudServiceHasStoredDataLocation <http://ikm-group.ch/archiMEO/bdata#European_Union> ;
+  bpaas:cloudServiceHasStoredDataLocation <http://ikm-group.ch/archiMEO/bdata#French> ;
+  bpaas:cloudServiceHasStoredDataLocation <http://ikm-group.ch/archiMEO/bdata#Germany> ;
+  bpaas:cloudServiceHasStoredDataLocation <http://ikm-group.ch/archiMEO/bdata#Israel> ;
+  bpaas:cloudServiceHasStoredDataLocation <http://ikm-group.ch/archiMEO/bdata#Italy> ;
+  bpaas:cloudServiceHasStoredDataLocation <http://ikm-group.ch/archiMEO/bdata#North_America> ;
+  bpaas:cloudServiceHasStoredDataLocation <http://ikm-group.ch/archiMEO/bdata#Romania> ;
+  bpaas:cloudServiceHasStoredDataLocation <http://ikm-group.ch/archiMEO/bdata#South_America> ;
+  bpaas:cloudServiceHasStoredDataLocation <http://ikm-group.ch/archiMEO/bdata#Switzerland> ;
+  bpaas:cloudServiceHasStoredDataLocation <http://ikm-group.ch/archiMEO/bdata#The_Netherlands> ;
+  bpaas:cloudServiceHasStoredDataLocation <http://ikm-group.ch/archiMEO/bdata#USA> ;
+  bpaas:cloudServiceHasStoredDataLocation <http://ikm-group.ch/archiMEO/bdata#United_Kingdom> ;
+.
+<http://ikm-group.ch/archiMEO/questiondata>
+  rdf:type owl:Ontology ;
+  owl:imports <http://ikm-group.ch/archiMEO/questionnaire> ;
+  owl:versionInfo "Created with TopBraid Composer" ;
+.
+questiondata:APQC_category_that_reflect_the_functional_requirement
+  rdf:type questionnaire:CloudServiceElement ;
+  rdf:type questionnaire:SearchSelection ;
+  questionnaire:cloudServiceElementHasCloudServiceDomain questiondata:Functional ;
+  questionnaire:questionHasAnnotationRelation bpaas:cloudServiceHasAPQC ;
+  questionnaire:searchSelectionHasSearchNamespace <http://ikm-group.ch/archimeo/apqc#AmericanProductivityAndQualityCenter> ;
+  questionnaire:searchSelectionOnClassesInsteadOfInstances "true"^^xsd:boolean ;
+  rdfs:label "APQC category that reflect the functional requirement" ;
+.
+questiondata:Action_does_reflect_the_functional_requirement
+  rdf:type questionnaire:CloudServiceElement ;
+  rdf:type questionnaire:SearchSelection ;
+  questionnaire:cloudServiceElementHasCloudServiceDomain questiondata:Functional ;
+  questionnaire:questionHasAnnotationRelation bpaas:cloudServiceHasAction ;
+  questionnaire:searchSelectionHasSearchNamespace <http://ikm-group.ch/archimeo/fbpdo#Action> ;
+  questionnaire:searchSelectionOnClassesInsteadOfInstances "true"^^xsd:boolean ;
+  rdfs:label "Action that reflect the functional requirement" ;
+.
+questiondata:Archive_the_log_when_full_and_do_not_overwrite_events
+  rdf:type questionnaire:Answer ;
+  rdfs:label "Archive the log when full and do not overwrite events" ;
+.
+questiondata:Backup_frequency_period
+  rdf:type questionnaire:CloudServiceElement ;
+  rdf:type questionnaire:SingleSelection ;
+  questionnaire:cloudServiceElementHasCloudServiceDomain questiondata:Security ;
+  questionnaire:questionHasAnnotationRelation bpaas:cloudServiceHasBackupFrequency ;
+  questionnaire:questionHasAnswers bpaas:daily ;
+  questionnaire:questionHasAnswers bpaas:monthly ;
+  questionnaire:questionHasAnswers bpaas:weekly ;
+  questionnaire:questionHasAnswers bpaas:yearly ;
+  rdfs:label "Backup frequency period" ;
+.
+questiondata:Backup_retention_time_period
+  rdf:type questionnaire:CloudServiceElement ;
+  rdf:type questionnaire:SingleSelection ;
+  questionnaire:cloudServiceElementHasCloudServiceDomain questiondata:Security ;
+  questionnaire:questionHasAnnotationRelation bpaas:cloudServiceHasBackupRetentionTime ;
+  questionnaire:questionHasAnswers bpaas:up_to_1_day ;
+  questionnaire:questionHasAnswers bpaas:up_to_1_month ;
+  questionnaire:questionHasAnswers bpaas:up_to_1_year ;
+  questionnaire:questionHasAnswers bpaas:up_to_2_month ;
+  questionnaire:questionHasAnswers bpaas:up_to_2_weeks ;
+  questionnaire:questionHasAnswers bpaas:up_to_6_months ;
+  questionnaire:questionHasAnswers bpaas:up_to_7_days ;
+  rdfs:label "Backup retention time period" ;
+.
+questiondata:Can_data_migration_be_perfomed_independently_from_the_provider
+  rdf:type questionnaire:Interoperability ;
+  rdf:type questionnaire:SingleSelection ;
+  questionnaire:questionHasAnnotationRelation bpaas:cloudServiceHasDataMigration ;
+  questionnaire:questionHasAnswers questionnaire:No ;
+  questionnaire:questionHasAnswers questionnaire:Yes ;
+  rdfs:label "Can data migration be perfomed independently from the provider" ;
+.
+questiondata:CloudService_Physical_ID
+  rdf:type questionnaire:CloudServiceElement ;
+  rdf:type questionnaire:ValueInsert ;
+  questionnaire:cloudServiceElementHasCloudServiceDomain questiondata:General ;
+  questionnaire:questionHasAnnotationRelation bpaas:cloudServiceHasPhysicalID ;
+  questionnaire:valueInsertAnswerTypeHasDatatype xsd:string ;
+  rdfs:label "Cloud service Physical ID" ;
+.
+questiondata:DataEncryptionLevelHigh
+  rdf:type questionnaire:Answer ;
+  rdfs:label "Data Encryption Level High" ;
+.
+questiondata:DataEncryptionLevelLow
+  rdf:type questionnaire:Answer ;
+  rdfs:label "Data Encryption Level Low" ;
+.
+questiondata:DataEncryptionLevelMedium
+  rdf:type questionnaire:Answer ;
+  rdfs:label "Data Encryption Level Medium" ;
+.
+questiondata:DataEncryptionLevel_High
+  rdf:type questionnaire:Answer ;
+  rdfs:label "High" ;
+.
+questiondata:DataEncryptionLevel_Low
+  rdf:type questionnaire:Answer ;
+  rdfs:label "Low" ;
+.
+questiondata:DataEncryptionLevel_Medium
+  rdf:type questionnaire:Answer ;
+  rdfs:label "Medium" ;
+.
+questiondata:DataStorageAtLeast10GB
+  rdf:type questionnaire:Answer ;
+  rdfs:label "Data storage at least10GB" ;
+.
+questiondata:DataStorageAtLeast1GB
+  rdf:type questionnaire:Answer ;
+  rdfs:label "at least 1 GB (apx 3.000 basic office files)" ;
+.
+questiondata:DataStorageAtLeast1Tera
+  rdf:type questionnaire:Answer ;
+  rdfs:label "at least 1 Tera (apx 26.000 basic office files)" ;
+.
+questiondata:DataStorageAtLeast2GB
+  rdf:type questionnaire:Answer ;
+  rdfs:label "at least 2 GB (apx 6.000 basic office files)" ;
+.
+questiondata:DataStorageAtLeast500MB
+  rdf:type questionnaire:Answer ;
+  rdfs:label "at least 500MB (apx. 1.500 basic office files)" ;
+.
+questiondata:DataStorageAtLeast5GB
+  rdf:type questionnaire:Answer ;
+  rdfs:label "at least 5 GB (apx. 13.000 basic office files)" ;
+.
+questiondata:Data_encryption_level
+  rdf:type questionnaire:CloudServiceElement ;
+  rdf:type questionnaire:SingleSelection ;
+  questionnaire:cloudServiceElementHasCloudServiceDomain questiondata:Security ;
+  questionnaire:questionHasAnnotationRelation bpaas:cloudServiceHasEncryptionType ;
+  questionnaire:questionHasAnswers questiondata:DataEncryptionLevelHigh ;
+  questionnaire:questionHasAnswers questiondata:DataEncryptionLevelLow ;
+  questionnaire:questionHasAnswers questiondata:DataEncryptionLevelMedium ;
+  rdfs:label "Data encryption level" ;
+.
+questiondata:Data_location
+  rdf:type questionnaire:CloudServiceElement ;
+  rdf:type questionnaire:SearchSelection ;
+  questionnaire:cloudServiceElementHasCloudServiceDomain questiondata:Security ;
+  questionnaire:questionHasAnnotationRelation bpaas:cloudServiceHasProcessedDataLocation ;
+  questionnaire:searchSelectionHasSearchNamespace bpaas:PhysicalLocation ;
+  questionnaire:searchSelectionOnClassesInsteadOfInstances "true"^^xsd:boolean ;
+  rdfs:label "Data location" ;
+.
+questiondata:Do_not_care
+  rdf:type questionnaire:Answer ;
+  rdfs:label "Do not care" ;
+.
+questiondata:Do_you_need_API_integration
+  rdf:type questionnaire:Interoperability ;
+  rdf:type questionnaire:SingleSelection ;
+  questionnaire:questionHasAnnotationRelation bpaas:cloudServiceHasAPI ;
+  questionnaire:questionHasAnswers questionnaire:No ;
+  questionnaire:questionHasAnswers questionnaire:Yes ;
+  rdfs:label "Do you need API integration?" ;
+.
+questiondata:Encryption_Type
+  rdf:type questionnaire:MultiSelection ;
+  rdf:type questionnaire:Security ;
+  questionnaire:questionHasAnnotationRelation bpaas:cloudServiceHasEncryptionType ;
+  questionnaire:questionHasAnswers bpaas:AES ;
+  questionnaire:questionHasAnswers bpaas:FDA ;
+  questionnaire:questionHasAnswers bpaas:FIPS ;
+  questionnaire:questionHasAnswers bpaas:HIPAA ;
+  questionnaire:questionHasAnswers bpaas:HIPAA_and_HITECH ;
+  questionnaire:questionHasAnswers bpaas:IAAS ;
+  questionnaire:questionHasAnswers bpaas:IP_Filtering ;
+  questionnaire:questionHasAnswers bpaas:ISO27001 ;
+  questionnaire:questionHasAnswers bpaas:Ipsec ;
+  questionnaire:questionHasAnswers bpaas:Not_SpecifiedEncr ;
+  questionnaire:questionHasAnswers bpaas:PCI_DSS ;
+  questionnaire:questionHasAnswers bpaas:PSN ;
+  questionnaire:questionHasAnswers bpaas:Privacy_Shield ;
+  questionnaire:questionHasAnswers bpaas:SOX ;
+  questionnaire:questionHasAnswers bpaas:SSH ;
+  questionnaire:questionHasAnswers bpaas:SSL ;
+  questionnaire:questionHasAnswers bpaas:TLS ;
+  questionnaire:questionHasAnswers bpaas:TLS_VPN ;
+  rdfs:label "Encryption type?" ;
+.
+questiondata:FileUpload_MP3
+  rdf:type questionnaire:Answer ;
+  rdfs:label "mp3" ;
+.
+questiondata:FileUpload_PDF
+  rdf:type questionnaire:Answer ;
+  rdfs:label "pdf" ;
+.
+questiondata:FileUpload_PPT
+  rdf:type questionnaire:Answer ;
+  rdfs:label "PPT" ;
+.
+questiondata:FileUpload_Video_MP4
+  rdf:type questionnaire:Answer ;
+  rdfs:label "Video MP4" ;
+.
+questiondata:Functional
+  rdf:type questionnaire:CloudServiceDomain ;
+  rdfs:label "Functional" ;
+.
+questiondata:General
+  rdf:type questionnaire:CloudServiceDomain ;
+  rdfs:label "General" ;
+.
+questiondata:How_many_simultaneous_users_do_you_prefer
+  rdf:type questionnaire:Performance ;
+  rdf:type questionnaire:ValueInsert ;
+  questionnaire:questionHasAnnotationRelation bpaas:cloudServiceHasSimultaneousUsers ;
+  questionnaire:valueInsertAnswerTypeHasDatatype xsd:integer ;
+  rdfs:label "How many simultaneous users do you prefer? (Insert 0 for any value)" ;
+.
+questiondata:LogAccessFor1Month
+  rdf:type questionnaire:Answer ;
+  rdfs:label "Log access for1Month" ;
+.
+questiondata:LogAccessFor1Year
+  rdf:type questionnaire:Answer ;
+  rdfs:label "Log access for1Year" ;
+.
+questiondata:LogAccessFor2Month
+  rdf:type questionnaire:Answer ;
+  rdfs:label "Log access for2Month" ;
+.
+questiondata:LogAccessForHalfYear
+  rdf:type questionnaire:Answer ;
+  rdfs:label "Log access for half year" ;
+.
+questiondata:LogFileRetentionPeriod1Month
+  rdf:type questionnaire:Answer ;
+  rdfs:label "Log file retention period1Month" ;
+.
+questiondata:LogFileRetentionPeriod1Year
+  rdf:type questionnaire:Answer ;
+  rdfs:label "Log file retention period1Year" ;
+.
+questiondata:LogFileRetentionPeriod2Month
+  rdf:type questionnaire:Answer ;
+  rdfs:label "Log file retention period2Month" ;
+.
+questiondata:LogFileRetentionPeriodHalfYear
+  rdf:type questionnaire:Answer ;
+  rdfs:label "Log file retention period half year" ;
+.
+questiondata:Monthly_downtime_in_minutes
+  rdf:type questionnaire:CloudServiceElement ;
+  rdf:type questionnaire:ValueInsert ;
+  questionnaire:cloudServiceElementHasCloudServiceDomain questiondata:Performance ;
+  questionnaire:questionHasAnnotationRelation bpaas:cloudServiceHasAvailabilityInPercent ;
+  questionnaire:valueInsertAnswerTypeHasDatatype xsd:double ;
+  rdfs:label "Availability in Percent" ;
+.
+questiondata:No
+  rdf:type questionnaire:Answer ;
+  rdfs:label "No" ;
+.
+questiondata:None
+  rdf:type questionnaire:Answer ;
+  rdfs:label "None" ;
+.
+questiondata:Number_of_Simultaneous_users
+  rdf:type questionnaire:CloudServiceElement ;
+  rdf:type questionnaire:ValueInsert ;
+  questionnaire:cloudServiceElementHasCloudServiceDomain questiondata:Performance ;
+  questionnaire:questionHasAnnotationRelation bpaas:cloudServiceHasSimultaneousUsers ;
+  questionnaire:valueInsertAnswerTypeHasDatatype xsd:integer ;
+  rdfs:label "Number of simultaneous users" ;
+.
+questiondata:Number_of_process_execution
+  rdf:type questionnaire:CloudServiceElement ;
+  rdf:type questionnaire:ValueInsert ;
+  questionnaire:cloudServiceElementHasCloudServiceDomain questiondata:Performance ;
+  questionnaire:questionHasAnnotationRelation bpaas:cloudServiceHasDataStorageInGB ;
+  questionnaire:valueInsertAnswerTypeHasDatatype xsd:integer ;
+  rdfs:label "Number of process execution" ;
+.
+questiondata:Object_does_reflect_the_functional_requirement
+  rdf:type questionnaire:CloudServiceElement ;
+  rdf:type questionnaire:SearchSelection ;
+  questionnaire:cloudServiceElementHasCloudServiceDomain questiondata:Functional ;
+  questionnaire:questionHasAnnotationRelation bpaas:cloudServiceHasObject ;
+  questionnaire:searchSelectionHasSearchNamespace <http://ikm-group.ch/archimeo/fbpdo#Object> ;
+  questionnaire:searchSelectionOnClassesInsteadOfInstances "true"^^xsd:boolean ;
+  rdfs:label "Object that reflect the functional requirement" ;
+.
+questiondata:Overwrite_events_as_needed
+  rdf:type questionnaire:Answer ;
+  rdfs:label "Overwrite events as needed" ;
+.
+questiondata:Payment
+  rdf:type questionnaire:CloudServiceDomain ;
+  rdfs:label "Payment" ;
+.
+questiondata:PaymentPlanCustomizable
+  rdf:type questionnaire:Answer ;
+  rdfs:label "customizable" ;
+.
+questiondata:PaymentPlanFreeOfCharge
+  rdf:type questionnaire:Answer ;
+  rdfs:label "free of charge" ;
+.
+questiondata:PaymentPlanMonthlyFee
+  rdf:type questionnaire:Answer ;
+  rdfs:label "monthly fee" ;
+.
+questiondata:PaymentPlanPrepaidAnnualFee
+  rdf:type questionnaire:Answer ;
+  rdfs:label "prepaid annual fee" ;
+.
+questiondata:PaymentPlanTryFreeFirst
+  rdf:type questionnaire:Answer ;
+  rdfs:label "Try Free First" ;
+.
+questiondata:PaymentPlanYearlyFee
+  rdf:type questionnaire:Answer ;
+  rdfs:label "yearly fee" ;
+.
+questiondata:Payment_Plan
+  rdf:type questionnaire:CloudServiceElement ;
+  rdf:type questionnaire:MultiSelection ;
+  questionnaire:cloudServiceElementHasCloudServiceDomain questiondata:Payment ;
+  questionnaire:questionHasAnnotationRelation bpaas:cloudServiceHasPaymentPlan ;
+  questionnaire:questionHasAnswers bpaas:CustomizablePlan ;
+  questionnaire:questionHasAnswers bpaas:FreeOfCharge ;
+  questionnaire:questionHasAnswers bpaas:MonthlyFee ;
+  questionnaire:questionHasAnswers bpaas:NoPlan ;
+  questionnaire:questionHasAnswers bpaas:PrepaidAnnualPlan ;
+  questionnaire:questionHasAnswers bpaas:TryFreeFirst ;
+  rdfs:label "Select your preferred payment plan" ;
+.
+questiondata:Performance
+  rdf:type questionnaire:CloudServiceDomain ;
+  rdfs:label "Performance" ;
+.
+questiondata:Please_select_your_favorite_retention_period_for_a_Log_File
+  rdf:type questionnaire:NotSortedYet ;
+  questionnaire:questionHasAnswers questiondata:LogAccessFor1Month ;
+  questionnaire:questionHasAnswers questiondata:LogAccessFor1Year ;
+  questionnaire:questionHasAnswers questiondata:LogAccessFor2Month ;
+  questionnaire:questionHasAnswers questiondata:LogAccessForHalfYear ;
+  questionnaire:questionHasAnswers questiondata:None ;
+  rdfs:label "Please select your favorite log file retention period" ;
+.
+questiondata:Please_select_your_favorite_retention_policies
+  rdf:type questionnaire:NotSortedYet ;
+  questionnaire:questionHasAnswers questiondata:Archive_the_log_when_full_and_do_not_overwrite_events ;
+  questionnaire:questionHasAnswers questiondata:Do_not_care ;
+  questionnaire:questionHasAnswers questiondata:Overwrite_events_as_needed ;
+  questionnaire:questionHasAnswers questiondata:do_not_overwrite_events ;
+  rdfs:label "Please select your favorite retention policies" ;
+.
+questiondata:PreferedAccess_Log_Availability_in_Months
+  rdf:type questionnaire:Availability ;
+  rdf:type questionnaire:ValueInsert ;
+  questionnaire:questionHasAnnotationRelation bpaas:cloudServiceHasAccessLogAvailabilityInMonths ;
+  questionnaire:valueInsertAnswerTypeHasDatatype xsd:integer ;
+  rdfs:label "Prefered Access Log Availability (in Months) (Insert 0 for any value)" ;
+.
+questiondata:PreferedAccess_Log_Retention_Period_in_Months
+  rdf:type questionnaire:Availability ;
+  rdf:type questionnaire:ValueInsert ;
+  questionnaire:questionHasAnnotationRelation bpaas:cloudServiceHasAccessLogRetentionPeriodInMonths ;
+  questionnaire:valueInsertAnswerTypeHasDatatype xsd:integer ;
+  rdfs:label "Prefered Access Log Retention Period in Months? (Insert 0 for any value)" ;
+.
+questiondata:PreferedAuditLogAvailabilityInMonths
+  rdf:type questionnaire:Availability ;
+  rdf:type questionnaire:ValueInsert ;
+  questionnaire:questionHasAnnotationRelation bpaas:cloudServiceHasAuditLogAvailabilityInMonth ;
+  questionnaire:valueInsertAnswerTypeHasDatatype xsd:integer ;
+  rdfs:label "Prefered Audit Log Availability In Months? (Insert 0 for any value)" ;
+.
+questiondata:PreferedAuditLogRetentionPeriodinMonths
+  rdf:type questionnaire:Availability ;
+  rdf:type questionnaire:ValueInsert ;
+  questionnaire:questionHasAnnotationRelation bpaas:cloudServiceHasAuditLogRetentionAvailabilityInMonth ;
+  questionnaire:valueInsertAnswerTypeHasDatatype xsd:integer ;
+  rdfs:label "Prefered Audit Log Retention Period (in Months)? (Insert 0 for any value)" ;
+.
+questiondata:PreferedAvailability_in_percentage
+  rdf:type questionnaire:Availability ;
+  rdf:type questionnaire:ValueInsert ;
+  questionnaire:questionHasAnnotationRelation bpaas:cloudServiceHasAvailabilityInPercent ;
+  questionnaire:valueInsertAnswerTypeHasDatatype xsd:integer ;
+  rdfs:label "Prefered availability in percentage? (Insert 0 for any value)" ;
+.
+questiondata:Prefered_Data_Storage_in_GB
+  rdf:type questionnaire:Performance ;
+  rdf:type questionnaire:ValueInsert ;
+  questionnaire:questionHasAnnotationRelation bpaas:cloudServiceHasDataStorageInGB ;
+  questionnaire:valueInsertAnswerTypeHasDatatype xsd:integer ;
+  rdfs:label "Select the prefered Data Storage in GB (Insert 0 for any value)" ;
+.
+questiondata:ProcessExecutionOnADailyBasis
+  rdf:type questionnaire:Answer ;
+  rdfs:label "on a daily basis" ;
+.
+questiondata:ProcessExecutionOnAMonthlyBasis
+  rdf:type questionnaire:Answer ;
+  rdfs:label "Process execution on a monthly basis" ;
+.
+questiondata:ProcessExecutionOnAWeeklyBasis
+  rdf:type questionnaire:Answer ;
+  rdfs:label "on a weekly basis" ;
+.
+questiondata:ProcessExecutionOnAYearlyBasis
+  rdf:type questionnaire:Answer ;
+  rdfs:label "Process execution on a yearly basis" ;
+.
+questiondata:ResponseTime_High
+  rdf:type questionnaire:Answer ;
+  rdfs:label "high" ;
+.
+questiondata:ResponseTime_Low
+  rdf:type questionnaire:Answer ;
+  rdfs:label "low" ;
+.
+questiondata:ResponseTime_Medium
+  rdf:type questionnaire:Answer ;
+  rdfs:label "medium" ;
+.
+questiondata:Response_time_level
+  rdf:type questionnaire:CloudServiceElement ;
+  rdf:type questionnaire:SingleSelection ;
+  questionnaire:cloudServiceElementHasCloudServiceDomain questiondata:Performance ;
+  questionnaire:questionHasAnnotationRelation bpaas:cloudServiceHasResponseTime_in_ms ;
+  questionnaire:questionHasAnswers questiondata:ResponseTime_High ;
+  questionnaire:questionHasAnswers questiondata:ResponseTime_Low ;
+  questionnaire:questionHasAnswers questiondata:ResponseTime_Medium ;
+  rdfs:label "Response time level" ;
+.
+questiondata:RestoreTimeHigh
+  rdf:type questionnaire:Answer ;
+  questionnaire:AnswerHasQuestionDependency questiondata:What_is_your_favorite_backup_frequency_period ;
+  rdfs:label "High" ;
+.
+questiondata:RestoreTimeLow
+  rdf:type questionnaire:Answer ;
+  questionnaire:AnswerHasQuestionDependency questiondata:What_is_your_favorite_backup_frequency_period ;
+  rdfs:label "Low" ;
+.
+questiondata:RestoreTimeMedium
+  rdf:type questionnaire:Answer ;
+  questionnaire:AnswerHasQuestionDependency questiondata:What_is_your_favorite_backup_frequency_period ;
+  rdfs:label "Medium" ;
+.
+questiondata:Restore_time_level
+  rdf:type questionnaire:CloudServiceElement ;
+  rdf:type questionnaire:SingleSelection ;
+  questionnaire:cloudServiceElementHasCloudServiceDomain questiondata:Security ;
+  questionnaire:questionHasAnnotationRelation bpaas:cloudServiceHasBackupRestoreInGBPerHour ;
+  questionnaire:questionHasAnswers questiondata:None ;
+  questionnaire:questionHasAnswers questiondata:RestoreTimeHigh ;
+  questionnaire:questionHasAnswers questiondata:RestoreTimeLow ;
+  questionnaire:questionHasAnswers questiondata:RestoreTimeMedium ;
+  rdfs:label " Restore time period" ;
+.
+questiondata:Security
+  rdf:type questionnaire:CloudServiceDomain ;
+  rdfs:label "Data Security" ;
+.
+questiondata:Select_the_desired_Service_Support_Responsiveness
+  rdf:type questionnaire:MultiSelection ;
+  rdf:type questionnaire:ServiceSupport ;
+  questionnaire:questionHasAnnotationRelation bpaas:cloudServiceHasServiceSupportResponsiveness ;
+  questionnaire:questionHasAnswers bpaas:Not_specified ;
+  questionnaire:questionHasAnswers <http://ikm-group.ch/archimeo/bpaas#at_most_1.5_hours> ;
+  questionnaire:questionHasAnswers bpaas:at_most_120_hours ;
+  questionnaire:questionHasAnswers bpaas:at_most_12_hours ;
+  questionnaire:questionHasAnswers bpaas:at_most_15_minutes ;
+  questionnaire:questionHasAnswers bpaas:at_most_1_hour ;
+  questionnaire:questionHasAnswers bpaas:at_most_1_working_day ;
+  questionnaire:questionHasAnswers bpaas:at_most_2_hours ;
+  questionnaire:questionHasAnswers bpaas:at_most_2_working_days ;
+  questionnaire:questionHasAnswers bpaas:at_most_30_working_days ;
+  questionnaire:questionHasAnswers bpaas:at_most_3_hours ;
+  questionnaire:questionHasAnswers bpaas:at_most_3_working_days ;
+  questionnaire:questionHasAnswers bpaas:at_most_4_hours ;
+  questionnaire:questionHasAnswers bpaas:at_most_4_working_days ;
+  questionnaire:questionHasAnswers bpaas:at_most_5_hours ;
+  questionnaire:questionHasAnswers bpaas:at_most_5_working_days ;
+  questionnaire:questionHasAnswers bpaas:at_most_8_hours ;
+  rdfs:label "Select_the_desired_Service_Support_Responsiveness" ;
+.
+questiondata:Select_the_prefered_data_type_for_import_and_export
+  rdf:type questionnaire:Interoperability ;
+  rdf:type questionnaire:MultiSelection ;
+  questionnaire:questionHasAnnotationRelation bpaas:CloudServiceHasMediaTypeImportExport ;
+  questionnaire:questionHasAnswers bpaas:Video_mp4 ;
+  questionnaire:questionHasAnswers bpaas:csv ;
+  questionnaire:questionHasAnswers bpaas:mp3 ;
+  questionnaire:questionHasAnswers bpaas:pdf ;
+  questionnaire:questionHasAnswers bpaas:ppt ;
+  rdfs:label "Select the prefered data import and export" ;
+.
+questiondata:Select_your_favorite_target_market
+  rdf:type questionnaire:MultiSelection ;
+  rdf:type questionnaire:TargetMarket ;
+  questionnaire:questionHasAnnotationRelation bpaas:cloudServiceHasTargetMarket ;
+  questionnaire:questionHasAnswers bpaas:App_Developers ;
+  questionnaire:questionHasAnswers bpaas:Businesses ;
+  questionnaire:questionHasAnswers bpaas:CultureArcheology ;
+  questionnaire:questionHasAnswers bpaas:Development_Agencies ;
+  questionnaire:questionHasAnswers bpaas:Education ;
+  questionnaire:questionHasAnswers bpaas:Government_Institutions ;
+  questionnaire:questionHasAnswers bpaas:Health_Care ;
+  questionnaire:questionHasAnswers bpaas:Justice_sector ;
+  questionnaire:questionHasAnswers bpaas:NoTarget ;
+  questionnaire:questionHasAnswers bpaas:Public_Sector ;
+  questionnaire:questionHasAnswers bpaas:Publishers ;
+  questionnaire:questionHasAnswers bpaas:Social_Care ;
+  questionnaire:questionHasAnswers bpaas:Social_Sector ;
+  questionnaire:questionHasAnswers bpaas:Web-Developers ;
+  rdfs:label "Select your favorite target market" ;
+.
+questiondata:Select_your_preferred_payment_plan
+  rdf:type questionnaire:MultiSelection ;
+  rdf:type questionnaire:Payment ;
+  questionnaire:questionHasAnnotationRelation bpaas:cloudServiceHasPaymentPlan ;
+  questionnaire:questionHasAnswers bpaas:CustomizablePlan ;
+  questionnaire:questionHasAnswers bpaas:Fixed_Subscription ;
+  questionnaire:questionHasAnswers bpaas:FreeofCharge ;
+  questionnaire:questionHasAnswers bpaas:Initial_Base_Fee ;
+  questionnaire:questionHasAnswers bpaas:MonthlyFee ;
+  questionnaire:questionHasAnswers bpaas:NoPlan ;
+  questionnaire:questionHasAnswers bpaas:Not_specifiedPayment ;
+  questionnaire:questionHasAnswers bpaas:Pay-as-you-go ;
+  questionnaire:questionHasAnswers bpaas:Per-Item ;
+  questionnaire:questionHasAnswers bpaas:Per-day ;
+  questionnaire:questionHasAnswers bpaas:Per-hour ;
+  questionnaire:questionHasAnswers bpaas:Per-instance ;
+  questionnaire:questionHasAnswers bpaas:Per-terabyte ;
+  questionnaire:questionHasAnswers bpaas:Per-user ;
+  questionnaire:questionHasAnswers bpaas:PrepaidAnnualPlan ;
+  questionnaire:questionHasAnswers bpaas:TryFreeFirst ;
+  questionnaire:questionHasAnswers bpaas:Utility ;
+  rdfs:label "Select your preferred payment plan" ;
+.
+questiondata:ServiceSupport
+  rdf:type questionnaire:CloudServiceDomain ;
+  rdfs:label "Service Support" ;
+.
+questiondata:Storage_type
+  rdf:type questionnaire:CloudServiceElement ;
+  rdf:type questionnaire:SingleSelection ;
+  questionnaire:cloudServiceElementHasCloudServiceDomain questiondata:Security ;
+  questionnaire:questionHasAnnotationRelation bpaas:cloudServiceHasDocumentManagementSystem ;
+  questionnaire:questionHasAnswers bpaas:File_System ;
+  questionnaire:questionHasAnswers bpaas:Storage_Service ;
+  rdfs:label "Storage type" ;
+.
+questiondata:SupportResponsivenessAtMost1WorkingDay
+  rdf:type questionnaire:Answer ;
+  rdfs:label "Support responsiveness at most 1 working day" ;
+.
+questiondata:SupportResponsivenessAtMost2Hours
+  rdf:type questionnaire:Answer ;
+  rdfs:label "at most 2 Hours" ;
+.
+questiondata:SupportResponsivenessAtMost4Hours
+  rdf:type questionnaire:Answer ;
+  rdfs:label "at most 4 Hours" ;
+.
+questiondata:SupportServiceYes
+  rdf:type questionnaire:Answer ;
+  questionnaire:AnswerHasQuestionDependency questiondata:What_is_your_favorite_support_coverage ;
+  questionnaire:AnswerHasQuestionDependency questiondata:What_is_your_favorite_support_responsiveness ;
+  rdfs:label "Yes" ;
+.
+questiondata:Support_coverage
+  rdf:type questionnaire:CloudServiceElement ;
+  rdf:type questionnaire:SingleSelection ;
+  questionnaire:cloudServiceElementHasCloudServiceDomain questiondata:ServiceSupport ;
+  questionnaire:questionHasAnnotationRelation bpaas:cloudServiceHasServiceSupport ;
+  questionnaire:questionHasAnswers bpaas:Mon-Fri ;
+  questionnaire:questionHasAnswers bpaas:Mon-Sat ;
+  questionnaire:questionHasAnswers bpaas:Twenty4Seven ;
+  questionnaire:questionHasAnswers bpaas:Weekend ;
+  rdfs:label "Support coverage" ;
+.
+questiondata:TargetMarket
+  rdf:type questionnaire:CloudServiceDomain ;
+  rdfs:label "Target Market" ;
+.
+questiondata:TargetMarketBusinesses
+  rdf:type questionnaire:Answer ;
+  rdfs:label "businesses" ;
+.
+questiondata:TargetMarketIndividuals
+  rdf:type questionnaire:Answer ;
+  rdfs:label "Target market individuals" ;
+.
+questiondata:TargetMarketSchoolAndUniversities
+  rdf:type questionnaire:Answer ;
+  rdfs:label "school and universities" ;
+.
+questiondata:TargetMarketSmallTeams
+  rdf:type questionnaire:Answer ;
+  rdfs:label "small teams" ;
+.
+questiondata:Target_market
+  rdf:type questionnaire:CloudServiceElement ;
+  rdf:type questionnaire:SingleSelection ;
+  questionnaire:cloudServiceElementHasCloudServiceDomain questiondata:TargetMarket ;
+  questionnaire:questionHasAnnotationRelation bpaas:cloudServiceHasTargetMarket ;
+  questionnaire:questionHasAnswers bpaas:Businesses ;
+  questionnaire:questionHasAnswers bpaas:GrowingTeams ;
+  questionnaire:questionHasAnswers bpaas:Individuals ;
+  questionnaire:questionHasAnswers bpaas:NoTarget ;
+  questionnaire:questionHasAnswers bpaas:SchoolsAndUniversities ;
+  questionnaire:questionHasAnswers bpaas:SmallTeams ;
+  rdfs:label "Target market" ;
+.
+questiondata:Various
+  rdf:type questionnaire:CloudServiceDomain ;
+  rdfs:label "Various" ;
+.
+questiondata:What_are_the_offered_support_channels
+  rdf:type questionnaire:MultiSelection ;
+  rdf:type questionnaire:ServiceSupport ;
+  questionnaire:questionHasAnnotationRelation bpaas:cloudServiceHasSupportChannel ;
+  questionnaire:questionHasAnswers bpaas:Mail ;
+  questionnaire:questionHasAnswers bpaas:OnSiteSupport ;
+  questionnaire:questionHasAnswers bpaas:OnlineTicketing ;
+  questionnaire:questionHasAnswers bpaas:Other ;
+  questionnaire:questionHasAnswers bpaas:Phone ;
+  questionnaire:questionHasAnswers bpaas:SocialMedia ;
+  rdfs:label "What are the offered support channels" ;
+.
+questiondata:What_could_be_uploaded
+  rdf:type questionnaire:CloudServiceElement ;
+  rdf:type questionnaire:MultiSelection ;
+  questionnaire:cloudServiceElementHasCloudServiceDomain questiondata:Performance ;
+  questionnaire:questionHasAnnotationRelation bpaas:cloudServiceHasDataStorageInGB ;
+  questionnaire:questionHasAnswers questiondata:FileUpload_MP3 ;
+  questionnaire:questionHasAnswers questiondata:FileUpload_PDF ;
+  questionnaire:questionHasAnswers questiondata:FileUpload_PPT ;
+  questionnaire:questionHasAnswers questiondata:FileUpload_Video_MP4 ;
+  rdfs:label "What could be uploaded" ;
+.
+questiondata:What_is_the_backup_frequency
+  rdf:type questionnaire:MultiSelection ;
+  rdf:type questionnaire:Reliability ;
+  questionnaire:questionHasAnnotationRelation bpaas:cloudServiceHasBackupFrequency ;
+  questionnaire:questionHasAnswers bpaas:daily ;
+  questionnaire:questionHasAnswers bpaas:defined_by_customer ;
+  questionnaire:questionHasAnswers bpaas:every_3_hours ;
+  questionnaire:questionHasAnswers bpaas:hourly ;
+  questionnaire:questionHasAnswers bpaas:monthly ;
+  questionnaire:questionHasAnswers bpaas:not_specifiedBackupFrequency ;
+  questionnaire:questionHasAnswers bpaas:weekly ;
+  questionnaire:questionHasAnswers bpaas:yearly ;
+  rdfs:label "What's the prefered backup frequency?" ;
+.
+questiondata:What_is_the_backup_retention_time
+  rdf:type questionnaire:MultiSelection ;
+  rdf:type questionnaire:Reliability ;
+  questionnaire:questionHasAnnotationRelation bpaas:cloudServiceHasBackupRetentionTime ;
+  questionnaire:questionHasAnswers bpaas:Not_specifiedBackupRet ;
+  questionnaire:questionHasAnswers bpaas:longer_than_1_year ;
+  questionnaire:questionHasAnswers bpaas:up_to_1_day ;
+  questionnaire:questionHasAnswers bpaas:up_to_1_month ;
+  questionnaire:questionHasAnswers bpaas:up_to_1_week ;
+  questionnaire:questionHasAnswers bpaas:up_to_1_year ;
+  questionnaire:questionHasAnswers bpaas:up_to_6_months ;
+  rdfs:label "What's the prefered backup retention time?" ;
+.
+questiondata:What_is_you_favorite_restore_time_level
+  rdf:type questionnaire:SingleSelection ;
+  questionnaire:questionHasAnnotationRelation bpaas:cloudServiceHasBackupRestoreInGBPerHour ;
+  questionnaire:questionHasAnswers questiondata:None ;
+  questionnaire:questionHasAnswers questiondata:RestoreTimeHigh ;
+  questionnaire:questionHasAnswers questiondata:RestoreTimeLow ;
+  questionnaire:questionHasAnswers questiondata:RestoreTimeMedium ;
+  rdfs:label "--What is you favorite restore time period?" ;
+.
+questiondata:What_is_your_favorite_backup_frequency_period
+  rdf:type questionnaire:SingleSelection ;
+  questionnaire:questionHasAnnotationRelation bpaas:cloudServiceHasBackupFrequency ;
+  questionnaire:questionHasAnswers bpaas:daily ;
+  questionnaire:questionHasAnswers bpaas:monthly ;
+  questionnaire:questionHasAnswers bpaas:weekly ;
+  questionnaire:questionHasAnswers bpaas:yearly ;
+  rdfs:label "--What is your favorite backup frequency period?" ;
+.
+questiondata:What_is_your_favorite_backup_retention_time_period
+  rdf:type questionnaire:SingleSelection ;
+  questionnaire:questionHasAnnotationRelation bpaas:cloudServiceHasBackupRetentionTime ;
+  questionnaire:questionHasAnswers bpaas:up_to_1_day ;
+  questionnaire:questionHasAnswers bpaas:up_to_1_month ;
+  questionnaire:questionHasAnswers bpaas:up_to_1_year ;
+  questionnaire:questionHasAnswers bpaas:up_to_2_month ;
+  questionnaire:questionHasAnswers bpaas:up_to_2_weeks ;
+  questionnaire:questionHasAnswers bpaas:up_to_6_months ;
+  questionnaire:questionHasAnswers bpaas:up_to_7_days ;
+  rdfs:label "--What is your favorite backup retention time period?" ;
+.
+questiondata:What_is_your_favorite_response_time_level
+  rdf:type questionnaire:Performance ;
+  rdf:type questionnaire:ValueInsert ;
+  questionnaire:questionHasAnnotationRelation bpaas:cloudServiceHasResponseTime_in_ms ;
+  questionnaire:valueInsertAnswerTypeHasDatatype xsd:integer ;
+  rdfs:label "What is your favorite response time level? (Insert 0 for any value)" ;
+.
+questiondata:What_is_your_favorite_stored_data_location
+  rdf:type questionnaire:MultiSelection ;
+  rdf:type questionnaire:Security ;
+  questionnaire:questionHasAnnotationRelation bpaas:cloudServiceHasStoredDataLocation ;
+  questionnaire:questionHasAnswers questionnaire:Not_Specified ;
+  questionnaire:questionHasAnswers bpaas:Africa ;
+  questionnaire:questionHasAnswers bpaas:Asia ;
+  questionnaire:questionHasAnswers bpaas:Austria ;
+  questionnaire:questionHasAnswers bpaas:Brazil ;
+  questionnaire:questionHasAnswers bpaas:China ;
+  questionnaire:questionHasAnswers bpaas:EES ;
+  questionnaire:questionHasAnswers bpaas:EU-US_Privacy_Shield_agreement_locations ;
+  questionnaire:questionHasAnswers bpaas:Europe ;
+  questionnaire:questionHasAnswers bpaas:European_Economic_Area_EEA ;
+  questionnaire:questionHasAnswers bpaas:European_Union ;
+  questionnaire:questionHasAnswers bpaas:French ;
+  questionnaire:questionHasAnswers bpaas:Germany ;
+  questionnaire:questionHasAnswers bpaas:Israel ;
+  questionnaire:questionHasAnswers bpaas:Italy ;
+  questionnaire:questionHasAnswers bpaas:North_America ;
+  questionnaire:questionHasAnswers bpaas:Romania ;
+  questionnaire:questionHasAnswers bpaas:South_America ;
+  questionnaire:questionHasAnswers bpaas:Switzerland ;
+  questionnaire:questionHasAnswers bpaas:The_Netherlands ;
+  questionnaire:questionHasAnswers bpaas:USA ;
+  questionnaire:questionHasAnswers bpaas:United_Kingdom ;
+  rdfs:label "What is your favorite stored data location?" ;
+.
+questiondata:What_is_your_favorite_support_coverage
+  rdf:type questionnaire:MultiSelection ;
+  rdf:type questionnaire:ServiceSupport ;
+  questionnaire:questionHasAnnotationRelation bpaas:cloudServiceHasServiceSupport ;
+  questionnaire:questionHasAnswers bpaas:Mon-Fri ;
+  questionnaire:questionHasAnswers bpaas:Mon-Sat ;
+  questionnaire:questionHasAnswers bpaas:Mon-Sun ;
+  questionnaire:questionHasAnswers bpaas:NotSpecified ;
+  questionnaire:questionHasAnswers bpaas:Twenty4Seven ;
+  questionnaire:questionHasAnswers bpaas:Twenty4five ;
+  questionnaire:questionHasAnswers bpaas:nineToFive ;
+  questionnaire:questionHasAnswers bpaas:sevenDaysAWeek ;
+  rdfs:label "What is your favorite support coverage?" ;
+.
+questiondata:What_is_your_favorite_support_responsiveness
+  rdf:type questionnaire:NotSortedYet ;
+  questionnaire:questionHasAnswers questiondata:None ;
+  questionnaire:questionHasAnswers questiondata:SupportResponsivenessAtMost1WorkingDay ;
+  questionnaire:questionHasAnswers questiondata:SupportResponsivenessAtMost2Hours ;
+  questionnaire:questionHasAnswers questiondata:SupportResponsivenessAtMost4Hours ;
+  rdfs:label "What is your favorite support responsiveness?" ;
+.
+questiondata:Which_APQC_category_does_reflect_the_functional_requirement_you_want_to_express
+  rdf:type questionnaire:Functional ;
+  rdf:type questionnaire:SearchSelection ;
+  questionnaire:questionHasAnnotationRelation bpaas:cloudServiceHasAPQC ;
+  questionnaire:searchSelectionHasSearchNamespace <http://ikm-group.ch/archimeo/apqc#AmericanProductivityAndQualityCenter> ;
+  questionnaire:searchSelectionOnClassesInsteadOfInstances "true"^^xsd:boolean ;
+  rdfs:label "Which APQC category does reflect the functional requirement you want to express?" ;
+.
+questiondata:Which_Action_does_reflect_the_functional_requirement_you_want_to_express
+  rdf:type questionnaire:Functional ;
+  rdf:type questionnaire:SearchSelection ;
+  questionnaire:questionHasAnnotationRelation bpaas:cloudServiceHasAction ;
+  questionnaire:searchSelectionHasSearchNamespace <http://ikm-group.ch/archimeo/fbpdo#Action> ;
+  questionnaire:searchSelectionOnClassesInsteadOfInstances "true"^^xsd:boolean ;
+  rdfs:label "Which Action does reflect the functional requirement you want to express?" ;
+.
+questiondata:Which_Object_does_reflect_the_functional_requirement_you_want_to_express
+  rdf:type questionnaire:Functional ;
+  rdf:type questionnaire:SearchSelection ;
+  questionnaire:questionHasAnnotationRelation bpaas:cloudServiceHasObject ;
+  questionnaire:searchSelectionHasSearchNamespace <http://ikm-group.ch/archimeo/fbpdo#Object> ;
+  questionnaire:searchSelectionOnClassesInsteadOfInstances "true"^^xsd:boolean ;
+  rdfs:label "Which Object does reflect the functional requirement you want to express?" ;
+.
+questiondata:Would_a_computing_processing_power_scalable_be_required
+  rdf:type questionnaire:Performance ;
+  rdf:type questionnaire:SingleSelection ;
+  questionnaire:questionHasAnnotationRelation bpaas:cloudServiceHasScalableProcessingPower ;
+  questionnaire:questionHasAnswers questionnaire:No ;
+  questionnaire:questionHasAnswers questionnaire:Yes ;
+  rdfs:label "Would a computing processing power scalable be required?" ;
+.
+questiondata:Would_a_data_storage_scalable_be_required
+  rdf:type questionnaire:Performance ;
+  rdf:type questionnaire:SingleSelection ;
+  questionnaire:questionHasAnnotationRelation bpaas:cloudServiceHasScalableStorage ;
+  questionnaire:questionHasAnswers questionnaire:No ;
+  questionnaire:questionHasAnswers questionnaire:Yes ;
+  rdfs:label "Would a scalable data storage be required?" ;
+.
+questiondata:Would_an_automatic_password_management_in_place_be_required
+  rdf:type questionnaire:Security ;
+  rdf:type questionnaire:SingleSelection ;
+  questionnaire:questionHasAnnotationRelation bpaas:cloudServiceHasAutomatedPasswordManagement ;
+  questionnaire:questionHasAnswers questionnaire:No ;
+  questionnaire:questionHasAnswers questionnaire:Not_Specified ;
+  questionnaire:questionHasAnswers questionnaire:Yes ;
+  rdfs:label "Would an automatic password management in place be required?" ;
+.
+questiondata:Yes
+  rdf:type questionnaire:Answer ;
+  rdfs:label "Yes" ;
+.
+questiondata:do_not_overwrite_events
+  rdf:type questionnaire:Answer ;
+  rdfs:label "do not overwrite events" ;
+.
+questionnaire:PerformanceYes
+  rdf:type questionnaire:Answer ;
+  rdfs:label "Yes" ;
+.
+bpaas:CloudServiceHasMediaTypeImportExport
+  rdfs:domain bpaas:CloudService ;
+.

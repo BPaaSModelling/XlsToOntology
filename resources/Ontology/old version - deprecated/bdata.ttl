@@ -1,0 +1,805 @@
+# baseURI: http://ikm-group.ch/archiMEO/bdata
+# imports: http://ikm-group.ch/archimeo/bpaas
+# prefix: bdata
+
+@prefix apqc: <http://ikm-group.ch/archimeo/apqc#> .
+@prefix bdata: <http://ikm-group.ch/archiMEO/bdata#> .
+@prefix bpaas: <http://ikm-group.ch/archimeo/bpaas#> .
+@prefix fbpdo: <http://ikm-group.ch/archimeo/fbpdo#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix top: <http://ikm-group.ch/archiMEO/top#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://ikm-group.ch/archiMEO/bdata>
+  rdf:type owl:Ontology ;
+  owl:imports <http://ikm-group.ch/archimeo/bpaas> ;
+  owl:versionInfo "Created with TopBraid Composer" ;
+  .
+bdata:Drive
+  rdf:type bpaas:CloudService ;
+  bpaas:cloudServiceHasAPQC <http://ikm-group.ch/archimeo/apqc#9_11_7_Document_trade_14095> ;
+  bpaas:cloudServiceHasAPQC <http://ikm-group.ch/archimeo/apqc#9_2_2_2_Generate_customer_billing_data_10795> ;
+  bpaas:cloudServiceHasAPQC <http://ikm-group.ch/archimeo/apqc#9_2_2_3_Transmit_billing_data_to_customers_10796> ;
+  bpaas:cloudServiceHasAPQC <http://ikm-group.ch/archimeo/apqc#9_2_2_Invoice_customer_10743> ;
+  bpaas:cloudServiceHasAction fbpdo:Create ;
+  bpaas:cloudServiceHasAction fbpdo:Manage ;
+  bpaas:cloudServiceHasAction fbpdo:Send ;
+  bpaas:cloudServiceHasAction fbpdo:Update ;
+  bpaas:cloudServiceHasAction fbpdo:Upload ;
+  bpaas:cloudServiceHasAvailabilityInPercent 99.999 ;
+  bpaas:cloudServiceHasBackupFrequency bpaas:daily ;
+  bpaas:cloudServiceHasDocumentManagementSystem bpaas:Storage_Service ;
+  bpaas:cloudServiceHasEncryptionType bpaas:Sha256 ;
+  bpaas:cloudServiceHasObject fbpdo:Document ;
+  bpaas:cloudServiceHasObject fbpdo:Invoice ;
+  bpaas:cloudServiceHasPaymentPlan bpaas:CustomizablePlan ;
+  bpaas:cloudServiceHasPaymentPlan bpaas:FreeofCharge ;
+  bpaas:cloudServiceHasPaymentPlan bpaas:MonthlyFee ;
+  bpaas:cloudServiceHasPaymentPlan bpaas:NoPlan ;
+  bpaas:cloudServiceHasPaymentPlan bpaas:PrepaidAnnualPlan ;
+  bpaas:cloudServiceHasPaymentPlan bpaas:TryFreeFirst ;
+  bpaas:cloudServiceHasProcessedDataLocation bpaas:Europe ;
+  bpaas:cloudServiceHasServiceSupport bpaas:Twenty4Seven ;
+  bpaas:cloudServiceHasSimultaneousUsers 100 ;
+  bpaas:cloudServiceHasTargetMarket bpaas:Businesses ;
+  bpaas:cloudServiceHasTargetMarket bpaas:GrowingTeams ;
+  bpaas:cloudServiceHasTargetMarket bpaas:Individuals ;
+  bpaas:cloudServiceHasTargetMarket bpaas:NoTarget ;
+  bpaas:cloudServiceHasTargetMarket bpaas:SchoolsAndUniversities ;
+  bpaas:cloudServiceHasTargetMarket bpaas:SmallTeams ;
+  rdfs:label "Google Drive" ;
+.
+bdata:Dropbox
+  rdf:type bpaas:CloudService ;
+  bpaas:cloudServiceHasAPQC <http://ikm-group.ch/archimeo/apqc#9_11_7_Document_trade_14095> ;
+  bpaas:cloudServiceHasAPQC <http://ikm-group.ch/archimeo/apqc#9_2_2_2_Generate_customer_billing_data_10795> ;
+  bpaas:cloudServiceHasAPQC <http://ikm-group.ch/archimeo/apqc#9_2_2_3_Transmit_billing_data_to_customers_10796> ;
+  bpaas:cloudServiceHasAPQC <http://ikm-group.ch/archimeo/apqc#9_2_2_Invoice_customer_10743> ;
+  bpaas:cloudServiceHasAction fbpdo:Create ;
+  bpaas:cloudServiceHasAction fbpdo:Manage ;
+  bpaas:cloudServiceHasAction fbpdo:Send ;
+  bpaas:cloudServiceHasAction fbpdo:Update ;
+  bpaas:cloudServiceHasAction fbpdo:Upload ;
+  bpaas:cloudServiceHasAvailabilityInPercent 99.997 ;
+  bpaas:cloudServiceHasBackupFrequency bpaas:daily ;
+  bpaas:cloudServiceHasDocumentManagementSystem bpaas:Storage_Service ;
+  bpaas:cloudServiceHasEncryptionType bpaas:Sha256 ;
+  bpaas:cloudServiceHasObject fbpdo:Document ;
+  bpaas:cloudServiceHasObject fbpdo:Invoice ;
+  bpaas:cloudServiceHasProcessedDataLocation bpaas:Europe ;
+  bpaas:cloudServiceHasServiceSupport bpaas:Twenty4Seven ;
+  bpaas:cloudServiceHasSimultaneousUsers 100 ;
+  bpaas:cloudServiceHasTargetMarket bpaas:Businesses ;
+  bpaas:cloudServiceHasTargetMarket bpaas:GrowingTeams ;
+  bpaas:cloudServiceHasTargetMarket bpaas:Individuals ;
+  bpaas:cloudServiceHasTargetMarket bpaas:NoTarget ;
+  bpaas:cloudServiceHasTargetMarket bpaas:SchoolsAndUniversities ;
+  bpaas:cloudServiceHasTargetMarket bpaas:SmallTeams ;
+  rdfs:label "Dropbox" ;
+.
+bdata:Gmail
+  rdf:type bpaas:CloudService ;
+  bpaas:cloudServiceHasAPQC <http://ikm-group.ch/archimeo/apqc#9_2_2_3_Transmit_billing_data_to_customers_10796> ;
+  bpaas:cloudServiceHasAction fbpdo:Send ;
+  bpaas:cloudServiceHasAvailabilityInPercent 99.9 ;
+  bpaas:cloudServiceHasBackupFrequency bpaas:monthly ;
+  bpaas:cloudServiceHasBackupRestoreInGBPerHour 1 ;
+  bpaas:cloudServiceHasBackupRetentionTime bpaas:up_to_1_month ;
+  bpaas:cloudServiceHasDataStorageInGB 5 ;
+  bpaas:cloudServiceHasDescription "https://www.gmail.com" ;
+  bpaas:cloudServiceHasEncryptionType bpaas:Sha256 ;
+  bpaas:cloudServiceHasObject fbpdo:Invoice ;
+  bpaas:cloudServiceHasPaymentPlan bpaas:FreeOfCharge ;
+  bpaas:cloudServiceHasPaymentPlan bpaas:MonthlyFee ;
+  bpaas:cloudServiceHasProcessedDataLocation bpaas:USA ;
+  bpaas:cloudServiceHasResponseTime_in_ms 1 ;
+  bpaas:cloudServiceHasServiceSupport bpaas:Twenty4Seven ;
+  bpaas:cloudServiceHasServiceSupportResponsiveness bpaas:at_most_1_working_day ;
+  bpaas:cloudServiceHasSimultaneousUsers 100 ;
+  bpaas:cloudServiceHasStoredDataLocation bpaas:USA ;
+  bpaas:cloudServiceHasTargetMarket bpaas:Businesses ;
+  bpaas:cloudServiceHasTargetMarket bpaas:GrowingTeams ;
+  bpaas:cloudServiceHasTargetMarket bpaas:Individuals ;
+  bpaas:cloudServiceHasTargetMarket bpaas:SchoolsAndUniversities ;
+  bpaas:cloudServiceHasTargetMarket bpaas:SmallTeams ;
+  rdfs:label "Gmail - e-mail system" ;
+.
+bdata:InvoiceNinja
+  rdf:type bpaas:CloudService ;
+  bpaas:cloudServiceHasAPQC <http://ikm-group.ch/archimeo/apqc#9_2_2_2_Generate_customer_billing_data_10795> ;
+  bpaas:cloudServiceHasAPQC <http://ikm-group.ch/archimeo/apqc#9_2_2_3_Transmit_billing_data_to_customers_10796> ;
+  bpaas:cloudServiceHasAccessLogAvailabilityInMonths 2 ;
+  bpaas:cloudServiceHasAccessLogRetentionPeriodInMonths 2 ;
+  bpaas:cloudServiceHasAccessLogRetentionPolicies bpaas:Overwrite_events_as_needed ;
+  bpaas:cloudServiceHasAction fbpdo:Manage ;
+  bpaas:cloudServiceHasAction fbpdo:Send ;
+  bpaas:cloudServiceHasAuditLogAvailabilityInMonth 2 ;
+  bpaas:cloudServiceHasAuditLogRetentionPeriodInMonths 2 ;
+  bpaas:cloudServiceHasAuditLogRetentionPolicies bpaas:Overwrite_events_as_needed ;
+  bpaas:cloudServiceHasAvailabilityInPercent 99.999 ;
+  bpaas:cloudServiceHasBackupFrequency bpaas:daily ;
+  bpaas:cloudServiceHasBackupRestoreInGBPerHour 50 ;
+  bpaas:cloudServiceHasBackupRetentionTime bpaas:up_to_7_days ;
+  bpaas:cloudServiceHasDataStorageInGB 5 ;
+  bpaas:cloudServiceHasDescription "https://www.invoiceninja.com/" ;
+  bpaas:cloudServiceHasDocumentManagementSystem bpaas:File_System ;
+  bpaas:cloudServiceHasEncryptionType bpaas:Sha256 ;
+  bpaas:cloudServiceHasExecutionCapacity 20 ;
+  bpaas:cloudServiceHasObject fbpdo:Document ;
+  bpaas:cloudServiceHasObject fbpdo:Invoice ;
+  bpaas:cloudServiceHasPaymentPlan bpaas:FreeOfCharge ;
+  bpaas:cloudServiceHasPaymentPlan bpaas:MonthlyFee ;
+  bpaas:cloudServiceHasPaymentPlan bpaas:PrepaidAnnualPlan ;
+  bpaas:cloudServiceHasProcessedDataLocation bpaas:Israel ;
+  bpaas:cloudServiceHasResponseTime_in_ms 5 ;
+  bpaas:cloudServiceHasServiceSupport bpaas:Twenty4Seven ;
+  bpaas:cloudServiceHasServiceSupportResponsiveness bpaas:at_most_1_working_day ;
+  bpaas:cloudServiceHasSimultaneousUsers 500 ;
+  bpaas:cloudServiceHasTargetMarket bpaas:Businesses ;
+  rdfs:label "InvoiceNinja" ;
+.
+bdata:MailJet
+  rdf:type bpaas:CloudService ;
+  bpaas:cloudServiceHasAPQC <http://ikm-group.ch/archimeo/apqc#9_2_2_2_Generate_customer_billing_data_10795> ;
+  bpaas:cloudServiceHasAPQC <http://ikm-group.ch/archimeo/apqc#9_2_2_3_Transmit_billing_data_to_customers_10796> ;
+  bpaas:cloudServiceHasAction fbpdo:Manage ;
+  bpaas:cloudServiceHasAction fbpdo:Send ;
+  bpaas:cloudServiceHasAvailabilityInPercent 99.999 ;
+  bpaas:cloudServiceHasBackupFrequency bpaas:daily ;
+  bpaas:cloudServiceHasBackupRestoreInGBPerHour 1 ;
+  bpaas:cloudServiceHasBackupRetentionTime bpaas:up_to_1_month ;
+  bpaas:cloudServiceHasDataStorageInGB 1 ;
+  bpaas:cloudServiceHasDescription "https://eu.mailjet.com/#" ;
+  bpaas:cloudServiceHasEncryptionType bpaas:Sha256 ;
+  bpaas:cloudServiceHasObject fbpdo:Document ;
+  bpaas:cloudServiceHasObject fbpdo:Invoice ;
+  bpaas:cloudServiceHasPaymentPlan bpaas:MonthlyFee ;
+  bpaas:cloudServiceHasProcessedDataLocation bpaas:French ;
+  bpaas:cloudServiceHasResponseTime_in_ms 1 ;
+  bpaas:cloudServiceHasServiceSupport bpaas:Twenty4Seven ;
+  bpaas:cloudServiceHasServiceSupportResponsiveness bpaas:at_most_1_working_day ;
+  bpaas:cloudServiceHasSimultaneousUsers 100 ;
+  bpaas:cloudServiceHasStoredDataLocation bpaas:French ;
+  bpaas:cloudServiceHasTargetMarket bpaas:Businesses ;
+  rdfs:label "MailJet" ;
+.
+bdata:Mathema_Document_Generator
+  rdf:type bpaas:CloudService ;
+  bpaas:cloudServiceHasAPQC <http://ikm-group.ch/archimeo/apqc#9_2_2_2_Generate_customer_billing_data_10795> ;
+  bpaas:cloudServiceHasAccessLogAvailabilityInMonths 1 ;
+  bpaas:cloudServiceHasAccessLogRetentionPeriodInMonths 1 ;
+  bpaas:cloudServiceHasAccessLogRetentionPolicies bpaas:Archive_the_log_when_full ;
+  bpaas:cloudServiceHasAuditLogAvailabilityInMonth 1 ;
+  bpaas:cloudServiceHasAuditLogRetentionPeriodInMonths 1 ;
+  bpaas:cloudServiceHasAuditLogRetentionPolicies bpaas:Archive_the_log_when_full ;
+  bpaas:cloudServiceHasAvailabilityInPercent "99"^^xsd:decimal ;
+  bpaas:cloudServiceHasBackupFrequency bpaas:monthly ;
+  bpaas:cloudServiceHasBackupRestoreInGBPerHour 5 ;
+  bpaas:cloudServiceHasBackupRetentionTime bpaas:up_to_2_month ;
+  bpaas:cloudServiceHasDataStorageInGB 1 ;
+  bpaas:cloudServiceHasEncryptionType bpaas:Sha256 ;
+  bpaas:cloudServiceHasExecutionCapacity 20 ;
+  bpaas:cloudServiceHasPaymentPlan bpaas:MonthlyFee ;
+  bpaas:cloudServiceHasPaymentPlan bpaas:TryFreeFirst ;
+  bpaas:cloudServiceHasProcessedDataLocation bpaas:USA ;
+  bpaas:cloudServiceHasResponseTime_in_ms 2 ;
+  bpaas:cloudServiceHasServiceSupport bpaas:Mon-Fri ;
+  bpaas:cloudServiceHasServiceSupportResponsiveness bpaas:at_most_4_hours ;
+  bpaas:cloudServiceHasSimultaneousUsers 200 ;
+  bpaas:cloudServiceHasStoredDataLocation bpaas:Italy ;
+  bpaas:cloudServiceHasTargetMarket bpaas:Businesses ;
+  bpaas:cloudServiceHasTargetMarket bpaas:Individuals ;
+  bpaas:cloudServiceHasTargetMarket bpaas:SchoolsAndUniversities ;
+  bpaas:cloudServiceHasTargetMarket bpaas:SmallTeams ;
+  rdfs:label "Mathema Document Generator" ;
+.
+bdata:NextCloud
+  rdf:type bpaas:CloudService ;
+  bpaas:cloudServiceHasAPQC <http://ikm-group.ch/archimeo/apqc#9_11_7_Document_trade_14095> ;
+  bpaas:cloudServiceHasAPQC <http://ikm-group.ch/archimeo/apqc#9_2_2_3_Transmit_billing_data_to_customers_10796> ;
+  bpaas:cloudServiceHasAction fbpdo:Create ;
+  bpaas:cloudServiceHasAction fbpdo:Manage ;
+  bpaas:cloudServiceHasAction fbpdo:Send ;
+  bpaas:cloudServiceHasAction fbpdo:Update ;
+  bpaas:cloudServiceHasAction fbpdo:Upload ;
+  bpaas:cloudServiceHasAvailabilityInPercent 99.999 ;
+  bpaas:cloudServiceHasBackupFrequency bpaas:daily ;
+  bpaas:cloudServiceHasDocumentManagementSystem bpaas:Storage_Service ;
+  bpaas:cloudServiceHasEncryptionType bpaas:Sha256 ;
+  bpaas:cloudServiceHasObject fbpdo:ContentMessage ;
+  bpaas:cloudServiceHasObject fbpdo:Document ;
+  bpaas:cloudServiceHasObject fbpdo:Invoice ;
+  bpaas:cloudServiceHasProcessedDataLocation bpaas:Germany ;
+  bpaas:cloudServiceHasServiceSupport bpaas:Twenty4Seven ;
+  bpaas:cloudServiceHasSimultaneousUsers 100 ;
+  bpaas:cloudServiceHasTargetMarket bpaas:Businesses ;
+  bpaas:cloudServiceHasTargetMarket bpaas:Individuals ;
+  bpaas:cloudServiceHasTargetMarket bpaas:NoTarget ;
+  rdfs:label "NextCloud" ;
+.
+bdata:Ninja_email
+  rdf:type bpaas:CloudService ;
+  bpaas:cloudServiceHasAPQC <http://ikm-group.ch/archimeo/apqc#9_0_Manage_Financial_Resources_17058> ;
+  bpaas:cloudServiceHasAccessLogAvailabilityInMonths 2 ;
+  bpaas:cloudServiceHasAccessLogRetentionPeriodInMonths 2 ;
+  bpaas:cloudServiceHasAccessLogRetentionPolicies bpaas:Overwrite_events_as_needed ;
+  bpaas:cloudServiceHasAction fbpdo:Send ;
+  bpaas:cloudServiceHasAuditLogAvailabilityInMonth 2 ;
+  bpaas:cloudServiceHasAuditLogRetentionPeriodInMonths 2 ;
+  bpaas:cloudServiceHasAuditLogRetentionPolicies bpaas:Overwrite_events_as_needed ;
+  bpaas:cloudServiceHasAvailabilityInPercent 99.999 ;
+  bpaas:cloudServiceHasBackupFrequency bpaas:daily ;
+  bpaas:cloudServiceHasBackupRestoreInGBPerHour 50 ;
+  bpaas:cloudServiceHasBackupRetentionTime bpaas:up_to_7_days ;
+  bpaas:cloudServiceHasDataStorageInGB 5 ;
+  bpaas:cloudServiceHasDescription "https://www.invoiceninja.com/" ;
+  bpaas:cloudServiceHasEncryptionType bpaas:Sha256 ;
+  bpaas:cloudServiceHasExecutionCapacity 20 ;
+  bpaas:cloudServiceHasObject fbpdo:Invoice ;
+  bpaas:cloudServiceHasPaymentPlan bpaas:FreeOfCharge ;
+  bpaas:cloudServiceHasPaymentPlan bpaas:MonthlyFee ;
+  bpaas:cloudServiceHasPaymentPlan bpaas:PrepaidAnnualPlan ;
+  bpaas:cloudServiceHasProcessedDataLocation bpaas:Israel ;
+  bpaas:cloudServiceHasResponseTime_in_ms 5 ;
+  bpaas:cloudServiceHasServiceSupport bpaas:Twenty4Seven ;
+  bpaas:cloudServiceHasServiceSupportResponsiveness bpaas:at_most_1_working_day ;
+  bpaas:cloudServiceHasSimultaneousUsers 500 ;
+  bpaas:cloudServiceHasTargetMarket bpaas:Businesses ;
+  rdfs:label "Ninja e-mail System" ;
+.
+bdata:Open_Source_Billing
+  rdf:type bpaas:CloudService ;
+  bpaas:cloudServiceHasAPQC <http://ikm-group.ch/archimeo/apqc#9_2_2_2_Generate_customer_billing_data_10795> ;
+  bpaas:cloudServiceHasAccessLogAvailabilityInMonths 1 ;
+  bpaas:cloudServiceHasAccessLogRetentionPeriodInMonths 1 ;
+  bpaas:cloudServiceHasAccessLogRetentionPolicies bpaas:Archive_the_log_when_full ;
+  bpaas:cloudServiceHasAuditLogAvailabilityInMonth 1 ;
+  bpaas:cloudServiceHasAuditLogRetentionPeriodInMonths 1 ;
+  bpaas:cloudServiceHasAuditLogRetentionPolicies bpaas:Archive_the_log_when_full ;
+  bpaas:cloudServiceHasAvailabilityInPercent "99"^^xsd:decimal ;
+  bpaas:cloudServiceHasBackupFrequency bpaas:monthly ;
+  bpaas:cloudServiceHasBackupRestoreInGBPerHour 5 ;
+  bpaas:cloudServiceHasBackupRetentionTime bpaas:up_to_2_month ;
+  bpaas:cloudServiceHasDataStorageInGB 1 ;
+  bpaas:cloudServiceHasDescription "https://www.odoo.com/page/billing?utm_source=adwords&utm_medium=cpc&utm_campaign=en-adwordscpc-billing&gclid=Cj0KEQiA5bvEBRCM6vypnc7QgMkBEiQAUZftQGIOKS2kFdxrxzcGC2Cx-D8t-fkHs2KPYHGVNPe6sGIaAjrm8P8HAQ" ;
+  bpaas:cloudServiceHasEncryptionType bpaas:Sha256 ;
+  bpaas:cloudServiceHasExecutionCapacity 20 ;
+  bpaas:cloudServiceHasPaymentPlan bpaas:MonthlyFee ;
+  bpaas:cloudServiceHasPaymentPlan bpaas:TryFreeFirst ;
+  bpaas:cloudServiceHasProcessedDataLocation bpaas:USA ;
+  bpaas:cloudServiceHasResponseTime_in_ms 2 ;
+  bpaas:cloudServiceHasServiceSupport bpaas:Mon-Fri ;
+  bpaas:cloudServiceHasServiceSupportResponsiveness bpaas:at_most_4_hours ;
+  bpaas:cloudServiceHasSimultaneousUsers 200 ;
+  bpaas:cloudServiceHasStoredDataLocation bpaas:USA ;
+  bpaas:cloudServiceHasTargetMarket bpaas:Businesses ;
+  bpaas:cloudServiceHasTargetMarket bpaas:Individuals ;
+  bpaas:cloudServiceHasTargetMarket bpaas:SchoolsAndUniversities ;
+  bpaas:cloudServiceHasTargetMarket bpaas:SmallTeams ;
+  rdfs:label "Open Source Billing - Invoicing System" ;
+.
+bdata:Simple_Invoices
+  rdf:type bpaas:CloudService ;
+  bpaas:cloudServiceHasAPQC <http://ikm-group.ch/archimeo/apqc#9_2_2_2_Generate_customer_billing_data_10795> ;
+  bpaas:cloudServiceHasAccessLogAvailabilityInMonths 1 ;
+  bpaas:cloudServiceHasAccessLogRetentionPeriodInMonths 1 ;
+  bpaas:cloudServiceHasAccessLogRetentionPolicies bpaas:Archive_the_log_when_full ;
+  bpaas:cloudServiceHasAuditLogAvailabilityInMonth 1 ;
+  bpaas:cloudServiceHasAuditLogRetentionPeriodInMonths 1 ;
+  bpaas:cloudServiceHasAuditLogRetentionPolicies bpaas:Archive_the_log_when_full ;
+  bpaas:cloudServiceHasAvailabilityInPercent 99.7 ;
+  bpaas:cloudServiceHasBackupFrequency bpaas:monthly ;
+  bpaas:cloudServiceHasBackupRestoreInGBPerHour 50 ;
+  bpaas:cloudServiceHasBackupRetentionTime bpaas:up_to_2_month ;
+  bpaas:cloudServiceHasDataStorageInGB 10 ;
+  bpaas:cloudServiceHasDescription "http://www.simpleinvoices.org/" ;
+  bpaas:cloudServiceHasEncryptionType bpaas:Sha256 ;
+  bpaas:cloudServiceHasExecutionCapacity 20 ;
+  bpaas:cloudServiceHasPaymentPlan bpaas:MonthlyFee ;
+  bpaas:cloudServiceHasPaymentPlan bpaas:TryFreeFirst ;
+  bpaas:cloudServiceHasProcessedDataLocation bpaas:Germany ;
+  bpaas:cloudServiceHasResponseTime_in_ms 1 ;
+  bpaas:cloudServiceHasServiceSupport bpaas:Mon-Fri ;
+  bpaas:cloudServiceHasServiceSupportResponsiveness bpaas:at_most_4_hours ;
+  bpaas:cloudServiceHasSimultaneousUsers 30 ;
+  bpaas:cloudServiceHasStoredDataLocation bpaas:Germany ;
+  bpaas:cloudServiceHasTargetMarket bpaas:Businesses ;
+  rdfs:label "Simple Invoices - Invoicing System" ;
+.
+bdata:SugarCRM
+  rdf:type bpaas:CloudService ;
+  bpaas:cloudServiceHasEncryptionType bpaas:Sha256 ;
+  bpaas:cloudServiceHasProcessedDataLocation bpaas:Europe ;
+  rdfs:label "SugarCRM" ;
+.
+bdata:YMENS_CRM
+  rdf:type bpaas:CloudService ;
+  bpaas:cloudServiceHasAPQC <http://ikm-group.ch/archimeo/apqc#3_5_2_4_Manage_customer_relationships_11174> ;
+  bpaas:cloudServiceHasAccessLogAvailabilityInMonths 6 ;
+  bpaas:cloudServiceHasAccessLogRetentionPeriodInMonths 2 ;
+  bpaas:cloudServiceHasAccessLogRetentionPolicies bpaas:Overwrite_events_as_needed ;
+  bpaas:cloudServiceHasAction fbpdo:Manage ;
+  bpaas:cloudServiceHasAction fbpdo:Update ;
+  bpaas:cloudServiceHasAuditLogAvailabilityInMonth 2 ;
+  bpaas:cloudServiceHasAuditLogRetentionPeriodInMonths 6 ;
+  bpaas:cloudServiceHasAuditLogRetentionPolicies bpaas:Overwrite_events_as_needed ;
+  bpaas:cloudServiceHasAvailabilityInPercent 99.99999 ;
+  bpaas:cloudServiceHasBackupFrequency bpaas:daily ;
+  bpaas:cloudServiceHasBackupRestoreInGBPerHour 50 ;
+  bpaas:cloudServiceHasBackupRetentionTime bpaas:up_to_1_month ;
+  bpaas:cloudServiceHasDataStorageInGB 10 ;
+  bpaas:cloudServiceHasDocumentManagementSystem bpaas:File_System ;
+  bpaas:cloudServiceHasEncryptionType bpaas:Sha256 ;
+  bpaas:cloudServiceHasExecutionCapacity "111"^^xsd:decimal ;
+  bpaas:cloudServiceHasObject fbpdo:Document ;
+  bpaas:cloudServiceHasObject fbpdo:Invoice ;
+  bpaas:cloudServiceHasPaymentPlan bpaas:PrepaidAnnualPlan ;
+  bpaas:cloudServiceHasProcessedDataLocation bpaas:Romania ;
+  bpaas:cloudServiceHasResponseTime_in_ms 1 ;
+  bpaas:cloudServiceHasServiceSupport bpaas:Twenty4Seven ;
+  bpaas:cloudServiceHasServiceSupportResponsiveness bpaas:at_most_2_hours ;
+  bpaas:cloudServiceHasSimultaneousUsers 1000 ;
+  bpaas:cloudServiceHasStoredDataLocation bpaas:Romania ;
+  bpaas:cloudServiceHasTargetMarket bpaas:Businesses ;
+  bpaas:cloudServiceHasTargetMarket bpaas:SchoolsAndUniversities ;
+  rdfs:label "YMENS CRM" ;
+.
+bdata:Zoho_CRM
+  rdf:type bpaas:CloudService ;
+  bpaas:cloudServiceHasAPQC <http://ikm-group.ch/archimeo/apqc#3_5_2_4_Manage_customer_relationships_11174> ;
+  bpaas:cloudServiceHasAccessLogAvailabilityInMonths 1 ;
+  bpaas:cloudServiceHasAccessLogRetentionPeriodInMonths 2 ;
+  bpaas:cloudServiceHasAccessLogRetentionPolicies bpaas:Overwrite_events_as_needed ;
+  bpaas:cloudServiceHasAuditLogAvailabilityInMonth 1 ;
+  bpaas:cloudServiceHasAuditLogRetentionPeriodInMonths 2 ;
+  bpaas:cloudServiceHasAuditLogRetentionPolicies bpaas:Overwrite_events_as_needed ;
+  bpaas:cloudServiceHasAvailabilityInPercent 99.8 ;
+  bpaas:cloudServiceHasBackupFrequency bpaas:monthly ;
+  bpaas:cloudServiceHasBackupRestoreInGBPerHour 100 ;
+  bpaas:cloudServiceHasBackupRetentionTime bpaas:up_to_1_month ;
+  bpaas:cloudServiceHasDataStorageInGB 5 ;
+  bpaas:cloudServiceHasDescription "https://www.zoho.com/crm/?src=zoho" ;
+  bpaas:cloudServiceHasEncryptionType bpaas:Sha256 ;
+  bpaas:cloudServiceHasExecutionCapacity 30 ;
+  bpaas:cloudServiceHasObject fbpdo:Document ;
+  bpaas:cloudServiceHasObject fbpdo:Invoice ;
+  bpaas:cloudServiceHasPaymentPlan bpaas:MonthlyFee ;
+  bpaas:cloudServiceHasPaymentPlan bpaas:PrepaidAnnualPlan ;
+  bpaas:cloudServiceHasPaymentPlan bpaas:TryFreeFirst ;
+  bpaas:cloudServiceHasProcessedDataLocation bpaas:USA ;
+  bpaas:cloudServiceHasResponseTime_in_ms 5 ;
+  bpaas:cloudServiceHasServiceSupport bpaas:Mon-Fri ;
+  bpaas:cloudServiceHasServiceSupportResponsiveness bpaas:at_most_2_hours ;
+  bpaas:cloudServiceHasSimultaneousUsers 200 ;
+  bpaas:cloudServiceHasStoredDataLocation bpaas:USA ;
+  bpaas:cloudServiceHasTargetMarket bpaas:Businesses ;
+  rdfs:label "Zoho CRM" ;
+
+  
+.
+bdata:3b852ef9-df0d-4081-ba59-cb14a51bf841
+rdf:type bpaas:CloudService ;
+bpaas:cloudServiceHasDescription The eMail solution provided by Ymens allows you, through the specific features offered by the most powerful email system on the market- Exchange 2013, to increase your users’ productivity, advancing from simple communication to good collaboration between them. Moreover, now you can easily check emails, at all times and on any device with Internet access. And to enjoy a pleasant experience when using the email solution, we provide a quick and easy transition to the cloud.;
+bpaas:cloudServiceHasTargetMarket bpaas:Business ;
+bpaas:cloudServiceHasTargetMarket bpaas:Development Agencies ;
+bpaas:cloudServiceHasTargetMarket bpaas:Health Care ;
+bpaas:cloudServiceHasTargetMarket bpaas:Government Institutions ;
+bpaas:cloudServiceHasTargetMarket bpaas:Public Sector ;
+bpaas:cloudServiceHasTargetMarket bpaas:Growing Teams ;
+bpaas:cloudServiceHasTargetMarket bpaas:Individuals ;
+bpaas:cloudServiceHasTargetMarket bpaas:School and Universities ;
+bpaas:cloudServiceHasTargetMarket bpaas:Small Teams ;
+bpaas:cloudServiceHasStoredDataLocation bpaas:Romania ;
+bpaas:cloudServiceHasMediaType bpaas:Not_specified ;
+bpaas:cloudServiceHasBackupFrequency bpaas:daily ;
+bpaas:cloudServiceHasBackupRetentionTime bpaas:SevenDays ;
+bpaas:cloudServiceHasPaymentPlan bpaas:per_user_per_month ;
+bpaas:cloudServiceHasAccessLogFileRetentionPolicy bpaas:Overwrite_events_as_needed ;
+bpaas:cloudServiceHasServiceSupportResponsiveness bpaas:at_most_2_working_days ;
+bpaas:cloudServiceHasServiceSupport bpaas:Mon-Fri ;
+bpaas:cloudServiceHasAccessLogAvailabilityInMonths 9999 ;
+bpaas:cloudServiceHasAccessLogRetentionPeriodInMonths 9999 ;
+bpaas:cloudServiceHasAuditLogAvailabilityInMonth 9999 ;
+bpaas:cloudServiceHasAuditLogRetentionPeriodInMonths 9999 ;
+bpaas:cloudServiceHasAvailabilityInPercent 99.98 ^^xsd:decimal ;
+bpaas:cloudServiceHasBackupRestoreInGBPerHour 0 ;
+bpaas:cloudServiceHasDataStorageInGB 10 ;
+bpaas:cloudServiceHasResponseTime_in_ms 10 ;
+bpaas:cloudServiceHasSimultaneousUsers "false"^^xsd:boolean ;
+bpaas:cloudServiceHasTermsOfContract bpaas:ContractPerMonth ;
+bpaas:cloudServiceHasAdditionalCosts "false"^^xsd:boolean ;
+bpaas:cloudServiceHasAutomatedPasswordManagmentSystem "false"^^xsd:boolean ;
+bpaas:cloudServiceHasAvailabiltyLevelOptional "false"^^xsd:boolean ;
+bpaas:cloudServiceHasOrderedSelfService "false"^^xsd:boolean ;
+bpaas:cloudServiceHasSupportChannels bpaas:byPhone ;
+bpaas:cloudServiceHasScalabilityOfferedToCustomer "false"^^xsd:boolean ;
+bpaas:cloudServicehasDataExportFormatAvailable "false"^^xsd:boolean ;
+bpaas:cloudServiceHasApiIntegrateSolution "false"^^xsd:boolean ;
+bpaas:cloudServiceHasDataMigrationIndependent "false"^^xsd:boolean ;
+bpaas:cloudServiceHasDocumentManagementSystem bpaas:not_defined ;
+rdfs:label Ymens Email ;
+
+
+
+.
+bdata:9cb8d232-b942-4aac-9d2c-60c9d41fb6dd
+rdf:type bpaas:CloudService ;
+bpaas:cloudServiceHasDescription The way people interconnect is continuously evolving. Give your employees access to collaboration solutions that provide the same freedom to communicate and share information as in their personal life. The Collaboration Suite meets this requirement through its component solutions: eMail - email collaboration solution based on Exchange 2013, Communicator - communication solution for video, audio and text communication based on Lync 2013 and Portal - team collaboration solution which uses an internal SharePoint 2013 portal. Using the Ymens proposed collaboration suite, you will gain access from any device with Internet access to emails, instant messaging and video conferencing, as well as internal the portal, the unique information location for all team members.;
+bpaas:cloudServiceHasTargetMarket bpaas:Business ;
+bpaas:cloudServiceHasTargetMarket bpaas:Development Agencies ;
+bpaas:cloudServiceHasTargetMarket bpaas:Health Care ;
+bpaas:cloudServiceHasTargetMarket bpaas:Government Institutions ;
+bpaas:cloudServiceHasTargetMarket bpaas:Public Sector ;
+bpaas:cloudServiceHasTargetMarket bpaas:Growing Teams ;
+bpaas:cloudServiceHasTargetMarket bpaas:Individuals ;
+bpaas:cloudServiceHasTargetMarket bpaas:School and Universities ;
+bpaas:cloudServiceHasTargetMarket bpaas:Small Teams ;
+bpaas:cloudServiceHasStoredDataLocation bpaas:Romania ;
+bpaas:cloudServiceHasMediaType bpaas:Not_specified ;
+bpaas:cloudServiceHasBackupFrequency bpaas:daily ;
+bpaas:cloudServiceHasBackupRetentionTime bpaas:SevenDays ;
+bpaas:cloudServiceHasPaymentPlan bpaas:per_user_per_month ;
+bpaas:cloudServiceHasAccessLogFileRetentionPolicy bpaas:Overwrite_events_as_needed ;
+bpaas:cloudServiceHasServiceSupportResponsiveness bpaas:at_most_2_working_days ;
+bpaas:cloudServiceHasServiceSupport bpaas:Mon-Fri ;
+bpaas:cloudServiceHasAccessLogAvailabilityInMonths 9999 ;
+bpaas:cloudServiceHasAccessLogRetentionPeriodInMonths 9999 ;
+bpaas:cloudServiceHasAuditLogAvailabilityInMonth 9999 ;
+bpaas:cloudServiceHasAuditLogRetentionPeriodInMonths 9999 ;
+bpaas:cloudServiceHasAvailabilityInPercent 99.98 ^^xsd:decimal ;
+bpaas:cloudServiceHasBackupRestoreInGBPerHour 0 ;
+bpaas:cloudServiceHasDataStorageInGB 100 ;
+bpaas:cloudServiceHasResponseTime_in_ms 10 ;
+bpaas:cloudServiceHasSimultaneousUsers "false"^^xsd:boolean ;
+bpaas:cloudServiceHasTermsOfContract bpaas:ContractPerMonth ;
+bpaas:cloudServiceHasAdditionalCosts "false"^^xsd:boolean ;
+bpaas:cloudServiceHasAutomatedPasswordManagmentSystem "false"^^xsd:boolean ;
+bpaas:cloudServiceHasAvailabiltyLevelOptional "false"^^xsd:boolean ;
+bpaas:cloudServiceHasOrderedSelfService "false"^^xsd:boolean ;
+bpaas:cloudServiceHasSupportChannels bpaas:byPhone ;
+bpaas:cloudServiceHasSupportChannels bpaas:byMail ;
+bpaas:cloudServiceHasScalabilityOfferedToCustomer "false"^^xsd:boolean ;
+bpaas:cloudServicehasDataExportFormatAvailable "false"^^xsd:boolean ;
+bpaas:cloudServiceHasApiIntegrateSolution "false"^^xsd:boolean ;
+bpaas:cloudServiceHasDataMigrationIndependent "false"^^xsd:boolean ;
+bpaas:cloudServiceHasDocumentManagementSystem bpaas:not_defined ;
+rdfs:label Collaboration Suite ;
+
+
+.
+bdata:459d2061-2ff0-4c28-bdea-50923bea6d99
+rdf:type bpaas:CloudService ;
+bpaas:cloudServiceHasDescription Based on Microsoft Dynamics CRM, this cloud application provides all the tools needed to obtain and maintain a clear image of your clients, from the first point of contact to procurement and loyalty. With the help of Ymens CRM, you can manage in an integrated way all sales and marketing campaigns and easily access relevant activity reports, all by means of an intuitive interface, integrated with Microsoft Outlook.;
+bpaas:cloudServiceHasTargetMarket bpaas:Business ;
+bpaas:cloudServiceHasTargetMarket bpaas:Development Agencies ;
+bpaas:cloudServiceHasTargetMarket bpaas:Health Care ;
+bpaas:cloudServiceHasTargetMarket bpaas:Government Institutions ;
+bpaas:cloudServiceHasTargetMarket bpaas:Public Sector ;
+bpaas:cloudServiceHasTargetMarket bpaas:Growing Teams ;
+bpaas:cloudServiceHasTargetMarket bpaas:Individuals ;
+bpaas:cloudServiceHasTargetMarket bpaas:School and Universities ;
+bpaas:cloudServiceHasTargetMarket bpaas:Small Teams ;
+bpaas:cloudServiceHasStoredDataLocation bpaas:Romania ;
+bpaas:cloudServiceHasMediaType bpaas:Not_specified ;
+bpaas:cloudServiceHasBackupFrequency bpaas:daily ;
+bpaas:cloudServiceHasBackupRetentionTime bpaas:SevenDays ;
+bpaas:cloudServiceHasPaymentPlan bpaas:per_user_per_month ;
+bpaas:cloudServiceHasAccessLogFileRetentionPolicy bpaas:Overwrite_events_as_needed ;
+bpaas:cloudServiceHasServiceSupportResponsiveness bpaas:at_most_2_working_days ;
+bpaas:cloudServiceHasServiceSupport bpaas:Mon-Fri ;
+bpaas:cloudServiceHasAccessLogAvailabilityInMonths 9999 ;
+bpaas:cloudServiceHasAccessLogRetentionPeriodInMonths 9999 ;
+bpaas:cloudServiceHasAuditLogAvailabilityInMonth 9999 ;
+bpaas:cloudServiceHasAuditLogRetentionPeriodInMonths 9999 ;
+bpaas:cloudServiceHasAvailabilityInPercent 99.98 ^^xsd:decimal ;
+bpaas:cloudServiceHasBackupRestoreInGBPerHour 0 ;
+bpaas:cloudServiceHasDataStorageInGB 40 ;
+bpaas:cloudServiceHasResponseTime_in_ms 10 ;
+bpaas:cloudServiceHasSimultaneousUsers "false"^^xsd:boolean ;
+bpaas:cloudServiceHasTermsOfContract bpaas:ContractPerMonth ;
+bpaas:cloudServiceHasAdditionalCosts "false"^^xsd:boolean ;
+bpaas:cloudServiceHasAutomatedPasswordManagmentSystem "false"^^xsd:boolean ;
+bpaas:cloudServiceHasAvailabiltyLevelOptional "false"^^xsd:boolean ;
+bpaas:cloudServiceHasOrderedSelfService "false"^^xsd:boolean ;
+bpaas:cloudServiceHasSupportChannels bpaas:byPhone ;
+bpaas:cloudServiceHasSupportChannels bpaas:byMail ;
+bpaas:cloudServiceHasScalabilityOfferedToCustomer "false"^^xsd:boolean ;
+bpaas:cloudServicehasDataExportFormatAvailable "false"^^xsd:boolean ;
+bpaas:cloudServiceHasApiIntegrateSolution "false"^^xsd:boolean ;
+bpaas:cloudServiceHasDataMigrationIndependent "false"^^xsd:boolean ;
+bpaas:cloudServiceHasDocumentManagementSystem bpaas:File_System ;
+rdfs:label Ymens CRM ;
+
+
+.
+bdata:667bc16c-6e4a-434c-b1cb-d4ffae321d30
+rdf:type bpaas:CloudService ;
+bpaas:cloudServiceHasDescription Ymens ERP is the tool you need to simplify and improve the business processes in your company and to efficiently manage all the company resources. This solution offers you the opportunity to integrate all the processes and procedures in a unique system, thus supporting the optimization of performance both for your employees and for your entire company.;
+bpaas:cloudServiceHasTargetMarket bpaas:Business ;
+bpaas:cloudServiceHasTargetMarket bpaas:Development Agencies ;
+bpaas:cloudServiceHasTargetMarket bpaas:Health Care ;
+bpaas:cloudServiceHasTargetMarket bpaas:Government Institutions ;
+bpaas:cloudServiceHasTargetMarket bpaas:Public Sector ;
+bpaas:cloudServiceHasTargetMarket bpaas:Growing Teams ;
+bpaas:cloudServiceHasStoredDataLocation bpaas:Romania ;
+bpaas:cloudServiceHasMediaType bpaas:Not_specified ;
+bpaas:cloudServiceHasBackupFrequency bpaas:daily ;
+bpaas:cloudServiceHasBackupRetentionTime bpaas:SevenDays ;
+bpaas:cloudServiceHasPaymentPlan bpaas:per_user_per_month ;
+bpaas:cloudServiceHasAccessLogFileRetentionPolicy bpaas:Overwrite_events_as_needed ;
+bpaas:cloudServiceHasServiceSupportResponsiveness bpaas:at_most_2_working_days ;
+bpaas:cloudServiceHasServiceSupport bpaas:Mon-Fri ;
+bpaas:cloudServiceHasAccessLogAvailabilityInMonths 9999 ;
+bpaas:cloudServiceHasAccessLogRetentionPeriodInMonths 9999 ;
+bpaas:cloudServiceHasAuditLogAvailabilityInMonth 9999 ;
+bpaas:cloudServiceHasAuditLogRetentionPeriodInMonths 9999 ;
+bpaas:cloudServiceHasAvailabilityInPercent 99.98 ^^xsd:decimal ;
+bpaas:cloudServiceHasBackupRestoreInGBPerHour 0 ;
+bpaas:cloudServiceHasDataStorageInGB 50 ;
+bpaas:cloudServiceHasResponseTime_in_ms 10 ;
+bpaas:cloudServiceHasSimultaneousUsers "false"^^xsd:boolean ;
+bpaas:cloudServiceHasTermsOfContract bpaas:ContractPerMonth ;
+bpaas:cloudServiceHasAdditionalCosts "false"^^xsd:boolean ;
+bpaas:cloudServiceHasAutomatedPasswordManagmentSystem "false"^^xsd:boolean ;
+bpaas:cloudServiceHasAvailabiltyLevelOptional "false"^^xsd:boolean ;
+bpaas:cloudServiceHasOrderedSelfService "false"^^xsd:boolean ;
+bpaas:cloudServiceHasSupportChannels bpaas:byPhone ;
+bpaas:cloudServiceHasSupportChannels bpaas:byMail ;
+bpaas:cloudServiceHasScalabilityOfferedToCustomer "false"^^xsd:boolean ;
+bpaas:cloudServicehasDataExportFormatAvailable "false"^^xsd:boolean ;
+bpaas:cloudServiceHasApiIntegrateSolution "false"^^xsd:boolean ;
+bpaas:cloudServiceHasDataMigrationIndependent "false"^^xsd:boolean ;
+bpaas:cloudServiceHasDocumentManagementSystem bpaas:File_System ;
+rdfs:label Ymens ERP ;
+
+
+.
+bdata:31ba11b1-e209-4e74-bf9a-9ccd9fa60bf7
+rdf:type bpaas:CloudService ;
+bpaas:cloudServiceHasDescription eMagazin, an ecommerce solution, developed by Shopmania and offered through Ymens cloud platform, helps you extend your distribution channels through online shopping. eMagazin is a robust solution suitable for new businesses and optimizing traditional ones. All it takes is a few minutes, a few mouse clicks and no technical skills to create a completely functional online store.;
+bpaas:cloudServiceHasTargetMarket bpaas:Business ;
+bpaas:cloudServiceHasTargetMarket bpaas:Small Teams ;
+bpaas:cloudServiceHasStoredDataLocation bpaas:Romania ;
+bpaas:cloudServiceHasMediaType bpaas:Not_specified ;
+bpaas:cloudServiceHasBackupRetentionTime bpaas:BestEffort ;
+bpaas:cloudServiceHasPaymentPlan bpaas:per_user_per_month ;
+bpaas:cloudServiceHasAccessLogFileRetentionPolicy bpaas:Overwrite_events_as_needed ;
+bpaas:cloudServiceHasServiceSupportResponsiveness bpaas:at_most_2_working_days ;
+bpaas:cloudServiceHasServiceSupport bpaas:Mon-Fri ;
+bpaas:cloudServiceHasAccessLogAvailabilityInMonths 9999 ;
+bpaas:cloudServiceHasAccessLogRetentionPeriodInMonths 9999 ;
+bpaas:cloudServiceHasAuditLogAvailabilityInMonth 9999 ;
+bpaas:cloudServiceHasAuditLogRetentionPeriodInMonths 9999 ;
+bpaas:cloudServiceHasAvailabilityInPercent 99.98 ^^xsd:decimal ;
+bpaas:cloudServiceHasBackupRestoreInGBPerHour 0 ;
+bpaas:cloudServiceHasDataStorageInGB 10 ;
+bpaas:cloudServiceHasResponseTime_in_ms 10 ;
+bpaas:cloudServiceHasSimultaneousUsers "false"^^xsd:boolean ;
+bpaas:cloudServiceHasTermsOfContract bpaas:ContractPerMonth ;
+bpaas:cloudServiceHasAdditionalCosts "false"^^xsd:boolean ;
+bpaas:cloudServiceHasAutomatedPasswordManagmentSystem "false"^^xsd:boolean ;
+bpaas:cloudServiceHasAvailabiltyLevelOptional "false"^^xsd:boolean ;
+bpaas:cloudServiceHasOrderedSelfService "false"^^xsd:boolean ;
+bpaas:cloudServiceHasSupportChannels bpaas:byPhone ;
+bpaas:cloudServiceHasSupportChannels bpaas:byMail ;
+bpaas:cloudServiceHasScalabilityOfferedToCustomer "false"^^xsd:boolean ;
+bpaas:cloudServicehasDataExportFormatAvailable "false"^^xsd:boolean ;
+bpaas:cloudServiceHasApiIntegrateSolution "false"^^xsd:boolean ;
+bpaas:cloudServiceHasDataMigrationIndependent "false"^^xsd:boolean ;
+bpaas:cloudServiceHasDocumentManagementSystem bpaas:not_defined ;
+rdfs:label eMagazin ;
+
+
+.
+bdata:467315b9-8daf-4e2a-8811-6f189d9f732c
+rdf:type bpaas:CloudService ;
+bpaas:cloudServiceHasDescription The Facturator solution facilitates and streamlines your company’s financial department’s activities from basic accounting to financial accounting. With Facturator solution, the Standard and Expert levels, developed by Gradientis Software and offered through Ymens cloud platform, you can automatically generate reports displaying the financial flow between your company, customers and suppliers.;
+bpaas:cloudServiceHasTargetMarket bpaas:Business ;
+bpaas:cloudServiceHasTargetMarket bpaas:Development Agencies ;
+bpaas:cloudServiceHasTargetMarket bpaas:Individuals ;
+bpaas:cloudServiceHasTargetMarket bpaas:Small Teams ;
+bpaas:cloudServiceHasStoredDataLocation bpaas:Romania ;
+bpaas:cloudServiceHasMediaType bpaas:Not_specified ;
+bpaas:cloudServiceHasBackupRetentionTime bpaas:BestEffort ;
+bpaas:cloudServiceHasPaymentPlan bpaas:per_user_per_month ;
+bpaas:cloudServiceHasAccessLogFileRetentionPolicy bpaas:Overwrite_events_as_needed ;
+bpaas:cloudServiceHasServiceSupportResponsiveness bpaas:at_most_2_working_days ;
+bpaas:cloudServiceHasServiceSupport bpaas:Mon-Fri ;
+bpaas:cloudServiceHasAccessLogAvailabilityInMonths N/A ;
+bpaas:cloudServiceHasAccessLogRetentionPeriodInMonths N/A ;
+bpaas:cloudServiceHasAuditLogAvailabilityInMonth N/A ;
+bpaas:cloudServiceHasAuditLogRetentionPeriodInMonths N/A ;
+bpaas:cloudServiceHasAvailabilityInPercent N/A ;
+bpaas:cloudServiceHasDataStorageInGB N/A ;
+bpaas:cloudServiceHasResponseTime_in_ms 10 ;
+bpaas:cloudServiceHasSimultaneousUsers "false"^^xsd:boolean ;
+bpaas:cloudServiceHasTermsOfContract bpaas:ContractPerMonth ;
+bpaas:cloudServiceHasAdditionalCosts "false"^^xsd:boolean ;
+bpaas:cloudServiceHasAutomatedPasswordManagmentSystem "false"^^xsd:boolean ;
+bpaas:cloudServiceHasAvailabiltyLevelOptional "false"^^xsd:boolean ;
+bpaas:cloudServiceHasOrderedSelfService "false"^^xsd:boolean ;
+bpaas:cloudServiceHasSupportChannels bpaas:byPhone ;
+bpaas:cloudServiceHasSupportChannels bpaas:byMail ;
+bpaas:cloudServiceHasScalabilityOfferedToCustomer "false"^^xsd:boolean ;
+bpaas:cloudServicehasDataExportFormatAvailable "false"^^xsd:boolean ;
+bpaas:cloudServiceHasApiIntegrateSolution "false"^^xsd:boolean ;
+bpaas:cloudServiceHasDataMigrationIndependent "false"^^xsd:boolean ;
+bpaas:cloudServiceHasDocumentManagementSystem bpaas:not_defined ;
+rdfs:label Facturator ;
+
+
+.
+bdata:fcc54e17-8202-485f-948f-f52af1a6f48d
+rdf:type bpaas:CloudService ;
+bpaas:cloudServiceHasDescription Mesager is the SMS marketing solution that helps you create marketing campaigns for your existing and potential customers. By using this solution, you can be sure that your text messages are immediately sent to your recipients. Mesager offers you a new way of communicating with your customers. The interaction with them becomes easier, more efficient and will positively impact your business.;
+bpaas:cloudServiceHasTargetMarket bpaas:Business ;
+bpaas:cloudServiceHasTargetMarket bpaas:Growing Teams ;
+bpaas:cloudServiceHasTargetMarket bpaas:Individuals ;
+bpaas:cloudServiceHasTargetMarket bpaas:Small Teams ;
+bpaas:cloudServiceHasStoredDataLocation bpaas:Romania ;
+bpaas:cloudServiceHasMediaType bpaas:Not_specified ;
+bpaas:cloudServiceHasBackupRetentionTime bpaas:BestEffort ;
+bpaas:cloudServiceHasPaymentPlan bpaas:per_user_per_month ;
+bpaas:cloudServiceHasAccessLogFileRetentionPolicy bpaas:Overwrite_events_as_needed ;
+bpaas:cloudServiceHasServiceSupportResponsiveness bpaas:at_most_2_working_days ;
+bpaas:cloudServiceHasServiceSupport bpaas:Mon-Fri ;
+bpaas:cloudServiceHasAccessLogAvailabilityInMonths N/A ;
+bpaas:cloudServiceHasAccessLogRetentionPeriodInMonths N/A ;
+bpaas:cloudServiceHasAuditLogAvailabilityInMonth N/A ;
+bpaas:cloudServiceHasAuditLogRetentionPeriodInMonths N/A ;
+bpaas:cloudServiceHasAvailabilityInPercent N/A ;
+bpaas:cloudServiceHasDataStorageInGB N/A ;
+bpaas:cloudServiceHasResponseTime_in_ms 10 ;
+bpaas:cloudServiceHasSimultaneousUsers "false"^^xsd:boolean ;
+bpaas:cloudServiceHasTermsOfContract bpaas:ContractPerMonth ;
+bpaas:cloudServiceHasAdditionalCosts "false"^^xsd:boolean ;
+bpaas:cloudServiceHasAutomatedPasswordManagmentSystem "false"^^xsd:boolean ;
+bpaas:cloudServiceHasAvailabiltyLevelOptional "false"^^xsd:boolean ;
+bpaas:cloudServiceHasOrderedSelfService "false"^^xsd:boolean ;
+bpaas:cloudServiceHasSupportChannels bpaas:byPhone ;
+bpaas:cloudServiceHasSupportChannels bpaas:byMail ;
+bpaas:cloudServiceHasScalabilityOfferedToCustomer "false"^^xsd:boolean ;
+bpaas:cloudServicehasDataExportFormatAvailable "false"^^xsd:boolean ;
+bpaas:cloudServiceHasApiIntegrateSolution "false"^^xsd:boolean ;
+bpaas:cloudServiceHasDataMigrationIndependent "false"^^xsd:boolean ;
+bpaas:cloudServiceHasDocumentManagementSystem bpaas:not_defined ;
+rdfs:label Mesager ;
+
+.
+bdata:365a9429-43fb-4761-a88c-772b69e95353
+rdf:type bpaas:CloudService ;
+bpaas:cloudServiceHasDescription Jurist offers your company’s legal department quick access to Romanian and European Union’s legislation, such as laws and decisions and their updates and modifications. By understanding the law, your employees will be able to conduct business in a lawful manner. The Jurist solution is provided by The Territorial Computing Centre (CTC)  and offered through Ymens cloud platform.;
+bpaas:cloudServiceHasTargetMarket bpaas:Business ;
+bpaas:cloudServiceHasTargetMarket bpaas:Public Sector ;
+bpaas:cloudServiceHasTargetMarket bpaas:Growing Teams ;
+bpaas:cloudServiceHasTargetMarket bpaas:Individuals ;
+bpaas:cloudServiceHasTargetMarket bpaas:Small Teams ;
+bpaas:cloudServiceHasStoredDataLocation bpaas:Romania ;
+bpaas:cloudServiceHasMediaType bpaas:Not_specified ;
+bpaas:cloudServiceHasBackupRetentionTime bpaas:BestEffort ;
+bpaas:cloudServiceHasPaymentPlan bpaas:per_user_per_month ;
+bpaas:cloudServiceHasAccessLogFileRetentionPolicy bpaas:Overwrite_events_as_needed ;
+bpaas:cloudServiceHasServiceSupportResponsiveness bpaas:at_most_2_working_days ;
+bpaas:cloudServiceHasServiceSupport bpaas:Mon-Fri ;
+bpaas:cloudServiceHasAccessLogAvailabilityInMonths N/A ;
+bpaas:cloudServiceHasAccessLogRetentionPeriodInMonths N/A ;
+bpaas:cloudServiceHasAuditLogAvailabilityInMonth N/A ;
+bpaas:cloudServiceHasAuditLogRetentionPeriodInMonths N/A ;
+bpaas:cloudServiceHasAvailabilityInPercent N/A ;
+bpaas:cloudServiceHasDataStorageInGB N/A ;
+bpaas:cloudServiceHasResponseTime_in_ms 10 ;
+bpaas:cloudServiceHasSimultaneousUsers "false"^^xsd:boolean ;
+bpaas:cloudServiceHasTermsOfContract bpaas:ContractPerMonth ;
+bpaas:cloudServiceHasAdditionalCosts "false"^^xsd:boolean ;
+bpaas:cloudServiceHasAutomatedPasswordManagmentSystem "false"^^xsd:boolean ;
+bpaas:cloudServiceHasAvailabiltyLevelOptional "false"^^xsd:boolean ;
+bpaas:cloudServiceHasOrderedSelfService "false"^^xsd:boolean ;
+bpaas:cloudServiceHasSupportChannels bpaas:byPhone ;
+bpaas:cloudServiceHasSupportChannels bpaas:byMail ;
+bpaas:cloudServiceHasScalabilityOfferedToCustomer "false"^^xsd:boolean ;
+bpaas:cloudServicehasDataExportFormatAvailable "false"^^xsd:boolean ;
+bpaas:cloudServiceHasApiIntegrateSolution "false"^^xsd:boolean ;
+bpaas:cloudServiceHasDataMigrationIndependent "false"^^xsd:boolean ;
+bpaas:cloudServiceHasDocumentManagementSystem bpaas:not_defined ;
+rdfs:label Jurist ;
+
+
+.
+bdata:2524214a-bf58-4e59-b717-43e3c628f477
+rdf:type bpaas:CloudService ;
+bpaas:cloudServiceHasDescription The Intranet solution is an information hub that gives your team access to general interest information within your company. Moreover, this internal portal-type solution offers you the possibility to customize the information to be displayed, according to your company’s specific needs. It also allows you to manage your company’s assets and car fleet.;
+bpaas:cloudServiceHasTargetMarket bpaas:Business ;
+bpaas:cloudServiceHasTargetMarket bpaas:Development Agencies ;
+bpaas:cloudServiceHasTargetMarket bpaas:Health Care ;
+bpaas:cloudServiceHasTargetMarket bpaas:Government Institutions ;
+bpaas:cloudServiceHasTargetMarket bpaas:Public Sector ;
+bpaas:cloudServiceHasTargetMarket bpaas:Growing Teams ;
+bpaas:cloudServiceHasTargetMarket bpaas:Individuals ;
+bpaas:cloudServiceHasTargetMarket bpaas:School and Universities ;
+bpaas:cloudServiceHasTargetMarket bpaas:Small Teams ;
+bpaas:cloudServiceHasStoredDataLocation bpaas:Romania ;
+bpaas:cloudServiceHasMediaType bpaas:Not_specified ;
+bpaas:cloudServiceHasBackupFrequency bpaas:daily ;
+bpaas:cloudServiceHasBackupRetentionTime bpaas:SevenDays ;
+bpaas:cloudServiceHasPaymentPlan bpaas:per_user_per_month ;
+bpaas:cloudServiceHasAccessLogFileRetentionPolicy bpaas:Overwrite_events_as_needed ;
+bpaas:cloudServiceHasServiceSupportResponsiveness bpaas:at_most_2_working_days ;
+bpaas:cloudServiceHasServiceSupport bpaas:Mon-Fri ;
+bpaas:cloudServiceHasAccessLogAvailabilityInMonths 9999 ;
+bpaas:cloudServiceHasAccessLogRetentionPeriodInMonths 9999 ;
+bpaas:cloudServiceHasAuditLogAvailabilityInMonth 9999 ;
+bpaas:cloudServiceHasAuditLogRetentionPeriodInMonths 9999 ;
+bpaas:cloudServiceHasAvailabilityInPercent 99.98 ^^xsd:decimal ;
+bpaas:cloudServiceHasBackupRestoreInGBPerHour 0 ;
+bpaas:cloudServiceHasDataStorageInGB 100 ;
+bpaas:cloudServiceHasResponseTime_in_ms 10 ;
+bpaas:cloudServiceHasSimultaneousUsers "false"^^xsd:boolean ;
+bpaas:cloudServiceHasTermsOfContract bpaas:ContractPerMonth ;
+bpaas:cloudServiceHasAdditionalCosts "false"^^xsd:boolean ;
+bpaas:cloudServiceHasAutomatedPasswordManagmentSystem "false"^^xsd:boolean ;
+bpaas:cloudServiceHasAvailabiltyLevelOptional "false"^^xsd:boolean ;
+bpaas:cloudServiceHasOrderedSelfService "false"^^xsd:boolean ;
+bpaas:cloudServiceHasSupportChannels bpaas:byPhone ;
+bpaas:cloudServiceHasSupportChannels bpaas:byMail ;
+bpaas:cloudServiceHasScalabilityOfferedToCustomer "false"^^xsd:boolean ;
+bpaas:cloudServicehasDataExportFormatAvailable "false"^^xsd:boolean ;
+bpaas:cloudServiceHasApiIntegrateSolution "false"^^xsd:boolean ;
+bpaas:cloudServiceHasDataMigrationIndependent "false"^^xsd:boolean ;
+bpaas:cloudServiceHasDocumentManagementSystem bpaas:File_System ;
+rdfs:label Intranet ;
+
+
+.
+bdata:87a87ab0-1087-4cd0-99ff-db50ab0f32a9
+rdf:type bpaas:CloudService ;
+bpaas:cloudServiceHasDescription Office 365 is Microsoft's cloud productivity solution available to companies who need the Office suite and collaboration solutions, all at an affordable price. Choosing any of the plans available in Office 365, users gain productivity benefits of Microsoft Office with specific cloud benefits: mobility, flexibility and scalability. Regardless of your choice – a Office 365 plan, the eMail solution or the Ymens-Collaboration solution shall provide the consultancy and support needed for a swift transition to the cloud technology, with immediately visible results in team productivity.;
+bpaas:cloudServiceHasTargetMarket bpaas:Business ;
+bpaas:cloudServiceHasTargetMarket bpaas:Development Agencies ;
+bpaas:cloudServiceHasTargetMarket bpaas:Health Care ;
+bpaas:cloudServiceHasTargetMarket bpaas:Government Institutions ;
+bpaas:cloudServiceHasTargetMarket bpaas:Public Sector ;
+bpaas:cloudServiceHasTargetMarket bpaas:Growing Teams ;
+bpaas:cloudServiceHasTargetMarket bpaas:Individuals ;
+bpaas:cloudServiceHasTargetMarket bpaas:School and Universities ;
+bpaas:cloudServiceHasTargetMarket bpaas:Small Teams ;
+bpaas:cloudServiceHasStoredDataLocation bpaas:Romania ;
+bpaas:cloudServiceHasMediaType bpaas:Not_specified ;
+bpaas:cloudServiceHasBackupRetentionTime bpaas:BestEffort ;
+bpaas:cloudServiceHasPaymentPlan bpaas:per_user_per_month ;
+bpaas:cloudServiceHasAccessLogFileRetentionPolicy bpaas:Overwrite_events_as_needed ;
+bpaas:cloudServiceHasServiceSupportResponsiveness bpaas:at_most_2_working_days ;
+bpaas:cloudServiceHasServiceSupport bpaas:Mon-Fri ;
+bpaas:cloudServiceHasAccessLogAvailabilityInMonths N/A ;
+bpaas:cloudServiceHasAccessLogRetentionPeriodInMonths N/A ;
+bpaas:cloudServiceHasAuditLogAvailabilityInMonth N/A ;
+bpaas:cloudServiceHasAuditLogRetentionPeriodInMonths N/A ;
+bpaas:cloudServiceHasAvailabilityInPercent N/A ;
+bpaas:cloudServiceHasDataStorageInGB N/A ;
+bpaas:cloudServiceHasResponseTime_in_ms 10 ;
+bpaas:cloudServiceHasSimultaneousUsers "false"^^xsd:boolean ;
+bpaas:cloudServiceHasTermsOfContract bpaas:ContractPerMonth ;
+bpaas:cloudServiceHasAdditionalCosts "false"^^xsd:boolean ;
+bpaas:cloudServiceHasAutomatedPasswordManagmentSystem "false"^^xsd:boolean ;
+bpaas:cloudServiceHasAvailabiltyLevelOptional "false"^^xsd:boolean ;
+bpaas:cloudServiceHasOrderedSelfService "false"^^xsd:boolean ;
+bpaas:cloudServiceHasSupportChannels bpaas:byPhone ;
+bpaas:cloudServiceHasSupportChannels bpaas:byMail ;
+bpaas:cloudServiceHasScalabilityOfferedToCustomer "false"^^xsd:boolean ;
+bpaas:cloudServicehasDataExportFormatAvailable "false"^^xsd:boolean ;
+bpaas:cloudServiceHasApiIntegrateSolution "false"^^xsd:boolean ;
+bpaas:cloudServiceHasDataMigrationIndependent "false"^^xsd:boolean ;
+bpaas:cloudServiceHasDocumentManagementSystem bpaas:not_defined ;
+rdfs:label Office 365 ;
+
+.
+bdata:peruserpermonth
+  rdf:type bpaas:PaymentPlan ;
+  rdfs:label "per user per month" ;
+.
+bpaas:SupportChannels
+  rdf:type owl:Class ;
+  rdfs:label "phone" ;
+  rdfs:subClassOf bpaas:ServiceLevelObjective ;
+.
