@@ -4,8 +4,10 @@ import java.util.UUID;
 public class test {
 
 	public static void main(String[] args) {
-		String pathExcel = "C:\\Users\\adnan\\Desktop\\cloud.xlsm";
-		String pathOntology = "C:\\Users\\adnan\\Documents\\GitHub\\CloudSocket-Ontology\\";
+		String pathExcel = ".\\resources\\ExcelFiles\\testexcel.xlsm";
+		String pathOntology = ".\\resources\\CloudSocket-OntologyAdnan\\";
+		//String pathOntology = "C:\\Users\\User\\Desktop\\CloudSocket\\gitHub\\Questionnaire_v3-Ontology\\";
+		
 		Operation op = new Operation();
 		op.parseOntology(pathOntology + "apqc.ttl");
 		op.parseOntology(pathOntology + "bdata.ttl");
@@ -16,8 +18,8 @@ public class test {
 		ArrayList<OntologyInstance> instance;
 
 		op.parseExcelFile(pathExcel);
-		//System.out.println(op.getServices().size());
-		//System.out.println(".");
+		System.out.println(op.getServices().size());
+		System.out.println(".");
 		
 		for (int i = 0; i < op.getServices().size(); i++){
 			//System.out.println("bdata:" +""+op.getServices().get(i).getName());
@@ -34,8 +36,7 @@ public class test {
 		for(int i = 0; i < op.getInstances().size();i++)
 		{
 			 instance = op.getInstances();
-			 
-			 
+			 	 
 			
 		}
 		
