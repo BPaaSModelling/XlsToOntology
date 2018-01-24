@@ -4,9 +4,10 @@ import java.util.UUID;
 public class test {
 
 	public static void main(String[] args) {
-		String pathExcel = ".\\resources\\ExcelFiles\\testexcel.xlsm";
-		String pathOntology = ".\\resources\\CloudSocket-OntologyAdnan\\";
-		//String pathOntology = "C:\\Users\\User\\Desktop\\CloudSocket\\gitHub\\Questionnaire_v3-Ontology\\";
+		//String pathExcel = ".\\resources\\ExcelFiles\\testexcel.xlsm";
+		String pathExcel = ".\\resources\\ExcelFiles\\CloudServicesSpecifications-Elena-20180114.xlsx";
+		//String pathOntology = ".\\resources\\CloudSocket-OntologyAdnan\\";
+		String pathOntology = ".\\resources\\Questionnaire_v3-Ontology\\";
 		
 		Operation op = new Operation();
 		op.parseOntology(pathOntology + "apqc.ttl");
@@ -32,6 +33,8 @@ public class test {
 			System.out.println("rdfs:label " + op.getServices().get(i).getName()+" ;");
 			System.out.println(".");
 		}
+		//TODO: STORE THE DATA INTO A PHYSICAL FILE IN FOLDER  ".\\resources\\Output
+		
 		
 		for(int i = 0; i < op.getInstances().size();i++)
 		{

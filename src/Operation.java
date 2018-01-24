@@ -307,6 +307,13 @@ public class Operation {
 
 	public void parseExcelFile(String path_file){
 		Workbook workbook;
+		
+		//TODO: REORDER AND ADJUCT CASES TO THE NEW ONTOLOGY
+		// The functional requirements should be linked to fbpdo
+		// The non functional has to be linked to bpaas
+		// any appearence of yes, no, not specified can be linked to questionnaire:Yes, questionnaire:No, questionnaire:Not_specified
+		// use the excel file "mapping for the updated excel" in folder Resources\REFERENCE as main reference.
+		// AN EXAMPLE CLOUDSERVICE is available in bdata:Drive_1 or Gmail_1
 		try {
 			workbook = WorkbookFactory.create(new File(path_file));
 			Sheet sheet = workbook.getSheetAt(0);
