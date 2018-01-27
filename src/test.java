@@ -7,7 +7,7 @@ public class test {
 		//String pathExcel = ".\\resources\\ExcelFiles\\testexcel.xlsm";
 		//String pathOntology = ".\\resources\\Ontology\\old version - deprecated\\";
 		
-		String pathExcel = ".\\resources\\ExcelFiles\\CloudServicesSpecifications-Elena-20180114.xlsx";
+		String pathExcel = ".\\resources\\ExcelFiles\\pluerat_latestfile.xlsx";
 		String pathOntology = ".\\resources\\Ontology\\V3\\";
 		
 		Operation op = new Operation();

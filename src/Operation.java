@@ -326,7 +326,7 @@ public class Operation {
 				while (cellIterator.hasNext()){
 					Cell cell = cellIterator.next();
 					//if (row.getRowNum() > 1){
-					if (row.getRowNum() ==1){
+					if (row.getRowNum() ==3){
 						maxcount = row.getLastCellNum();
 						
 					
@@ -335,8 +335,9 @@ public class Operation {
 							cs.setName(cell.toString());
 							break;
 							
+							
 							//here i am parsing provider
-						/*case 1:
+						case 1:
 							if(!validateNullCellString(cell.toString()))
 							{
 								cs.properties.add(new CloudServiceProperty("bpass:cloudServiceHasProvider", String.valueOf(cell.toString())+";"));
@@ -353,14 +354,15 @@ public class Operation {
 							}
 							}
 							break;
+							
 						
 							case 6:
 							//here I am parsing APQC category
-							if(cell.toString() !=null && cell.getCellType() == cell.CELL_TYPE_STRING)
+							if(!validateNullCellString(cell.toString()))
 							{
-							   cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasAPQC", cell.getStringCellValue()));
+							   cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasAPQC", String.valueOf(cell.toString())+" ;"));
 							}
-							break;*/
+							break;
 							
 						
 							case 7:
@@ -387,11 +389,47 @@ public class Operation {
 									
 						break;
 						
+						case 9:
+							//Here I am parsing the Payment Plan
+							
+							ArrayList<String> matchInstance_PaymentPlan = new ArrayList<String>();
+							matchInstance_PaymentPlan = getMatchedInstances(cell.toString());
+							for (int i = 0; i < matchInstance_PaymentPlan.size(); i++)
+							{
+										cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasPaymentPlan",matchInstance_PaymentPlan.get(i)+" ;"));
+									
+								
+							}
+							break;
+						
+						case 10:
+							// Here I am parsing additional costs
+							if(cell.toString() !=null)
+							{
+								cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasAdditionalCosts", validateBooleanCellString(String.valueOf(cell.toString()))));
+							}
+							break;
+							
+                        case 11:
+							
+							// Here I am parsing Encryption Type
+					         ArrayList<String> matchInstanceEncryption = new ArrayList<String>();
+					         matchInstanceEncryption = getMatchedInstances(cell.toString()); 
+							for(int i = 0; i < matchInstanceEncryption.size();i++)
+							{
+								
+								
+									cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasEncryptionType", matchInstanceEncryption.get(i)+" ;"));
+		
+								
+							}
+							
+							break; 
 						
 							
 							
 							
-						case 11:
+						case 12:
 							//Here I am parsing StoredDataLocation
 							
 							ArrayList<String> matchClasses_location = new ArrayList<String>();
@@ -405,7 +443,7 @@ public class Operation {
 							break;
 							
 							
-						case 12:
+						/*case 12:
 							// Here I am parsing media type
 							ArrayList<String> matchInstances_media = new ArrayList<String>();
 							matchInstances_media = getMatchedInstances(cell.toString());
@@ -417,9 +455,206 @@ public class Operation {
 							}
 							
 							
-							break;
+							break;*/
+							
+							
+							// security standard in place 
 							
 						case 13:
+							
+							if(cell.toString() !=null && validateNullCellString(cell.toString()))
+							{
+								cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasSecurityStandardInPlace", validateBooleanCellString(cell.toString())));
+							}
+							else{
+								cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasSecurityStandardInPlace", validateBooleanCellString(cell.toString())));
+							}
+							break;
+							
+							// automated password management system
+							
+						case 14:
+						
+							//Here I am parsing password management system automated 
+							
+							if(cell.toString() !=null && validateNullCellString(cell.toString()))
+							{
+	
+								cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasAutomatedPasswordManagmentSystem", validateBooleanCellString(cell.toString())));
+							}
+							else
+							{
+				
+								//System.out.println("++++++++++++++++"+cell.toString()+"bbbbbbbbbbbbbb");
+								cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasAutomatedPasswordManagmentSystem", validateBooleanCellString(cell.toString())));
+							}
+							
+							break;
+							
+						case 15:
+							//performanceManagementSystem in place
+							
+							if(cell.toString()!=null &&validateNullCellString(cell.toString()))
+							{
+								cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasPerformanceManagementSystemInPlace", validateBooleanCellString(cell.toString())));
+							}
+							else
+								
+								cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasPerformanceManagementSystemInPlace", validateBooleanCellString(cell.toString())));
+							
+							
+							break;
+							
+						case 16:
+							//different performance plan available
+							
+							if(cell.toString() !=null && validateNullCellString(cell.toString()))
+							{
+								cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasDifferentPerformancePlanAvailable", validateBooleanCellString(cell.toString())));
+							}
+							else
+								cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasDifferentPerformancePlanAvailable", validateBooleanCellString(cell.toString())));
+								
+							break;
+							
+						case 17:
+							// response time in mili second
+							
+							 if(cell.toString() !=null && validateNullCellString(cell.toString()))
+							 {
+								 cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasResponseTime_in_ms", cell.toString()+" ;"));
+							 }
+							 else
+								 cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasResponseTime_in_ms", validiateNumeric(cell)+" ;"));
+								 
+							break;
+							
+						case 18:
+							// computing processing power power scalable
+							if(cell.toString() !=null && validateNullCellString(cell.toString()))
+							{
+								cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasScalableProcessingPower", validateBooleanCellString(cell.toString())));
+							}
+							else
+								cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasScalableProcessingPower", validateBooleanCellString(cell.toString())));
+							
+							break;
+							
+						case 19:
+							// data storage scalable
+							
+							if(cell.toString() !=null && validateNullCellString(cell.toString()))
+							{
+								cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasScalableStorage", validateBooleanCellString(cell.toString())));
+							}
+							else
+								cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasScalableStorage", validateBooleanCellString(cell.toString())));
+							
+							break;
+							
+							
+						case 20:
+							//here i am parsing data storage in BG
+							
+							if(cell.toString() !=null && validateNullCellString(cell.toString()))
+							{
+								
+								cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasDataStorageInGB", String.valueOf(cell.toString())+" ;"));
+							}
+							else
+								cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasDataStorageInGB", validiateNumeric(cell)+" ;"));
+								
+							break;
+							
+                         case 21:
+							
+							// Here I am parsing simultaneous user
+							if(cell.toString() !=null && validateNullCellString(cell.toString()))
+							{
+								
+								cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasSimultaneousUsers",String.valueOf(cell.toString()+" ;")));
+							}
+							else
+								cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasSimultaneousUsers",validiateNumeric(cell)+" ;"));
+								
+							break;
+							
+                         case 22:
+ 							
+ 							// Here I am parsing percentage
+ 						
+ 							if(cell.toString() !=null && !null_values_string.contains(cell.toString().trim()))
+ 							{
+ 								String d = validateDecimalString(cell.getNumericCellValue()+"");
+ 								//System.out.println("wala:  "+d);
+ 								cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasAvailabilityInPercent",String.valueOf(d)+" ;"));
+ 							}
+ 							else
+ 								cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasAvailabilityInPercent",String.valueOf(validateDecimalString(cell.getStringCellValue()+" ;"))));
+ 							
+ 							
+ 							break;
+ 							
+                         case 23:
+ 							// Here I am parsing Access Log Availability in months
+ 							
+ 							
+ 									if (cell.toString() != null && validateNullCellString(cell.toString())){
+ 										
+ 										
+ 										
+ 										cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasAccessLogAvailabilityInMonths",String.valueOf(cell.toString()+" ;")));
+ 									}
+ 									else
+ 										cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasAccessLogAvailabilityInMonths",validiateNumeric(cell)+" ;"));
+ 							
+ 							
+ 							break;
+ 							
+                         case 24:
+ 							//Here I am parsing Access Log Retention Period in months
+ 							if(cell.toString() !=null && validateNullCellString(cell.toString()))
+ 							{
+ 								
+ 								cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasAccessLogRetentionPeriodInMonths", String.valueOf(cell.toString()+" ;")));
+ 							}
+ 							
+ 							else
+ 								
+ 								cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasAccessLogRetentionPeriodInMonths", validiateNumeric(cell)+" ;"));
+ 								
+ 							
+ 							
+ 							break;
+ 							
+                         case 25:
+ 							//here i am parsing AuditLogAvailabilityin Months
+ 							if(cell.toString() != null && validateNullCellString(cell.toString()))
+ 							{
+ 								
+ 								cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasAuditLogAvailabilityInMonth", String.valueOf(cell.toString()+" ;")));
+ 							}
+ 							else
+ 								
+ 								cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasAuditLogAvailabilityInMonth", validiateNumeric(cell)+" ;"));
+ 								
+ 							break;
+ 							
+                         case 26:
+  							//here i am parsing AuditLogRetentionPeriodinMonths
+  							if(cell.toString() != null && validateNullCellString(cell.toString()))
+  							{
+  								
+  								cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasAuditLogRetentionPeriodInMonths", String.valueOf(cell.toString()+" ;")));
+  							}
+  							else
+  								
+  								cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasAuditLogRetentionPeriodInMonths", validiateNumeric(cell)+" ;"));
+  								
+  							break;
+ 							
+ 							
+                         case 27:
 							//here I am parsing the BackupFrequecny
 							ArrayList<String> matchInstance_backupFrequency = new ArrayList<String>();
 							matchInstance_backupFrequency = getMatchedInstances(cell.toString());
@@ -432,7 +667,7 @@ public class Operation {
 							}
 							break;
 							
-						case 14:
+						case 28:
 							//here I am parsing BackupRetentionTime
 							
 							ArrayList<String> matchInstances_backupTime = new ArrayList<String>();
@@ -446,8 +681,19 @@ public class Operation {
 								
 							}
 							break;
+						case 31:
+							// data migration
 							
-						case 9:
+							
+							if(cell.toString() !=null && validateNullCellString(cell.toString()))
+							{
+								cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasDataMigration", validateBooleanCellString(cell.toString())));
+							}
+							else
+								cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasDataMigration", validateBooleanCellString(cell.toString())));
+							break;
+							
+						/*case 9:
 							//Here I am parsing the Payment Plan
 							
 							ArrayList<String> matchInstance_PaymentPlan = new ArrayList<String>();
@@ -493,7 +739,7 @@ public class Operation {
 							break; */
 						
 							
-						case 18:
+						/*case 18:
 							
 							// here i am parsing service support responsiveness
 							
@@ -528,47 +774,17 @@ public class Operation {
 							
 							break;
 							
-						case 20:
-							// Here I am parsing Access Log Availability in months
+						*/
 							
 							
-									if (cell.toString() != null){
-										
-										
-										
-										cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasAccessLogAvailabilityInMonths", validiateNumeric(cell)+" ;"));
-									}
-									
-								
-							
-							
-							break;
-							
-						case 21:
-							//Here I am parsing Access Log Retention Period in months
-							if(cell.toString() !=null)
-							{
-								
-								cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasAccessLogRetentionPeriodInMonths", validiateNumeric(cell)+" ;"));
-							}
-							
-							
-							break;
+						
 							
 							
 							
-						case 22:
-							//here i am parsing AuditLogAvailabilityin Months
-							if(cell.toString() != null)
-							{
-								
-								cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasAuditLogAvailabilityInMonth", validiateNumeric(cell)+" ;"));
-							}
-							
-							break;
+						
 							
 							
-						case 23:
+						/*case 23:
 							//here I am parsing audit log retention periods in months
 							if(cell.toString() !=null)
 							{
@@ -580,21 +796,7 @@ public class Operation {
 							
 							break;
 							
-						case 24:
-							
-							// Here I am parsing percentage
 						
-							if(cell.toString() !=null && !null_values_string.contains(cell.toString().trim()))
-							{
-								String d = validateDecimalString(cell.getNumericCellValue()+"");
-								//System.out.println("wala:  "+d);
-								cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasAvailabilityInPercent",String.valueOf(d)));
-							}
-							else
-								cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasAvailabilityInPercent",String.valueOf(validateDecimalString(cell.getStringCellValue()))));
-							
-							
-							break;
 							
 							
 						case 25:
@@ -606,15 +808,7 @@ public class Operation {
 								cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasBackupRestoreInGBPerHour", validiateNumeric(cell)+" ;"));
 							}
 							break;
-						case 26:
-							//here i am parsing data storage in BG
-							
-							if(cell.toString() !=null)
-							{
-								
-								cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasDataStorageInGB", validiateNumeric(cell)+" ;"));
-							}
-							break;
+						
 							
 						case 27:
 							//here i am parsing response time in mili second
@@ -626,15 +820,7 @@ public class Operation {
 							}
 							break;
 							
-						case 28:
-							
-							// Here I am parsing simultaneous user
-							if(cell.toString() !=null)
-							{
-								
-								cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasSimultaneousUsers",validateBooleanCellString(String.valueOf(cell.toString()))));
-							}
-							break;
+						
 						
 							
 						case 30:
@@ -650,15 +836,15 @@ public class Operation {
 								
 							}
 							
-							break;
+							break;*/
 							
-						case 31:
+					/*	case 31:
 							// Here I am parsing additional costs
 							if(cell.toString() !=null)
 							{
 								cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasAdditionalCosts", validateBooleanCellString(String.valueOf(cell.toString()+" ;"))));
 							}
-							break;
+							break;*/
 							
 						case 45:
 							//Here I am parsing password management system automated 
@@ -830,10 +1016,10 @@ public class Operation {
 		}
 		else
 		{
-			
-			return
-					
-			cell.toString().substring(0,cell.toString().indexOf("."));
+			if(cell.toString().indexOf(".")>-1)
+				return cell.toString().substring(0,cell.toString().indexOf("."));
+			else
+				return cell.toString();
 			
 		}
 	}
@@ -841,11 +1027,13 @@ public class Operation {
 	
 	private String validateBooleanCellString(String cell){
 		boolean result;
-		if (cell.equals("yes".trim())){
+		if (cell.equals("yes")){
 			return "\"true\"^^xsd:boolean ;";
-		}else {
+		}else if(cell.equals("no")){
 			return "\"false\"^^xsd:boolean ;";
 		}
+		else
+			return cell.toString()+" ;";
 		
 	}
 	
