@@ -672,7 +672,7 @@ questiondata:What_is_the_backup_frequency
   questionnaire:questionHasAnswers bpaas:every_3_hours ;
   questionnaire:questionHasAnswers bpaas:hourly ;
   questionnaire:questionHasAnswers bpaas:monthly ;
-  questionnaire:questionHasAnswers bpaas:not_specifiedBackupFrequency ;
+  questionnaire:questionHasAnswers bpaas:not_specified ;
   questionnaire:questionHasAnswers bpaas:weekly ;
   questionnaire:questionHasAnswers bpaas:yearly ;
   rdfs:label "What's the prefered backup frequency?" ;

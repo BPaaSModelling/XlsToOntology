@@ -41,128 +41,14 @@ apqc:AmericanProductivityAndQualityCenter
   owl:imports <http://spinrdf.org/spl> ;
   owl:versionInfo "Created with TopBraid Composer" ;
 .
-bpaas:Africa
-  rdf:type bpaas:StoredDataLocation ;
-  rdfs:label "Africa" ;
-.
-bpaas:Asia
-  rdf:type bpaas:StoredDataLocation ;
-  rdfs:label "Asia" ;
-.
-bpaas:Austria
-  rdf:type bpaas:StoredDataLocation ;
-  rdfs:label "Austria" ;
-.
-bpaas:Brazil
-  rdf:type bpaas:StoredDataLocation ;
-  rdfs:label "Brazil" ;
-.
-bpaas:China
-  rdf:type bpaas:StoredDataLocation ;
-  rdfs:label "China" ;
-.bpaas:EES
-  rdf:type bpaas:StoredDataLocation ;
-  rdfs:label "EES" ;
-.
-bpaas:EU-US_Privacy_Shield_agreement_locations
-  rdf:type bpaas:StoredDataLocation ;
-  rdfs:label "EU-US Privacy Shield agreement locations" ;
-.
-bpaas:Europe
-  rdf:type bpaas:StoredDataLocation ;
-  rdfs:label "Europe" ;
-.
-bpaas:European_Economic_Area_EEA
-  rdf:type bpaas:StoredDataLocation ;
-  rdfs:label " European Economic Area (EEA)" ;
-.
-bpaas:European_Union
-  rdf:type bpaas:StoredDataLocation ;
-  rdfs:label "European Union" ;
-.
-bpaas:French
-  rdf:type bpaas:StoredDataLocation ;
-  rdfs:label "French" ;
-.
-bpaas:Germany
-  rdf:type bpaas:StoredDataLocation ;
-  rdfs:label "Germany" ;
-.
-bpaas:Israel
-  rdf:type bpaas:StoredDataLocation ;
-  rdfs:label "Israel" ;
-.
-bpaas:Italy
-  rdf:type bpaas:StoredDataLocation ;
-  rdfs:label "Italy" ;
-.
-bpaas:Mail
-  rdf:type bpaas:SupportChannel ;
-  rdfs:label "Mail" ;
-.
-bpaas:North_America
-  rdf:type bpaas:StoredDataLocation ;
-  rdfs:label "North America" ;
-.
-bpaas:OnSiteSupport
-  rdf:type bpaas:SupportChannel ;
-  rdfs:label "On site support" ;
-.
-bpaas:OnlineTicketing
-  rdf:type bpaas:SupportChannel ;
-  rdfs:label "Online Ticketing" ;
-.
-bpaas:Other
-  rdf:type bpaas:SupportChannel ;
-  rdfs:label "Other" ;
-.
-bpaas:Phone
-  rdf:type bpaas:SupportChannel ;
-  rdfs:label "Phone" ;
-.
-bpaas:Romania
-  rdf:type bpaas:StoredDataLocation ;
-  rdfs:label "Romania" ;
-.
-
-bpaas:SocialMedia
-  rdf:type bpaas:SupportChannel ;
-  rdfs:label "Social Media" ;
-.
-bpaas:South_America
-  rdf:type bpaas:StoredDataLocation ;
-  rdfs:label "South America" ;
-.
-bpaas:SugarCRM
-  rdf:type bpaas:CloudService ;
-  bpaas:cloudServiceHasEncryptionType bpaas:Sha256 ;
-  rdfs:label "SugarCRM" ;
-.
-bpaas:Switzerland
-  rdf:type bpaas:StoredDataLocation ;
-  rdfs:label "Switzerland" ;
-.
-bpaas:The_Netherlands
-  rdf:type bpaas:StoredDataLocation ;
-  rdfs:label "The Netherlands" ;
-.
-bpaas:USA
-  rdf:type bpaas:StoredDataLocation ;
-  rdfs:label "USA" ;
-.
-bpaas:United_Kingdom
-  rdf:type bpaas:StoredDataLocation ;
-  rdfs:label "United Kingdom" ;
-.
-
-bpaas:cloudServiceHasStoredDataLocation
-  rdfs:range bpaas:StoredDataLocation ;
-.
-
 bpaas:AES
   rdf:type bpaas:EncryptionType ;
   bpaas:encryptionTypeHasRequirementLevel bpaas:Medium ;
   rdfs:label "AES" ;
+.
+bpaas:Africa
+  rdf:type bpaas:StoredDataLocation ;
+  rdfs:label "Africa" ;
 .
 bpaas:App_Developers
   rdf:type bpaas:TargetMarket ;
@@ -177,10 +63,18 @@ bpaas:ArchivedData
   rdf:type owl:Class ;
   rdfs:subClassOf archi:DataObject ;
 .
+bpaas:Asia
+  rdf:type bpaas:StoredDataLocation ;
+  rdfs:label "Asia" ;
+.
 bpaas:Auditing
   rdf:type owl:Class ;
   rdfs:label "Auditing" ;
   rdfs:subClassOf bpaas:SecurityService ;
+.
+bpaas:Austria
+  rdf:type bpaas:StoredDataLocation ;
+  rdfs:label "Austria" ;
 .
 bpaas:Authentication
   rdf:type owl:Class ;
@@ -241,6 +135,10 @@ bpaas:BackupRetentionTime
   rdfs:label "bpaas:BackupRetentionTime" ;
   rdfs:subClassOf bpaas:BackupManagement ;
 .
+bpaas:Brazil
+  rdf:type bpaas:StoredDataLocation ;
+  rdfs:label "Brazil" ;
+.
 bpaas:BusinessProcessAnnotationGroup
   rdf:type owl:Class ;
   rdfs:label "Business Process Annotation Group" ;
@@ -259,6 +157,10 @@ bpaas:Capacity
   rdf:type owl:Class ;
   rdfs:label "Capacity" ;
   rdfs:subClassOf bpaas:Performance ;
+.
+bpaas:China
+  rdf:type bpaas:StoredDataLocation ;
+  rdfs:label "China" ;
 .
 bpaas:CloudBroker
   rdf:type owl:Class ;
@@ -321,6 +223,14 @@ bpaas:DocumentManagementSystem
   rdfs:label "cs a" ;
   rdfs:subClassOf bpaas:DataManagement ;
 .
+bpaas:EES
+  rdf:type bpaas:StoredDataLocation ;
+  rdfs:label "EES" ;
+.
+bpaas:EU-US_Privacy_Shield_agreement_locations
+  rdf:type bpaas:StoredDataLocation ;
+  rdfs:label "EU-US Privacy Shield agreement locations" ;
+.
 bpaas:Education
   rdf:type bpaas:TargetMarket ;
   rdfs:label "Education" ;
@@ -329,6 +239,18 @@ bpaas:EncryptionType
   rdf:type owl:Class ;
   rdfs:label "EncryptionType" ;
   rdfs:subClassOf bpaas:SecurityService ;
+.
+bpaas:Europe
+  rdf:type bpaas:StoredDataLocation ;
+  rdfs:label "Europe" ;
+.
+bpaas:European_Economic_Area_EEA
+  rdf:type bpaas:StoredDataLocation ;
+  rdfs:label " European Economic Area (EEA)" ;
+.
+bpaas:European_Union
+  rdf:type bpaas:StoredDataLocation ;
+  rdfs:label "European Union" ;
 .
 bpaas:FDA
   rdf:type bpaas:EncryptionType ;
@@ -352,8 +274,16 @@ bpaas:FreeofCharge
   rdf:type bpaas:PaymentPlan ;
   rdfs:label "Free of Charge" ;
 .
+bpaas:French
+  rdf:type bpaas:StoredDataLocation ;
+  rdfs:label "French" ;
+.
 bpaas:Full
   rdf:type bpaas:BackupManagement ;
+.
+bpaas:Germany
+  rdf:type bpaas:StoredDataLocation ;
+  rdfs:label "Germany" ;
 .
 bpaas:Government_Institutions
   rdf:type bpaas:TargetMarket ;
@@ -415,6 +345,14 @@ bpaas:Ipsec
   bpaas:encryptionTypeHasRequirementLevel bpaas:Medium ;
   rdfs:label "Ipsec" ;
 .
+bpaas:Israel
+  rdf:type bpaas:StoredDataLocation ;
+  rdfs:label "Israel" ;
+.
+bpaas:Italy
+  rdf:type bpaas:StoredDataLocation ;
+  rdfs:label "Italy" ;
+.
 bpaas:JiraUIGroup
   rdf:type bpaas:WorkflowAnnotationGroup ;
 .
@@ -450,6 +388,10 @@ bpaas:LoggingKeepsALogFile
 bpaas:Low
   rdf:type bpaas:RequirementLevel ;
   rdfs:label "low" ;
+.
+bpaas:Mail
+  rdf:type bpaas:SupportChannel ;
+  rdfs:label "Mail" ;
 .
 bpaas:MediaType
   rdf:type owl:Class ;
@@ -487,6 +429,10 @@ bpaas:NoTarget
   rdf:type bpaas:TargetMarket ;
   rdfs:label "No Target" ;
 .
+bpaas:North_America
+  rdf:type bpaas:StoredDataLocation ;
+  rdfs:label "North America" ;
+.
 bpaas:NotSpecified
   rdf:type bpaas:ServiceSupport ;
   rdfs:label "Not specified" ;
@@ -508,8 +454,20 @@ bpaas:Not_specifiedPayment
   rdf:type bpaas:PaymentPlan ;
   rdfs:label "Not specified" ;
 .
+bpaas:OnSiteSupport
+  rdf:type bpaas:SupportChannel ;
+  rdfs:label "On site support" ;
+.
 bpaas:One-timePasswordDevice
   rdf:type bpaas:Authentication ;
+.
+bpaas:OnlineTicketing
+  rdf:type bpaas:SupportChannel ;
+  rdfs:label "Online Ticketing" ;
+.
+bpaas:Other
+  rdf:type bpaas:SupportChannel ;
+  rdfs:label "Other" ;
 .
 bpaas:PCI_DSS
   rdf:type bpaas:EncryptionType ;
@@ -568,6 +526,10 @@ bpaas:Performance
 bpaas:PersonalDataProtection
   rdf:type owl:Class ;
   rdfs:subClassOf bpaas:ServiceLevelObjective ;
+.
+bpaas:Phone
+  rdf:type bpaas:SupportChannel ;
+  rdfs:label "Phone" ;
 .
 bpaas:Pin
   rdf:type bpaas:Authentication ;
@@ -668,6 +630,10 @@ bpaas:ResponseTime
   rdfs:label "Response Time" ;
   rdfs:subClassOf bpaas:Performance ;
 .
+bpaas:Romania
+  rdf:type bpaas:StoredDataLocation ;
+  rdfs:label "Romania" ;
+.
 bpaas:SOX
   rdf:type bpaas:EncryptionType ;
   bpaas:encryptionTypeHasRequirementLevel bpaas:Medium ;
@@ -719,6 +685,10 @@ bpaas:ServiceSupportResponsiveness
   rdfs:label "ServiceSupportResponsiveness" ;
   rdfs:subClassOf bpaas:ServiceLevelObjective ;
 .
+bpaas:SocialMedia
+  rdf:type bpaas:SupportChannel ;
+  rdfs:label "Social Media" ;
+.
 bpaas:SocialMediaExecutionGroup
   rdf:type bpaas:BusinessProcessAnnotationGroup ;
 .
@@ -733,6 +703,10 @@ bpaas:Social_Sector
 bpaas:SoftCryptoToken
   rdf:type bpaas:Authentication ;
 .
+bpaas:South_America
+  rdf:type bpaas:StoredDataLocation ;
+  rdfs:label "South America" ;
+.
 bpaas:StoragePeriodInMonths
   rdf:type owl:DatatypeProperty ;
   rdfs:range xsd:integer ;
@@ -745,6 +719,11 @@ bpaas:StoredDataLocation
   rdf:type owl:Class ;
   rdfs:subClassOf archi:DataObject ;
 .
+bpaas:SugarCRM
+  rdf:type bpaas:CloudService ;
+  bpaas:cloudServiceHasEncryptionType bpaas:Sha256 ;
+  rdfs:label "SugarCRM" ;
+.
 bpaas:SupportChannel
   rdf:type owl:Class ;
   rdfs:label "Support Channel" ;
@@ -752,6 +731,10 @@ bpaas:SupportChannel
 .
 bpaas:SupportServiceHasServiceSupportPeriod
   rdf:type owl:ObjectProperty ;
+.
+bpaas:Switzerland
+  rdf:type bpaas:StoredDataLocation ;
+  rdfs:label "Switzerland" ;
 .
 bpaas:TLS
   rdf:type bpaas:EncryptionType ;
@@ -767,6 +750,10 @@ bpaas:TargetMarket
   rdf:type owl:Class ;
   rdfs:label "Target Market" ;
   rdfs:subClassOf archi:BusinessRole ;
+.
+bpaas:The_Netherlands
+  rdf:type bpaas:StoredDataLocation ;
+  rdfs:label "The Netherlands" ;
 .
 bpaas:TryFreeFirst
   rdf:type bpaas:PaymentPlan ;
@@ -784,6 +771,14 @@ bpaas:TypeOfRaid
   rdf:type owl:Class ;
   rdfs:label "Type of raid" ;
   rdfs:subClassOf bpaas:SecurityService ;
+.
+bpaas:USA
+  rdf:type bpaas:StoredDataLocation ;
+  rdfs:label "USA" ;
+.
+bpaas:United_Kingdom
+  rdf:type bpaas:StoredDataLocation ;
+  rdfs:label "United Kingdom" ;
 .
 bpaas:UserInterfaceGroup
   rdf:type bpaas:BusinessProcessAnnotationGroup ;
@@ -1207,6 +1202,7 @@ bpaas:cloudServiceHasStoredDataLocation
   rdf:type owl:ObjectProperty ;
   rdfs:domain bpaas:CloudService ;
   rdfs:label "cloudServiceHasStoredDataLocation" ;
+  rdfs:range bpaas:StoredDataLocation ;
 .
 bpaas:cloudServiceHasSupportChannel
   rdf:type owl:ObjectProperty ;
@@ -1353,7 +1349,7 @@ bpaas:nineToFive
   rdf:type bpaas:ServiceSupport ;
   rdfs:label "9am-5pm" ;
 .
-bpaas:not_specifiedBackupFrequency
+bpaas:not_specified
   rdf:type bpaas:BackupFrequency ;
   rdfs:label "not specified" ;
 .
@@ -1526,4 +1522,16 @@ bpaas:workflowHasWorkflowDescription
 bpaas:yearly
   rdf:type bpaas:BackupFrequency ;
   rdfs:label "yearly" ;
+.
+fbpdo:Collaborate
+  rdf:type owl:Class ;
+  rdfs:label "Collaborate" ;
+  rdfs:subClassOf fbpdo:Action ;
+.
+fbpdo:fbpdo_Action-label-
+  rdf:type rdf:Statement ;
+  rdf:object "Action" ;
+  rdf:predicate rdfs:label ;
+  rdf:subject fbpdo:Action ;
+  rdfs:label "Collaborate" ;
 .

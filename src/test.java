@@ -1,9 +1,12 @@
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.UUID;
 
 public class test {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws FileNotFoundException {
 		//String pathExcel = ".\\resources\\ExcelFiles\\testexcel.xlsm";
 		//String pathOntology = ".\\resources\\Ontology\\old version - deprecated\\";
 		
@@ -20,7 +23,9 @@ public class test {
 		ArrayList<OntologyInstance> instance;
 
 		op.parseExcelFile(pathExcel);
-		System.out.println(op.getServices().size());
+		//System.out.println(op.getServices().size());
+		PrintStream out = new PrintStream(new FileOutputStream("bdata.ttl"));
+		System.setOut(out);
 		System.out.println(".");
 		
 		for (int i = 0; i < op.getServices().size(); i++){
