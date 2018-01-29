@@ -56,10 +56,6 @@ questiondata:Action_does_reflect_the_functional_requirement
   questionnaire:searchSelectionOnClassesInsteadOfInstances "true"^^xsd:boolean ;
   rdfs:label "Action that reflect the functional requirement" ;
 .
-questiondata:Archive_the_log_when_full_and_do_not_overwrite_events
-  rdf:type questionnaire:Answer ;
-  rdfs:label "Archive the log when full and do not overwrite events" ;
-.
 questiondata:Backup_frequency_period
   rdf:type questionnaire:CloudServiceElement ;
   rdf:type questionnaire:SingleSelection ;
@@ -101,18 +97,6 @@ questiondata:CloudService_Physical_ID
   questionnaire:valueInsertAnswerTypeHasDatatype xsd:string ;
   rdfs:label "Cloud service Physical ID" ;
 .
-questiondata:DataEncryptionLevelHigh
-  rdf:type questionnaire:Answer ;
-  rdfs:label "Data Encryption Level High" ;
-.
-questiondata:DataEncryptionLevelLow
-  rdf:type questionnaire:Answer ;
-  rdfs:label "Data Encryption Level Low" ;
-.
-questiondata:DataEncryptionLevelMedium
-  rdf:type questionnaire:Answer ;
-  rdfs:label "Data Encryption Level Medium" ;
-.
 questiondata:DataEncryptionLevel_High
   rdf:type questionnaire:Answer ;
   rdfs:label "High" ;
@@ -125,38 +109,11 @@ questiondata:DataEncryptionLevel_Medium
   rdf:type questionnaire:Answer ;
   rdfs:label "Medium" ;
 .
-questiondata:DataStorageAtLeast10GB
-  rdf:type questionnaire:Answer ;
-  rdfs:label "Data storage at least10GB" ;
-.
-questiondata:DataStorageAtLeast1GB
-  rdf:type questionnaire:Answer ;
-  rdfs:label "at least 1 GB (apx 3.000 basic office files)" ;
-.
-questiondata:DataStorageAtLeast1Tera
-  rdf:type questionnaire:Answer ;
-  rdfs:label "at least 1 Tera (apx 26.000 basic office files)" ;
-.
-questiondata:DataStorageAtLeast2GB
-  rdf:type questionnaire:Answer ;
-  rdfs:label "at least 2 GB (apx 6.000 basic office files)" ;
-.
-questiondata:DataStorageAtLeast500MB
-  rdf:type questionnaire:Answer ;
-  rdfs:label "at least 500MB (apx. 1.500 basic office files)" ;
-.
-questiondata:DataStorageAtLeast5GB
-  rdf:type questionnaire:Answer ;
-  rdfs:label "at least 5 GB (apx. 13.000 basic office files)" ;
-.
 questiondata:Data_encryption_level
   rdf:type questionnaire:CloudServiceElement ;
   rdf:type questionnaire:SingleSelection ;
   questionnaire:cloudServiceElementHasCloudServiceDomain questiondata:Security ;
   questionnaire:questionHasAnnotationRelation bpaas:cloudServiceHasEncryptionType ;
-  questionnaire:questionHasAnswers questiondata:DataEncryptionLevelHigh ;
-  questionnaire:questionHasAnswers questiondata:DataEncryptionLevelLow ;
-  questionnaire:questionHasAnswers questiondata:DataEncryptionLevelMedium ;
   rdfs:label "Data encryption level" ;
 .
 questiondata:Data_location
@@ -204,22 +161,6 @@ questiondata:Encryption_Type
   questionnaire:questionHasAnswers bpaas:TLS_VPN ;
   rdfs:label "Encryption type?" ;
 .
-questiondata:FileUpload_MP3
-  rdf:type questionnaire:Answer ;
-  rdfs:label "mp3" ;
-.
-questiondata:FileUpload_PDF
-  rdf:type questionnaire:Answer ;
-  rdfs:label "pdf" ;
-.
-questiondata:FileUpload_PPT
-  rdf:type questionnaire:Answer ;
-  rdfs:label "PPT" ;
-.
-questiondata:FileUpload_Video_MP4
-  rdf:type questionnaire:Answer ;
-  rdfs:label "Video MP4" ;
-.
 questiondata:Functional
   rdf:type questionnaire:CloudServiceDomain ;
   rdfs:label "Functional" ;
@@ -234,38 +175,6 @@ questiondata:How_many_simultaneous_users_do_you_prefer
   questionnaire:questionHasAnnotationRelation bpaas:cloudServiceHasSimultaneousUsers ;
   questionnaire:valueInsertAnswerTypeHasDatatype xsd:integer ;
   rdfs:label "How many simultaneous users do you prefer? (Insert 0 for any value)" ;
-.
-questiondata:LogAccessFor1Month
-  rdf:type questionnaire:Answer ;
-  rdfs:label "Log access for1Month" ;
-.
-questiondata:LogAccessFor1Year
-  rdf:type questionnaire:Answer ;
-  rdfs:label "Log access for1Year" ;
-.
-questiondata:LogAccessFor2Month
-  rdf:type questionnaire:Answer ;
-  rdfs:label "Log access for2Month" ;
-.
-questiondata:LogAccessForHalfYear
-  rdf:type questionnaire:Answer ;
-  rdfs:label "Log access for half year" ;
-.
-questiondata:LogFileRetentionPeriod1Month
-  rdf:type questionnaire:Answer ;
-  rdfs:label "Log file retention period1Month" ;
-.
-questiondata:LogFileRetentionPeriod1Year
-  rdf:type questionnaire:Answer ;
-  rdfs:label "Log file retention period1Year" ;
-.
-questiondata:LogFileRetentionPeriod2Month
-  rdf:type questionnaire:Answer ;
-  rdfs:label "Log file retention period2Month" ;
-.
-questiondata:LogFileRetentionPeriodHalfYear
-  rdf:type questionnaire:Answer ;
-  rdfs:label "Log file retention period half year" ;
 .
 questiondata:Monthly_downtime_in_minutes
   rdf:type questionnaire:CloudServiceElement ;
@@ -308,37 +217,9 @@ questiondata:Object_does_reflect_the_functional_requirement
   questionnaire:searchSelectionOnClassesInsteadOfInstances "true"^^xsd:boolean ;
   rdfs:label "Object that reflect the functional requirement" ;
 .
-questiondata:Overwrite_events_as_needed
-  rdf:type questionnaire:Answer ;
-  rdfs:label "Overwrite events as needed" ;
-.
 questiondata:Payment
   rdf:type questionnaire:CloudServiceDomain ;
   rdfs:label "Payment" ;
-.
-questiondata:PaymentPlanCustomizable
-  rdf:type questionnaire:Answer ;
-  rdfs:label "customizable" ;
-.
-questiondata:PaymentPlanFreeOfCharge
-  rdf:type questionnaire:Answer ;
-  rdfs:label "free of charge" ;
-.
-questiondata:PaymentPlanMonthlyFee
-  rdf:type questionnaire:Answer ;
-  rdfs:label "monthly fee" ;
-.
-questiondata:PaymentPlanPrepaidAnnualFee
-  rdf:type questionnaire:Answer ;
-  rdfs:label "prepaid annual fee" ;
-.
-questiondata:PaymentPlanTryFreeFirst
-  rdf:type questionnaire:Answer ;
-  rdfs:label "Try Free First" ;
-.
-questiondata:PaymentPlanYearlyFee
-  rdf:type questionnaire:Answer ;
-  rdfs:label "yearly fee" ;
 .
 questiondata:Payment_Plan
   rdf:type questionnaire:CloudServiceElement ;
@@ -359,19 +240,12 @@ questiondata:Performance
 .
 questiondata:Please_select_your_favorite_retention_period_for_a_Log_File
   rdf:type questionnaire:NotSortedYet ;
-  questionnaire:questionHasAnswers questiondata:LogAccessFor1Month ;
-  questionnaire:questionHasAnswers questiondata:LogAccessFor1Year ;
-  questionnaire:questionHasAnswers questiondata:LogAccessFor2Month ;
-  questionnaire:questionHasAnswers questiondata:LogAccessForHalfYear ;
   questionnaire:questionHasAnswers questiondata:None ;
   rdfs:label "Please select your favorite log file retention period" ;
 .
 questiondata:Please_select_your_favorite_retention_policies
   rdf:type questionnaire:NotSortedYet ;
-  questionnaire:questionHasAnswers questiondata:Archive_the_log_when_full_and_do_not_overwrite_events ;
   questionnaire:questionHasAnswers questiondata:Do_not_care ;
-  questionnaire:questionHasAnswers questiondata:Overwrite_events_as_needed ;
-  questionnaire:questionHasAnswers questiondata:do_not_overwrite_events ;
   rdfs:label "Please select your favorite retention policies" ;
 .
 questiondata:PreferedAccess_Log_Availability_in_Months
@@ -416,22 +290,6 @@ questiondata:Prefered_Data_Storage_in_GB
   questionnaire:valueInsertAnswerTypeHasDatatype xsd:integer ;
   rdfs:label "Select the prefered Data Storage in GB (Insert 0 for any value)" ;
 .
-questiondata:ProcessExecutionOnADailyBasis
-  rdf:type questionnaire:Answer ;
-  rdfs:label "on a daily basis" ;
-.
-questiondata:ProcessExecutionOnAMonthlyBasis
-  rdf:type questionnaire:Answer ;
-  rdfs:label "Process execution on a monthly basis" ;
-.
-questiondata:ProcessExecutionOnAWeeklyBasis
-  rdf:type questionnaire:Answer ;
-  rdfs:label "on a weekly basis" ;
-.
-questiondata:ProcessExecutionOnAYearlyBasis
-  rdf:type questionnaire:Answer ;
-  rdfs:label "Process execution on a yearly basis" ;
-.
 questiondata:ResponseTime_High
   rdf:type questionnaire:Answer ;
   rdfs:label "high" ;
@@ -454,30 +312,12 @@ questiondata:Response_time_level
   questionnaire:questionHasAnswers questiondata:ResponseTime_Medium ;
   rdfs:label "Response time level" ;
 .
-questiondata:RestoreTimeHigh
-  rdf:type questionnaire:Answer ;
-  questionnaire:AnswerHasQuestionDependency questiondata:What_is_your_favorite_backup_frequency_period ;
-  rdfs:label "High" ;
-.
-questiondata:RestoreTimeLow
-  rdf:type questionnaire:Answer ;
-  questionnaire:AnswerHasQuestionDependency questiondata:What_is_your_favorite_backup_frequency_period ;
-  rdfs:label "Low" ;
-.
-questiondata:RestoreTimeMedium
-  rdf:type questionnaire:Answer ;
-  questionnaire:AnswerHasQuestionDependency questiondata:What_is_your_favorite_backup_frequency_period ;
-  rdfs:label "Medium" ;
-.
 questiondata:Restore_time_level
   rdf:type questionnaire:CloudServiceElement ;
   rdf:type questionnaire:SingleSelection ;
   questionnaire:cloudServiceElementHasCloudServiceDomain questiondata:Security ;
   questionnaire:questionHasAnnotationRelation bpaas:cloudServiceHasBackupRestoreInGBPerHour ;
   questionnaire:questionHasAnswers questiondata:None ;
-  questionnaire:questionHasAnswers questiondata:RestoreTimeHigh ;
-  questionnaire:questionHasAnswers questiondata:RestoreTimeLow ;
-  questionnaire:questionHasAnswers questiondata:RestoreTimeMedium ;
   rdfs:label " Restore time period" ;
 .
 questiondata:Security
@@ -574,24 +414,6 @@ questiondata:Storage_type
   questionnaire:questionHasAnswers bpaas:Storage_Service ;
   rdfs:label "Storage type" ;
 .
-questiondata:SupportResponsivenessAtMost1WorkingDay
-  rdf:type questionnaire:Answer ;
-  rdfs:label "Support responsiveness at most 1 working day" ;
-.
-questiondata:SupportResponsivenessAtMost2Hours
-  rdf:type questionnaire:Answer ;
-  rdfs:label "at most 2 Hours" ;
-.
-questiondata:SupportResponsivenessAtMost4Hours
-  rdf:type questionnaire:Answer ;
-  rdfs:label "at most 4 Hours" ;
-.
-questiondata:SupportServiceYes
-  rdf:type questionnaire:Answer ;
-  questionnaire:AnswerHasQuestionDependency questiondata:What_is_your_favorite_support_coverage ;
-  questionnaire:AnswerHasQuestionDependency questiondata:What_is_your_favorite_support_responsiveness ;
-  rdfs:label "Yes" ;
-.
 questiondata:Support_coverage
   rdf:type questionnaire:CloudServiceElement ;
   rdf:type questionnaire:SingleSelection ;
@@ -606,22 +428,6 @@ questiondata:Support_coverage
 questiondata:TargetMarket
   rdf:type questionnaire:CloudServiceDomain ;
   rdfs:label "Target Market" ;
-.
-questiondata:TargetMarketBusinesses
-  rdf:type questionnaire:Answer ;
-  rdfs:label "businesses" ;
-.
-questiondata:TargetMarketIndividuals
-  rdf:type questionnaire:Answer ;
-  rdfs:label "Target market individuals" ;
-.
-questiondata:TargetMarketSchoolAndUniversities
-  rdf:type questionnaire:Answer ;
-  rdfs:label "school and universities" ;
-.
-questiondata:TargetMarketSmallTeams
-  rdf:type questionnaire:Answer ;
-  rdfs:label "small teams" ;
 .
 questiondata:Target_market
   rdf:type questionnaire:CloudServiceElement ;
@@ -657,10 +463,6 @@ questiondata:What_could_be_uploaded
   rdf:type questionnaire:MultiSelection ;
   questionnaire:cloudServiceElementHasCloudServiceDomain questiondata:Performance ;
   questionnaire:questionHasAnnotationRelation bpaas:cloudServiceHasDataStorageInGB ;
-  questionnaire:questionHasAnswers questiondata:FileUpload_MP3 ;
-  questionnaire:questionHasAnswers questiondata:FileUpload_PDF ;
-  questionnaire:questionHasAnswers questiondata:FileUpload_PPT ;
-  questionnaire:questionHasAnswers questiondata:FileUpload_Video_MP4 ;
   rdfs:label "What could be uploaded" ;
 .
 questiondata:What_is_the_backup_frequency
@@ -694,9 +496,6 @@ questiondata:What_is_you_favorite_restore_time_level
   rdf:type questionnaire:SingleSelection ;
   questionnaire:questionHasAnnotationRelation bpaas:cloudServiceHasBackupRestoreInGBPerHour ;
   questionnaire:questionHasAnswers questiondata:None ;
-  questionnaire:questionHasAnswers questiondata:RestoreTimeHigh ;
-  questionnaire:questionHasAnswers questiondata:RestoreTimeLow ;
-  questionnaire:questionHasAnswers questiondata:RestoreTimeMedium ;
   rdfs:label "--What is you favorite restore time period?" ;
 .
 questiondata:What_is_your_favorite_backup_frequency_period
@@ -772,9 +571,6 @@ questiondata:What_is_your_favorite_support_coverage
 questiondata:What_is_your_favorite_support_responsiveness
   rdf:type questionnaire:NotSortedYet ;
   questionnaire:questionHasAnswers questiondata:None ;
-  questionnaire:questionHasAnswers questiondata:SupportResponsivenessAtMost1WorkingDay ;
-  questionnaire:questionHasAnswers questiondata:SupportResponsivenessAtMost2Hours ;
-  questionnaire:questionHasAnswers questiondata:SupportResponsivenessAtMost4Hours ;
   rdfs:label "What is your favorite support responsiveness?" ;
 .
 questiondata:Which_APQC_category_does_reflect_the_functional_requirement_you_want_to_express
@@ -827,14 +623,6 @@ questiondata:Would_an_automatic_password_management_in_place_be_required
   rdfs:label "Would an automatic password management in place be required?" ;
 .
 questiondata:Yes
-  rdf:type questionnaire:Answer ;
-  rdfs:label "Yes" ;
-.
-questiondata:do_not_overwrite_events
-  rdf:type questionnaire:Answer ;
-  rdfs:label "do not overwrite events" ;
-.
-questionnaire:PerformanceYes
   rdf:type questionnaire:Answer ;
   rdfs:label "Yes" ;
 .
