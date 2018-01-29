@@ -24,7 +24,7 @@ public class test {
 
 		op.parseExcelFile(pathExcel);
 		//System.out.println(op.getServices().size());
-		PrintStream out = new PrintStream(new FileOutputStream("bdata.ttl"));
+		PrintStream out = new PrintStream(new FileOutputStream(".\\resources\\Output\\bdata"+UUID.randomUUID()+".ttl"));
 		System.setOut(out);
 		System.out.println(".");
 		

@@ -1,7 +1,7 @@
 .
-bdata:bc559648-a87c-4ae3-8280-214f060f4e6c
+bdata:4123ff00-2319-4a4c-8b02-904af18fc7de
 rdf:type bpaas:CloudService ;
-bpass:cloudServiceHasProvider Provider;
+bpass:cloudServiceHasProvider "Provider" ;
 bpaas:cloudServiceHasDescription "Description" ;
 bpaas:cloudServiceHasAPQC APQCCategory ;
 bpaas:cloudServiceHasAction fbpdo:Action ;
@@ -24,9 +24,9 @@ bpaas:cloudServiceHasDataMigration dataMigrationPerformedIndependently ;
 bpaas:cloudServiceHasAPI applicationProgrammingInterface ;
 rdfs:label Name of the Cloud Service ;
 .
-bdata:7b0fb534-6038-467c-ac7d-c4cb14da5d43
+bdata:36635737-e0bd-43fa-9114-a85a7684a233
 rdf:type bpaas:CloudService ;
-bpass:cloudServiceHasProvider Bridgeway Security Solutions;
+bpass:cloudServiceHasProvider "Bridgeway Security Solutions" ;
 bpaas:cloudServiceHasDescription "The Accellion kiteworks solution enables secure inter-and-intra agency collaboration, secure remote access to files and documents, as well as easy collaboration with contractors and constituents, from any device, ensuring today’s government employees are productive and agile." ;
 bpaas:cloudServiceHasPaymentPlan bpaas:TryFreeFirst ;
 bpaas:cloudServiceHasPaymentPlan questiondata:PaymentPlanTryFreeFirst ;
@@ -60,9 +60,9 @@ bpaas:cloudServiceHasServiceSupport bpaas:Twenty4Seven ;
 bpaas:cloudServiceHasTargetMarket bpaas:Government_Institutions ;
 rdfs:label Accellion Mobile Productivity and Collaboration (kiteworks) ;
 .
-bdata:75468b92-8e26-4f15-b7bb-bd1738565867
+bdata:0de5bbd3-23c5-4160-badf-eacbdc736c10
 rdf:type bpaas:CloudService ;
-bpass:cloudServiceHasProvider Agilisys Ltd;
+bpass:cloudServiceHasProvider "Agilisys Ltd" ;
 bpaas:cloudServiceHasDescription "Agilisys Revenue Collection puts data and analytics at the heart of our collection strategies. We collect your outstanding debts without interruption to services and with no upfront costs. We enable you to understand and unlock the true value of your debt portfolios and improve the service to citizens in arrears." ;
 bpaas:cloudServiceHasAPQC 9.7.4 Manage debt and investment ;
 bpaas:cloudServiceHasPaymentPlan bpaas:PrepaidAnnualPlan ;
@@ -95,9 +95,9 @@ bpaas:cloudServiceHasServiceSupport bpaas:not_specified ;
 bpaas:cloudServiceHasTargetMarket bpaas:Government_Institutions ;
 rdfs:label Agilisys Revenue Collection (ARC) ;
 .
-bdata:ef596afe-c39a-45c5-941f-7c928a35914e
+bdata:2b5aa39b-eab3-448e-a03f-df39fe5a938d
 rdf:type bpaas:CloudService ;
-bpass:cloudServiceHasProvider Atos IT Services UK Ltd;
+bpass:cloudServiceHasProvider "Atos IT Services UK Ltd" ;
 bpaas:cloudServiceHasDescription "Skype for Business as a Service offers an enterprise–ready unified communications platform that connects users everywhere as part of their everyday productivity experience, providing a consistent, single client Skype for Business experience for presence, instant messaging, voice, video and meetings with the benefits of telecommunications infrastructure and external calling." ;
 bpaas:cloudServiceHasAPQC 7.8 Manage employee communication ;
 bpaas:cloudServiceHasPaymentPlan bpaas:MonthlyFee ;
@@ -128,9 +128,9 @@ bpaas:cloudServiceHasServiceSupport bpaas:not_specified ;
 bpaas:cloudServiceHasTargetMarket bpaas:NoTarget ;
 rdfs:label Skype for Business as a Service ;
 .
-bdata:c0dffd7d-0ec1-4c34-8825-4c567bb3a066
+bdata:becb9c9c-f900-4735-a4cf-e7da4b40cd2d
 rdf:type bpaas:CloudService ;
-bpass:cloudServiceHasProvider Quest Computing Ltd.;
+bpass:cloudServiceHasProvider "Quest Computing Ltd." ;
 bpaas:cloudServiceHasDescription "AIMS is a highly flexible, configurable off-the-shelf solution designed for public and social sector organisations to manage grants and funding programmes. AIMS comes with CRM, document management, configurable stylesheet, online portal, forms and workflow templates, decision and payment management, audit, tracking and reporting. Easily scalable for ERP integration and self-configuration." ;
 bpaas:cloudServiceHasAPQC 3.5.2.4 Manage customer relationships, 9.0 Manage Financial Resources ;
 bpaas:cloudServiceHasPaymentPlan bpaas:PrepaidAnnualPlan ;
@@ -160,9 +160,9 @@ bpaas:cloudServiceHasServiceSupport bpaas:Mon-Fri ;
 bpaas:cloudServiceHasTargetMarket bpaas:Public_Sector ;
 rdfs:label AIMS grant and programme management ;
 .
-bdata:dc8768ce-40b8-4cfc-992d-a8d073e69112
+bdata:bfbc8c82-99c8-4747-8341-191fd16f8119
 rdf:type bpaas:CloudService ;
-bpass:cloudServiceHasProvider ESRI (UK) LIMITED;
+bpass:cloudServiceHasProvider "ESRI (UK) LIMITED" ;
 bpaas:cloudServiceHasDescription "ArcGIS Online from Esri UK is a secure, hosted geographic information system (GIS) in the cloud. Create and share digital maps, mapping applications and location analytics services. Use your own data, open data, documents, images and other information. Access from Web browser, smartphone, tablet, Excel and other business intelligence tools." ;
 bpaas:cloudServiceHasPaymentPlan bpaas:PrepaidAnnualPlan ;
 bpaas:cloudServiceHasAdditionalCosts not specified ;
@@ -191,11 +191,12 @@ bpaas:cloudServiceHasServiceSupport bpaas:not_specified ;
 bpaas:cloudServiceHasTargetMarket bpaas:NoTarget ;
 rdfs:label ArcGIS Online ;
 .
-bdata:9adfec78-b9fb-4693-9f78-df288c4307be
+bdata:97dacb00-cd75-4d8e-bf75-4490420e633d
 rdf:type bpaas:CloudService ;
-bpass:cloudServiceHasProvider SHE Software;
+bpass:cloudServiceHasProvider "SHE Software" ;
 bpaas:cloudServiceHasDescription "As part of the Assure health and safety software management system, the risk module contains the tools required to easily complete, track and report fire risk assessments across your organisation." ;
 bpaas:cloudServiceHasAPQC 11.1 Manage enterprise risk ;
+bpaas:cloudServiceHasObject fbpdo:Risk
 bpaas:cloudServiceHasPaymentPlan bpaas:PrepaidAnnualPlan ;
 bpaas:cloudServiceHasAdditionalCosts not specified ;
 bpaas:cloudServiceHasEncryptionType bpaas:TLS ;
@@ -222,9 +223,9 @@ bpaas:cloudServiceHasServiceSupport bpaas:Mon-Fri ;
 bpaas:cloudServiceHasTargetMarket bpaas:NoTarget ;
 rdfs:label Assure Risk Management Software Module: Fire Risk Assessment ;
 .
-bdata:7588e314-f0b1-4570-82e2-9c4a303792af
+bdata:75093a3a-d6e8-43f2-a6d0-8970f97b8686
 rdf:type bpaas:CloudService ;
-bpass:cloudServiceHasProvider Azeus UK Limited;
+bpass:cloudServiceHasProvider "Azeus UK Limited" ;
 bpaas:cloudServiceHasDescription "AzeusCare is a completely integrated case management and finance solution for social care and health which supports a wide range of services including: 
 1. Adults Services 
 2.Children and Young People Services 
@@ -262,9 +263,9 @@ bpaas:cloudServiceHasTargetMarket bpaas:Development_Agencies ;
 bpaas:cloudServiceHasTargetMarket bpaas:Health_Care ;
 rdfs:label AzeusCare ;
 .
-bdata:74a0cdec-b37d-4be4-b196-86780db9f3da
+bdata:0b778791-d4b3-4eb3-9233-dddadb33f519
 rdf:type bpaas:CloudService ;
-bpass:cloudServiceHasProvider SHE Software;
+bpass:cloudServiceHasProvider "SHE Software" ;
 bpaas:cloudServiceHasDescription "Assure Asset Management health and safety software allows your organisation to create a register of assets across departments/locations. This allows simple visibility of assets across all regions. Utilising automated notifications and action management linked to maintenance and testing dates, personnel will always be aware of deadlines and compliance requirements." ;
 bpaas:cloudServiceHasAPQC 10.0 Acquire, Construct, and Manage Assets ;
 bpaas:cloudServiceHasPaymentPlan bpaas:PrepaidAnnualPlan ;
@@ -293,12 +294,13 @@ bpaas:cloudServiceHasServiceSupport bpaas:Mon-Fri ;
 bpaas:cloudServiceHasTargetMarket bpaas:NoTarget ;
 rdfs:label Assure Asset Management Software ;
 .
-bdata:00390ba0-5177-47bb-a2a4-b0cde81b8d92
+bdata:37db1bb6-ab36-4eda-b636-30d5828a341e
 rdf:type bpaas:CloudService ;
-bpass:cloudServiceHasProvider BookingBug Ltd
-;
+bpass:cloudServiceHasProvider "BookingBug Ltd
+" ;
 bpaas:cloudServiceHasDescription "BookingBug is the ideal appointment, event and queuing booking solution for local councils and local government organisations, as part of their transition to become Digital by Default. Its platform helps simplify complicated, high-volume booking requirements, while maximising staff and resource utilisation.
 " ;
+bpaas:cloudServiceHasObject fbpdo:Bookings
 bpaas:cloudServiceHasPaymentPlan bpaas:PrepaidAnnualPlan ;
 bpaas:cloudServiceHasAdditionalCosts not specified ;
 bpaas:cloudServiceHasEncryptionType bpaas:TLS ;
@@ -326,9 +328,9 @@ bpaas:cloudServiceHasServiceSupport bpaas:Mon-Fri ;
 bpaas:cloudServiceHasTargetMarket bpaas:Government_Institutions ;
 rdfs:label Online Appointment and Event Booking System for Local Government ;
 .
-bdata:15302910-f549-4d56-907e-03e03f6ecb43
+bdata:924c40aa-f9e6-48b4-be73-1c6980b826c8
 rdf:type bpaas:CloudService ;
-bpass:cloudServiceHasProvider Think S3 (S3 Consulting Ltd);
+bpass:cloudServiceHasProvider "Think S3 (S3 Consulting Ltd)" ;
 bpaas:cloudServiceHasDescription "Powerful firewall for Azure with the Next Gen Firewall. The Barracuda Web Application Firewall for Azure is a scalable security solution that protects applications from targeted and automated attacks.
 Message Archiver & E-Mail Security Gateway provides Email Security & Email Management on Microsoft Azure" ;
 bpaas:cloudServiceHasAPQC 8.3 Develop and implement security, privacy, and data protection controls ;
@@ -359,9 +361,9 @@ bpaas:cloudServiceHasServiceSupport bpaas:Twenty4Seven ;
 bpaas:cloudServiceHasTargetMarket bpaas:NoTarget ;
 rdfs:label Barracuda Next Generation and Web Application Firewall ;
 .
-bdata:565bbe5f-362d-498b-abbd-11cdb8772d5f
+bdata:eff0fdd7-6848-408f-a255-d26a38515776
 rdf:type bpaas:CloudService ;
-bpass:cloudServiceHasProvider Bramble Hub Limited;
+bpass:cloudServiceHasProvider "Bramble Hub Limited" ;
 bpaas:cloudServiceHasDescription "With Herotext you finally get to measure customer experience (CSAT, CES and NPS) in realtime. You’ll see exactly who leaves feedback and what they have to say. Create Mobile surveys 
 and view reportson the dashboard in realtime and you can export results to your favourite spreadsheet." ;
 bpaas:cloudServiceHasAPQC 1.2.8.1 Assess customer experience ;
@@ -391,10 +393,12 @@ bpaas:cloudServiceHasServiceSupport bpaas:Twenty4Seven ;
 bpaas:cloudServiceHasTargetMarket bpaas:NoTarget ;
 rdfs:label Bramble Hub Cauwill Technologies - Herotext ;
 .
-bdata:f5477051-de10-45bd-9cdb-4c70598478bc
+bdata:ae38e55f-696a-47c1-b66a-99d0ac69cb99
 rdf:type bpaas:CloudService ;
-bpass:cloudServiceHasProvider Infor (UK) Ltd;
+bpass:cloudServiceHasProvider "Infor (UK) Ltd" ;
 bpaas:cloudServiceHasDescription "Birst is an enterprise business intelligence platform that connects together the entire organisation through a network of interwoven virtualised BI instances on a shared common analytical fabric. Birst delivers speed, self-service, and agility and the scale, security, and control to meet rigorous standards with low TCO." ;
+bpaas:cloudServiceHasAction fbpdo:Analyse ;
+bpaas:cloudServiceHasObject fbpdo:Data
 bpaas:cloudServiceHasPaymentPlan bpaas:CustomizablePlan ;
 bpaas:cloudServiceHasPaymentPlan bpaas:PrepaidAnnualPlan ;
 bpaas:cloudServiceHasPaymentPlan bpaas:TryFreeFirst ;
@@ -427,9 +431,9 @@ bpaas:cloudServiceHasServiceSupport bpaas:Twenty4five ;
 bpaas:cloudServiceHasTargetMarket bpaas:NoTarget ;
 rdfs:label Birst Cloud Enterprise Edition Analytics and Business Intelligence (BI) Platform ;
 .
-bdata:210e0715-3037-4edf-8868-739bacca02e8
+bdata:539881ff-5025-434b-aa92-c042893b2783
 rdf:type bpaas:CloudService ;
-bpass:cloudServiceHasProvider Brainloop Limited;
+bpass:cloudServiceHasProvider "Brainloop Limited" ;
 bpaas:cloudServiceHasDescription "Brainloop BoardRoom is a portal for efficient and secure board and committee communications. It streamlines and simplifies how board and meeting packs are created, distributed, reviewed and updated, while end users are able to access and collaborate on the packs via any device, online and offline." ;
 bpaas:cloudServiceHasAPQC 12.3 Manage relations with board of directors ;
 bpaas:cloudServiceHasPaymentPlan bpaas:PrepaidAnnualPlan ;
@@ -459,12 +463,13 @@ bpaas:cloudServiceHasServiceSupport bpaas:Twenty4Seven ;
 bpaas:cloudServiceHasTargetMarket bpaas:NoTarget ;
 rdfs:label Brainloop BoardRoom ;
 .
-bdata:1e8cecce-adc1-4f66-9e26-96b1dab4ec20
+bdata:09733769-7e80-4594-9284-90e3c6b7fc92
 rdf:type bpaas:CloudService ;
-bpass:cloudServiceHasProvider Arcus Global Limited
-;
+bpass:cloudServiceHasProvider "Arcus Global Limited
+" ;
 bpaas:cloudServiceHasDescription "The Arcus local government CRM builds on the industry leading Salesforce.com Service Cloud to deliver a comprehensive set of features and functionality tailored to the specific needs of UK local government including an enhanced views of citizens and addresses, a service catalogue, and integration to existing and Arcus digital forms." ;
 bpaas:cloudServiceHasAPQC 3.5.2.4 Manage customer relationships ;
+bpaas:cloudServiceHasObject fbpdo:Customer
 bpaas:cloudServiceHasPaymentPlan bpaas:MonthlyFee ;
 bpaas:cloudServiceHasPaymentPlan bpaas:Fixed_Subscription ;
 bpaas:cloudServiceHasAdditionalCosts not specified ;
@@ -494,9 +499,9 @@ bpaas:cloudServiceHasTargetMarket bpaas:Government_Institutions ;
 bpaas:cloudServiceHasTargetMarket bpaas:Public_Sector ;
 rdfs:label Arcus Local Government CRM ;
 .
-bdata:3acb5c7c-f0ee-4ae8-aa9a-8f28c0197320
+bdata:a212e857-7d7b-42b8-9e6f-47627a77eeef
 rdf:type bpaas:CloudService ;
-bpass:cloudServiceHasProvider EMIS Ltd;
+bpass:cloudServiceHasProvider "EMIS Ltd" ;
 bpaas:cloudServiceHasDescription "Our Commissioner Accelerator is a comprehensive, Microsoft Business Intelligence and data warehouse platform that provides the commissioning, contracting, budgetary and activity data required to identify and commission high quality and cost-effective services on behalf of a population." ;
 bpaas:cloudServiceHasAPQC 9.1.1 Perform planning/budgeting/forecasting ;
 bpaas:cloudServiceHasPaymentPlan bpaas:PrepaidAnnualPlan ;
@@ -527,9 +532,9 @@ bpaas:cloudServiceHasServiceSupport bpaas:not_specified ;
 bpaas:cloudServiceHasTargetMarket bpaas:NoTarget ;
 rdfs:label Commissioner BI Accelerator ;
 .
-bdata:81d3bf74-e9d3-4807-88df-77a47c26c889
+bdata:80d79261-b204-46c7-8793-504202a7b836
 rdf:type bpaas:CloudService ;
-bpass:cloudServiceHasProvider Ideagen PLC;
+bpass:cloudServiceHasProvider "Ideagen PLC" ;
 bpaas:cloudServiceHasDescription "A modular cloud platform designed to provide an integrated approach to managing all aspects of:
 
 Performance & Strategy
@@ -569,10 +574,11 @@ bpaas:cloudServiceHasServiceSupport bpaas:Mon-Fri ;
 bpaas:cloudServiceHasTargetMarket bpaas:NoTarget ;
 rdfs:label Ideagen Covalent ;
 .
-bdata:2d00215b-c5ce-4349-9b89-36ebb0d68a2e
+bdata:f2f40283-f04e-42e1-b266-8f911c105b8f
 rdf:type bpaas:CloudService ;
-bpass:cloudServiceHasProvider Zengenti Limited;
+bpass:cloudServiceHasProvider "Zengenti Limited" ;
 bpaas:cloudServiceHasDescription "Contensis is a CMS used by many public-sector organisations – from universities to councils, police and NHS trusts. Modules enhance the way Contensis works and include social media, form builder, blog, document channel, event, FOI, directory, forum, quality assurance/accessibility, news, multilingual, and federated search modules." ;
+bpaas:cloudServiceHasObject fbpdo:Content
 bpaas:cloudServiceHasPaymentPlan bpaas:MonthlyFee ;
 bpaas:cloudServiceHasAdditionalCosts not specified ;
 bpaas:cloudServiceHasEncryptionType bpaas:TLS ;
@@ -603,11 +609,12 @@ bpaas:cloudServiceHasTargetMarket bpaas:Public_Sector ;
 bpaas:cloudServiceHasTargetMarket bpaas:Government_Institutions ;
 rdfs:label Modules for the Contensis CMS ;
 .
-bdata:19468999-5df1-410d-bdf7-4de1fe5e369a
+bdata:79dfb819-ab8c-4858-8540-41ea52afe6d3
 rdf:type bpaas:CloudService ;
-bpass:cloudServiceHasProvider Darzin Software UK;
+bpass:cloudServiceHasProvider "Darzin Software UK" ;
 bpaas:cloudServiceHasDescription "Darzin cloud based stakeholder management software enables organisations to effectively manage consultations and create consultation reports. Darzin is the only software that offers qualitative, quantitative and spatial analysis, and integrated consultation data. Built-in survey tool, task management, grievance management and more. Darzin is secure, easy-to-use and very well supported." ;
 bpaas:cloudServiceHasAPQC 1.3.3.2 Communicate strategic initiatives to business units and stakeholders ;
+bpaas:cloudServiceHasObject fbpdo:Stakeholders
 bpaas:cloudServiceHasPaymentPlan bpaas:Fixed_Subscription ;
 bpaas:cloudServiceHasAdditionalCosts not specified ;
 bpaas:cloudServiceHasEncryptionType bpaas:TLS ;
@@ -636,11 +643,12 @@ bpaas:cloudServiceHasServiceSupport bpaas:Mon-Fri ;
 bpaas:cloudServiceHasTargetMarket bpaas:NoTarget ;
 rdfs:label Darzin Stakeholder Relationship Management Software (CRM/SRMS) ;
 .
-bdata:50830f42-1acd-48ee-a322-f4f22eec45e4
+bdata:df116fc1-3576-4bb4-b54e-1d0b819c78ea
 rdf:type bpaas:CloudService ;
-bpass:cloudServiceHasProvider Equiniti Plc;
+bpass:cloudServiceHasProvider "Equiniti Plc" ;
 bpaas:cloudServiceHasDescription "Equiniti’s data management solution - DataPoint from Automated Intelligence - automates and manages the process of data cleansing, data categorising and data migration – either on SaaS data management, in cloud data categorising or a hybrid data management solution. Available as Official or Official-Sensitive" ;
 bpaas:cloudServiceHasAPQC 2.1.4 Manage product and service master data ;
+bpaas:cloudServiceHasObject fbpdo:Data
 bpaas:cloudServiceHasPaymentPlan bpaas:MonthlyFee ;
 bpaas:cloudServiceHasAdditionalCosts not specified ;
 bpaas:cloudServiceHasEncryptionType bpaas:TLS ;
@@ -667,11 +675,12 @@ bpaas:cloudServiceHasServiceSupport bpaas:Mon-Fri ;
 bpaas:cloudServiceHasTargetMarket bpaas:NoTarget ;
 rdfs:label Data Consolidation; Data collection, data cleansing, data migration ;
 .
-bdata:9c2c789e-329c-4933-bad8-fba417b24a07
+bdata:c5eed29a-a27a-4051-9658-e8cd4ba032fb
 rdf:type bpaas:CloudService ;
-bpass:cloudServiceHasProvider CloudTrade;
+bpass:cloudServiceHasProvider "CloudTrade" ;
 bpaas:cloudServiceHasDescription "Participation of suppliers is key for a successful e-invoicing project. CloudTrade removes the barriers to supplier adoption: more suppliers are connected and more paper removed in a shorter time frame than any other approach. Our multi channel e-invoice service provides 100% coverage and ensures all suppliers can be e-invoice suppliers." ;
 bpaas:cloudServiceHasAPQC 9.2.2 Invoice customer ;
+bpaas:cloudServiceHasObject fbpdo:Invoices
 bpaas:cloudServiceHasPaymentPlan bpaas:MonthlyFee ;
 bpaas:cloudServiceHasPaymentPlan bpaas:Fixed_Subscription ;
 bpaas:cloudServiceHasAdditionalCosts not specified ;
@@ -699,9 +708,9 @@ bpaas:cloudServiceHasServiceSupportResponsiveness bpaas:not_specified ;
 bpaas:cloudServiceHasServiceSupport bpaas:Mon-Fri ;
 rdfs:label E-Invoicing ;
 .
-bdata:3f5f70c7-7282-4943-926d-99fc3d07251c
+bdata:c65c4219-fe78-4b06-ab82-fa64996da5b3
 rdf:type bpaas:CloudService ;
-bpass:cloudServiceHasProvider Texuna;
+bpass:cloudServiceHasProvider "Texuna" ;
 bpaas:cloudServiceHasDescription "ItemBank eAssessment is a fully customisable repository for test item development and design for examination test creation. Publish tests to the e-assessment online tool and deliver tests to students and gather real-time responses. Design tests, release, then distribute globally! Cloud-based security and scalability built-in with mobile apps for deployment." ;
 bpaas:cloudServiceHasAPQC 7.3.4.6 Manage examinations and certifications ;
 bpaas:cloudServiceHasPaymentPlan bpaas:MonthlyFee ;
@@ -733,12 +742,13 @@ bpaas:cloudServiceHasServiceSupportResponsiveness bpaas:at_most_5_working_days ;
 bpaas:cloudServiceHasServiceSupport bpaas:Mon-Fri ;
 rdfs:label Texuna Itembank and eAssessment ;
 .
-bdata:ba025f4c-1f74-4021-88a0-f36212ceac40
+bdata:e9e1ac13-8e4e-40df-b0ee-6d424b13926f
 rdf:type bpaas:CloudService ;
-bpass:cloudServiceHasProvider Ember Group;
+bpass:cloudServiceHasProvider "Ember Group" ;
 bpaas:cloudServiceHasDescription "Our Customer Effort Dashboard is a performance management tool that will help improve the customer journey through your organisation – giving you the evidence you need to improve your service. It enables you to interrogate data in four key areas – customer demand; customer contact; customer satisfaction and channel analytics.
 " ;
 bpaas:cloudServiceHasAPQC 1.2.8.2.2 Create customer journey maps ;
+bpaas:cloudServiceHasObject fbpdo:Customer
 bpaas:cloudServiceHasPaymentPlan bpaas:Pay-as-you-go ;
 bpaas:cloudServiceHasAdditionalCosts not specified ;
 bpaas:cloudServiceHasEncryptionType bpaas:TLS ;
@@ -765,11 +775,12 @@ bpaas:cloudServiceHasServiceSupportResponsiveness bpaas:not_specified ;
 bpaas:cloudServiceHasServiceSupport bpaas:Mon-Fri ;
 rdfs:label Customer Effort Dashboard ;
 .
-bdata:ab6ae089-b0a5-408a-9a40-77df71e2726f
+bdata:df9eb2de-1e98-49cf-8824-95bfd9f688a2
 rdf:type bpaas:CloudService ;
-bpass:cloudServiceHasProvider Equiniti Plc;
+bpass:cloudServiceHasProvider "Equiniti Plc" ;
 bpaas:cloudServiceHasDescription "Equiniti offers Microsoft Dynamics CRM 2013, 2015, 2016 and Dynamics 365 as a fully integrated customer relationship management system. Microsoft Dynamics offers the capability to easily create and maintain a clear view of customers and stakeholders from first contact through to engagement and post-interaction. Available as Official or Official-Sensitive" ;
 bpaas:cloudServiceHasAPQC 3.5.2.4 Manage customer relationships ;
+bpaas:cloudServiceHasObject fbpdo:Customer
 bpaas:cloudServiceHasPaymentPlan bpaas:MonthlyFee ;
 bpaas:cloudServiceHasAdditionalCosts not specified ;
 bpaas:cloudServiceHasEncryptionType bpaas:TLS ;
@@ -797,11 +808,12 @@ bpaas:cloudServiceHasTargetMarket bpaas:Government_Institutions ;
 bpaas:cloudServiceHasTargetMarket bpaas:Public_Sector ;
 rdfs:label Customer Relationship Management: CRM, Public Sector CRM ;
 .
-bdata:244474ad-289d-4205-a126-498ef6cfe3d9
+bdata:a77aece4-198f-4c7b-b357-825fa35e85dd
 rdf:type bpaas:CloudService ;
-bpass:cloudServiceHasProvider Business Cloud Integration Ltd.;
+bpass:cloudServiceHasProvider "Business Cloud Integration Ltd." ;
 bpaas:cloudServiceHasDescription "Helping organisations to streamline and automate business processes to increase efficiency, encourage process consistency across their organisations, help enforce compliance, and easily track processes from beginning to end." ;
 bpaas:cloudServiceHasAPQC 13.1 Manage business processes ;
+bpaas:cloudServiceHasObject fbpdo:BusinessProcess
 bpaas:cloudServiceHasPaymentPlan bpaas:CustomizablePlan ;
 bpaas:cloudServiceHasAdditionalCosts not specified ;
 bpaas:cloudServiceHasEncryptionType bpaas:TLS ;
@@ -829,11 +841,12 @@ bpaas:cloudServiceHasServiceSupport bpaas:Mon-Fri ;
 bpaas:cloudServiceHasTargetMarket bpaas:NoTarget ;
 rdfs:label SharePoint Online Business Process Automation ;
 .
-bdata:6038cdbd-b921-46c0-b552-9cd686a878b5
+bdata:8027080b-4267-48a3-87e6-6607ba86781d
 rdf:type bpaas:CloudService ;
-bpass:cloudServiceHasProvider Target Group;
+bpass:cloudServiceHasProvider "Target Group" ;
 bpaas:cloudServiceHasDescription "Debt Management SaaS from Target offers a focussed, intelligent, results driven solution, suitable to be integrated into existing CRM, Contact Centre and Treasury functions. Case Management capabilities include: managing the end-to-end collections process from pre-arrears identification through to a shortfall recovery, tailored collections solution, third party management and oversight." ;
 bpaas:cloudServiceHasAPQC 9.7.4 Manage debt and investment ;
+bpaas:cloudServiceHasObject fbpdo:Debt
 bpaas:cloudServiceHasPaymentPlan bpaas:Initial_Base_Fee ;
 bpaas:cloudServiceHasPaymentPlan bpaas:MonthlyFee ;
 bpaas:cloudServiceHasAdditionalCosts not specified ;
@@ -863,11 +876,13 @@ bpaas:cloudServiceHasServiceSupport bpaas:Twenty4Seven ;
 bpaas:cloudServiceHasTargetMarket bpaas:NoTarget ;
 rdfs:label Debt Management ;
 .
-bdata:8decd1e7-89ee-424e-9e71-f866ddaba90c
+bdata:096d247a-5463-4c60-a6c4-770fac6f1291
 rdf:type bpaas:CloudService ;
-bpass:cloudServiceHasProvider Datalytyx Ltd;
+bpass:cloudServiceHasProvider "Datalytyx Ltd" ;
 bpaas:cloudServiceHasDescription "DATALYTYX Assessmint Shared Services 360 Assessment provides an online, cloud-based solution for detailed assessment of, and reporting on, an organisation’s current state of shared services, in order to generate referential base-lines and compliance reports. The functionality can also be expanded to include assessments other items provided by vendors." ;
 bpaas:cloudServiceHasAPQC 1.2.2.10 Develop shared services strategy ;
+bpaas:cloudServiceHasAction fbpdo:Assess ;
+bpaas:cloudServiceHasObject fbpdo:Shared-services
 bpaas:cloudServiceHasPaymentPlan bpaas:Per-Item ;
 bpaas:cloudServiceHasAdditionalCosts not specified ;
 bpaas:cloudServiceHasEncryptionType bpaas:SSL ;
@@ -897,11 +912,12 @@ bpaas:cloudServiceHasServiceSupport bpaas:Mon-Fri ;
 bpaas:cloudServiceHasTargetMarket bpaas:NoTarget ;
 rdfs:label DATALYTYX Assessmint Shared Services 360 Assessment ;
 .
-bdata:c1017a4e-b7b7-4d1a-b0d0-ca878bda4803
+bdata:636a8b75-190f-48e3-b07c-667f5d7a7956
 rdf:type bpaas:CloudService ;
-bpass:cloudServiceHasProvider Learning Pool Ltd;
+bpass:cloudServiceHasProvider "Learning Pool Ltd" ;
 bpaas:cloudServiceHasDescription "Our highly-skilled and experienced content development team work with customers to deliver interactive e-learning that enables them to maximise the engagement and impact of the module. Our in-house team can develop e-learning in a number of tools including our own Adapt solution and Storyline, Captivate, Camtasia and Elucidat." ;
 bpaas:cloudServiceHasAction fbpdo:Develop ;
+bpaas:cloudServiceHasObject fbpdo:e-learning
 bpaas:cloudServiceHasPaymentPlan bpaas:Per-Item ;
 bpaas:cloudServiceHasAdditionalCosts not specified ;
 bpaas:cloudServiceHasEncryptionType bpaas:SSL ;
@@ -930,10 +946,11 @@ bpaas:cloudServiceHasServiceSupport bpaas:Mon-Fri ;
 bpaas:cloudServiceHasTargetMarket bpaas:NoTarget ;
 rdfs:label Custom-built e-learning content ;
 .
-bdata:ea34efd5-f399-414a-9c88-d9b7eadadbb1
+bdata:c3bad247-882a-4a3a-b56b-dc17f5fcf685
 rdf:type bpaas:CloudService ;
-bpass:cloudServiceHasProvider EMIS Ltd;
+bpass:cloudServiceHasProvider "EMIS Ltd" ;
 bpaas:cloudServiceHasDescription "EMIS Web provides health care professionals working within primary, community, children’s, mental health, and secondary care with an Electronic Patient Record (EPR) and Patient Administration System (PAS) that they can tailor to the unique requirements of their service. Electronic sharing agreements provide a seamless integrated record across care settings." ;
+bpaas:cloudServiceHasObject fbpdo:Patients
 bpaas:cloudServiceHasPaymentPlan bpaas:PrepaidAnnualPlan ;
 bpaas:cloudServiceHasAdditionalCosts not specified ;
 bpaas:cloudServiceHasEncryptionType bpaas:TLS ;
@@ -963,10 +980,11 @@ bpaas:cloudServiceHasServiceSupport bpaas:Mon-Fri ;
 bpaas:cloudServiceHasTargetMarket bpaas:Health_Care ;
 rdfs:label Emis Web ;
 .
-bdata:5709a1fe-d9af-4ffb-8857-65a6ca5a0753
+bdata:108610e9-9d41-4ebf-9464-1c1427a8205f
 rdf:type bpaas:CloudService ;
-bpass:cloudServiceHasProvider i2N Ltd;
+bpass:cloudServiceHasProvider "i2N Ltd" ;
 bpaas:cloudServiceHasDescription "Hearings Manager delivers the Digital Courtroom now, enabling the presentation of digital material at Hearings, Courts and Tribunals. Hearings Manager presents digital bundles including documents and multimedia to screens, laptops and tablets distributed around the court or committee room and maintains a full audit trail of the proceedings." ;
+bpaas:cloudServiceHasObject fbpdo:Hearings
 bpaas:cloudServiceHasPaymentPlan bpaas:PrepaidAnnualPlan ;
 bpaas:cloudServiceHasAdditionalCosts not specified ;
 bpaas:cloudServiceHasEncryptionType bpaas:TLS ;
@@ -995,9 +1013,9 @@ bpaas:cloudServiceHasServiceSupport bpaas:Mon-Fri ;
 bpaas:cloudServiceHasTargetMarket bpaas:Justice_sector ;
 rdfs:label Hearings Manager ;
 .
-bdata:21407fb0-f2c7-475d-bc63-ca34c2ebd225
+bdata:ad6c6f0c-5274-4b56-b5ab-b0e86616ab17
 rdf:type bpaas:CloudService ;
-bpass:cloudServiceHasProvider Spikes Cavell Analytic Ltd;
+bpass:cloudServiceHasProvider "Spikes Cavell Analytic Ltd" ;
 bpaas:cloudServiceHasDescription "Grow Local is an add on service to Spend Analytics from Spikes Cavell. It provides analysis and information about spend with local suppliers as well as reporting of potential local suppliers for the goods and services bought by the public sector." ;
 bpaas:cloudServiceHasAPQC 4.2.4 Manage suppliers ;
 bpaas:cloudServiceHasPaymentPlan bpaas:PrepaidAnnualPlan ;
@@ -1027,10 +1045,11 @@ bpaas:cloudServiceHasServiceSupport bpaas:Mon-Fri ;
 bpaas:cloudServiceHasTargetMarket bpaas:NoTarget ;
 rdfs:label Grow Local ;
 .
-bdata:ede47b50-1b92-464c-b147-4b585240304c
+bdata:3b4648b1-f831-4b7c-a8cb-733f6bc3d5f1
 rdf:type bpaas:CloudService ;
-bpass:cloudServiceHasProvider exeGesIS Spatial Data Management;
+bpass:cloudServiceHasProvider "exeGesIS Spatial Data Management" ;
 bpaas:cloudServiceHasDescription "The Historic Buildings, Sites and Monuments Record system (HBSMR) is a comprehensive database and GIS solution for the management of Historic Environment Records, developed in partnership with English Heritage and the Association of Local Government Archaeological Officers. HBSMR is used by the majority of HERs and SMRs in the UK." ;
+bpaas:cloudServiceHasObject fbpdo:Buildings
 bpaas:cloudServiceHasPaymentPlan bpaas:MonthlyFee ;
 bpaas:cloudServiceHasAdditionalCosts not specified ;
 bpaas:cloudServiceHasEncryptionType bpaas:TLS ;
@@ -1056,11 +1075,12 @@ bpaas:cloudServiceHasTargetMarket bpaas:CultureArcheology ;
 rdfs:label Historic Buildings, Sites and Monuments Record system (HBSMR)
  ;
 .
-bdata:2f092293-0c24-47fb-a1e2-b0d5e1c1d527
+bdata:ab9788c0-29b5-4c1f-a898-0854edb77226
 rdf:type bpaas:CloudService ;
-bpass:cloudServiceHasProvider IBM United Kingdom Ltd;
+bpass:cloudServiceHasProvider "IBM United Kingdom Ltd" ;
 bpaas:cloudServiceHasDescription "IBM WebSphere Application Server serves applications from the front office to the back office -whether mobile, Web, cloud or mission-critical enterprise applications-to support seamless Systems of Interaction. IBM WAS provides you an array of successful cloud implementation models–Hybrid, Public, Private, or on-premise based on your requirements." ;
 bpaas:cloudServiceHasAPQC 8.7.4 Manage IT infrastructure operations ;
+bpaas:cloudServiceHasObject fbpdo:Application
 bpaas:cloudServiceHasPaymentPlan bpaas:Per-Item ;
 bpaas:cloudServiceHasPaymentPlan bpaas:Per-hour ;
 bpaas:cloudServiceHasAdditionalCosts not specified ;
@@ -1089,11 +1109,12 @@ bpaas:cloudServiceHasServiceSupport bpaas:sevenDaysAWeek ;
 bpaas:cloudServiceHasTargetMarket bpaas:NoTarget ;
 rdfs:label IBM Application Server on Cloud (Websphere Application Server in Bluemix) ;
 .
-bdata:1cd73b4e-bf6f-4acf-9877-343f95212ee1
+bdata:58699418-f80f-4ca7-abf9-3ffbbc42d9fd
 rdf:type bpaas:CloudService ;
-bpass:cloudServiceHasProvider Locata Housing Services Limited;
+bpass:cloudServiceHasProvider "Locata Housing Services Limited" ;
 bpaas:cloudServiceHasDescription "Allows Local Authorities to triage applicants prior to allowing them to register for Housing. Online pre-application questionnaire is configured to requirement and makes a basic assessment of applicant needs. After completion a personalised Action Plan is produced sign posting and advising applicants to the most suitable housing options available." ;
 bpaas:cloudServiceHasAPQC 7.2.5 Manage applicant information ;
+bpaas:cloudServiceHasObject fbpdo:Application
 bpaas:cloudServiceHasPaymentPlan bpaas:Per-Item ;
 bpaas:cloudServiceHasPaymentPlan bpaas:PrepaidAnnualPlan ;
 bpaas:cloudServiceHasAdditionalCosts not specified ;
@@ -1125,11 +1146,12 @@ bpaas:cloudServiceHasServiceSupport bpaas:Mon-Fri ;
 bpaas:cloudServiceHasTargetMarket bpaas:NoTarget ;
 rdfs:label Housing Options Pre Assessment ;
 .
-bdata:fe7be407-72b1-4b6a-a9cb-2aefb71ff489
+bdata:c82c6f0f-f339-4c07-9e54-332aa5d9bbf8
 rdf:type bpaas:CloudService ;
-bpass:cloudServiceHasProvider Responsiv Solutions Ltd;
+bpass:cloudServiceHasProvider "Responsiv Solutions Ltd" ;
 bpaas:cloudServiceHasDescription "Orchestrate and Automate business processes using IBM's Business Process Manager (BPM) on cloud through Responsiv Solution's Platform as a Service. Available on IBM Cloud (SoftLayer) as well as custom offerings on other clouds such as Microsoft Azure and Amazon Web Services (AWS). Build your SaaS business processes on our PaaS." ;
 bpaas:cloudServiceHasAPQC 13.1 Manage business processes ;
+bpaas:cloudServiceHasObject fbpdo:BusinessProcess
 bpaas:cloudServiceHasPaymentPlan bpaas:Per-Item ;
 bpaas:cloudServiceHasPaymentPlan bpaas:MonthlyFee ;
 bpaas:cloudServiceHasAdditionalCosts not specified ;
@@ -1162,11 +1184,12 @@ bpaas:cloudServiceHasServiceSupport bpaas:Mon-Fri ;
 bpaas:cloudServiceHasTargetMarket bpaas:NoTarget ;
 rdfs:label Responsiv Solutions IBM Business Process Manager (BPM) ;
 .
-bdata:f2a8bc1e-0e93-4256-bb49-b7db34585f5e
+bdata:1b11cd57-7bfc-4135-aa1b-1b8d3d9d5e10
 rdf:type bpaas:CloudService ;
-bpass:cloudServiceHasProvider T-Impact Limited;
+bpass:cloudServiceHasProvider "T-Impact Limited" ;
 bpaas:cloudServiceHasDescription "IBM Business Process Manager is a comprehensive and consumable, business process management suite (BPMS) that delivers management of your business processes in a cloud environment. IBM BPM on Cloud provides a full lifecycle environment including development, test and production—with tooling and run time for process design, execution, monitoring and optimisation." ;
 bpaas:cloudServiceHasAPQC 13.1 Manage business processes ;
+bpaas:cloudServiceHasObject fbpdo:BusinessProcess
 bpaas:cloudServiceHasPaymentPlan bpaas:Per-Item ;
 bpaas:cloudServiceHasPaymentPlan bpaas:MonthlyFee ;
 bpaas:cloudServiceHasAdditionalCosts not specified ;
@@ -1197,9 +1220,9 @@ bpaas:cloudServiceHasServiceSupport bpaas:Twenty4Seven ;
 bpaas:cloudServiceHasTargetMarket bpaas:NoTarget ;
 rdfs:label IBM BPM (Business Process Manager) on Cloud for Process Automation ;
 .
-bdata:a1a08081-b91f-4f47-b96c-4e5afd267756
+bdata:41b3786b-51b6-432c-b1e9-7e49d58147fa
 rdf:type bpaas:CloudService ;
-bpass:cloudServiceHasProvider IBM United Kingdom Ltd;
+bpass:cloudServiceHasProvider "IBM United Kingdom Ltd" ;
 bpaas:cloudServiceHasDescription "IBM Case Manager on Cloud is a solution built around the concept of processing a case, a collection of information and coordinated tasks, by knowledge workers (or case workers) to achieve a desired outcome. It provides contextual insight through real-time analytics, and enhances teamwork through collaboration tools and flexible workflow." ;
 bpaas:cloudServiceHasAPQC 13.2.3.1.5 Create business case and obtain funding ;
 bpaas:cloudServiceHasPaymentPlan bpaas:Per-Item ;
@@ -1232,12 +1255,13 @@ bpaas:cloudServiceHasTargetMarket bpaas:NoTarget ;
 rdfs:label IBM Case Manager on Cloud
  ;
 .
-bdata:6c70b7b5-ed95-475d-8c91-253f7faa6748
+bdata:68d192ca-4bf7-4d55-b849-2875910e807c
 rdf:type bpaas:CloudService ;
-bpass:cloudServiceHasProvider IBM United Kingdom Ltd
-;
+bpass:cloudServiceHasProvider "IBM United Kingdom Ltd
+" ;
 bpaas:cloudServiceHasDescription "A full lifecycle business process management (BPM) environment including development, test and production—with tooling and run time for process design, execution, monitoring and optimization. Business users can get started quickly with process improvements without the need to build and maintain an IT infrastructure. Provides visibility and management of business processes." ;
 bpaas:cloudServiceHasAPQC 13.1 Manage business processes ;
+bpaas:cloudServiceHasObject fbpdo:BusinessProcess
 bpaas:cloudServiceHasPaymentPlan bpaas:Per-user ;
 bpaas:cloudServiceHasPaymentPlan bpaas:MonthlyFee ;
 bpaas:cloudServiceHasAdditionalCosts not specified ;
@@ -1268,11 +1292,12 @@ bpaas:cloudServiceHasServiceSupport bpaas:Twenty4Seven ;
 bpaas:cloudServiceHasTargetMarket bpaas:NoTarget ;
 rdfs:label IBM Business Process Manager on Cloud (BPMoC) for orchestration and automation (SaaS for OFFICIAL) ;
 .
-bdata:28381272-0f7a-4d3e-a82b-b19c4f1b6780
+bdata:47da193a-680a-4202-a399-acaa9f889ce6
 rdf:type bpaas:CloudService ;
-bpass:cloudServiceHasProvider IBM United Kingdom Ltd;
+bpass:cloudServiceHasProvider "IBM United Kingdom Ltd" ;
 bpaas:cloudServiceHasDescription "Capture, automate and manage rules-based business decisions such as determining eligibility for a benefit, approving a claim or right to a service, and detecting fraud. An easy to use business rules automation platform that anyone can work with to quickly initiate business rules management projects at lower cost. (SaaS).
 " ;
+bpaas:cloudServiceHasObject fbpdo:BusinessDecisions
 bpaas:cloudServiceHasPaymentPlan bpaas:Per-Item ;
 bpaas:cloudServiceHasPaymentPlan bpaas:MonthlyFee ;
 bpaas:cloudServiceHasAdditionalCosts not specified ;
@@ -1299,12 +1324,13 @@ bpaas:cloudServiceHasServiceSupport bpaas:Mon-Fri ;
 bpaas:cloudServiceHasTargetMarket bpaas:NoTarget ;
 rdfs:label IBM Operational Decision Manager on Cloud (ODMOC) (SaaS for OFFICIAL) ;
 .
-bdata:f22ff1e7-e832-4574-b9b1-5d70c8269d8e
+bdata:445e9700-76f1-4ede-841b-f197426d7d8e
 rdf:type bpaas:CloudService ;
-bpass:cloudServiceHasProvider IBM United Kingdom Ltd;
+bpass:cloudServiceHasProvider "IBM United Kingdom Ltd" ;
 bpaas:cloudServiceHasDescription "IBM® Kenexa® Talent Acquisition Suite is a set of products that works together to help you streamline and optimise employee recruitment and onboarding. This comprehensive hiring solution helps you hire, and onboard top talent using an automated process, incorporating the latest mobile and enterprise grade social technologies.
 " ;
 bpaas:cloudServiceHasAPQC 7.2 Recruit, source, and select employees ;
+bpaas:cloudServiceHasObject fbpdo:Recruitment
 bpaas:cloudServiceHasPaymentPlan bpaas:Per-Item ;
 bpaas:cloudServiceHasPaymentPlan bpaas:PrepaidAnnualPlan ;
 bpaas:cloudServiceHasAdditionalCosts not specified ;
@@ -1334,10 +1360,11 @@ bpaas:cloudServiceHasServiceSupport bpaas:Twenty4Seven ;
 bpaas:cloudServiceHasTargetMarket bpaas:NoTarget ;
 rdfs:label IBM Kenexa Talent Acquisition Suite ;
 .
-bdata:1f23503c-7a4a-432d-94af-3ba7d0d66c36
+bdata:324b0fe4-fe0b-44d7-a8dd-f03dad0b1232
 rdf:type bpaas:CloudService ;
-bpass:cloudServiceHasProvider IBM United Kingdom Ltd;
+bpass:cloudServiceHasProvider "IBM United Kingdom Ltd" ;
 bpaas:cloudServiceHasDescription "To allow for private cloud object storage via purchasing of software licencing & operations from IBM, but utilising 3rd party approved kit (to be purchased independently by the purchaser)" ;
+bpaas:cloudServiceHasObject fbpdo:CloudStorage
 bpaas:cloudServiceHasAdditionalCosts not specified ;
 bpaas:cloudServiceHasEncryptionType bpaas:TLS ;
 bpaas:cloudServiceHasSecurityStandardInPlace "true"^^xsd:boolean ;
@@ -1363,10 +1390,11 @@ bpaas:cloudServiceHasServiceSupport bpaas:sevenDaysAWeek ;
 bpaas:cloudServiceHasTargetMarket bpaas:NoTarget ;
 rdfs:label IBM Cloud Object Storage (Cleversafe) (SECRET) ;
 .
-bdata:a19fe364-d75a-4c00-ba4f-acb3f15bc938
+bdata:3bc98023-c395-40f5-bb8d-7f60afa5dcc2
 rdf:type bpaas:CloudService ;
-bpass:cloudServiceHasProvider IBM United Kingdom Ltd;
+bpass:cloudServiceHasProvider "IBM United Kingdom Ltd" ;
 bpaas:cloudServiceHasDescription "Blockchain on Bluemix provides Blockchain as a service (SaaS) in the IBM Cloud. It is accessed through IBM’s Bluemix service providing an easy to use development environment for blockchain applications. The blockchain service is hosted on a highly secure LinuxONE platform in a UK based data centre for sensitive workloads." ;
+bpaas:cloudServiceHasObject fbpdo:BlockChain
 bpaas:cloudServiceHasPaymentPlan bpaas:Per-Item ;
 bpaas:cloudServiceHasPaymentPlan bpaas:MonthlyFee ;
 bpaas:cloudServiceHasAdditionalCosts not specified ;
@@ -1396,11 +1424,12 @@ bpaas:cloudServiceHasServiceSupport bpaas:Twenty4Seven ;
 bpaas:cloudServiceHasTargetMarket bpaas:NoTarget ;
 rdfs:label IBM Blockchain on Bluemix – High Security Business Network (HSBN) ;
 .
-bdata:7b1d4987-233b-470f-b0c6-9d45f40abacb
+bdata:324e039f-99cf-419f-8418-08d6a581811f
 rdf:type bpaas:CloudService ;
-bpass:cloudServiceHasProvider IBM United Kingdom Ltd;
+bpass:cloudServiceHasProvider "IBM United Kingdom Ltd" ;
 bpaas:cloudServiceHasDescription "An IBM cloud hosted and managed portal & content management solution focused on customer and partner web content/application needs. Customers and/or partners focus on developing their content and applications while IBM manages infrastructure, operations, maintenance, and security." ;
 bpaas:cloudServiceHasAPQC 8.4.1 Develop information and content management strategies ;
+bpaas:cloudServiceHasObject fbpdo:Content
 bpaas:cloudServiceHasPaymentPlan bpaas:Per-Item ;
 bpaas:cloudServiceHasAdditionalCosts not specified ;
 bpaas:cloudServiceHasEncryptionType bpaas:TLS ;
@@ -1430,10 +1459,12 @@ bpaas:cloudServiceHasServiceSupport bpaas:Mon-Fri ;
 bpaas:cloudServiceHasTargetMarket bpaas:NoTarget ;
 rdfs:label IBM Digital Experience on Cloud ;
 .
-bdata:84f7b331-ad37-4b34-a223-8d4a180d48fb
+bdata:c036ed38-1fdb-4b10-a199-a997ae71bf12
 rdf:type bpaas:CloudService ;
-bpass:cloudServiceHasProvider IBM United Kingdom Ltd;
+bpass:cloudServiceHasProvider "IBM United Kingdom Ltd" ;
 bpaas:cloudServiceHasDescription "IBM Sterling File Transfer Service provides cloud service for file-based B2B interactions. It provides a single, security-rich, highly reliable connection between you and your B2B partners. IBM Sterling File Transfer Service offers an alternative to more expensive on-premise software, while helping to reduce the operational impact on technology staff." ;
+bpaas:cloudServiceHasAction fbpdo:Transfer ;
+bpaas:cloudServiceHasObject fbpdo:File
 bpaas:cloudServiceHasPaymentPlan bpaas:Per-Item ;
 bpaas:cloudServiceHasPaymentPlan bpaas:MonthlyFee ;
 bpaas:cloudServiceHasAdditionalCosts not specified ;
@@ -1464,10 +1495,11 @@ bpaas:cloudServiceHasServiceSupport bpaas:Mon-Fri ;
 bpaas:cloudServiceHasTargetMarket bpaas:NoTarget ;
 rdfs:label IBM Sterling File Transfer Service ;
 .
-bdata:5b85961e-92fb-4753-9aa5-ab6f1f423c47
+bdata:b1491319-7834-4783-93cd-5c3e3c290b4d
 rdf:type bpaas:CloudService ;
-bpass:cloudServiceHasProvider IBM United Kingdom Ltd;
+bpass:cloudServiceHasProvider "IBM United Kingdom Ltd" ;
 bpaas:cloudServiceHasDescription "BM® MobileFirst Managed Mobility Services is focused on enabling and managing tasks on mobile devices." ;
+bpaas:cloudServiceHasObject fbpdo:Tasks
 bpaas:cloudServiceHasPaymentPlan bpaas:Per-Item ;
 bpaas:cloudServiceHasPaymentPlan bpaas:MonthlyFee ;
 bpaas:cloudServiceHasAdditionalCosts not specified ;
@@ -1497,10 +1529,11 @@ bpaas:cloudServiceHasServiceSupport bpaas:Twenty4Seven ;
 bpaas:cloudServiceHasTargetMarket bpaas:NoTarget ;
 rdfs:label IBM Enterprise Managed Mobility (EMM) ;
 .
-bdata:331dbeaa-71be-40af-b899-4a6055c1a3e4
+bdata:81cc9abd-386b-4abe-bf7b-05d9bf138ea8
 rdf:type bpaas:CloudService ;
-bpass:cloudServiceHasProvider IBM United Kingdom Ltd;
+bpass:cloudServiceHasProvider "IBM United Kingdom Ltd" ;
 bpaas:cloudServiceHasDescription "IBM MVS enable enterprise clients to radically streamline and accelerate mobile adoption. IBM leverages Citrix and VMWare solutions to transform traditional environments. Clients can utilise IBM’s experience and expertise of designing and implementing virtualisation solutions to provide a platform their end users with a secure, scalable and flexible virtualised platform." ;
+bpaas:cloudServiceHasObject fbpdo:MobileAdoption
 bpaas:cloudServiceHasPaymentPlan bpaas:Per-user ;
 bpaas:cloudServiceHasAdditionalCosts not specified ;
 bpaas:cloudServiceHasEncryptionType bpaas:TLS ;
@@ -1531,11 +1564,13 @@ bpaas:cloudServiceHasServiceSupport bpaas:Twenty4Seven ;
 bpaas:cloudServiceHasTargetMarket bpaas:NoTarget ;
 rdfs:label IBM MobileFirst Virtualisation Services (MVS) ;
 .
-bdata:d0fc5e24-8a05-4322-ba84-775c49d8e23c
+bdata:c0b3da2d-abc7-4cfc-8728-19dc5e095604
 rdf:type bpaas:CloudService ;
-bpass:cloudServiceHasProvider IBM United Kingdom Ltd;
+bpass:cloudServiceHasProvider "IBM United Kingdom Ltd" ;
 bpaas:cloudServiceHasDescription "IBM Integration Bus (IIB) on Cloud offers flexible integration solution based on enterprise service bus (ESB) technology. IIBoC delivers a fully managed Integration Bus environment providing integration / connectivity across all platforms, providing secure integration without the need to acquire and maintain an IT infrastructure." ;
 bpaas:cloudServiceHasAPQC 8.2.1 Develop IT services and solutions strategy ;
+bpaas:cloudServiceHasAction fbpdo:Integrate ;
+bpaas:cloudServiceHasObject fbpdo:Solutions
 bpaas:cloudServiceHasPaymentPlan bpaas:PrepaidAnnualPlan ;
 bpaas:cloudServiceHasPaymentPlan bpaas:TryFreeFirst ;
 bpaas:cloudServiceHasPaymentPlan questiondata:PaymentPlanTryFreeFirst ;
@@ -1567,10 +1602,11 @@ bpaas:cloudServiceHasServiceSupport bpaas:Mon-Fri ;
 bpaas:cloudServiceHasTargetMarket bpaas:NoTarget ;
 rdfs:label IBM Integration Bus on Cloud (SaaS for OFFICIAL) ;
 .
-bdata:8a6979d6-f8f4-4bc2-bbc6-4c94ef0cbd3e
+bdata:39c6e59d-5170-4012-a4c2-b3d55e1177da
 rdf:type bpaas:CloudService ;
-bpass:cloudServiceHasProvider IBM United Kingdom Ltd;
+bpass:cloudServiceHasProvider "IBM United Kingdom Ltd" ;
 bpaas:cloudServiceHasDescription "IBM offers Wide-Area and Local-Area Data Centre Network assessment, design and implementation to production cloud platforms, optimized, virtualized or software defined, as well as integrated or migrated to client environments. IBM Data Centre Network Services for Cloud provide people, process and technology for organizations innovating to a cloud computing model." ;
+bpaas:cloudServiceHasAction fbpdo:Assess ;
 bpaas:cloudServiceHasPaymentPlan bpaas:Per-user ;
 bpaas:cloudServiceHasPaymentPlan bpaas:Per-day ;
 bpaas:cloudServiceHasAdditionalCosts not specified ;
@@ -1600,9 +1636,9 @@ bpaas:cloudServiceHasServiceSupport bpaas:Twenty4Seven ;
 bpaas:cloudServiceHasTargetMarket bpaas:NoTarget ;
 rdfs:label IBM Data Centre Network Services for Cloud ;
 .
-bdata:c7c2d348-596f-4d8a-8df4-d6b70c8cc448
+bdata:a708dcc3-ee8a-4a40-b5ab-148f7070bb61
 rdf:type bpaas:CloudService ;
-bpass:cloudServiceHasProvider Dropbox, Inc.;
+bpass:cloudServiceHasProvider "Dropbox, Inc." ;
 bpaas:cloudServiceHasDescription "Dropbox Enterprise brings that same simplicity of Dropbox to the workplace, with enterprise-grade features that help teams share instantly across their organizations and give admins the visibility and control they need. But more than just an easy-to-use tool, Dropbox Enterprise is designed to let employees collaborate while keeping work secure." ;
 bpaas:cloudServiceHasPaymentPlan bpaas:Per-user ;
 bpaas:cloudServiceHasPaymentPlan bpaas:PrepaidAnnualPlan ;
@@ -1634,9 +1670,9 @@ bpaas:cloudServiceHasServiceSupport bpaas:Twenty4Seven ;
 bpaas:cloudServiceHasTargetMarket bpaas:NoTarget ;
 rdfs:label Dropbox Enterprise ;
 .
-bdata:a33eaac7-5f28-4d0a-8991-27cb2e5d444f
+bdata:191de0b8-b861-426a-96e6-314bac79432b
 rdf:type bpaas:CloudService ;
-bpass:cloudServiceHasProvider Amazon Web Services;
+bpass:cloudServiceHasProvider "Amazon Web Services" ;
 bpaas:cloudServiceHasDescription "Amazon Connect is a self-service, cloud-based contact-centre service that makes it easy for any business to deliver better customer service at lower cost. The self-service graphical interface in Amazon Connect makes it easy for non-technical users to design contact flows, manage agents, and track performance metrics." ;
 bpaas:cloudServiceHasAPQC 6.0 Manage Customer Service ;
 bpaas:cloudServiceHasPaymentPlan bpaas:Per-instance ;
@@ -1667,9 +1703,9 @@ bpaas:cloudServiceHasServiceSupport bpaas:Twenty4Seven ;
 bpaas:cloudServiceHasTargetMarket bpaas:NoTarget ;
 rdfs:label Amazon Connect ;
 .
-bdata:b8141844-5974-4793-a9f0-9b5b4a1d9841
+bdata:fc8a0287-4716-44fe-afc8-c96fc02b086b
 rdf:type bpaas:CloudService ;
-bpass:cloudServiceHasProvider Amazon Web Services;
+bpass:cloudServiceHasProvider "Amazon Web Services" ;
 bpaas:cloudServiceHasDescription "Amazon WorkMail is a secure, managed business email and calendar service with support for existing desktop and mobile email clients. Amazon WorkMail gives users the ability to seamlessly access their email, contacts, and calendars using Microsoft Outlook, their web browser, or their native iOS and Android email applications. " ;
 bpaas:cloudServiceHasPaymentPlan bpaas:Per-instance ;
 bpaas:cloudServiceHasAdditionalCosts not specified ;
@@ -1700,9 +1736,9 @@ bpaas:cloudServiceHasServiceSupport bpaas:Twenty4Seven ;
 bpaas:cloudServiceHasTargetMarket bpaas:NoTarget ;
 rdfs:label Amazon WorkMail ;
 .
-bdata:b3b6d0ea-c3ec-42f3-878b-37667de66733
+bdata:44c1d703-788c-4f74-acd9-e81d80b22073
 rdf:type bpaas:CloudService ;
-bpass:cloudServiceHasProvider Amazon Web Services;
+bpass:cloudServiceHasProvider "Amazon Web Services" ;
 bpaas:cloudServiceHasDescription "Amazon Route 53 is highly available and scalable cloud Domain Name System web service, giving developers and businesses a reliable and cost effective way to route users to Internet applications by translating names (e.g. www.example.com) into numeric IP addresses (e.g. 192.0.2.1) that computers use to connect to each other." ;
 bpaas:cloudServiceHasPaymentPlan bpaas:MonthlyFee ;
 bpaas:cloudServiceHasAdditionalCosts not specified ;

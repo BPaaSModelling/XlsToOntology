@@ -341,7 +341,11 @@ public class Operation {
 				int t = 0;
 				while (cellIterator.hasNext()) {
 					Cell cell = cellIterator.next();
+					
+					//TODO: IF THE FIRST ROW IS THE MENU, IT SHOULD NOT SCAN IT AND ADD IT TO THE ONTOLOGY. CHECK IF THE CELL A1 AND B1, IF IT'S THE MENU, SKIP THE LINE
+					//TODO: bpass:cloudServiceHasProvider Bridgeway Security Solutions. THIS SHOULD BE bpass:cloudServiceHasProvider "Bridgeway Security Solutions" SAME FOR LABEL AND ALL THE TEXTUALS ATTRIBUTES
 					// if (row.getRowNum() > 1){
+					
 					if (true) {
 						maxcount = row.getLastCellNum();
 
@@ -354,7 +358,7 @@ public class Operation {
 						case 1:
 							if (!validateNullCellString(cell.toString())) {
 								cs.properties.add(new CloudServiceProperty("bpass:cloudServiceHasProvider",
-										String.valueOf(cell.toString()) + ";"));
+										"\""+String.valueOf(cell.toString()) + "\" ;"));
 							}
 							break;
 
