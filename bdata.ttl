@@ -1,5 +1,5 @@
 .
-bdata:6a8e2daa-93cd-4334-9e30-9b28a43c5de8
+bdata:bc559648-a87c-4ae3-8280-214f060f4e6c
 rdf:type bpaas:CloudService ;
 bpass:cloudServiceHasProvider Provider;
 bpaas:cloudServiceHasDescription "Description" ;
@@ -24,7 +24,7 @@ bpaas:cloudServiceHasDataMigration dataMigrationPerformedIndependently ;
 bpaas:cloudServiceHasAPI applicationProgrammingInterface ;
 rdfs:label Name of the Cloud Service ;
 .
-bdata:e6e8c5fa-59b2-4d81-b0b3-8ca2fd983c5d
+bdata:7b0fb534-6038-467c-ac7d-c4cb14da5d43
 rdf:type bpaas:CloudService ;
 bpass:cloudServiceHasProvider Bridgeway Security Solutions;
 bpaas:cloudServiceHasDescription "The Accellion kiteworks solution enables secure inter-and-intra agency collaboration, secure remote access to files and documents, as well as easy collaboration with contractors and constituents, from any device, ensuring today’s government employees are productive and agile." ;
@@ -50,6 +50,8 @@ bpaas:cloudServiceHasAccessLogRetentionPeriodInMonths 12 ;
 bpaas:cloudServiceHasAuditLogAvailabilityInMonth 12 ;
 bpaas:cloudServiceHasAuditLogRetentionPeriodInMonths 12 ;
 bpaas:cloudServiceHasBackupFrequency bpaas:not_specified ;
+bpaas:CloudServiceHasMediaTypeImportExport bpaas:pdf ;
+bpaas:CloudServiceHasMediaTypeImportExport questiondata:FileUpload_PDF ;
 bpaas:cloudServiceHasDataMigration "false"^^xsd:boolean ;
 bpaas:cloudServiceHasAPI "true"^^xsd:boolean ;
 bpaas:cloudServiceHasServiceSupportResponsiveness bpaas:at_most_3_hours ;
@@ -58,7 +60,7 @@ bpaas:cloudServiceHasServiceSupport bpaas:Twenty4Seven ;
 bpaas:cloudServiceHasTargetMarket bpaas:Government_Institutions ;
 rdfs:label Accellion Mobile Productivity and Collaboration (kiteworks) ;
 .
-bdata:fb9068df-d011-4904-abd7-f729b8d49199
+bdata:75468b92-8e26-4f15-b7bb-bd1738565867
 rdf:type bpaas:CloudService ;
 bpass:cloudServiceHasProvider Agilisys Ltd;
 bpaas:cloudServiceHasDescription "Agilisys Revenue Collection puts data and analytics at the heart of our collection strategies. We collect your outstanding debts without interruption to services and with no upfront costs. We enable you to understand and unlock the true value of your debt portfolios and improve the service to citizens in arrears." ;
@@ -84,6 +86,8 @@ bpaas:cloudServiceHasAccessLogRetentionPeriodInMonths 12 ;
 bpaas:cloudServiceHasAuditLogAvailabilityInMonth 12 ;
 bpaas:cloudServiceHasAuditLogRetentionPeriodInMonths 12 ;
 bpaas:cloudServiceHasBackupFrequency bpaas:not_specified ;
+bpaas:CloudServiceHasMediaTypeImportExport bpaas:pdf ;
+bpaas:CloudServiceHasMediaTypeImportExport questiondata:FileUpload_PDF ;
 bpaas:cloudServiceHasDataMigration "false"^^xsd:boolean ;
 bpaas:cloudServiceHasAPI "false"^^xsd:boolean ;
 bpaas:cloudServiceHasServiceSupportResponsiveness bpaas:not_specified ;
@@ -91,7 +95,7 @@ bpaas:cloudServiceHasServiceSupport bpaas:not_specified ;
 bpaas:cloudServiceHasTargetMarket bpaas:Government_Institutions ;
 rdfs:label Agilisys Revenue Collection (ARC) ;
 .
-bdata:f077c76e-7424-4233-9fd9-8c661ac49bea
+bdata:ef596afe-c39a-45c5-941f-7c928a35914e
 rdf:type bpaas:CloudService ;
 bpass:cloudServiceHasProvider Atos IT Services UK Ltd;
 bpaas:cloudServiceHasDescription "Skype for Business as a Service offers an enterprise–ready unified communications platform that connects users everywhere as part of their everyday productivity experience, providing a consistent, single client Skype for Business experience for presence, instant messaging, voice, video and meetings with the benefits of telecommunications infrastructure and external calling." ;
@@ -114,6 +118,8 @@ bpaas:cloudServiceHasAuditLogAvailabilityInMonth 6 ;
 bpaas:cloudServiceHasAuditLogRetentionPeriodInMonths 6 ;
 bpaas:cloudServiceHasBackupFrequency bpaas:not_specified ;
 bpaas:cloudServiceHasBackupRetentionTime bpaas:not_specified ;
+bpaas:CloudServiceHasMediaTypeImportExport bpaas:pdf ;
+bpaas:CloudServiceHasMediaTypeImportExport questiondata:FileUpload_PDF ;
 bpaas:cloudServiceHasDataMigration "false"^^xsd:boolean ;
 bpaas:cloudServiceHasAPI "false"^^xsd:boolean ;
 bpaas:cloudServiceHasServiceSupportResponsiveness bpaas:at_most_12_hours ;
@@ -122,7 +128,7 @@ bpaas:cloudServiceHasServiceSupport bpaas:not_specified ;
 bpaas:cloudServiceHasTargetMarket bpaas:NoTarget ;
 rdfs:label Skype for Business as a Service ;
 .
-bdata:c766be43-8ac8-4deb-a2cc-9b94855641bf
+bdata:c0dffd7d-0ec1-4c34-8825-4c567bb3a066
 rdf:type bpaas:CloudService ;
 bpass:cloudServiceHasProvider Quest Computing Ltd.;
 bpaas:cloudServiceHasDescription "AIMS is a highly flexible, configurable off-the-shelf solution designed for public and social sector organisations to manage grants and funding programmes. AIMS comes with CRM, document management, configurable stylesheet, online portal, forms and workflow templates, decision and payment management, audit, tracking and reporting. Easily scalable for ERP integration and self-configuration." ;
@@ -145,6 +151,8 @@ bpaas:cloudServiceHasAuditLogAvailabilityInMonth 12 ;
 bpaas:cloudServiceHasAuditLogRetentionPeriodInMonths 12 ;
 bpaas:cloudServiceHasBackupFrequency bpaas:not_specified ;
 bpaas:cloudServiceHasBackupRetentionTime bpaas:not_specified ;
+bpaas:CloudServiceHasMediaTypeImportExport bpaas:pdf ;
+bpaas:CloudServiceHasMediaTypeImportExport questiondata:FileUpload_PDF ;
 bpaas:cloudServiceHasDataMigration "false"^^xsd:boolean ;
 bpaas:cloudServiceHasAPI "true"^^xsd:boolean ;
 bpaas:cloudServiceHasServiceSupportResponsiveness bpaas:at_most_3_hours ;
@@ -152,7 +160,7 @@ bpaas:cloudServiceHasServiceSupport bpaas:Mon-Fri ;
 bpaas:cloudServiceHasTargetMarket bpaas:Public_Sector ;
 rdfs:label AIMS grant and programme management ;
 .
-bdata:1020e46c-5c85-42ae-aae8-fe07ce6379f1
+bdata:dc8768ce-40b8-4cfc-992d-a8d073e69112
 rdf:type bpaas:CloudService ;
 bpass:cloudServiceHasProvider ESRI (UK) LIMITED;
 bpaas:cloudServiceHasDescription "ArcGIS Online from Esri UK is a secure, hosted geographic information system (GIS) in the cloud. Create and share digital maps, mapping applications and location analytics services. Use your own data, open data, documents, images and other information. Access from Web browser, smartphone, tablet, Excel and other business intelligence tools." ;
@@ -183,7 +191,7 @@ bpaas:cloudServiceHasServiceSupport bpaas:not_specified ;
 bpaas:cloudServiceHasTargetMarket bpaas:NoTarget ;
 rdfs:label ArcGIS Online ;
 .
-bdata:9323e90b-74ee-4823-b42f-7cd651b3fc17
+bdata:9adfec78-b9fb-4693-9f78-df288c4307be
 rdf:type bpaas:CloudService ;
 bpass:cloudServiceHasProvider SHE Software;
 bpaas:cloudServiceHasDescription "As part of the Assure health and safety software management system, the risk module contains the tools required to easily complete, track and report fire risk assessments across your organisation." ;
@@ -206,13 +214,15 @@ bpaas:cloudServiceHasAuditLogAvailabilityInMonth  ;
 bpaas:cloudServiceHasAuditLogRetentionPeriodInMonths  ;
 bpaas:cloudServiceHasBackupFrequency bpaas:not_specified ;
 bpaas:cloudServiceHasBackupRetentionTime bpaas:not_specified ;
+bpaas:CloudServiceHasMediaTypeImportExport bpaas:pdf ;
+bpaas:CloudServiceHasMediaTypeImportExport questiondata:FileUpload_PDF ;
 bpaas:cloudServiceHasDataMigration "false"^^xsd:boolean ;
 bpaas:cloudServiceHasAPI "true"^^xsd:boolean ;
 bpaas:cloudServiceHasServiceSupport bpaas:Mon-Fri ;
 bpaas:cloudServiceHasTargetMarket bpaas:NoTarget ;
 rdfs:label Assure Risk Management Software Module: Fire Risk Assessment ;
 .
-bdata:e1e003e3-bb79-4cf4-b896-83c441827a93
+bdata:7588e314-f0b1-4570-82e2-9c4a303792af
 rdf:type bpaas:CloudService ;
 bpass:cloudServiceHasProvider Azeus UK Limited;
 bpaas:cloudServiceHasDescription "AzeusCare is a completely integrated case management and finance solution for social care and health which supports a wide range of services including: 
@@ -240,6 +250,8 @@ bpaas:cloudServiceHasAccessLogAvailabilityInMonths  ;
 bpaas:cloudServiceHasAccessLogRetentionPeriodInMonths 6 ;
 bpaas:cloudServiceHasAuditLogAvailabilityInMonth  ;
 bpaas:cloudServiceHasAuditLogRetentionPeriodInMonths  ;
+bpaas:CloudServiceHasMediaTypeImportExport bpaas:pdf ;
+bpaas:CloudServiceHasMediaTypeImportExport questiondata:FileUpload_PDF ;
 bpaas:cloudServiceHasDataMigration "true"^^xsd:boolean ;
 bpaas:cloudServiceHasAPI "true"^^xsd:boolean ;
 bpaas:cloudServiceHasServiceSupportResponsiveness bpaas:at_most_2_working_days ;
@@ -250,7 +262,7 @@ bpaas:cloudServiceHasTargetMarket bpaas:Development_Agencies ;
 bpaas:cloudServiceHasTargetMarket bpaas:Health_Care ;
 rdfs:label AzeusCare ;
 .
-bdata:3aaa3ad3-f30f-41f3-ad22-031207907064
+bdata:74a0cdec-b37d-4be4-b196-86780db9f3da
 rdf:type bpaas:CloudService ;
 bpass:cloudServiceHasProvider SHE Software;
 bpaas:cloudServiceHasDescription "Assure Asset Management health and safety software allows your organisation to create a register of assets across departments/locations. This allows simple visibility of assets across all regions. Utilising automated notifications and action management linked to maintenance and testing dates, personnel will always be aware of deadlines and compliance requirements." ;
@@ -273,13 +285,15 @@ bpaas:cloudServiceHasAuditLogAvailabilityInMonth  ;
 bpaas:cloudServiceHasAuditLogRetentionPeriodInMonths  ;
 bpaas:cloudServiceHasBackupFrequency bpaas:daily ;
 bpaas:cloudServiceHasBackupFrequency bpaas:weekly ;
+bpaas:CloudServiceHasMediaTypeImportExport bpaas:pdf ;
+bpaas:CloudServiceHasMediaTypeImportExport questiondata:FileUpload_PDF ;
 bpaas:cloudServiceHasDataMigration "false"^^xsd:boolean ;
 bpaas:cloudServiceHasAPI "true"^^xsd:boolean ;
 bpaas:cloudServiceHasServiceSupport bpaas:Mon-Fri ;
 bpaas:cloudServiceHasTargetMarket bpaas:NoTarget ;
 rdfs:label Assure Asset Management Software ;
 .
-bdata:041821e0-bacd-4654-bd20-808bcf37a6c5
+bdata:00390ba0-5177-47bb-a2a4-b0cde81b8d92
 rdf:type bpaas:CloudService ;
 bpass:cloudServiceHasProvider BookingBug Ltd
 ;
@@ -302,6 +316,8 @@ bpaas:cloudServiceHasAccessLogAvailabilityInMonths 12 ;
 bpaas:cloudServiceHasAccessLogRetentionPeriodInMonths 12 ;
 bpaas:cloudServiceHasAuditLogAvailabilityInMonth 12 ;
 bpaas:cloudServiceHasAuditLogRetentionPeriodInMonths 12 ;
+bpaas:CloudServiceHasMediaTypeImportExport bpaas:pdf ;
+bpaas:CloudServiceHasMediaTypeImportExport questiondata:FileUpload_PDF ;
 bpaas:cloudServiceHasDataMigration "true"^^xsd:boolean ;
 bpaas:cloudServiceHasAPI "true"^^xsd:boolean ;
 bpaas:cloudServiceHasServiceSupportResponsiveness bpaas:at_most_2_hours ;
@@ -310,7 +326,7 @@ bpaas:cloudServiceHasServiceSupport bpaas:Mon-Fri ;
 bpaas:cloudServiceHasTargetMarket bpaas:Government_Institutions ;
 rdfs:label Online Appointment and Event Booking System for Local Government ;
 .
-bdata:fcbccc0a-2f09-4689-a003-bc0f35f61056
+bdata:15302910-f549-4d56-907e-03e03f6ecb43
 rdf:type bpaas:CloudService ;
 bpass:cloudServiceHasProvider Think S3 (S3 Consulting Ltd);
 bpaas:cloudServiceHasDescription "Powerful firewall for Azure with the Next Gen Firewall. The Barracuda Web Application Firewall for Azure is a scalable security solution that protects applications from targeted and automated attacks.
@@ -335,13 +351,15 @@ bpaas:cloudServiceHasAuditLogAvailabilityInMonth 12 ;
 bpaas:cloudServiceHasAuditLogRetentionPeriodInMonths 12 ;
 bpaas:cloudServiceHasBackupFrequency bpaas:not_specified ;
 bpaas:cloudServiceHasBackupRetentionTime bpaas:not_specified ;
+bpaas:CloudServiceHasMediaTypeImportExport bpaas:pdf ;
+bpaas:CloudServiceHasMediaTypeImportExport questiondata:FileUpload_PDF ;
 bpaas:cloudServiceHasDataMigration "false"^^xsd:boolean ;
 bpaas:cloudServiceHasAPI "false"^^xsd:boolean ;
 bpaas:cloudServiceHasServiceSupport bpaas:Twenty4Seven ;
 bpaas:cloudServiceHasTargetMarket bpaas:NoTarget ;
 rdfs:label Barracuda Next Generation and Web Application Firewall ;
 .
-bdata:d43190ac-fa49-47f3-ab80-e93547f8b157
+bdata:565bbe5f-362d-498b-abbd-11cdb8772d5f
 rdf:type bpaas:CloudService ;
 bpass:cloudServiceHasProvider Bramble Hub Limited;
 bpaas:cloudServiceHasDescription "With Herotext you finally get to measure customer experience (CSAT, CES and NPS) in realtime. You’ll see exactly who leaves feedback and what they have to say. Create Mobile surveys 
@@ -373,7 +391,7 @@ bpaas:cloudServiceHasServiceSupport bpaas:Twenty4Seven ;
 bpaas:cloudServiceHasTargetMarket bpaas:NoTarget ;
 rdfs:label Bramble Hub Cauwill Technologies - Herotext ;
 .
-bdata:67ae87d7-5a24-4da9-bc9e-1a0af0ae98bf
+bdata:f5477051-de10-45bd-9cdb-4c70598478bc
 rdf:type bpaas:CloudService ;
 bpass:cloudServiceHasProvider Infor (UK) Ltd;
 bpaas:cloudServiceHasDescription "Birst is an enterprise business intelligence platform that connects together the entire organisation through a network of interwoven virtualised BI instances on a shared common analytical fabric. Birst delivers speed, self-service, and agility and the scale, security, and control to meet rigorous standards with low TCO." ;
@@ -409,7 +427,7 @@ bpaas:cloudServiceHasServiceSupport bpaas:Twenty4five ;
 bpaas:cloudServiceHasTargetMarket bpaas:NoTarget ;
 rdfs:label Birst Cloud Enterprise Edition Analytics and Business Intelligence (BI) Platform ;
 .
-bdata:c6652301-fc37-4794-a09e-1fb25ca48a31
+bdata:210e0715-3037-4edf-8868-739bacca02e8
 rdf:type bpaas:CloudService ;
 bpass:cloudServiceHasProvider Brainloop Limited;
 bpaas:cloudServiceHasDescription "Brainloop BoardRoom is a portal for efficient and secure board and committee communications. It streamlines and simplifies how board and meeting packs are created, distributed, reviewed and updated, while end users are able to access and collaborate on the packs via any device, online and offline." ;
@@ -432,6 +450,8 @@ bpaas:cloudServiceHasAccessLogRetentionPeriodInMonths 12 ;
 bpaas:cloudServiceHasAuditLogAvailabilityInMonth 12 ;
 bpaas:cloudServiceHasAuditLogRetentionPeriodInMonths 12 ;
 bpaas:cloudServiceHasBackupFrequency bpaas:daily ;
+bpaas:CloudServiceHasMediaTypeImportExport bpaas:pdf ;
+bpaas:CloudServiceHasMediaTypeImportExport questiondata:FileUpload_PDF ;
 bpaas:cloudServiceHasDataMigration "false"^^xsd:boolean ;
 bpaas:cloudServiceHasAPI "true"^^xsd:boolean ;
 bpaas:cloudServiceHasServiceSupportResponsiveness bpaas:not_specified ;
@@ -439,7 +459,7 @@ bpaas:cloudServiceHasServiceSupport bpaas:Twenty4Seven ;
 bpaas:cloudServiceHasTargetMarket bpaas:NoTarget ;
 rdfs:label Brainloop BoardRoom ;
 .
-bdata:4f64137e-d62d-4daf-a9d8-611132c13c95
+bdata:1e8cecce-adc1-4f66-9e26-96b1dab4ec20
 rdf:type bpaas:CloudService ;
 bpass:cloudServiceHasProvider Arcus Global Limited
 ;
@@ -474,7 +494,7 @@ bpaas:cloudServiceHasTargetMarket bpaas:Government_Institutions ;
 bpaas:cloudServiceHasTargetMarket bpaas:Public_Sector ;
 rdfs:label Arcus Local Government CRM ;
 .
-bdata:ca576310-36f4-4644-bb25-b8bf58ee1447
+bdata:3acb5c7c-f0ee-4ae8-aa9a-8f28c0197320
 rdf:type bpaas:CloudService ;
 bpass:cloudServiceHasProvider EMIS Ltd;
 bpaas:cloudServiceHasDescription "Our Commissioner Accelerator is a comprehensive, Microsoft Business Intelligence and data warehouse platform that provides the commissioning, contracting, budgetary and activity data required to identify and commission high quality and cost-effective services on behalf of a population." ;
@@ -498,6 +518,8 @@ bpaas:cloudServiceHasAuditLogAvailabilityInMonth 12 ;
 bpaas:cloudServiceHasAuditLogRetentionPeriodInMonths 12 ;
 bpaas:cloudServiceHasBackupFrequency bpaas:not_specified ;
 bpaas:cloudServiceHasBackupRetentionTime bpaas:not_specified ;
+bpaas:CloudServiceHasMediaTypeImportExport bpaas:pdf ;
+bpaas:CloudServiceHasMediaTypeImportExport questiondata:FileUpload_PDF ;
 bpaas:cloudServiceHasDataMigration not specified ;
 bpaas:cloudServiceHasAPI "true"^^xsd:boolean ;
 bpaas:cloudServiceHasServiceSupportResponsiveness bpaas:not_specified ;
@@ -505,7 +527,7 @@ bpaas:cloudServiceHasServiceSupport bpaas:not_specified ;
 bpaas:cloudServiceHasTargetMarket bpaas:NoTarget ;
 rdfs:label Commissioner BI Accelerator ;
 .
-bdata:00fa162a-ee41-469b-97de-e27650854ef6
+bdata:81d3bf74-e9d3-4807-88df-77a47c26c889
 rdf:type bpaas:CloudService ;
 bpass:cloudServiceHasProvider Ideagen PLC;
 bpaas:cloudServiceHasDescription "A modular cloud platform designed to provide an integrated approach to managing all aspects of:
@@ -538,6 +560,8 @@ bpaas:cloudServiceHasAccessLogRetentionPeriodInMonths  ;
 bpaas:cloudServiceHasAuditLogAvailabilityInMonth  ;
 bpaas:cloudServiceHasAuditLogRetentionPeriodInMonths 12 ;
 bpaas:cloudServiceHasBackupRetentionTime bpaas:not_specified ;
+bpaas:CloudServiceHasMediaTypeImportExport bpaas:pdf ;
+bpaas:CloudServiceHasMediaTypeImportExport questiondata:FileUpload_PDF ;
 bpaas:cloudServiceHasDataMigration not specified ;
 bpaas:cloudServiceHasAPI "false"^^xsd:boolean ;
 bpaas:cloudServiceHasServiceSupportResponsiveness bpaas:at_most_2_hours ;
@@ -545,7 +569,7 @@ bpaas:cloudServiceHasServiceSupport bpaas:Mon-Fri ;
 bpaas:cloudServiceHasTargetMarket bpaas:NoTarget ;
 rdfs:label Ideagen Covalent ;
 .
-bdata:7efb6a18-cf0f-4a40-b49f-7e9c52571e9b
+bdata:2d00215b-c5ce-4349-9b89-36ebb0d68a2e
 rdf:type bpaas:CloudService ;
 bpass:cloudServiceHasProvider Zengenti Limited;
 bpaas:cloudServiceHasDescription "Contensis is a CMS used by many public-sector organisations – from universities to councils, police and NHS trusts. Modules enhance the way Contensis works and include social media, form builder, blog, document channel, event, FOI, directory, forum, quality assurance/accessibility, news, multilingual, and federated search modules." ;
@@ -569,6 +593,8 @@ bpaas:cloudServiceHasAuditLogAvailabilityInMonth  ;
 bpaas:cloudServiceHasAuditLogRetentionPeriodInMonths  ;
 bpaas:cloudServiceHasBackupFrequency bpaas:not_specified ;
 bpaas:cloudServiceHasBackupRetentionTime bpaas:not_specified ;
+bpaas:CloudServiceHasMediaTypeImportExport bpaas:pdf ;
+bpaas:CloudServiceHasMediaTypeImportExport questiondata:FileUpload_PDF ;
 bpaas:cloudServiceHasDataMigration "true"^^xsd:boolean ;
 bpaas:cloudServiceHasAPI "true"^^xsd:boolean ;
 bpaas:cloudServiceHasServiceSupportResponsiveness bpaas:at_most_4_hours ;
@@ -577,7 +603,7 @@ bpaas:cloudServiceHasTargetMarket bpaas:Public_Sector ;
 bpaas:cloudServiceHasTargetMarket bpaas:Government_Institutions ;
 rdfs:label Modules for the Contensis CMS ;
 .
-bdata:cd2804b8-2455-42d5-baec-0778dd890ab0
+bdata:19468999-5df1-410d-bdf7-4de1fe5e369a
 rdf:type bpaas:CloudService ;
 bpass:cloudServiceHasProvider Darzin Software UK;
 bpaas:cloudServiceHasDescription "Darzin cloud based stakeholder management software enables organisations to effectively manage consultations and create consultation reports. Darzin is the only software that offers qualitative, quantitative and spatial analysis, and integrated consultation data. Built-in survey tool, task management, grievance management and more. Darzin is secure, easy-to-use and very well supported." ;
@@ -601,6 +627,8 @@ bpaas:cloudServiceHasAuditLogAvailabilityInMonth 12 ;
 bpaas:cloudServiceHasAuditLogRetentionPeriodInMonths 12 ;
 bpaas:cloudServiceHasBackupFrequency bpaas:not_specified ;
 bpaas:cloudServiceHasBackupRetentionTime bpaas:not_specified ;
+bpaas:CloudServiceHasMediaTypeImportExport bpaas:pdf ;
+bpaas:CloudServiceHasMediaTypeImportExport questiondata:FileUpload_PDF ;
 bpaas:cloudServiceHasDataMigration not specified ;
 bpaas:cloudServiceHasAPI "true"^^xsd:boolean ;
 bpaas:cloudServiceHasServiceSupportResponsiveness bpaas:not_specified ;
@@ -608,7 +636,7 @@ bpaas:cloudServiceHasServiceSupport bpaas:Mon-Fri ;
 bpaas:cloudServiceHasTargetMarket bpaas:NoTarget ;
 rdfs:label Darzin Stakeholder Relationship Management Software (CRM/SRMS) ;
 .
-bdata:f0cf89c1-6090-42d6-aecd-2866ec0b779a
+bdata:50830f42-1acd-48ee-a322-f4f22eec45e4
 rdf:type bpaas:CloudService ;
 bpass:cloudServiceHasProvider Equiniti Plc;
 bpaas:cloudServiceHasDescription "Equiniti’s data management solution - DataPoint from Automated Intelligence - automates and manages the process of data cleansing, data categorising and data migration – either on SaaS data management, in cloud data categorising or a hybrid data management solution. Available as Official or Official-Sensitive" ;
@@ -630,6 +658,8 @@ bpaas:cloudServiceHasAccessLogRetentionPeriodInMonths  ;
 bpaas:cloudServiceHasAuditLogAvailabilityInMonth  ;
 bpaas:cloudServiceHasAuditLogRetentionPeriodInMonths 12 ;
 bpaas:cloudServiceHasBackupFrequency bpaas:not_specified ;
+bpaas:CloudServiceHasMediaTypeImportExport bpaas:pdf ;
+bpaas:CloudServiceHasMediaTypeImportExport questiondata:FileUpload_PDF ;
 bpaas:cloudServiceHasDataMigration "true"^^xsd:boolean ;
 bpaas:cloudServiceHasAPI "false"^^xsd:boolean ;
 bpaas:cloudServiceHasServiceSupportResponsiveness bpaas:at_most_4_hours ;
@@ -637,7 +667,7 @@ bpaas:cloudServiceHasServiceSupport bpaas:Mon-Fri ;
 bpaas:cloudServiceHasTargetMarket bpaas:NoTarget ;
 rdfs:label Data Consolidation; Data collection, data cleansing, data migration ;
 .
-bdata:828c7ddd-f10e-4977-b482-cafb0a82df78
+bdata:9c2c789e-329c-4933-bad8-fba417b24a07
 rdf:type bpaas:CloudService ;
 bpass:cloudServiceHasProvider CloudTrade;
 bpaas:cloudServiceHasDescription "Participation of suppliers is key for a successful e-invoicing project. CloudTrade removes the barriers to supplier adoption: more suppliers are connected and more paper removed in a shorter time frame than any other approach. Our multi channel e-invoice service provides 100% coverage and ensures all suppliers can be e-invoice suppliers." ;
@@ -661,13 +691,15 @@ bpaas:cloudServiceHasAccessLogRetentionPeriodInMonths 12 ;
 bpaas:cloudServiceHasAuditLogAvailabilityInMonth 12 ;
 bpaas:cloudServiceHasAuditLogRetentionPeriodInMonths 12 ;
 bpaas:cloudServiceHasBackupRetentionTime bpaas:not_specified ;
+bpaas:CloudServiceHasMediaTypeImportExport bpaas:pdf ;
+bpaas:CloudServiceHasMediaTypeImportExport questiondata:FileUpload_PDF ;
 bpaas:cloudServiceHasDataMigration not specified ;
 bpaas:cloudServiceHasAPI "false"^^xsd:boolean ;
 bpaas:cloudServiceHasServiceSupportResponsiveness bpaas:not_specified ;
 bpaas:cloudServiceHasServiceSupport bpaas:Mon-Fri ;
 rdfs:label E-Invoicing ;
 .
-bdata:e270aa85-7cf4-4339-8914-1c87516b2a19
+bdata:3f5f70c7-7282-4943-926d-99fc3d07251c
 rdf:type bpaas:CloudService ;
 bpass:cloudServiceHasProvider Texuna;
 bpaas:cloudServiceHasDescription "ItemBank eAssessment is a fully customisable repository for test item development and design for examination test creation. Publish tests to the e-assessment online tool and deliver tests to students and gather real-time responses. Design tests, release, then distribute globally! Cloud-based security and scalability built-in with mobile apps for deployment." ;
@@ -692,6 +724,8 @@ bpaas:cloudServiceHasAuditLogAvailabilityInMonth  ;
 bpaas:cloudServiceHasAuditLogRetentionPeriodInMonths  ;
 bpaas:cloudServiceHasBackupFrequency bpaas:not_specified ;
 bpaas:cloudServiceHasBackupRetentionTime bpaas:not_specified ;
+bpaas:CloudServiceHasMediaTypeImportExport bpaas:pdf ;
+bpaas:CloudServiceHasMediaTypeImportExport questiondata:FileUpload_PDF ;
 bpaas:cloudServiceHasDataMigration not specified ;
 bpaas:cloudServiceHasAPI "true"^^xsd:boolean ;
 bpaas:cloudServiceHasServiceSupportResponsiveness bpaas:at_most_4_hours ;
@@ -699,7 +733,7 @@ bpaas:cloudServiceHasServiceSupportResponsiveness bpaas:at_most_5_working_days ;
 bpaas:cloudServiceHasServiceSupport bpaas:Mon-Fri ;
 rdfs:label Texuna Itembank and eAssessment ;
 .
-bdata:203a10dd-0fe3-4a8b-be41-960cb3def840
+bdata:ba025f4c-1f74-4021-88a0-f36212ceac40
 rdf:type bpaas:CloudService ;
 bpass:cloudServiceHasProvider Ember Group;
 bpaas:cloudServiceHasDescription "Our Customer Effort Dashboard is a performance management tool that will help improve the customer journey through your organisation – giving you the evidence you need to improve your service. It enables you to interrogate data in four key areas – customer demand; customer contact; customer satisfaction and channel analytics.
@@ -723,13 +757,15 @@ bpaas:cloudServiceHasAuditLogAvailabilityInMonth 12 ;
 bpaas:cloudServiceHasAuditLogRetentionPeriodInMonths 12 ;
 bpaas:cloudServiceHasBackupFrequency bpaas:not_specified ;
 bpaas:cloudServiceHasBackupRetentionTime bpaas:not_specified ;
+bpaas:CloudServiceHasMediaTypeImportExport bpaas:pdf ;
+bpaas:CloudServiceHasMediaTypeImportExport questiondata:FileUpload_PDF ;
 bpaas:cloudServiceHasDataMigration not specified ;
 bpaas:cloudServiceHasAPI "false"^^xsd:boolean ;
 bpaas:cloudServiceHasServiceSupportResponsiveness bpaas:not_specified ;
 bpaas:cloudServiceHasServiceSupport bpaas:Mon-Fri ;
 rdfs:label Customer Effort Dashboard ;
 .
-bdata:8519dc10-fd13-4947-bf3e-39dad9802b2f
+bdata:ab6ae089-b0a5-408a-9a40-77df71e2726f
 rdf:type bpaas:CloudService ;
 bpass:cloudServiceHasProvider Equiniti Plc;
 bpaas:cloudServiceHasDescription "Equiniti offers Microsoft Dynamics CRM 2013, 2015, 2016 and Dynamics 365 as a fully integrated customer relationship management system. Microsoft Dynamics offers the capability to easily create and maintain a clear view of customers and stakeholders from first contact through to engagement and post-interaction. Available as Official or Official-Sensitive" ;
@@ -751,6 +787,8 @@ bpaas:cloudServiceHasAccessLogRetentionPeriodInMonths 12 ;
 bpaas:cloudServiceHasAuditLogAvailabilityInMonth 12 ;
 bpaas:cloudServiceHasAuditLogRetentionPeriodInMonths 12 ;
 bpaas:cloudServiceHasBackupFrequency bpaas:not_specified ;
+bpaas:CloudServiceHasMediaTypeImportExport bpaas:pdf ;
+bpaas:CloudServiceHasMediaTypeImportExport questiondata:FileUpload_PDF ;
 bpaas:cloudServiceHasDataMigration not specified ;
 bpaas:cloudServiceHasAPI "false"^^xsd:boolean ;
 bpaas:cloudServiceHasServiceSupportResponsiveness bpaas:at_most_4_hours ;
@@ -759,7 +797,7 @@ bpaas:cloudServiceHasTargetMarket bpaas:Government_Institutions ;
 bpaas:cloudServiceHasTargetMarket bpaas:Public_Sector ;
 rdfs:label Customer Relationship Management: CRM, Public Sector CRM ;
 .
-bdata:ce697f12-cb09-42fd-abb6-ace5459598a3
+bdata:244474ad-289d-4205-a126-498ef6cfe3d9
 rdf:type bpaas:CloudService ;
 bpass:cloudServiceHasProvider Business Cloud Integration Ltd.;
 bpaas:cloudServiceHasDescription "Helping organisations to streamline and automate business processes to increase efficiency, encourage process consistency across their organisations, help enforce compliance, and easily track processes from beginning to end." ;
@@ -782,6 +820,8 @@ bpaas:cloudServiceHasAuditLogAvailabilityInMonth  ;
 bpaas:cloudServiceHasAuditLogRetentionPeriodInMonths  ;
 bpaas:cloudServiceHasBackupFrequency bpaas:not_specified ;
 bpaas:cloudServiceHasBackupRetentionTime bpaas:not_specified ;
+bpaas:CloudServiceHasMediaTypeImportExport bpaas:pdf ;
+bpaas:CloudServiceHasMediaTypeImportExport questiondata:FileUpload_PDF ;
 bpaas:cloudServiceHasDataMigration not specified ;
 bpaas:cloudServiceHasAPI "false"^^xsd:boolean ;
 bpaas:cloudServiceHasServiceSupportResponsiveness bpaas:not_specified ;
@@ -789,7 +829,7 @@ bpaas:cloudServiceHasServiceSupport bpaas:Mon-Fri ;
 bpaas:cloudServiceHasTargetMarket bpaas:NoTarget ;
 rdfs:label SharePoint Online Business Process Automation ;
 .
-bdata:136e77a6-c1a8-4474-adef-78e2e7dc2399
+bdata:6038cdbd-b921-46c0-b552-9cd686a878b5
 rdf:type bpaas:CloudService ;
 bpass:cloudServiceHasProvider Target Group;
 bpaas:cloudServiceHasDescription "Debt Management SaaS from Target offers a focussed, intelligent, results driven solution, suitable to be integrated into existing CRM, Contact Centre and Treasury functions. Case Management capabilities include: managing the end-to-end collections process from pre-arrears identification through to a shortfall recovery, tailored collections solution, third party management and oversight." ;
@@ -814,6 +854,8 @@ bpaas:cloudServiceHasAuditLogAvailabilityInMonth 12 ;
 bpaas:cloudServiceHasAuditLogRetentionPeriodInMonths 12 ;
 bpaas:cloudServiceHasBackupFrequency bpaas:not_specified ;
 bpaas:cloudServiceHasBackupRetentionTime bpaas:not_specified ;
+bpaas:CloudServiceHasMediaTypeImportExport bpaas:pdf ;
+bpaas:CloudServiceHasMediaTypeImportExport questiondata:FileUpload_PDF ;
 bpaas:cloudServiceHasDataMigration "true"^^xsd:boolean ;
 bpaas:cloudServiceHasAPI "false"^^xsd:boolean ;
 bpaas:cloudServiceHasServiceSupportResponsiveness bpaas:not_specified ;
@@ -821,7 +863,7 @@ bpaas:cloudServiceHasServiceSupport bpaas:Twenty4Seven ;
 bpaas:cloudServiceHasTargetMarket bpaas:NoTarget ;
 rdfs:label Debt Management ;
 .
-bdata:8117b52a-d288-4124-a341-d39d7ec2115c
+bdata:8decd1e7-89ee-424e-9e71-f866ddaba90c
 rdf:type bpaas:CloudService ;
 bpass:cloudServiceHasProvider Datalytyx Ltd;
 bpaas:cloudServiceHasDescription "DATALYTYX Assessmint Shared Services 360 Assessment provides an online, cloud-based solution for detailed assessment of, and reporting on, an organisation’s current state of shared services, in order to generate referential base-lines and compliance reports. The functionality can also be expanded to include assessments other items provided by vendors." ;
@@ -846,6 +888,8 @@ bpaas:cloudServiceHasAuditLogRetentionPeriodInMonths 12 ;
 bpaas:cloudServiceHasBackupFrequency bpaas:weekly ;
 bpaas:cloudServiceHasBackupFrequency bpaas:daily ;
 bpaas:cloudServiceHasBackupRetentionTime bpaas:not_specified ;
+bpaas:CloudServiceHasMediaTypeImportExport bpaas:pdf ;
+bpaas:CloudServiceHasMediaTypeImportExport questiondata:FileUpload_PDF ;
 bpaas:cloudServiceHasDataMigration not specified ;
 bpaas:cloudServiceHasAPI "true"^^xsd:boolean ;
 bpaas:cloudServiceHasServiceSupportResponsiveness bpaas:not_specified ;
@@ -853,7 +897,7 @@ bpaas:cloudServiceHasServiceSupport bpaas:Mon-Fri ;
 bpaas:cloudServiceHasTargetMarket bpaas:NoTarget ;
 rdfs:label DATALYTYX Assessmint Shared Services 360 Assessment ;
 .
-bdata:18b2629e-a993-4cdb-9034-1d881338518d
+bdata:c1017a4e-b7b7-4d1a-b0d0-ca878bda4803
 rdf:type bpaas:CloudService ;
 bpass:cloudServiceHasProvider Learning Pool Ltd;
 bpaas:cloudServiceHasDescription "Our highly-skilled and experienced content development team work with customers to deliver interactive e-learning that enables them to maximise the engagement and impact of the module. Our in-house team can develop e-learning in a number of tools including our own Adapt solution and Storyline, Captivate, Camtasia and Elucidat." ;
@@ -877,6 +921,8 @@ bpaas:cloudServiceHasAuditLogAvailabilityInMonth 12 ;
 bpaas:cloudServiceHasAuditLogRetentionPeriodInMonths 12 ;
 bpaas:cloudServiceHasBackupFrequency bpaas:not_specified ;
 bpaas:cloudServiceHasBackupRetentionTime bpaas:not_specified ;
+bpaas:CloudServiceHasMediaTypeImportExport bpaas:pdf ;
+bpaas:CloudServiceHasMediaTypeImportExport questiondata:FileUpload_PDF ;
 bpaas:cloudServiceHasDataMigration not specified ;
 bpaas:cloudServiceHasAPI "false"^^xsd:boolean ;
 bpaas:cloudServiceHasServiceSupportResponsiveness bpaas:at_most_12_hours ;
@@ -884,7 +930,7 @@ bpaas:cloudServiceHasServiceSupport bpaas:Mon-Fri ;
 bpaas:cloudServiceHasTargetMarket bpaas:NoTarget ;
 rdfs:label Custom-built e-learning content ;
 .
-bdata:ab33b2a3-5a6b-4812-a179-ab83865be35c
+bdata:ea34efd5-f399-414a-9c88-d9b7eadadbb1
 rdf:type bpaas:CloudService ;
 bpass:cloudServiceHasProvider EMIS Ltd;
 bpaas:cloudServiceHasDescription "EMIS Web provides health care professionals working within primary, community, children’s, mental health, and secondary care with an Electronic Patient Record (EPR) and Patient Administration System (PAS) that they can tailor to the unique requirements of their service. Electronic sharing agreements provide a seamless integrated record across care settings." ;
@@ -906,6 +952,8 @@ bpaas:cloudServiceHasAuditLogAvailabilityInMonth 12 ;
 bpaas:cloudServiceHasAuditLogRetentionPeriodInMonths 12 ;
 bpaas:cloudServiceHasBackupFrequency bpaas:not_specified ;
 bpaas:cloudServiceHasBackupRetentionTime bpaas:not_specified ;
+bpaas:CloudServiceHasMediaTypeImportExport bpaas:pdf ;
+bpaas:CloudServiceHasMediaTypeImportExport questiondata:FileUpload_PDF ;
 bpaas:cloudServiceHasDataMigration not specified ;
 bpaas:cloudServiceHasAPI "true"^^xsd:boolean ;
 bpaas:cloudServiceHasServiceSupportResponsiveness bpaas:at_most_4_hours ;
@@ -915,7 +963,7 @@ bpaas:cloudServiceHasServiceSupport bpaas:Mon-Fri ;
 bpaas:cloudServiceHasTargetMarket bpaas:Health_Care ;
 rdfs:label Emis Web ;
 .
-bdata:7bdbab21-68b6-4eda-bff4-f01f54808758
+bdata:5709a1fe-d9af-4ffb-8857-65a6ca5a0753
 rdf:type bpaas:CloudService ;
 bpass:cloudServiceHasProvider i2N Ltd;
 bpaas:cloudServiceHasDescription "Hearings Manager delivers the Digital Courtroom now, enabling the presentation of digital material at Hearings, Courts and Tribunals. Hearings Manager presents digital bundles including documents and multimedia to screens, laptops and tablets distributed around the court or committee room and maintains a full audit trail of the proceedings." ;
@@ -938,6 +986,8 @@ bpaas:cloudServiceHasAuditLogAvailabilityInMonth  ;
 bpaas:cloudServiceHasAuditLogRetentionPeriodInMonths  ;
 bpaas:cloudServiceHasBackupFrequency bpaas:not_specified ;
 bpaas:cloudServiceHasBackupRetentionTime bpaas:not_specified ;
+bpaas:CloudServiceHasMediaTypeImportExport bpaas:pdf ;
+bpaas:CloudServiceHasMediaTypeImportExport questiondata:FileUpload_PDF ;
 bpaas:cloudServiceHasDataMigration not specified ;
 bpaas:cloudServiceHasAPI "false"^^xsd:boolean ;
 bpaas:cloudServiceHasServiceSupportResponsiveness bpaas:at_most_4_hours ;
@@ -945,7 +995,7 @@ bpaas:cloudServiceHasServiceSupport bpaas:Mon-Fri ;
 bpaas:cloudServiceHasTargetMarket bpaas:Justice_sector ;
 rdfs:label Hearings Manager ;
 .
-bdata:8133c039-4f91-4b9e-8402-39c0f785ee2a
+bdata:21407fb0-f2c7-475d-bc63-ca34c2ebd225
 rdf:type bpaas:CloudService ;
 bpass:cloudServiceHasProvider Spikes Cavell Analytic Ltd;
 bpaas:cloudServiceHasDescription "Grow Local is an add on service to Spend Analytics from Spikes Cavell. It provides analysis and information about spend with local suppliers as well as reporting of potential local suppliers for the goods and services bought by the public sector." ;
@@ -969,13 +1019,15 @@ bpaas:cloudServiceHasAuditLogAvailabilityInMonth 12 ;
 bpaas:cloudServiceHasAuditLogRetentionPeriodInMonths 12 ;
 bpaas:cloudServiceHasBackupFrequency bpaas:not_specified ;
 bpaas:cloudServiceHasBackupRetentionTime bpaas:not_specified ;
+bpaas:CloudServiceHasMediaTypeImportExport bpaas:pdf ;
+bpaas:CloudServiceHasMediaTypeImportExport questiondata:FileUpload_PDF ;
 bpaas:cloudServiceHasDataMigration not specified ;
 bpaas:cloudServiceHasAPI "false"^^xsd:boolean ;
 bpaas:cloudServiceHasServiceSupport bpaas:Mon-Fri ;
 bpaas:cloudServiceHasTargetMarket bpaas:NoTarget ;
 rdfs:label Grow Local ;
 .
-bdata:8e6e2ace-b0ad-45cf-9941-d33e78363dfc
+bdata:ede47b50-1b92-464c-b147-4b585240304c
 rdf:type bpaas:CloudService ;
 bpass:cloudServiceHasProvider exeGesIS Spatial Data Management;
 bpaas:cloudServiceHasDescription "The Historic Buildings, Sites and Monuments Record system (HBSMR) is a comprehensive database and GIS solution for the management of Historic Environment Records, developed in partnership with English Heritage and the Association of Local Government Archaeological Officers. HBSMR is used by the majority of HERs and SMRs in the UK." ;
@@ -1004,7 +1056,7 @@ bpaas:cloudServiceHasTargetMarket bpaas:CultureArcheology ;
 rdfs:label Historic Buildings, Sites and Monuments Record system (HBSMR)
  ;
 .
-bdata:fe26a2d6-8f6f-495d-b3ec-7c2261b01164
+bdata:2f092293-0c24-47fb-a1e2-b0d5e1c1d527
 rdf:type bpaas:CloudService ;
 bpass:cloudServiceHasProvider IBM United Kingdom Ltd;
 bpaas:cloudServiceHasDescription "IBM WebSphere Application Server serves applications from the front office to the back office -whether mobile, Web, cloud or mission-critical enterprise applications-to support seamless Systems of Interaction. IBM WAS provides you an array of successful cloud implementation models–Hybrid, Public, Private, or on-premise based on your requirements." ;
@@ -1037,7 +1089,7 @@ bpaas:cloudServiceHasServiceSupport bpaas:sevenDaysAWeek ;
 bpaas:cloudServiceHasTargetMarket bpaas:NoTarget ;
 rdfs:label IBM Application Server on Cloud (Websphere Application Server in Bluemix) ;
 .
-bdata:4dd934df-77d9-44e6-875c-00406ef9ab08
+bdata:1cd73b4e-bf6f-4acf-9877-343f95212ee1
 rdf:type bpaas:CloudService ;
 bpass:cloudServiceHasProvider Locata Housing Services Limited;
 bpaas:cloudServiceHasDescription "Allows Local Authorities to triage applicants prior to allowing them to register for Housing. Online pre-application questionnaire is configured to requirement and makes a basic assessment of applicant needs. After completion a personalised Action Plan is produced sign posting and advising applicants to the most suitable housing options available." ;
@@ -1063,6 +1115,8 @@ bpaas:cloudServiceHasAuditLogRetentionPeriodInMonths  ;
 bpaas:cloudServiceHasBackupFrequency bpaas:daily ;
 bpaas:cloudServiceHasBackupFrequency bpaas:hourly ;
 bpaas:cloudServiceHasBackupRetentionTime bpaas:not_specified ;
+bpaas:CloudServiceHasMediaTypeImportExport bpaas:pdf ;
+bpaas:CloudServiceHasMediaTypeImportExport questiondata:FileUpload_PDF ;
 bpaas:cloudServiceHasDataMigration "true"^^xsd:boolean ;
 bpaas:cloudServiceHasAPI "false"^^xsd:boolean ;
 bpaas:cloudServiceHasServiceSupportResponsiveness bpaas:at_most_5_working_days ;
@@ -1071,7 +1125,7 @@ bpaas:cloudServiceHasServiceSupport bpaas:Mon-Fri ;
 bpaas:cloudServiceHasTargetMarket bpaas:NoTarget ;
 rdfs:label Housing Options Pre Assessment ;
 .
-bdata:4c133201-f815-4bab-b5b4-77d440cddd43
+bdata:fe7be407-72b1-4b6a-a9cb-2aefb71ff489
 rdf:type bpaas:CloudService ;
 bpass:cloudServiceHasProvider Responsiv Solutions Ltd;
 bpaas:cloudServiceHasDescription "Orchestrate and Automate business processes using IBM's Business Process Manager (BPM) on cloud through Responsiv Solution's Platform as a Service. Available on IBM Cloud (SoftLayer) as well as custom offerings on other clouds such as Microsoft Azure and Amazon Web Services (AWS). Build your SaaS business processes on our PaaS." ;
@@ -1097,6 +1151,8 @@ bpaas:cloudServiceHasAuditLogAvailabilityInMonth 6 ;
 bpaas:cloudServiceHasAuditLogRetentionPeriodInMonths 6 ;
 bpaas:cloudServiceHasBackupFrequency bpaas:not_specified ;
 bpaas:cloudServiceHasBackupRetentionTime bpaas:not_specified ;
+bpaas:CloudServiceHasMediaTypeImportExport bpaas:pdf ;
+bpaas:CloudServiceHasMediaTypeImportExport questiondata:FileUpload_PDF ;
 bpaas:cloudServiceHasDataMigration not specified ;
 bpaas:cloudServiceHasAPI "true"^^xsd:boolean ;
 bpaas:cloudServiceHasServiceSupportResponsiveness bpaas:at_most_2_hours ;
@@ -1106,7 +1162,7 @@ bpaas:cloudServiceHasServiceSupport bpaas:Mon-Fri ;
 bpaas:cloudServiceHasTargetMarket bpaas:NoTarget ;
 rdfs:label Responsiv Solutions IBM Business Process Manager (BPM) ;
 .
-bdata:c6ea911b-86d8-4d99-8837-0540eb38f91c
+bdata:f2a8bc1e-0e93-4256-bb49-b7db34585f5e
 rdf:type bpaas:CloudService ;
 bpass:cloudServiceHasProvider T-Impact Limited;
 bpaas:cloudServiceHasDescription "IBM Business Process Manager is a comprehensive and consumable, business process management suite (BPMS) that delivers management of your business processes in a cloud environment. IBM BPM on Cloud provides a full lifecycle environment including development, test and production—with tooling and run time for process design, execution, monitoring and optimisation." ;
@@ -1131,6 +1187,8 @@ bpaas:cloudServiceHasAuditLogAvailabilityInMonth 6 ;
 bpaas:cloudServiceHasAuditLogRetentionPeriodInMonths 6 ;
 bpaas:cloudServiceHasBackupFrequency bpaas:not_specified ;
 bpaas:cloudServiceHasBackupRetentionTime bpaas:not_specified ;
+bpaas:CloudServiceHasMediaTypeImportExport bpaas:pdf ;
+bpaas:CloudServiceHasMediaTypeImportExport questiondata:FileUpload_PDF ;
 bpaas:cloudServiceHasDataMigration not specified ;
 bpaas:cloudServiceHasAPI "true"^^xsd:boolean ;
 bpaas:cloudServiceHasServiceSupportResponsiveness bpaas:at_most_2_hours ;
@@ -1139,7 +1197,7 @@ bpaas:cloudServiceHasServiceSupport bpaas:Twenty4Seven ;
 bpaas:cloudServiceHasTargetMarket bpaas:NoTarget ;
 rdfs:label IBM BPM (Business Process Manager) on Cloud for Process Automation ;
 .
-bdata:71b864ae-d893-4e7e-b07c-c26353c10ea3
+bdata:a1a08081-b91f-4f47-b96c-4e5afd267756
 rdf:type bpaas:CloudService ;
 bpass:cloudServiceHasProvider IBM United Kingdom Ltd;
 bpaas:cloudServiceHasDescription "IBM Case Manager on Cloud is a solution built around the concept of processing a case, a collection of information and coordinated tasks, by knowledge workers (or case workers) to achieve a desired outcome. It provides contextual insight through real-time analytics, and enhances teamwork through collaboration tools and flexible workflow." ;
@@ -1164,6 +1222,8 @@ bpaas:cloudServiceHasAuditLogAvailabilityInMonth 6 ;
 bpaas:cloudServiceHasAuditLogRetentionPeriodInMonths 6 ;
 bpaas:cloudServiceHasBackupFrequency bpaas:not_specified ;
 bpaas:cloudServiceHasBackupRetentionTime bpaas:not_specified ;
+bpaas:CloudServiceHasMediaTypeImportExport bpaas:pdf ;
+bpaas:CloudServiceHasMediaTypeImportExport questiondata:FileUpload_PDF ;
 bpaas:cloudServiceHasDataMigration not specified ;
 bpaas:cloudServiceHasAPI "true"^^xsd:boolean ;
 bpaas:cloudServiceHasServiceSupportResponsiveness <http://ikm-group.ch/archimeo/bpaas#at_most_1.5_hours> ;
@@ -1172,7 +1232,7 @@ bpaas:cloudServiceHasTargetMarket bpaas:NoTarget ;
 rdfs:label IBM Case Manager on Cloud
  ;
 .
-bdata:4e9b8961-a0f5-4a37-9d7d-7834ac18fed4
+bdata:6c70b7b5-ed95-475d-8c91-253f7faa6748
 rdf:type bpaas:CloudService ;
 bpass:cloudServiceHasProvider IBM United Kingdom Ltd
 ;
@@ -1198,6 +1258,8 @@ bpaas:cloudServiceHasAuditLogAvailabilityInMonth 6 ;
 bpaas:cloudServiceHasAuditLogRetentionPeriodInMonths 6 ;
 bpaas:cloudServiceHasBackupFrequency bpaas:not_specified ;
 bpaas:cloudServiceHasBackupRetentionTime bpaas:not_specified ;
+bpaas:CloudServiceHasMediaTypeImportExport bpaas:pdf ;
+bpaas:CloudServiceHasMediaTypeImportExport questiondata:FileUpload_PDF ;
 bpaas:cloudServiceHasDataMigration not specified ;
 bpaas:cloudServiceHasAPI "true"^^xsd:boolean ;
 bpaas:cloudServiceHasServiceSupportResponsiveness bpaas:at_most_2_hours ;
@@ -1206,7 +1268,7 @@ bpaas:cloudServiceHasServiceSupport bpaas:Twenty4Seven ;
 bpaas:cloudServiceHasTargetMarket bpaas:NoTarget ;
 rdfs:label IBM Business Process Manager on Cloud (BPMoC) for orchestration and automation (SaaS for OFFICIAL) ;
 .
-bdata:79c44074-f8d8-40af-8f44-1b229c9424f7
+bdata:28381272-0f7a-4d3e-a82b-b19c4f1b6780
 rdf:type bpaas:CloudService ;
 bpass:cloudServiceHasProvider IBM United Kingdom Ltd;
 bpaas:cloudServiceHasDescription "Capture, automate and manage rules-based business decisions such as determining eligibility for a benefit, approving a claim or right to a service, and detecting fraud. An easy to use business rules automation platform that anyone can work with to quickly initiate business rules management projects at lower cost. (SaaS).
@@ -1237,7 +1299,7 @@ bpaas:cloudServiceHasServiceSupport bpaas:Mon-Fri ;
 bpaas:cloudServiceHasTargetMarket bpaas:NoTarget ;
 rdfs:label IBM Operational Decision Manager on Cloud (ODMOC) (SaaS for OFFICIAL) ;
 .
-bdata:71ca6478-6776-48a1-bb6a-63eaa9223237
+bdata:f22ff1e7-e832-4574-b9b1-5d70c8269d8e
 rdf:type bpaas:CloudService ;
 bpass:cloudServiceHasProvider IBM United Kingdom Ltd;
 bpaas:cloudServiceHasDescription "IBM® Kenexa® Talent Acquisition Suite is a set of products that works together to help you streamline and optimise employee recruitment and onboarding. This comprehensive hiring solution helps you hire, and onboard top talent using an automated process, incorporating the latest mobile and enterprise grade social technologies.
@@ -1263,6 +1325,8 @@ bpaas:cloudServiceHasAuditLogAvailabilityInMonth 12 ;
 bpaas:cloudServiceHasAuditLogRetentionPeriodInMonths 12 ;
 bpaas:cloudServiceHasBackupFrequency bpaas:daily ;
 bpaas:cloudServiceHasBackupFrequency bpaas:weekly ;
+bpaas:CloudServiceHasMediaTypeImportExport bpaas:pdf ;
+bpaas:CloudServiceHasMediaTypeImportExport questiondata:FileUpload_PDF ;
 bpaas:cloudServiceHasDataMigration not specified ;
 bpaas:cloudServiceHasAPI "true"^^xsd:boolean ;
 bpaas:cloudServiceHasServiceSupportResponsiveness bpaas:not_specified ;
@@ -1270,7 +1334,7 @@ bpaas:cloudServiceHasServiceSupport bpaas:Twenty4Seven ;
 bpaas:cloudServiceHasTargetMarket bpaas:NoTarget ;
 rdfs:label IBM Kenexa Talent Acquisition Suite ;
 .
-bdata:2c465fef-eb4d-4890-bc72-25513d4a417a
+bdata:1f23503c-7a4a-432d-94af-3ba7d0d66c36
 rdf:type bpaas:CloudService ;
 bpass:cloudServiceHasProvider IBM United Kingdom Ltd;
 bpaas:cloudServiceHasDescription "To allow for private cloud object storage via purchasing of software licencing & operations from IBM, but utilising 3rd party approved kit (to be purchased independently by the purchaser)" ;
@@ -1291,6 +1355,7 @@ bpaas:cloudServiceHasAuditLogAvailabilityInMonth  ;
 bpaas:cloudServiceHasAuditLogRetentionPeriodInMonths  ;
 bpaas:cloudServiceHasBackupFrequency bpaas:not_specified ;
 bpaas:cloudServiceHasBackupRetentionTime bpaas:not_specified ;
+bpaas:CloudServiceHasMediaTypeImportExport bpaas:not_specified ;
 bpaas:cloudServiceHasDataMigration not specified ;
 bpaas:cloudServiceHasAPI "true"^^xsd:boolean ;
 bpaas:cloudServiceHasServiceSupportResponsiveness bpaas:at_most_2_hours ;
@@ -1298,7 +1363,7 @@ bpaas:cloudServiceHasServiceSupport bpaas:sevenDaysAWeek ;
 bpaas:cloudServiceHasTargetMarket bpaas:NoTarget ;
 rdfs:label IBM Cloud Object Storage (Cleversafe) (SECRET) ;
 .
-bdata:094d965e-9dc4-41b6-842a-af8e2db7e55e
+bdata:a19fe364-d75a-4c00-ba4f-acb3f15bc938
 rdf:type bpaas:CloudService ;
 bpass:cloudServiceHasProvider IBM United Kingdom Ltd;
 bpaas:cloudServiceHasDescription "Blockchain on Bluemix provides Blockchain as a service (SaaS) in the IBM Cloud. It is accessed through IBM’s Bluemix service providing an easy to use development environment for blockchain applications. The blockchain service is hosted on a highly secure LinuxONE platform in a UK based data centre for sensitive workloads." ;
@@ -1331,7 +1396,7 @@ bpaas:cloudServiceHasServiceSupport bpaas:Twenty4Seven ;
 bpaas:cloudServiceHasTargetMarket bpaas:NoTarget ;
 rdfs:label IBM Blockchain on Bluemix – High Security Business Network (HSBN) ;
 .
-bdata:fc62c2a7-ed4f-46a2-8c4f-0fb136f79abd
+bdata:7b1d4987-233b-470f-b0c6-9d45f40abacb
 rdf:type bpaas:CloudService ;
 bpass:cloudServiceHasProvider IBM United Kingdom Ltd;
 bpaas:cloudServiceHasDescription "An IBM cloud hosted and managed portal & content management solution focused on customer and partner web content/application needs. Customers and/or partners focus on developing their content and applications while IBM manages infrastructure, operations, maintenance, and security." ;
@@ -1365,7 +1430,7 @@ bpaas:cloudServiceHasServiceSupport bpaas:Mon-Fri ;
 bpaas:cloudServiceHasTargetMarket bpaas:NoTarget ;
 rdfs:label IBM Digital Experience on Cloud ;
 .
-bdata:b5420102-4868-437d-ab6e-49531c77fd05
+bdata:84f7b331-ad37-4b34-a223-8d4a180d48fb
 rdf:type bpaas:CloudService ;
 bpass:cloudServiceHasProvider IBM United Kingdom Ltd;
 bpaas:cloudServiceHasDescription "IBM Sterling File Transfer Service provides cloud service for file-based B2B interactions. It provides a single, security-rich, highly reliable connection between you and your B2B partners. IBM Sterling File Transfer Service offers an alternative to more expensive on-premise software, while helping to reduce the operational impact on technology staff." ;
@@ -1388,6 +1453,8 @@ bpaas:cloudServiceHasAuditLogAvailabilityInMonth  ;
 bpaas:cloudServiceHasAuditLogRetentionPeriodInMonths  ;
 bpaas:cloudServiceHasBackupFrequency bpaas:not_specified ;
 bpaas:cloudServiceHasBackupRetentionTime bpaas:not_specified ;
+bpaas:CloudServiceHasMediaTypeImportExport bpaas:pdf ;
+bpaas:CloudServiceHasMediaTypeImportExport questiondata:FileUpload_PDF ;
 bpaas:cloudServiceHasDataMigration  ;
 bpaas:cloudServiceHasAPI "false"^^xsd:boolean ;
 bpaas:cloudServiceHasServiceSupportResponsiveness bpaas:at_most_2_hours ;
@@ -1397,7 +1464,7 @@ bpaas:cloudServiceHasServiceSupport bpaas:Mon-Fri ;
 bpaas:cloudServiceHasTargetMarket bpaas:NoTarget ;
 rdfs:label IBM Sterling File Transfer Service ;
 .
-bdata:3073d1a7-7820-4345-a095-5d8e17152a16
+bdata:5b85961e-92fb-4753-9aa5-ab6f1f423c47
 rdf:type bpaas:CloudService ;
 bpass:cloudServiceHasProvider IBM United Kingdom Ltd;
 bpaas:cloudServiceHasDescription "BM® MobileFirst Managed Mobility Services is focused on enabling and managing tasks on mobile devices." ;
@@ -1421,6 +1488,8 @@ bpaas:cloudServiceHasAuditLogAvailabilityInMonth 6 ;
 bpaas:cloudServiceHasAuditLogRetentionPeriodInMonths 6 ;
 bpaas:cloudServiceHasBackupFrequency bpaas:not_specified ;
 bpaas:cloudServiceHasBackupRetentionTime bpaas:not_specified ;
+bpaas:CloudServiceHasMediaTypeImportExport bpaas:pdf ;
+bpaas:CloudServiceHasMediaTypeImportExport questiondata:FileUpload_PDF ;
 bpaas:cloudServiceHasDataMigration  ;
 bpaas:cloudServiceHasAPI "false"^^xsd:boolean ;
 bpaas:cloudServiceHasServiceSupportResponsiveness bpaas:at_most_4_hours ;
@@ -1428,7 +1497,7 @@ bpaas:cloudServiceHasServiceSupport bpaas:Twenty4Seven ;
 bpaas:cloudServiceHasTargetMarket bpaas:NoTarget ;
 rdfs:label IBM Enterprise Managed Mobility (EMM) ;
 .
-bdata:0179a5d3-f23a-4eca-a5b7-d428138b73fa
+bdata:331dbeaa-71be-40af-b899-4a6055c1a3e4
 rdf:type bpaas:CloudService ;
 bpass:cloudServiceHasProvider IBM United Kingdom Ltd;
 bpaas:cloudServiceHasDescription "IBM MVS enable enterprise clients to radically streamline and accelerate mobile adoption. IBM leverages Citrix and VMWare solutions to transform traditional environments. Clients can utilise IBM’s experience and expertise of designing and implementing virtualisation solutions to provide a platform their end users with a secure, scalable and flexible virtualised platform." ;
@@ -1452,6 +1521,8 @@ bpaas:cloudServiceHasAuditLogAvailabilityInMonth 6 ;
 bpaas:cloudServiceHasAuditLogRetentionPeriodInMonths 6 ;
 bpaas:cloudServiceHasBackupFrequency bpaas:not_specified ;
 bpaas:cloudServiceHasBackupRetentionTime bpaas:not_specified ;
+bpaas:CloudServiceHasMediaTypeImportExport bpaas:pdf ;
+bpaas:CloudServiceHasMediaTypeImportExport questiondata:FileUpload_PDF ;
 bpaas:cloudServiceHasDataMigration  ;
 bpaas:cloudServiceHasAPI "false"^^xsd:boolean ;
 bpaas:cloudServiceHasServiceSupportResponsiveness bpaas:at_most_2_hours ;
@@ -1460,7 +1531,7 @@ bpaas:cloudServiceHasServiceSupport bpaas:Twenty4Seven ;
 bpaas:cloudServiceHasTargetMarket bpaas:NoTarget ;
 rdfs:label IBM MobileFirst Virtualisation Services (MVS) ;
 .
-bdata:fe7b710e-2c29-4d93-b0ea-f4756f090087
+bdata:d0fc5e24-8a05-4322-ba84-775c49d8e23c
 rdf:type bpaas:CloudService ;
 bpass:cloudServiceHasProvider IBM United Kingdom Ltd;
 bpaas:cloudServiceHasDescription "IBM Integration Bus (IIB) on Cloud offers flexible integration solution based on enterprise service bus (ESB) technology. IIBoC delivers a fully managed Integration Bus environment providing integration / connectivity across all platforms, providing secure integration without the need to acquire and maintain an IT infrastructure." ;
@@ -1496,7 +1567,7 @@ bpaas:cloudServiceHasServiceSupport bpaas:Mon-Fri ;
 bpaas:cloudServiceHasTargetMarket bpaas:NoTarget ;
 rdfs:label IBM Integration Bus on Cloud (SaaS for OFFICIAL) ;
 .
-bdata:df4e4299-bdca-4585-ac0a-3bd9e19d300d
+bdata:8a6979d6-f8f4-4bc2-bbc6-4c94ef0cbd3e
 rdf:type bpaas:CloudService ;
 bpass:cloudServiceHasProvider IBM United Kingdom Ltd;
 bpaas:cloudServiceHasDescription "IBM offers Wide-Area and Local-Area Data Centre Network assessment, design and implementation to production cloud platforms, optimized, virtualized or software defined, as well as integrated or migrated to client environments. IBM Data Centre Network Services for Cloud provide people, process and technology for organizations innovating to a cloud computing model." ;
@@ -1520,6 +1591,8 @@ bpaas:cloudServiceHasAuditLogAvailabilityInMonth 6 ;
 bpaas:cloudServiceHasAuditLogRetentionPeriodInMonths 6 ;
 bpaas:cloudServiceHasBackupFrequency bpaas:not_specified ;
 bpaas:cloudServiceHasBackupRetentionTime bpaas:not_specified ;
+bpaas:CloudServiceHasMediaTypeImportExport bpaas:pdf ;
+bpaas:CloudServiceHasMediaTypeImportExport questiondata:FileUpload_PDF ;
 bpaas:cloudServiceHasDataMigration  ;
 bpaas:cloudServiceHasAPI "true"^^xsd:boolean ;
 bpaas:cloudServiceHasServiceSupportResponsiveness bpaas:not_specified ;
@@ -1527,7 +1600,7 @@ bpaas:cloudServiceHasServiceSupport bpaas:Twenty4Seven ;
 bpaas:cloudServiceHasTargetMarket bpaas:NoTarget ;
 rdfs:label IBM Data Centre Network Services for Cloud ;
 .
-bdata:f5805dd6-4943-4c6d-9809-d9aadf869a8a
+bdata:c7c2d348-596f-4d8a-8df4-d6b70c8cc448
 rdf:type bpaas:CloudService ;
 bpass:cloudServiceHasProvider Dropbox, Inc.;
 bpaas:cloudServiceHasDescription "Dropbox Enterprise brings that same simplicity of Dropbox to the workplace, with enterprise-grade features that help teams share instantly across their organizations and give admins the visibility and control they need. But more than just an easy-to-use tool, Dropbox Enterprise is designed to let employees collaborate while keeping work secure." ;
@@ -1552,6 +1625,8 @@ bpaas:cloudServiceHasAuditLogRetentionPeriodInMonths 12 ;
 bpaas:cloudServiceHasBackupFrequency bpaas:hourly ;
 bpaas:cloudServiceHasBackupFrequency bpaas:daily ;
 bpaas:cloudServiceHasBackupRetentionTime bpaas:not_specified ;
+bpaas:CloudServiceHasMediaTypeImportExport bpaas:pdf ;
+bpaas:CloudServiceHasMediaTypeImportExport questiondata:FileUpload_PDF ;
 bpaas:cloudServiceHasDataMigration  ;
 bpaas:cloudServiceHasAPI "true"^^xsd:boolean ;
 bpaas:cloudServiceHasServiceSupportResponsiveness bpaas:not_specified ;
@@ -1559,7 +1634,7 @@ bpaas:cloudServiceHasServiceSupport bpaas:Twenty4Seven ;
 bpaas:cloudServiceHasTargetMarket bpaas:NoTarget ;
 rdfs:label Dropbox Enterprise ;
 .
-bdata:cb6b77af-3e04-43ec-9009-d4e25dbbadef
+bdata:a33eaac7-5f28-4d0a-8991-27cb2e5d444f
 rdf:type bpaas:CloudService ;
 bpass:cloudServiceHasProvider Amazon Web Services;
 bpaas:cloudServiceHasDescription "Amazon Connect is a self-service, cloud-based contact-centre service that makes it easy for any business to deliver better customer service at lower cost. The self-service graphical interface in Amazon Connect makes it easy for non-technical users to design contact flows, manage agents, and track performance metrics." ;
@@ -1583,6 +1658,8 @@ bpaas:cloudServiceHasAuditLogAvailabilityInMonth 12 ;
 bpaas:cloudServiceHasAuditLogRetentionPeriodInMonths 12 ;
 bpaas:cloudServiceHasBackupFrequency bpaas:not_specified ;
 bpaas:cloudServiceHasBackupRetentionTime bpaas:not_specified ;
+bpaas:CloudServiceHasMediaTypeImportExport bpaas:pdf ;
+bpaas:CloudServiceHasMediaTypeImportExport questiondata:FileUpload_PDF ;
 bpaas:cloudServiceHasDataMigration  ;
 bpaas:cloudServiceHasAPI "true"^^xsd:boolean ;
 bpaas:cloudServiceHasServiceSupportResponsiveness bpaas:not_specified ;
@@ -1590,7 +1667,7 @@ bpaas:cloudServiceHasServiceSupport bpaas:Twenty4Seven ;
 bpaas:cloudServiceHasTargetMarket bpaas:NoTarget ;
 rdfs:label Amazon Connect ;
 .
-bdata:9910b735-dd26-4592-9d17-49da4c8569a4
+bdata:b8141844-5974-4793-a9f0-9b5b4a1d9841
 rdf:type bpaas:CloudService ;
 bpass:cloudServiceHasProvider Amazon Web Services;
 bpaas:cloudServiceHasDescription "Amazon WorkMail is a secure, managed business email and calendar service with support for existing desktop and mobile email clients. Amazon WorkMail gives users the ability to seamlessly access their email, contacts, and calendars using Microsoft Outlook, their web browser, or their native iOS and Android email applications. " ;
@@ -1613,6 +1690,8 @@ bpaas:cloudServiceHasAuditLogAvailabilityInMonth  ;
 bpaas:cloudServiceHasAuditLogRetentionPeriodInMonths  ;
 bpaas:cloudServiceHasBackupFrequency bpaas:not_specified ;
 bpaas:cloudServiceHasBackupRetentionTime bpaas:not_specified ;
+bpaas:CloudServiceHasMediaTypeImportExport bpaas:pdf ;
+bpaas:CloudServiceHasMediaTypeImportExport questiondata:FileUpload_PDF ;
 bpaas:cloudServiceHasDataMigration  ;
 bpaas:cloudServiceHasAPI "true"^^xsd:boolean ;
 bpaas:cloudServiceHasServiceSupportResponsiveness bpaas:at_most_4_hours ;
@@ -1621,7 +1700,7 @@ bpaas:cloudServiceHasServiceSupport bpaas:Twenty4Seven ;
 bpaas:cloudServiceHasTargetMarket bpaas:NoTarget ;
 rdfs:label Amazon WorkMail ;
 .
-bdata:62b1f55b-3cdc-4e75-9175-91124b52aeac
+bdata:b3b6d0ea-c3ec-42f3-878b-37667de66733
 rdf:type bpaas:CloudService ;
 bpass:cloudServiceHasProvider Amazon Web Services;
 bpaas:cloudServiceHasDescription "Amazon Route 53 is highly available and scalable cloud Domain Name System web service, giving developers and businesses a reliable and cost effective way to route users to Internet applications by translating names (e.g. www.example.com) into numeric IP addresses (e.g. 192.0.2.1) that computers use to connect to each other." ;
@@ -1644,6 +1723,8 @@ bpaas:cloudServiceHasAuditLogAvailabilityInMonth  ;
 bpaas:cloudServiceHasAuditLogRetentionPeriodInMonths  ;
 bpaas:cloudServiceHasBackupFrequency bpaas:not_specified ;
 bpaas:cloudServiceHasBackupRetentionTime bpaas:not_specified ;
+bpaas:CloudServiceHasMediaTypeImportExport bpaas:pdf ;
+bpaas:CloudServiceHasMediaTypeImportExport questiondata:FileUpload_PDF ;
 bpaas:cloudServiceHasDataMigration  ;
 bpaas:cloudServiceHasAPI "true"^^xsd:boolean ;
 bpaas:cloudServiceHasServiceSupportResponsiveness bpaas:not_specified ;

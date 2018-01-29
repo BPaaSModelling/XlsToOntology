@@ -706,6 +706,19 @@ public class Operation {
 
 							}
 							break;
+						case 29:
+							//MediaType Data Export Import format
+							
+							ArrayList<String> matchInstances_exportImport = new ArrayList<String>();
+							matchInstances_exportImport = getMatchedInstances(cell.toString());
+
+							for (int i = 0; i < matchInstances_exportImport.size(); i++) {
+
+								cs.properties.add(new CloudServiceProperty("bpaas:CloudServiceHasMediaTypeImportExport",
+										matchInstances_exportImport.get(i) + " ;"));
+
+							}
+							break;
 						case 31:
 							// data migration
 
