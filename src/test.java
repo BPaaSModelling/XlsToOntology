@@ -36,7 +36,7 @@ public class test {
 			for (int j = 0; j < op.getServices().get(i).getProperties().size(); j++){
 				System.out.println(op.getServices().get(i).getProperties().get(j).name + " " + op.getServices().get(i).getProperties().get(j).value);
 			}
-			System.out.println("rdfs:label " + op.getServices().get(i).getName()+" ;");
+			System.out.println("rdfs:label " + "\"" + op.getServices().get(i).getName()+ "\" ;");
 			System.out.println(".");
 		}
 		//TODO: STORE THE DATA INTO A PHYSICAL FILE IN FOLDER  ".\\resources\\Output
