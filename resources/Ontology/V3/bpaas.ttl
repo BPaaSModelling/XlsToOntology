@@ -719,11 +719,6 @@ bpaas:StoredDataLocation
   rdf:type owl:Class ;
   rdfs:subClassOf archi:DataObject ;
 .
-bpaas:SugarCRM
-  rdf:type bpaas:CloudService ;
-  bpaas:cloudServiceHasEncryptionType bpaas:Sha256 ;
-  rdfs:label "SugarCRM" ;
-.
 bpaas:SupportChannel
   rdf:type owl:Class ;
   rdfs:label "Support Channel" ;
