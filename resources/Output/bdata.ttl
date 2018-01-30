@@ -1,0 +1,51 @@
+# baseURI: http://ikm-group.ch/archiMEO/bdata
+# imports: http://ikm-group.ch/archimeo/bpaas
+# imports: http://ikm-group.ch/archimeo/questionnaire
+
+# prefix: bdata
+
+@prefix apqc: <http://ikm-group.ch/archimeo/apqc#> .
+@prefix bdata: <http://ikm-group.ch/archiMEO/bdata#> .
+@prefix bpaas: <http://ikm-group.ch/archimeo/bpaas#> .
+@prefix fbpdo: <http://ikm-group.ch/archimeo/fbpdo#> .
+@prefix questionnaire: <http://ikm-group.ch/archimeo/questionnaire#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix top: <http://ikm-group.ch/archiMEO/top#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://ikm-group.ch/archiMEO/bdata>
+  rdf:type owl:Ontology ;
+  owl:imports <http://ikm-group.ch/archimeo/bpaas> ;
+  owl:versionInfo "Created with TopBraid Composer" ;
+  .
+bdata:a0217452-c2c8-4d37-8499-5840b0ecc418
+rdf:type bpaas:CloudService ;
+bpaas:cloudServiceHasDescription "The Accellion kiteworks solution enables secure inter-and-intra agency collaboration, secure remote access to files and documents, as well as easy collaboration with contractors and constituents, from any device, ensuring today’s government employees are productive and agile." ;
+bpaas:cloudServiceHasPaymentPlan bpaas:TryFreeFirst ;
+bpaas:cloudServiceHasPaymentPlan bpaas:PrepaidAnnualPlan ;
+bpaas:cloudServiceHasEncryptionType bpaas:SOX ;
+bpaas:cloudServiceHasSecurityStandardInPlace questionnaire:Yes ;
+bpaas:cloudServiceHasAutomatedPasswordManagmentSystem questionnaire:Not_Specified ;
+bpaas:cloudServiceHasPerformanceManagementSystemInPlace questionnaire:Not_Specified ;
+bpaas:cloudServiceHasDifferentPerformancePlanAvailable questionnaire:No ;
+bpaas:cloudServiceHasResponseTime_in_ms questionnaire:Not_Specified ;
+bpaas:cloudServiceHasScalableProcessingPower questionnaire:Yes ;
+bpaas:cloudServiceHasScalableStorage questionnaire:Yes ;
+bpaas:cloudServiceHasDataStorageInGB questionnaire:Not_Specified ;
+bpaas:cloudServiceHasDataStorageInGB questionnaire:Not_Specified ;
+bpaas:cloudServiceHasAccessLogAvailabilityInMonths 12.0_;
+bpaas:cloudServiceHasAccessLogRetentionPeriodInMonths 12.0 ;
+bpaas:cloudServiceHasAuditLogAvailabilityInMonth 12.0 ;
+bpaas:cloudServiceHasAuditLogRetentionPeriodInMonths 12.0 ;
+bpaas:cloudServiceHasBackupFrequency bpaas:not_specified ;
+bpaas:CloudServiceHasMediaTypeImportExport bpaas:pdf ;
+bpaas:cloudServiceHasDataMigration questionnaire:No ;
+bpaas:cloudServiceHasAPI questionnaire:Yes ;
+bpaas:cloudServiceHasServiceSupportResponsiveness bpaas:at_most_3_hours ;
+bpaas:cloudServiceHasServiceSupport bpaas:Mon-Fri ;
+bpaas:cloudServiceHasServiceSupport bpaas:Twenty4Seven ;
+bpaas:cloudServiceHasTargetMarket bpaas:Government_Institutions ;
+rdfs:label "Accellion Mobile Productivity and Collaboration (kiteworks)" ;
+.

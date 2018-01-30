@@ -4,6 +4,11 @@ import java.util.ArrayList;
 
 
 public class OntologyClass {
+	@Override
+	public String toString() {
+		return "||" + name + ", attributes=" + attributes + "||\n";
+	}
+
 	//This JAVA-class define the "Class" of an Ontology
 	private String name;
 	private ArrayList<String> types;

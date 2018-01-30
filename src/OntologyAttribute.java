@@ -1,6 +1,11 @@
 
 
 public class OntologyAttribute {
+@Override
+	public String toString() {
+		return " {" + name +" "+ type +" "+ value + "}";
+	}
+
 private String name;
 private String type;
 private String value;

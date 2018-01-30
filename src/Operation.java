@@ -341,11 +341,13 @@ public class Operation {
 				int t = 0;
 				while (cellIterator.hasNext()) {
 					Cell cell = cellIterator.next();
-					System.out.println("READING CELL COL " + cell.getColumnIndex()+ " ROW "+ cell.getRowIndex() +" WITH VALUE: " + cell.toString());
+					if (row.getRowNum() >0 ){
+					System.out.println("READING CELL COL " + cell.getColumnIndex()+ " ROW "+ cell.getRowIndex() +" WITH VALUE: " + cell.toString());}
+					
 
 					//TODO: IF THE FIRST ROW IS THE MENU, IT SHOULD NOT SCAN IT AND ADD IT TO THE ONTOLOGY. CHECK IF THE CELL A1 AND B1, IF IT'S THE MENU, SKIP THE LINE
 					//TODO: bpass:cloudServiceHasProvider Bridgeway Security Solutions. THIS SHOULD BE bpass:cloudServiceHasProvider "Bridgeway Security Solutions" SAME FOR LABEL AND ALL THE TEXTUALS ATTRIBUTES
-					if (row.getRowNum() > 1){
+					if (row.getRowNum() > 0){
 
 						if (true) {
 							maxcount = row.getLastCellNum();
@@ -354,14 +356,14 @@ public class Operation {
 							
 							case 0:
 								cs.setName(cell.toString());
-								System.out.println("Name of cloud service: "+cs.getName());
+								//System.out.println("Name of cloud service: "+cs.getName());
 								break;
-
+								
 								// here i am parsing provider
 							case 1:
 								if (!validateNullCellString(cell.toString())) {
-									cs.properties.add(new CloudServiceProperty("bpass:cloudServiceHasProvider",
-											"\""+String.valueOf(cell.toString()) + "\" ;"));
+									//cs.properties.add(new CloudServiceProperty("bpass:cloudServiceHasProvider",
+										//	"\""+String.valueOf(cell.toString()) + "\" ;"));
 								}
 								break;
 
@@ -387,8 +389,7 @@ public class Operation {
 									validated="<http://ikm-group.ch/archimeo/apqc#"+validated;
 									//validated=validated+"URI NUMBER E.G. <http://ikm-group.ch/archimeo/apqc#9_11_7_Document_trade_14095>";
 									validated=validated+">";
-									cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasAPQC",
-											validated + " ;"));
+									cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasAPQC",	validated + " ;"));
 								}
 								break;
 
@@ -397,11 +398,9 @@ public class Operation {
 								// here I am parsing action class
 								ArrayList<String> matchedClasses_forAction;// = new ArrayList<String>();
 								matchedClasses_forAction = getMatchedClasses(validateFbpdo(cell.toString()));
-								//System.out.println("..>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"+validateFbpdo(cell.toString()));
+								
 								for (int i = 0; i < matchedClasses_forAction.size(); i++) {
-									cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasAction",
-											matchedClasses_forAction.get(i)+" ;"));
-
+									cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasAction",(validateString(matchedClasses_forAction.get(i))+" ;")));
 								}
 
 								break;
@@ -411,8 +410,7 @@ public class Operation {
 								matchedClasses = getMatchedClasses(validateFbpdo(cell.toString()));
 
 								for (int i = 0; i < matchedClasses.size(); i++) {
-									cs.properties.add(
-											new CloudServiceProperty("bpaas:cloudServiceHasObject", matchedClasses.get(i)));
+									cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasObject", (validateString(matchedClasses.get(i))+" ;")));
 								}
 
 								break;
@@ -423,26 +421,24 @@ public class Operation {
 								ArrayList<String> matchInstance_PaymentPlan = new ArrayList<String>();
 								matchInstance_PaymentPlan = getMatchedInstances(cell.toString());
 								for (int i = 0; i < matchInstance_PaymentPlan.size(); i++) {
-									cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasPaymentPlan",
-											validateString(matchInstance_PaymentPlan.get(i)) + " ;"));
+									cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasPaymentPlan", validateString(matchInstance_PaymentPlan.get(i)) + " ;"));
 
 								}
 								break;
 
 							case 10:
 								// Here I am parsing additional costs
-								if (cell.toString() != null) {
-
-									cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasAdditionalCosts",
-											validateBooleanCellString(String.valueOf(cell.toString()))));
-								}
+//								if (cell.toString() != null) {
+//									cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasAdditionalCosts",
+//											validateBooleanCellString(String.valueOf(cell.toString()))));
+//								}
 								break;
 
 							case 11:
 
 								// Here I am parsing Encryption Type
 								ArrayList<String> matchInstanceEncryption = new ArrayList<String>();
-								matchInstanceEncryption = getMatchedInstances(cell.toString());
+								matchInstanceEncryption = getMatchedInstances(validateString(cell.toString()));
 								for (int i = 0; i < matchInstanceEncryption.size(); i++) {
 
 									cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasEncryptionType",
@@ -456,12 +452,9 @@ public class Operation {
 								// Here I am parsing StoredDataLocation
 
 								ArrayList<String> matchClasses_location = new ArrayList<String>();
-								matchClasses_location = getMatchedClasses(cell.toString());
-								for (int i = 0; i < matchClasses_location.size(); i++)
-
-								{
-									cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasStoredDataLocation",
-											validateString(matchClasses_location.get(i)) + " ;"));
+								matchClasses_location = getMatchedClasses(validateString(cell.toString()));
+								for (int i = 0; i < matchClasses_location.size(); i++){
+									cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasStoredDataLocation", validateString(matchClasses_location.get(i)) + " ;"));
 								}
 
 								break;
@@ -487,7 +480,7 @@ public class Operation {
 
 							case 13:
 
-								if (cell.toString() != null && validateNullCellString(cell.toString())) {
+								if (cell.toString() != null && validateNullCellString(validateBooleanCellString(cell.toString()))) {
 									cs.properties
 									.add(new CloudServiceProperty("bpaas:cloudServiceHasSecurityStandardInPlace",
 											validateBooleanCellString(cell.toString())));
@@ -505,7 +498,7 @@ public class Operation {
 								// Here I am parsing password management system
 								// automated
 
-								if (cell.toString() != null && validateNullCellString(cell.toString())) {
+								if (cell.toString() != null && validateNullCellString(validateBooleanCellString(cell.toString()))) {
 
 									cs.properties.add(new CloudServiceProperty(
 											"bpaas:cloudServiceHasAutomatedPasswordManagmentSystem",
@@ -523,7 +516,7 @@ public class Operation {
 							case 15:
 								// performanceManagementSystem in place
 
-								if (cell.toString() != null && validateNullCellString(cell.toString())) {
+								if (cell.toString() != null && validateNullCellString(validateBooleanCellString(cell.toString()))) {
 									cs.properties.add(new CloudServiceProperty(
 											"bpaas:cloudServiceHasPerformanceManagementSystemInPlace",
 											validateBooleanCellString(cell.toString())));
@@ -538,7 +531,7 @@ public class Operation {
 							case 16:
 								// different performance plan available
 
-								if (cell.toString() != null && validateNullCellString(cell.toString())) {
+								if (cell.toString() != null && validateNullCellString(validateBooleanCellString(cell.toString()))) {
 									cs.properties.add(new CloudServiceProperty(
 											"bpaas:cloudServiceHasDifferentPerformancePlanAvailable",
 											validateBooleanCellString(cell.toString())));
@@ -546,7 +539,6 @@ public class Operation {
 									cs.properties.add(new CloudServiceProperty(
 											"bpaas:cloudServiceHasDifferentPerformancePlanAvailable",
 											validateBooleanCellString(cell.toString())));
-
 								break;
 
 							case 17:
@@ -579,7 +571,6 @@ public class Operation {
 								} else
 									cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasScalableStorage",
 											validateBooleanCellString(cell.toString())));
-
 								break;
 
 							case 20:
@@ -627,13 +618,13 @@ public class Operation {
 								// months
 
 								if (!validateNullCellString(cell.toString())) {
-									cs.properties.add(
-											new CloudServiceProperty("bpaas:cloudServiceHasAccessLogAvailabilityInMonths",
-													validateNumeric(cell) + " ;"));
-								} else
+								
 									cs.properties.add(			
 											new CloudServiceProperty("bpaas:cloudServiceHasAccessLogAvailabilityInMonths",
 													validateString(String.valueOf(cell.toString()) + " ;")));
+									}else {
+										new CloudServiceProperty("bpaas:cloudServiceHasAccessLogAvailabilityInMonths", "questionnaire:Not_Specified ;");
+									}
 
 								break;
 
@@ -856,7 +847,7 @@ public class Operation {
 	private String validateBooleanCellString(String cell) {
 		boolean result;
 		if (cell.equals("not specified") ||cell.equals("not specfied") || cell.equals("Not specified")|| cell.equals("not_specified") || cell.equals("Not_specified") || cell.equals("") ||cell.equals(" ") || cell.equals(null) || null_values_string.contains(cell.toString())) {
-			return "questionnaire:Not_Specified";
+			return "questionnaire:Not_Specified ;";
 		} else if (cell.equals("Any")||cell.equals("Any")) {
 			return "questionnaire:Any ;";
 		} else if (cell.equals("No")||cell.equals("Not")|| cell.equals("no") || cell.equals("not")) {
@@ -869,17 +860,77 @@ public class Operation {
 	}
 
 	private String validateString(String cell) {
+		for (int i=0; i<cell.length(); i++) {
+			if (cell.startsWith(" ")||cell.startsWith("_") ) {
+				cell=cell.substring(1);
+			}
+		}
+		
 		boolean result;
-		if (cell.equals("not specified") ||cell.equals("not specfied") || cell.equals("Not specified")|| cell.equals("not_specified") || cell.equals("Not_specified") || cell.equals("") ||cell.equals(" ") || cell.equals(null) || null_values_string.contains(cell.toString())) {
-			return "questionnaire:Not_Specified";
+		if (cell.equals("not specified") ||cell.equals("not defined") ||cell.equals("not specfied") || cell.equals("Not specified")|| cell.equals("not_specified") || cell.equals("Not_specified") || cell.equals("") ||cell.equals(" ") || cell.equals(null) || null_values_string.contains(cell.toString())) {
+			return "questionnaire:Not_Specified ;";
 		} else if (cell.equals("Any")||cell.equals("Any")) {
 			return "questionnaire:Any";
-		} else if (cell.equals("No")||cell.equals("Not")|| cell.equals("no") || cell.equals("not")) {
+		} else if (cell.equals("No")||cell.equals("Not")|| cell.equals("no") || cell.equals("not") || cell.equals("None")|| cell.equals("none")) {
 			return "questionnaire:No";
 		} else if (cell.equals("Yes")||cell.equals("yes")) {
 			return "questionnaire:Yes";
-		} else {
-			return cell.toString().replace(" ","");
+			
+			//PAYMENT PLAN
+		}else if (cell.equals("Customizable Plan")) {
+			return "bpaas:CustomizablePlan";
+		}else if (cell.equals("Free of Charge")) {
+			return "bpaas:FreeofCharge";
+		}else if (cell.equals("Monthly Fee")) {
+			return "bpaas:MonthlyFee";
+		}else if (cell.equals("Any")||cell.equals("Any")) {
+			return "questionnaire:Any";
+		}else if (cell.equals("Prepaid Annual Plan")) {
+			return "bpaas:PrepaidAnnualPlan";
+		}else if (cell.equals("Try Free First")) {
+			return "bpaas:TryfreeFirst";
+						
+			
+			//ENCRYPTION TYPE
+		}else if (cell.equals("TLS VPN")) {
+			return "bpaas:TLS_VPN";
+		}else if (cell.equals("IP Filtering")) {
+			return "bpaas:IP_Filtering";
+		} else if (cell.equals("SSL (Secure Sockets Layer)")) {
+			return "bpaas:SSL";
+		} else if (cell.equals("ISO:27001")) {
+			return "bpaas:ISO27001";
+		}  
+		
+
+		//STORED DATA LOCATION
+		else if (cell.equals("European Economic Area (EEA)")) {
+			return "bpaas:European_Economic_Area_EEA";
+
+			//SERVICE SUPPORT
+		}else if (cell.equals("at_most_1_working_days")) {
+			return "bpaas:at_most_1_working_day";
+		} else if (cell.equals("24-7")) {
+			return "bpaas:Twenty4seven";
+		}else if (cell.equals("7 days a week")) {
+			return "bpaas:sevenDaysAWeek";
+		}else if (cell.equals("24-5")) {
+			return "bpaas:Twenty4five";
+		}else if (cell.equals("9am-5pm")) {
+			return "bpaas:nineToFive";
+		}
+		
+		//Target Market 
+		else if (cell.equals("Culture/Archeology")) {
+			return "bpaas:cultureArcheology";
+		}else if (cell.equals("No Target")) {
+			return "bpaas:NoTarget";
+		} 
+
+		
+		
+		else {
+			return cell.toString().replace(" ","_");
 		}
 	}
 
@@ -933,7 +984,7 @@ public class Operation {
 
 			}
 			if (!found) {
-				//System.out.println("WARNING > " + sublabels[i] + " CLASS NOT FOUND!");
+				System.out.println("WARNING > " + sublabels[i] + " CLASS NOT FOUND!");
 			}
 		}
 
@@ -954,7 +1005,7 @@ public class Operation {
 
 			}
 			if (!found) {
-				//System.out.println("WARNING > " + sublabels[i] + " INSTANCE NOT FOUND!");
+				System.out.println("WARNING > " + sublabels[i] + " INSTANCE NOT FOUND!");
 			}
 		}
 

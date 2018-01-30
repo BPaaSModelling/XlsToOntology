@@ -5,6 +5,10 @@ import java.util.ArrayList;
 //This Java-class defines an instance in the Ontology
 
 public class OntologyInstance {
+	@Override
+	public String toString() {
+		return "OntologyInstance [name=" + name + ", types=" + types + ", attributes=" + attributes + "]";
+	}
 	private String name;
 	private ArrayList<String> types;
 	private ArrayList<OntologyAttribute> attributes;

@@ -3,6 +3,11 @@
 import java.util.ArrayList;
 
 public class OntologyProperty {
+	@Override
+	public String toString() {
+		return "OntologyProperty [name=" + name + ", types=" + types + ", attributes=" + attributes + "]";
+	}
+
 	//This JAVA-class define a property of an instance in the Ontology
 	private String name;
 	private ArrayList<String> types;

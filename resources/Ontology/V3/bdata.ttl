@@ -1,11 +1,14 @@
 # baseURI: http://ikm-group.ch/archiMEO/bdata
 # imports: http://ikm-group.ch/archimeo/bpaas
+# imports: http://ikm-group.ch/archimeo/questionnaire
+
 # prefix: bdata
 
 @prefix apqc: <http://ikm-group.ch/archimeo/apqc#> .
 @prefix bdata: <http://ikm-group.ch/archiMEO/bdata#> .
 @prefix bpaas: <http://ikm-group.ch/archimeo/bpaas#> .
 @prefix fbpdo: <http://ikm-group.ch/archimeo/fbpdo#> .
+@prefix bpaas: <http://ikm-group.ch/archimeo/questionnaire#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
