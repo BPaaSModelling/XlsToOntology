@@ -727,13 +727,8 @@ public class Operation {
 
 									cs.properties.add(
 											new CloudServiceProperty("bpaas:cloudServiceHasAuditLogAvailabilityInMonth",
-													validateString(String.valueOf(cell.toString()) + " ;")));
-								} else
-
-									cs.properties.add(
-											new CloudServiceProperty("bpaas:cloudServiceHasAuditLogAvailabilityInMonth",
-													validateString(validateNumeric(cell)) + " ;"));
-
+													validateNumeric(cell) + " ;"));
+								}
 								break;
 
 							case 26:
@@ -742,13 +737,9 @@ public class Operation {
 
 									cs.properties.add(
 											new CloudServiceProperty("bpaas:cloudServiceHasAuditLogRetentionPeriodInMonths",
-													validateString(String.valueOf(cell.toString()) + " ;")));
-								} else
-
-									cs.properties.add(
-											new CloudServiceProperty("bpaas:cloudServiceHasAuditLogRetentionPeriodInMonths",
 													validateNumeric(cell) + " ;"));
-
+									System.out.println(cell.toString()+" -------------------------------------->"+validateNumeric(cell));
+								}
 								break;
 
 							case 27:
@@ -840,14 +831,15 @@ public class Operation {
 								break;
 
 							case 33:
-
-
+								
 								cellValues=cell.toString();
-
+															
 								validatedAl=new ArrayList<String>(Arrays.asList(cellValues.split((","))));
 
 								for (int i = 0; i < validatedAl.size(); i++) {
 									cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasServiceSupportResponsiveness", validateString(validatedAl.get(i)) +" ;"));
+									//System.out.println(cellValues+" -------------------------------------->"+validateString(validatedAl.get(i)));
+									
 								}
 
 
@@ -873,7 +865,12 @@ public class Operation {
 								validatedAl=new ArrayList<String>(Arrays.asList(cellValues.split((","))));
 
 								for (int i = 0; i < validatedAl.size(); i++) {
-									cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasServiceSupport", validateString(validatedAl.get(i).replace(" ", "_")) +" ;"));
+									String validated= validatedAl.get(i).replace(" ", "_");
+									
+									validated = validated.substring(0,1).toUpperCase() + validated.substring(1);
+									validated=validateString(validated);
+									cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasServiceSupport", validated +" ;"));
+									//System.out.println(cellValues+" -------------------------------------->"+validateString(validatedAl.get(i)));
 								}
 								//								
 								//
@@ -896,10 +893,14 @@ public class Operation {
 								validatedAl=new ArrayList<String>(Arrays.asList(cellValues.split((","))));
 
 								for (int i = 0; i < validatedAl.size(); i++) {
-
-									cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasSupportChannel",
-											validateString(validatedAl.get(i).replace(" ","_")) +" ;"));
-
+									String validated= validatedAl.get(i).replace(" ", "_");
+									//System.out.println(validated);
+									validated = validated.substring(0,1).toUpperCase() + validated.substring(1);
+									//System.out.println(validated);
+									validated=validateString(validated);
+									//System.out.println(validated);
+									cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasSupportChannel", validated +" ;"));
+									//System.out.println(cellValues+" -------------------------------------->"+validated);
 								}
 								break;
 
@@ -954,7 +955,6 @@ public class Operation {
 
 	private String validateNumeric(Cell cell) {
 
-
 		if (cell.equals("not specified") ||cell.equals("not specfied") || cell.equals("Not specified")|| cell.equals("not_specified") || cell.equals("Not_specified") || cell.equals("") ||cell.equals(" ") || cell.equals(null) || null_values_string.contains(cell.toString())) {
 			return "questionnaire:Not_Specified";
 		}else {
@@ -1001,7 +1001,7 @@ public class Operation {
 		if (cell.startsWith(" ")||cell.startsWith("_") ) {
 			cell=cell.substring(1,cell.length());
 		}
-
+		cell = cell.substring(0,1).toUpperCase() + cell.substring(1);
 		cell=cell.replace("(","");
 		cell=cell.replace(")","");
 
@@ -1056,7 +1056,7 @@ public class Operation {
 			return "bpaas:sevenDaysAWeek";
 		}else if (cell.equals("24-5")) {
 			return "bpaas:Twenty4five";
-		}else if (cell.equals("9_AM_-_5_PM")) {
+		}else if (cell.equals("9 AM - 5 PM")) {
 			return "bpaas:nineToFive";
 		}
 
