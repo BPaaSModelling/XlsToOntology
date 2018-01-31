@@ -10,14 +10,14 @@ public class test {
 		//String pathExcel = ".\\resources\\ExcelFiles\\testexcel.xlsm";
 		//String pathOntology = ".\\resources\\Ontology\\old version - deprecated\\";
 		
-		String pathExcel = ".\\resources\\ExcelFiles\\pleuratFirstLine.xlsx";
+		String pathExcel = ".\\resources\\ExcelFiles\\pluerat_latestfile.xlsx";
 		String pathOntology = ".\\resources\\Ontology\\V3\\";
 		
 		Operation op = new Operation();
 		
 		op.parseOntology(pathOntology + "fbpdo.ttl");
 		op.parseOntology(pathOntology + "bpaas.ttl");
-		System.out.println(op.getClasses().toString());
+		//System.out.println(op.getClasses().toString());
 		op.parseOntology(pathOntology + "apqc.ttl");
 		op.parseOntology(pathOntology + "questionnaire.ttl");
 		op.parseOntology(pathOntology + "questiondata.ttl");

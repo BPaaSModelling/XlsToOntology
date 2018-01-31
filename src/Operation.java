@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.lang.reflect.Array;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Iterator;
 import java.util.Scanner;
 
@@ -342,8 +343,9 @@ public class Operation {
 				while (cellIterator.hasNext()) {
 					Cell cell = cellIterator.next();
 					if (row.getRowNum() >0 ){
-					System.out.println("READING CELL COL " + cell.getColumnIndex()+ " ROW "+ cell.getRowIndex() +" WITH VALUE: " + cell.toString());}
-					
+						//System.out.println("READING CELL COL " + cell.getColumnIndex()+ " ROW "+ cell.getRowIndex() +" WITH VALUE: " + cell.toString());
+					}
+
 
 					//TODO: IF THE FIRST ROW IS THE MENU, IT SHOULD NOT SCAN IT AND ADD IT TO THE ONTOLOGY. CHECK IF THE CELL A1 AND B1, IF IT'S THE MENU, SKIP THE LINE
 					//TODO: bpass:cloudServiceHasProvider Bridgeway Security Solutions. THIS SHOULD BE bpass:cloudServiceHasProvider "Bridgeway Security Solutions" SAME FOR LABEL AND ALL THE TEXTUALS ATTRIBUTES
@@ -353,17 +355,17 @@ public class Operation {
 							maxcount = row.getLastCellNum();
 
 							switch (cell.getColumnIndex()) {
-							
+
 							case 0:
 								cs.setName(cell.toString());
 								//System.out.println("Name of cloud service: "+cs.getName());
 								break;
-								
+
 								// here i am parsing provider
 							case 1:
 								if (!validateNullCellString(cell.toString())) {
 									//cs.properties.add(new CloudServiceProperty("bpass:cloudServiceHasProvider",
-										//	"\""+String.valueOf(cell.toString()) + "\" ;"));
+									//	"\""+String.valueOf(cell.toString()) + "\" ;"));
 								}
 								break;
 
@@ -376,118 +378,187 @@ public class Operation {
 												"\""+String.valueOf(cell.toString()) + "\" ;"));
 									}
 								}
-								break;
+								break;	
 
 							case 6:
 								// here I am parsing APQC category
 								if (!validateNullCellString(cell.toString())) {
-									//TODO: it has to check if the apqc read is matching with the apqc in the ontology, and the format for the link is:
-									// bpaas:cloudServiceHasAPQC <http://ikm-group.ch/archimeo/apqc#9_11_7_Document_trade_14095> ;
-									String validated=cell.toString();
-									validated=validated.replace(" ","_");
-									validated=validated.replace(".","_");
-									validated="<http://ikm-group.ch/archimeo/apqc#"+validated;
-									//validated=validated+"URI NUMBER E.G. <http://ikm-group.ch/archimeo/apqc#9_11_7_Document_trade_14095>";
-									validated=validated+">";
-									cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasAPQC",	validated + " ;"));
+
+									String cellValues=cell.toString();
+
+									cellValues=cellValues.replace(" ","_");
+									cellValues=cellValues.replace(".","_");
+
+									ArrayList<String> validatedAl=new ArrayList<String>(Arrays.asList(cellValues.split(("(?<=,_[0-9])"))));
+
+									for (int i=0; i<validatedAl.size();i++) {
+
+
+										if (i==0) {
+											String validated=validatedAl.get(i);
+											String cutted= validated.substring(validated.length()-1);
+
+											//|| cutted =="2" ||cutted =="3" ||cutted =="4" ||cutted =="5" ||cutted =="6" ||cutted =="7" ||cutted =="8" ||cutted =="9"
+											if (cutted.contains("1")||cutted.contains("2")||cutted.contains("3")||cutted.contains("4")||cutted.contains("5")||cutted.contains("6")||cutted.contains("7")||cutted.contains("8")||cutted.contains("9")) {
+
+												validated="<http://ikm-group.ch/archimeo/apqc#"+validated.substring(0, validated.length()-3);
+												cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasAPQC", validated +"> ;"));
+
+											}else {
+												//if there's only one apqc
+												validated="<http://ikm-group.ch/archimeo/apqc#"+validated;
+												cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasAPQC", validated +"> ;"));
+											}
+										}else {
+
+											String validated=validatedAl.get(i);
+
+											String cutted= validated.substring(validated.length()-1);
+											String prevCutted= validatedAl.get(i-1).substring(validatedAl.get(i-1).length()-1);
+
+											if (cutted.contains("1")||cutted.contains("2")||cutted.contains("3")||cutted.contains("4")||cutted.contains("5")||cutted.contains("6")||cutted.contains("7")||cutted.contains("8")||cutted.contains("9")) {
+
+												validated="<http://ikm-group.ch/archimeo/apqc#"+prevCutted+validated.substring(0, validated.length()-3);
+												cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasAPQC", validated +"> ;"));
+
+											}else {
+												//if there's only one apqc
+												validated="<http://ikm-group.ch/archimeo/apqc#"+prevCutted+validated;
+												cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasAPQC", validated +"> ;"));
+
+											}
+										}
+									}
+
 								}
 								break;
 
 							case 7:
 
-								// here I am parsing action class
-								ArrayList<String> matchedClasses_forAction;// = new ArrayList<String>();
-								matchedClasses_forAction = getMatchedClasses(validateFbpdo(cell.toString()));
-								
-								for (int i = 0; i < matchedClasses_forAction.size(); i++) {
-									cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasAction",(validateString(matchedClasses_forAction.get(i))+" ;")));
+								String cellValues=cell.toString();
+								cellValues=validateFbpdo(cellValues.replace(" ",""));
+
+								ArrayList<String> validatedAl=new ArrayList<String>(Arrays.asList(cellValues.split((","))));
+
+								for (int i = 0; i < validatedAl.size(); i++) {
+									cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasAction", "fbpdo:"+validatedAl.get(i) +" ;"));
+
 								}
+
+								// here I am parsing action class
+								//								ArrayList<String> matchedClasses_forAction;// = new ArrayList<String>();
+								//								
+								//								matchedClasses_forAction = getMatchedClasses(validateFbpdo(cell.toString()));
+								//								
+								//								for (int i = 0; i < matchedClasses_forAction.size(); i++) {
+								//									cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasAction",(validateString(matchedClasses_forAction.get(i))+" ;")));
+								//								}
 
 								break;
 							case 8:
+
+								cellValues=cell.toString();
+								cellValues=validateFbpdo(cellValues.replace(" ",""));
+
+								validatedAl=new ArrayList<String>(Arrays.asList(cellValues.split((","))));
+
+								for (int i = 0; i < validatedAl.size(); i++) {
+									cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasObject", "fbpdo:"+validatedAl.get(i) +" ;"));
+
+								}
+
+
 								// Here i am parsing Object
-								ArrayList<String> matchedClasses = new ArrayList<String>();
-								matchedClasses = getMatchedClasses(validateFbpdo(cell.toString()));
-
-								for (int i = 0; i < matchedClasses.size(); i++) {
-									cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasObject", (validateString(matchedClasses.get(i))+" ;")));
-								}
+								//								ArrayList<String> matchedClasses = new ArrayList<String>();
+								//								matchedClasses = getMatchedClasses(validateFbpdo(cell.toString()));
+								//
+								//								for (int i = 0; i < matchedClasses.size(); i++) {
+								//									cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasObject", (validateString(matchedClasses.get(i))+" ;")));
+								//								}
 
 								break;
 
-							case 9:
-								// Here I am parsing the Payment Plan
+							case 9://ok
+								cellValues=cell.toString();
+								cellValues=cellValues.replace(" ","");
 
-								ArrayList<String> matchInstance_PaymentPlan = new ArrayList<String>();
-								matchInstance_PaymentPlan = getMatchedInstances(cell.toString());
-								for (int i = 0; i < matchInstance_PaymentPlan.size(); i++) {
-									cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasPaymentPlan", validateString(matchInstance_PaymentPlan.get(i)) + " ;"));
+								validatedAl=new ArrayList<String>(Arrays.asList(cellValues.split((","))));
+
+								for (int i = 0; i < validatedAl.size(); i++) {
+									cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasPaymentPlan", validateString(validatedAl.get(i)) +" ;"));
 
 								}
+
+
+								//								// Here I am parsing the Payment Plan
+								//								
+								//								ArrayList<String> matchInstance_PaymentPlan = new ArrayList<String>();
+								//								matchInstance_PaymentPlan = getMatchedInstances(cell.toString());
+								//								for (int i = 0; i < matchInstance_PaymentPlan.size(); i++) {
+								//									cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasPaymentPlan", validateString(matchInstance_PaymentPlan.get(i)) + " ;"));
+								//
+								//								}
 								break;
 
-							case 10:
+							case 10://ok
 								// Here I am parsing additional costs
-//								if (cell.toString() != null) {
-//									cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasAdditionalCosts",
-//											validateBooleanCellString(String.valueOf(cell.toString()))));
-//								}
+								//								if (cell.toString() != null) {
+								//									cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasAdditionalCosts",
+								//											validateBooleanCellString(String.valueOf(cell.toString()))));
+								//								}
 								break;
 
 							case 11:
+								cellValues=cell.toString();
 
-								// Here I am parsing Encryption Type
-								ArrayList<String> matchInstanceEncryption = new ArrayList<String>();
-								matchInstanceEncryption = getMatchedInstances(validateString(cell.toString()));
-								for (int i = 0; i < matchInstanceEncryption.size(); i++) {
+								validatedAl=new ArrayList<String>(Arrays.asList(cellValues.split((","))));
 
-									cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasEncryptionType",
-											validateString(matchInstanceEncryption.get(i)) + " ;"));
+								for (int i = 0; i < validatedAl.size(); i++) {
+									cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasEncryptionType", validateString(validatedAl.get(i).replace(" ","_")) +" ;"));
 
 								}
+								// Here I am parsing Encryption Type
+								//								ArrayList<String> matchInstanceEncryption = new ArrayList<String>();
+								//								matchInstanceEncryption = getMatchedInstances(validateString(cell.toString()));
+								//								for (int i = 0; i < matchInstanceEncryption.size(); i++) {
+								//
+								//									cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasEncryptionType",
+								//											validateString(matchInstanceEncryption.get(i)) + " ;"));
+								//
+								//								}
 
 								break;
 
 							case 12:
-								// Here I am parsing StoredDataLocation
 
-								ArrayList<String> matchClasses_location = new ArrayList<String>();
-								matchClasses_location = getMatchedClasses(validateString(cell.toString()));
-								for (int i = 0; i < matchClasses_location.size(); i++){
-									cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasStoredDataLocation", validateString(matchClasses_location.get(i)) + " ;"));
+								cellValues=cell.toString();
+
+								validatedAl=new ArrayList<String>(Arrays.asList(cellValues.split((","))));
+
+								for (int i = 0; i < validatedAl.size(); i++) {
+									cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasStoredDataLocation", validateString(validatedAl.get(i).replace(" ","_")) +" ;"));
+
 								}
+								// Here I am parsing StoredDataLocation
+								//
+								//								ArrayList<String> matchClasses_location = new ArrayList<String>();
+								//								matchClasses_location = getMatchedClasses(validateString(cell.toString()));
+								//								for (int i = 0; i < matchClasses_location.size(); i++){
+								//									cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasStoredDataLocation", validateString(matchClasses_location.get(i)) + " ;"));
+								//								}
 
 								break;
-
-								/*
-								 * case 12: // Here I am parsing media type
-								 * ArrayList<String> matchInstances_media = new
-								 * ArrayList<String>(); matchInstances_media =
-								 * getMatchedInstances(cell.toString()); for (int i = 0;
-								 * i < matchInstances_media.size(); i++)
-								 * 
-								 * { cs.properties.add(new
-								 * CloudServiceProperty("bpaas:cloudServiceHasMediaType"
-								 * ,matchInstances_media.get(i)+" ;"));
-								 * 
-								 * }
-								 * 
-								 * 
-								 * break;
-								 */
-
-								// security standard in place
 
 							case 13:
 
 								if (cell.toString() != null && validateNullCellString(validateBooleanCellString(cell.toString()))) {
 									cs.properties
 									.add(new CloudServiceProperty("bpaas:cloudServiceHasSecurityStandardInPlace",
-											validateBooleanCellString(cell.toString())));
+											validateBooleanCellString(cell.toString())+ " ;"));
 								} else {
 									cs.properties
 									.add(new CloudServiceProperty("bpaas:cloudServiceHasSecurityStandardInPlace",
-											validateBooleanCellString(cell.toString())));
+											validateBooleanCellString(cell.toString())+ " ;"));
 								}
 								break;
 
@@ -502,13 +573,13 @@ public class Operation {
 
 									cs.properties.add(new CloudServiceProperty(
 											"bpaas:cloudServiceHasAutomatedPasswordManagmentSystem",
-											validateBooleanCellString(cell.toString())));
+											validateBooleanCellString(cell.toString())+ " ;"));
 								} else {
 
 									// System.out.println("++++++++++++++++"+cell.toString()+"bbbbbbbbbbbbbb");
 									cs.properties.add(new CloudServiceProperty(
 											"bpaas:cloudServiceHasAutomatedPasswordManagmentSystem",
-											validateBooleanCellString(cell.toString())));
+											validateBooleanCellString(cell.toString())+ " ;"));
 								}
 
 								break;
@@ -519,12 +590,12 @@ public class Operation {
 								if (cell.toString() != null && validateNullCellString(validateBooleanCellString(cell.toString()))) {
 									cs.properties.add(new CloudServiceProperty(
 											"bpaas:cloudServiceHasPerformanceManagementSystemInPlace",
-											validateBooleanCellString(cell.toString())));
+											validateBooleanCellString(cell.toString())+ " ;"));
 								} else
 
 									cs.properties.add(new CloudServiceProperty(
 											"bpaas:cloudServiceHasPerformanceManagementSystemInPlace",
-											validateBooleanCellString(cell.toString())));
+											validateBooleanCellString(cell.toString())+ " ;"));
 
 								break;
 
@@ -534,11 +605,11 @@ public class Operation {
 								if (cell.toString() != null && validateNullCellString(validateBooleanCellString(cell.toString()))) {
 									cs.properties.add(new CloudServiceProperty(
 											"bpaas:cloudServiceHasDifferentPerformancePlanAvailable",
-											validateBooleanCellString(cell.toString())));
+											validateBooleanCellString(cell.toString())+ " ;"));
 								} else
 									cs.properties.add(new CloudServiceProperty(
 											"bpaas:cloudServiceHasDifferentPerformancePlanAvailable",
-											validateBooleanCellString(cell.toString())));
+											validateBooleanCellString(cell.toString())+ " ;"));
 								break;
 
 							case 17:
@@ -554,11 +625,11 @@ public class Operation {
 								if (cell.toString() != null && validateNullCellString(cell.toString())) {
 									cs.properties
 									.add(new CloudServiceProperty("bpaas:cloudServiceHasScalableProcessingPower",
-											validateBooleanCellString(cell.toString())));
+											validateBooleanCellString(cell.toString())+ " ;"));
 								} else
 									cs.properties
 									.add(new CloudServiceProperty("bpaas:cloudServiceHasScalableProcessingPower",
-											validateBooleanCellString(cell.toString())));
+											validateBooleanCellString(cell.toString())+ " ;"));
 
 								break;
 
@@ -567,10 +638,10 @@ public class Operation {
 
 								if (cell.toString() != null && validateNullCellString(cell.toString())) {
 									cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasScalableStorage",
-											validateBooleanCellString(cell.toString())));
+											validateBooleanCellString(cell.toString())+ " ;"));
 								} else
 									cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasScalableStorage",
-											validateBooleanCellString(cell.toString())));
+											validateBooleanCellString(cell.toString())+ " ;"));
 								break;
 
 							case 20:
@@ -585,7 +656,7 @@ public class Operation {
 
 								// Here I am parsing simultaneous user
 								if (cell.toString() != null && validateNullCellString(cell.toString())) {
-									cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasDataStorageInGB",
+									cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasSimultaneousUsers",
 											validateNumeric(cell).toString() + " ;"));}
 
 								break;
@@ -618,13 +689,13 @@ public class Operation {
 								// months
 
 								if (!validateNullCellString(cell.toString())) {
-								
+
 									cs.properties.add(			
 											new CloudServiceProperty("bpaas:cloudServiceHasAccessLogAvailabilityInMonths",
-													validateString(String.valueOf(cell.toString()) + " ;")));
-									}else {
-										new CloudServiceProperty("bpaas:cloudServiceHasAccessLogAvailabilityInMonths", "questionnaire:Not_Specified ;");
-									}
+													validateNumeric(cell) + " ;"));
+								}else {
+									new CloudServiceProperty("bpaas:cloudServiceHasAccessLogAvailabilityInMonths", "questionnaire:Not_Specified ;");
+								}
 
 								break;
 
@@ -635,7 +706,7 @@ public class Operation {
 
 									cs.properties.add(new CloudServiceProperty(
 											"bpaas:cloudServiceHasAccessLogRetentionPeriodInMonths",
-											validateString(String.valueOf(cell.toString()) + " ;")));
+											validateNumeric(cell) + " ;"));
 								}
 
 								else
@@ -677,52 +748,80 @@ public class Operation {
 								break;
 
 							case 27:
-								// here I am parsing the BackupFrequecny
-								ArrayList<String> matchInstance_backupFrequency;// = new ArrayList<String>();
-								matchInstance_backupFrequency = getMatchedInstances(cell.toString());
-								for (int i = 0; i < matchInstance_backupFrequency.size(); i++) {
-									//System.out.println("////////////////////////////////////////////////"+cell.toString());
-									cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasBackupFrequency", 
-											validateString(matchInstance_backupFrequency.get(i)) + " ;"));
+								cellValues=cell.toString();
+
+								validatedAl=new ArrayList<String>(Arrays.asList(cellValues.split((","))));
+
+								for (int i = 0; i < validatedAl.size(); i++) {
+									cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasBackupFrequency", validateString(validatedAl.get(i).replace(" ","_")) +" ;"));
 
 								}
+
+								// here I am parsing the BackupFrequecny
+								//								ArrayList<String> matchInstance_backupFrequency;// = new ArrayList<String>();
+								//								matchInstance_backupFrequency = getMatchedInstances(cell.toString());
+								//								for (int i = 0; i < matchInstance_backupFrequency.size(); i++) {
+								//									//System.out.println("////////////////////////////////////////////////"+cell.toString());
+								//									cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasBackupFrequency", 
+								//											validateString(matchInstance_backupFrequency.get(i)) + " ;"));
+								//
+								//								}
 								break;
 
 							case 28:
 								// here I am parsing BackupRetentionTime
+								cellValues=cell.toString();
 
-								ArrayList<String> matchInstances_backupTime = new ArrayList<String>();
-								matchInstances_backupTime = getMatchedInstances(cell.toString());
+								validatedAl=new ArrayList<String>(Arrays.asList(cellValues.split((","))));
 
-								for (int i = 0; i < matchInstances_backupTime.size(); i++) {
-
-									cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasBackupRetentionTime",
-											validateString(matchInstances_backupTime.get(i)) + " ;"));
+								for (int i = 0; i < validatedAl.size(); i++) {
+									cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasBackupRetentionTime", validateString(validatedAl.get(i)) +" ;"));
 
 								}
+
+
+								//								ArrayList<String> matchInstances_backupTime = new ArrayList<String>();
+								//								matchInstances_backupTime = getMatchedInstances(cell.toString());
+								//
+								//								for (int i = 0; i < matchInstances_backupTime.size(); i++) {
+								//
+								//									cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasBackupRetentionTime",
+								//											validateString(matchInstances_backupTime.get(i)) + " ;"));
+								//
+								//								}
 								break;
-							case 29:
+							case 29: 
 								//MediaType Data Export Import format
 
-								ArrayList<String> matchInstances_exportImport = new ArrayList<String>();
-								matchInstances_exportImport = getMatchedInstances(cell.toString());
+								cellValues=cell.toString();
 
-								for (int i = 0; i < matchInstances_exportImport.size(); i++) {
+								validatedAl=new ArrayList<String>(Arrays.asList(cellValues.split((","))));
 
-									cs.properties.add(new CloudServiceProperty("bpaas:CloudServiceHasMediaTypeImportExport",
-											validateString(matchInstances_exportImport.get(i)) + " ;"));
-
+								for (int i = 0; i < validatedAl.size(); i++) {
+									cs.properties.add(new CloudServiceProperty("bpaas:CloudServiceHasMediaTypeImportExport", validateString(validatedAl.get(i)) +" ;"));
 								}
+
+								//								ArrayList<String> matchInstances_exportImport = new ArrayList<String>();
+								//								matchInstances_exportImport = getMatchedInstances(cell.toString());
+								//
+								//								for (int i = 0; i < matchInstances_exportImport.size(); i++) {
+								//
+								//									cs.properties.add(new CloudServiceProperty("bpaas:CloudServiceHasMediaTypeImportExport",
+								//											validateString(matchInstances_exportImport.get(i)) + " ;"));
+								//
+								//								}
 								break;
+								//	case 30 is useless, merged into 29
+
 							case 31:
 								// data migration
 
 								if (cell.toString() != null && validateNullCellString(cell.toString())) {
 									cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasDataMigration",
-											validateBooleanCellString(cell.toString())));
+											validateBooleanCellString(cell.toString())+ " ;"));
 								} else
 									cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasDataMigration",
-											validateBooleanCellString(cell.toString())));
+											validateBooleanCellString(cell.toString())+ " ;"));
 								break;
 
 							case 32:
@@ -730,63 +829,86 @@ public class Operation {
 
 								if (cell.toString() != null && validateNullCellString(cell.toString())) {
 									cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasAPI",
-											validateBooleanCellString(cell.toString())));
+											validateBooleanCellString(cell.toString())+ " ;"));
 								} else
 									cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasAPI",
-											validateBooleanCellString(cell.toString())));
+											validateBooleanCellString(cell.toString())+ " ;"));
 								break;
 
 							case 33:
+
+
+								cellValues=cell.toString();
+
+								validatedAl=new ArrayList<String>(Arrays.asList(cellValues.split((","))));
+
+								for (int i = 0; i < validatedAl.size(); i++) {
+									cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasServiceSupportResponsiveness", validateString(validatedAl.get(i)) +" ;"));
+								}
+
+
 								// ServiceSupportResponsiveness
 
-								ArrayList<String> matchInstance_ServiceResponsive;// = new ArrayList<String>();
-								matchInstance_ServiceResponsive = getMatchedInstances(cell.toString());
-								//System.out.println("nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn"+cell.toString());
-								for (int i = 0; i < matchInstance_ServiceResponsive.size(); i++) {
-
-									cs.properties.add(
-											new CloudServiceProperty("bpaas:cloudServiceHasServiceSupportResponsiveness",
-													validateString(matchInstance_ServiceResponsive.get(i)) + " ;"));
-
-								}
+								//								ArrayList<String> matchInstance_ServiceResponsive;// = new ArrayList<String>();
+								//								matchInstance_ServiceResponsive = getMatchedInstances(cell.toString());
+								//								//System.out.println("nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn"+cell.toString());
+								//								for (int i = 0; i < matchInstance_ServiceResponsive.size(); i++) {
+								//
+								//									cs.properties.add(
+								//											new CloudServiceProperty("bpaas:cloudServiceHasServiceSupportResponsiveness",
+								//													validateString(matchInstance_ServiceResponsive.get(i)) + " ;"));
+								//
+								//								}
 
 								break;
 
 							case 34:
 								// service support
+								cellValues=cell.toString();
 
-								ArrayList<String> matchInstance_serviceSupport = new ArrayList<String>();
-								matchInstance_serviceSupport = getMatchedInstances(cell.toString());
-								
-								for (int i = 0; i < matchInstance_serviceSupport.size(); i++) {
+								validatedAl=new ArrayList<String>(Arrays.asList(cellValues.split((","))));
 
-									cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasServiceSupport",
-											validateString(matchInstance_serviceSupport.get(i)) + " ;"));
-
+								for (int i = 0; i < validatedAl.size(); i++) {
+									cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasServiceSupport", validateString(validatedAl.get(i).replace(" ", "_")) +" ;"));
 								}
-
+								//								
+								//
+								//								ArrayList<String> matchInstance_serviceSupport = new ArrayList<String>();
+								//								matchInstance_serviceSupport = getMatchedInstances(cell.toString());
+								//
+								//								for (int i = 0; i < matchInstance_serviceSupport.size(); i++) {
+								//
+								//									cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasServiceSupport",
+								//											validateString(matchInstance_serviceSupport.get(i)) + " ;"));
+								//
+								//								}
+								//
 								break;
 
 							case 35:
 								// SupportChannel
-								ArrayList<String> matchInstance_supportChannel = new ArrayList<String>();
-								matchInstance_supportChannel = getMatchedInstances(cell.toString());
-								for (int i = 0; i < matchInstance_supportChannel.size(); i++) {
+								cellValues=cell.toString();
+
+								validatedAl=new ArrayList<String>(Arrays.asList(cellValues.split((","))));
+
+								for (int i = 0; i < validatedAl.size(); i++) {
 
 									cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasSupportChannel",
-											validateString(matchInstance_supportChannel.get(i)) + " ;"));
+											validateString(validatedAl.get(i).replace(" ","_")) +" ;"));
 
 								}
 								break;
 
 							case 36:
 								// TargetMarket
-								ArrayList<String> matchInstance_targetMarket;// = new ArrayList<String>();
-								matchInstance_targetMarket = getMatchedInstances(cell.toString());
-								for (int i = 0; i < matchInstance_targetMarket.size(); i++) {
+								cellValues=cell.toString();
+
+								validatedAl=new ArrayList<String>(Arrays.asList(cellValues.split((","))));
+
+								for (int i = 0; i < validatedAl.size(); i++) {
 
 									cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasTargetMarket",
-											validateString(matchInstance_targetMarket.get(i)) + " ;"));
+											validateString(validatedAl.get(i).replace(" ","_")) +" ;"));
 
 								}
 
@@ -827,10 +949,21 @@ public class Operation {
 	}
 
 	private String validateNumeric(Cell cell) {
+
+
 		if (cell.equals("not specified") ||cell.equals("not specfied") || cell.equals("Not specified")|| cell.equals("not_specified") || cell.equals("Not_specified") || cell.equals("") ||cell.equals(" ") || cell.equals(null) || null_values_string.contains(cell.toString())) {
 			return "questionnaire:Not_Specified";
-		}else
-			return cell.toString();
+		}else {
+			String s="questionnaire:Not_Specified";
+			String start= cell.toString().substring(0,1);
+			if (start.contains(" ")||start.contains("_")) {
+				s =cell.toString().substring(1,cell.toString().length());	
+				return s;
+			}else {
+				return cell.toString();
+			}
+
+		}
 
 		/* what is it?
 		if (null_values_string.contains(cell.toString())) {
@@ -847,35 +980,38 @@ public class Operation {
 	private String validateBooleanCellString(String cell) {
 		boolean result;
 		if (cell.equals("not specified") ||cell.equals("not specfied") || cell.equals("Not specified")|| cell.equals("not_specified") || cell.equals("Not_specified") || cell.equals("") ||cell.equals(" ") || cell.equals(null) || null_values_string.contains(cell.toString())) {
-			return "questionnaire:Not_Specified ;";
+			return "questionnaire:Not_Specified";
 		} else if (cell.equals("Any")||cell.equals("Any")) {
-			return "questionnaire:Any ;";
+			return "questionnaire:Any";
 		} else if (cell.equals("No")||cell.equals("Not")|| cell.equals("no") || cell.equals("not")) {
-			return "questionnaire:No ;";
+			return "questionnaire:No";
 		} else if (cell.equals("Yes")||cell.equals("yes")) {
-			return "questionnaire:Yes ;";
+			return "questionnaire:Yes";
 		} else
-			return cell.toString() + " ;";
+			return cell.toString();
 
 	}
 
 	private String validateString(String cell) {
-		for (int i=0; i<cell.length(); i++) {
-			if (cell.startsWith(" ")||cell.startsWith("_") ) {
-				cell=cell.substring(1);
-			}
+
+		if (cell.startsWith(" ")||cell.startsWith("_") ) {
+			cell=cell.substring(1,cell.length());
 		}
-		
+
+		cell=cell.replace("(","");
+		cell=cell.replace(")","");
+
+
 		boolean result;
 		if (cell.equals("not specified") ||cell.equals("not defined") ||cell.equals("not specfied") || cell.equals("Not specified")|| cell.equals("not_specified") || cell.equals("Not_specified") || cell.equals("") ||cell.equals(" ") || cell.equals(null) || null_values_string.contains(cell.toString())) {
-			return "questionnaire:Not_Specified ;";
+			return "questionnaire:Not_Specified";
 		} else if (cell.equals("Any")||cell.equals("Any")) {
 			return "questionnaire:Any";
 		} else if (cell.equals("No")||cell.equals("Not")|| cell.equals("no") || cell.equals("not") || cell.equals("None")|| cell.equals("none")) {
 			return "questionnaire:No";
 		} else if (cell.equals("Yes")||cell.equals("yes")) {
 			return "questionnaire:Yes";
-			
+
 			//PAYMENT PLAN
 		}else if (cell.equals("Customizable Plan")) {
 			return "bpaas:CustomizablePlan";
@@ -889,8 +1025,8 @@ public class Operation {
 			return "bpaas:PrepaidAnnualPlan";
 		}else if (cell.equals("Try Free First")) {
 			return "bpaas:TryfreeFirst";
-						
-			
+
+
 			//ENCRYPTION TYPE
 		}else if (cell.equals("TLS VPN")) {
 			return "bpaas:TLS_VPN";
@@ -901,7 +1037,7 @@ public class Operation {
 		} else if (cell.equals("ISO:27001")) {
 			return "bpaas:ISO27001";
 		}  
-		
+
 
 		//STORED DATA LOCATION
 		else if (cell.equals("European Economic Area (EEA)")) {
@@ -912,14 +1048,14 @@ public class Operation {
 			return "bpaas:at_most_1_working_day";
 		} else if (cell.equals("24-7")) {
 			return "bpaas:Twenty4seven";
-		}else if (cell.equals("7 days a week")) {
+		}else if (cell.equals("7_days_a_week")) {
 			return "bpaas:sevenDaysAWeek";
 		}else if (cell.equals("24-5")) {
 			return "bpaas:Twenty4five";
-		}else if (cell.equals("9am-5pm")) {
+		}else if (cell.equals("9_AM_-_5_PM")) {
 			return "bpaas:nineToFive";
 		}
-		
+
 		//Target Market 
 		else if (cell.equals("Culture/Archeology")) {
 			return "bpaas:cultureArcheology";
@@ -927,14 +1063,17 @@ public class Operation {
 			return "bpaas:NoTarget";
 		} 
 
-		
-		
+
+
 		else {
-			return cell.toString().replace(" ","_");
+			return "bpaas:"+cell.toString().replace(" ","_");
 		}
 	}
 
 	private String validateFbpdo(String cell) {
+		if (cell.startsWith(" ")||cell.startsWith("_") ) {
+			cell=cell.substring(1,cell.length());
+		}
 		boolean result;
 		if (cell.equals("not specified") ||cell.equals("not specfied") || cell.equals("Not specified")|| cell.equals("not_specified") || cell.equals("Not_specified") || cell.equals("") ||cell.equals(" ") || cell.equals(null) || null_values_string.contains(cell.toString())) {
 			return "questionnaire:Not_Specified";
@@ -972,8 +1111,8 @@ public class Operation {
 
 	private ArrayList<String> getMatchedClasses(String label) {
 		ArrayList<String> result = new ArrayList<String>();
-		String[] sublabels = label.split(",");
-		
+		String[] sublabels = label.split(", ");
+
 		for (int i = 0; i < sublabels.length; i++) {
 			boolean found = false;
 			for (int j = 0; j < classes.size(); j++) {
