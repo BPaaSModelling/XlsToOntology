@@ -372,10 +372,14 @@ public class Operation {
 							case 2:
 								// here i am parsing cloud service has description
 								if (!validateNullCellString(cell.toString())) {
-
+									String desc=String.valueOf(cell.toString());
+									desc=desc.replace("\n", "");
+									desc=desc.replace("(", "");
+									desc=desc.replace(")", "");
+									desc=desc.replace("", "");
 									{
 										cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasDescription",
-												"\""+String.valueOf(cell.toString()) + "\" ;"));
+												"\""+desc + "\" ;"));
 									}
 								}
 								break;	
