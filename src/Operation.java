@@ -29,6 +29,11 @@ public class Operation {
 	// the ontology
 	private ArrayList<String> null_values_string;
 
+	private HashMap<String, OntologyClass> APQC;
+	private HashMap<String, OntologyClass> fbpdo;
+	private HashMap<String, OntologyClass> bpaas;
+	private HashMap<String, OntologyClass> questionnaire;
+
 	public ArrayList<OntologyClass> getClasses() {
 		return classes;
 	}
@@ -90,6 +95,11 @@ public class Operation {
 		classes = new ArrayList<OntologyClass>();
 		properties = new ArrayList<OntologyProperty>();
 		instances = new ArrayList<OntologyInstance>();
+		APQC= new HashMap<String, OntologyClass>() ;
+		fbpdo= new HashMap<String, OntologyClass>() ;
+		bpaas= new HashMap<String, OntologyClass>() ;
+		questionnaire= new HashMap<String, OntologyClass>() ;
+
 		ontologyPreamble = new ArrayList<String>();
 		services = new ArrayList<CloudService>();
 		null_values_string = new ArrayList<String>();
@@ -158,8 +168,20 @@ public class Operation {
 					titleLine = true;
 					for (int t = 0; t < temp_type.size(); t++) {
 						if (temp_type.get(t).equals("owl:Class")) {
+
 							// Parsing a Class
 							OntologyClass c = new OntologyClass(temp_name, temp_type, temp_attributes);
+							if (c.getName().contains("bpaas:")) {
+								bpaas.put(c.getName(), c);
+								//System.out.println(c.getName()+" to bpaas");
+							}else if(c.getName().contains("fbpdo:")){
+								fbpdo.put(c.getName(), c);
+								//System.out.println(c.getName()+" to fbpdo");
+							}else if(c.getName().contains("APQC#")){
+								APQC.put(c.getName(), c);
+								//System.out.println(c.getName()+" to APQC");
+							}
+
 							classes.add(c);
 							break;
 						} else if (temp_type.get(t).equals("owl:AnnotationProperty")
@@ -175,6 +197,17 @@ public class Operation {
 						} else if (t == temp_type.size() - 1) {
 							// Parsing an Istance
 							OntologyInstance i = new OntologyInstance(temp_name, temp_type, temp_attributes);
+							OntologyClass c = new OntologyClass(temp_name, temp_type, temp_attributes);
+							if (i.getName().contains("bpaas:")) {
+								bpaas.put(i.getName(), c);
+								//System.out.println(i.getName()+" to bpaas");
+							}else if(i.getName().contains("fbpdo:")){
+								fbpdo.put(i.getName(), c);
+								//System.out.println(i.getName()+" to fbpdo");
+							}else if(c.getName().contains("APQC#")){
+								APQC.put(i.getName(), c);
+								//System.out.println(i.getName()+" to APQC");
+							}
 							instances.add(i);
 						}
 					}
@@ -377,10 +410,11 @@ public class Operation {
 									desc=desc.replace("\n", "");
 									desc=desc.replace("(", "");
 									desc=desc.replace(")", "");
-									desc=desc.replace("", "");
+									desc=desc.replace(" ", "_");
+									desc=desc.replaceAll("\\W+","");
+									desc=desc.replace("\"","");
 									{
-										cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasDescription",
-												"\""+desc + "\" ;"));
+										cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasDescription", "\""+desc + "\" ;"));
 									}
 								}
 								break;	
@@ -404,7 +438,7 @@ public class Operation {
 										validated= addAPQCNumber(validated);
 
 										cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasAPQC", validated +" ;"));
-										System.out.println(cell.toString()+" -------------------------------------->"+validated );
+										//System.out.println(cell.toString()+" -------------------------------------->"+validated );
 										//								
 									}
 
@@ -650,7 +684,7 @@ public class Operation {
 								if (cell !=null) {
 									validated = validateNumeric(cell);									
 									cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasAccessLogRetentionPeriodInMonths", validated + " ;"));
-									//System.out.println(cell.toString()+" -------------------------------------->"+validated);
+									//	System.out.println(cell.toString()+" -------------------------------------->"+validated);
 								}	
 								break;
 
@@ -870,17 +904,20 @@ public class Operation {
 
 	private String validateNumeric(Cell cell) {
 
-		if (cell.equals("not specified") ||cell.equals("not specfied") || cell.equals("Not specified")|| cell.equals("not_specified") || cell.equals("Not_specified") || cell.equals("") ||cell.equals(" ") || cell.equals(null) || null_values_string.contains(cell.toString())) {
+		if (cell.toString().equals("not specified") ||cell.toString().equals("N/A") ||cell.toString().equals("not specfied") || cell.toString().equals("Not specified")|| cell.toString().equals("not_specified") || cell.toString().equals("Not_specified") || cell.equals("") ||cell.toString().equals(" ") || cell.toString().equals(null) || null_values_string.contains(cell.toString())) {
 			return "questionnaire:Not_Specified";
-		}else {
-			String s="questionnaire:Not_Specified";
-			String start= cell.toString().substring(0,1);
-			if (start.contains(" ")||start.contains("_")) {
-				s =cell.toString().substring(1,cell.toString().length());	
-				return s;
-			}else {
-				return cell.toString();
-			}
+		}else if (cell.toString().equals("Yes")||cell.equals("yes")||cell.equals("YES") ) {
+			return "questionnaire:Yes";
+		}
+		else if (cell.toString().equals("between 1- 6 months")||cell.toString().equals("user-defined")) {
+			return "questionnaire:Yes";
+		}
+
+		else {
+
+
+			return cell.toString();
+
 
 		}
 
@@ -898,7 +935,7 @@ public class Operation {
 
 	private String validateBooleanCellString(String cell) {
 		boolean result;
-		if (cell.equals("not specified") ||cell.equals("not specfied") || cell.equals("Not specified")|| cell.equals("not_specified") || cell.equals("Not_specified") || cell.equals("") ||cell.equals(" ") || cell.equals(null) || null_values_string.contains(cell.toString())) {
+		if (cell.equals("not specified") ||cell.equals("Not Specified") ||cell.equals("not specfied") || cell.equals("Not specified")|| cell.equals("not_specified") || cell.equals("Not_specified") || cell.equals("") ||cell.equals(" ") || cell.equals(null) || null_values_string.contains(cell.toString())) {
 			return "questionnaire:Not_Specified";
 		} else if (cell.equals("Any")||cell.equals("Any")) {
 			return "questionnaire:Any";
@@ -907,7 +944,12 @@ public class Operation {
 		} else if (cell.equals("Yes")||cell.equals("yes")) {
 			return "questionnaire:Yes";
 		} else
-			return cell.toString();
+			if (checkMatching(cell.toString())) {
+				return cell.toString();	
+			}else {
+				return "questionnaire:Not_specified";
+			}
+
 
 	}
 
@@ -921,7 +963,7 @@ public class Operation {
 
 
 		boolean result;
-		if (cell.equals("not specified") ||cell.equals("not defined") ||cell.equals("not specfied") || cell.equals("Not specified")|| cell.equals("not_specified") || cell.equals("Not_specified") || cell.equals("") ||cell.equals(" ") || cell.equals(null) || null_values_string.contains(cell.toString())) {
+		if (cell.equals("not_specified") || cell.equals("NotSpecified")||cell.equals("Not_Specified")||cell.equals("Not_defined") || cell.equals("Not_specified")|| cell.equals("not_specified") || cell.equals("Not_specified") || cell.equals("") ||cell.equals("_") || cell.equals(null) || null_values_string.contains(cell.toString())) {
 			return "questionnaire:Not_Specified";
 		} else if (cell.equals("Any")||cell.equals("Any")) {
 			return "questionnaire:Any";
@@ -943,10 +985,19 @@ public class Operation {
 			return "bpaas:PrepaidAnnualPlan";
 		}else if (cell.equals("Try Free First")) {
 			return "bpaas:TryfreeFirst";
+		}else if (cell.equals("FixedSubscription")) {
+			return "bpaas:Fixed_Subscription";
+		}else if (cell.equals("InitialBaseFee")) {
+			return "bpaas:bpaas:Initial_Base_Fee";
+		}else if (cell.equals("Per-terrabyte")) {
+			return "bpaas:Per-terabyte";
+		}
 
 
-			//ENCRYPTION TYPE
-		}else if (cell.equals("TLS_VPN")) {
+
+
+		//ENCRYPTION TYPE
+		else if (cell.equals("TLS_VPN")) {
 			return "bpaas:TLS_VPN";
 		}else if (cell.equals("IP_Filtering")) {
 			return "bpaas:IP_Filtering";
@@ -955,12 +1006,23 @@ public class Operation {
 		} else if (cell.equals("ISO:27001")) {
 			return "bpaas:ISO27001";
 		}  
-		
+
 		//service support responsiveness
 		else if (cell.equals("5_hours")) {
-		return "bpaas:At_most_5_hours";
+			return "bpaas:At_most_5_hours";
+		}else if (cell.equals("15_minutes")) {
+			return "bpaas:At_most_15_minutes";
+		}else if (cell.equals("30_days")) {
+			return "bpaas:At_most_30_working_days";
+		}else if (cell.equals("At_most_1.5_hours")) {
+			return "bpaas:At_most_1_5_hours";
+		}else if (cell.equals("30_minutes")) {
+			return "bpaas:At_most_30_minutes";
 		}
-		//
+
+
+
+		//channels
 		else if (cell.equals("On-site")) {
 			return "bpaas:On_Site_Support";
 		}
@@ -977,7 +1039,7 @@ public class Operation {
 		}else if (cell.equals("At_most_1_working_days")) {
 			return "bpaas:At_most_1_working_day";
 		} else if (cell.equals("24-7")) {
-			return "bpaas:Twenty4seven";
+			return "bpaas:Twenty4Seven";
 		}else if (cell.equals("7_days_a_week")) {
 			return "bpaas:SevenDaysAWeek";
 		}else if (cell.equals("24-5")) {
@@ -993,17 +1055,33 @@ public class Operation {
 			return "bpaas:CultureArcheology";
 		}else if (cell.equals("No_Target")) {
 			return "bpaas:NoTarget";
+		}else if (cell.equals("Business")) {
+			return "bpaas:Businesses";
+		}else if (cell.equals("Public_sector")) {
+			return "bpaas:Public_Sector";
 		}
+
 
 		//BackupRetentionTime
 		else if (cell.equals("5_years")) {
 			return "bpaas:Five_years";
-		} 
+		}else if (cell.equals("12.0")) {
+			return "bpaas:Up_to_1_year";
+		}else if (cell.equals("28_days")) {
+			return "bpaas:twenty8_days";
+		}  
 
 
 
 		else {
-			return "bpaas:"+cell.toString().replace(" ","_");
+			String validated="bpaas:"+cell.toString().replace(" ","_");
+			Boolean found=checkMatching(validated);
+			if (found) {
+				return validated;	
+			}else {
+				return "missingbpaas:" + cell.toString();
+			}
+
 		}
 	}
 
@@ -1089,9 +1167,9 @@ public class Operation {
 	}
 
 	private String addAPQCNumber(String validated) {
-		//PCFID Manage_IT_infrastructure_operations?
+
 		boolean found = false;
-		
+
 		String validatedOld=validated;
 		validated=validated.replace("_"," ");
 		validated=validated.replaceAll("\\d" ,"");
@@ -1101,7 +1179,7 @@ public class Operation {
 		for (int j = 0; j < classes.size(); j++) {
 
 			String name=classes.get(j).getLabel();
-
+			
 			ArrayList<OntologyAttribute> attributeList = classes.get(j).getAttributes();
 			//System.out.println(name);
 
@@ -1124,9 +1202,27 @@ public class Operation {
 			System.out.println("WARNING > " + validatedOld + " CLASS NOT FOUND!");
 		}
 
-
-
-
 		return validated;
+	}
+	private boolean checkMatching(String validated) {
+
+		boolean found = false;
+
+		String validatedOld=validated;
+		//		validated=validated.replace("_"," ");
+		//		validated=validated.replaceAll("\\d" ,"");
+		//		validated=validated.trim();
+
+		if (APQC.containsKey(validated)) {
+			found=true;
+		}else if(fbpdo.containsKey(validated)) {
+			found=true;
+			System.out.println("fbpdo----------------"+fbpdo.toString());
+		}else if (bpaas.containsKey(validated)) {
+			found=true;
+		}else
+			System.out.println("WARNING > " + validatedOld + " CLASS NOT FOUND!");
+
+		return found;
 	}
 }

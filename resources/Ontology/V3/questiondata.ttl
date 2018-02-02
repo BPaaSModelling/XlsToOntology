@@ -10,29 +10,6 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<http://ikm-group.ch/archiMEO/bdata#Drive_1>
-  bpaas:cloudServiceHasStoredDataLocation <http://ikm-group.ch/archiMEO/bdata#Africa> ;
-  bpaas:cloudServiceHasStoredDataLocation <http://ikm-group.ch/archiMEO/bdata#Asia> ;
-  bpaas:cloudServiceHasStoredDataLocation <http://ikm-group.ch/archiMEO/bdata#Austria> ;
-  bpaas:cloudServiceHasStoredDataLocation <http://ikm-group.ch/archiMEO/bdata#Brazil> ;
-  bpaas:cloudServiceHasStoredDataLocation <http://ikm-group.ch/archiMEO/bdata#China> ;
-  bpaas:cloudServiceHasStoredDataLocation <http://ikm-group.ch/archiMEO/bdata#EES> ;
-  bpaas:cloudServiceHasStoredDataLocation <http://ikm-group.ch/archiMEO/bdata#EU-US_Privacy_Shield_agreement_locations> ;
-  bpaas:cloudServiceHasStoredDataLocation <http://ikm-group.ch/archiMEO/bdata#Europe> ;
-  bpaas:cloudServiceHasStoredDataLocation <http://ikm-group.ch/archiMEO/bdata#European_Economic_Area_EEA> ;
-  bpaas:cloudServiceHasStoredDataLocation <http://ikm-group.ch/archiMEO/bdata#European_Union> ;
-  bpaas:cloudServiceHasStoredDataLocation <http://ikm-group.ch/archiMEO/bdata#French> ;
-  bpaas:cloudServiceHasStoredDataLocation <http://ikm-group.ch/archiMEO/bdata#Germany> ;
-  bpaas:cloudServiceHasStoredDataLocation <http://ikm-group.ch/archiMEO/bdata#Israel> ;
-  bpaas:cloudServiceHasStoredDataLocation <http://ikm-group.ch/archiMEO/bdata#Italy> ;
-  bpaas:cloudServiceHasStoredDataLocation <http://ikm-group.ch/archiMEO/bdata#North_America> ;
-  bpaas:cloudServiceHasStoredDataLocation <http://ikm-group.ch/archiMEO/bdata#Romania> ;
-  bpaas:cloudServiceHasStoredDataLocation <http://ikm-group.ch/archiMEO/bdata#South_America> ;
-  bpaas:cloudServiceHasStoredDataLocation <http://ikm-group.ch/archiMEO/bdata#Switzerland> ;
-  bpaas:cloudServiceHasStoredDataLocation <http://ikm-group.ch/archiMEO/bdata#The_Netherlands> ;
-  bpaas:cloudServiceHasStoredDataLocation <http://ikm-group.ch/archiMEO/bdata#USA> ;
-  bpaas:cloudServiceHasStoredDataLocation <http://ikm-group.ch/archiMEO/bdata#United_Kingdom> ;
-.
 <http://ikm-group.ch/archiMEO/questiondata>
   rdf:type owl:Ontology ;
   owl:imports <http://ikm-group.ch/archiMEO/questionnaire> ;
@@ -328,10 +305,10 @@ questiondata:Select_the_desired_Service_Support_Responsiveness
   rdf:type questionnaire:MultiSelection ;
   rdf:type questionnaire:ServiceSupport ;
   questionnaire:questionHasAnnotationRelation bpaas:cloudServiceHasServiceSupportResponsiveness ;
-  questionnaire:questionHasAnswers <http://ikm-group.ch/archimeo/bpaas#At_most_1.5_hours> ;
   questionnaire:questionHasAnswers bpaas:At_most_120_hours ;
   questionnaire:questionHasAnswers bpaas:At_most_12_hours ;
   questionnaire:questionHasAnswers bpaas:At_most_15_minutes ;
+  questionnaire:questionHasAnswers bpaas:At_most_1_5_hours ;
   questionnaire:questionHasAnswers bpaas:At_most_1_hour ;
   questionnaire:questionHasAnswers bpaas:At_most_1_working_day ;
   questionnaire:questionHasAnswers bpaas:At_most_2_hours ;
@@ -625,7 +602,4 @@ questiondata:Would_an_automatic_password_management_in_place_be_required
 questiondata:Yes
   rdf:type questionnaire:Answer ;
   rdfs:label "Yes" ;
-.
-bpaas:CloudServiceHasMediaTypeImportExport
-  rdfs:domain bpaas:CloudService ;
 .

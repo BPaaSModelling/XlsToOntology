@@ -67,10 +67,6 @@ bpaas:Asia
   rdf:type bpaas:StoredDataLocation ;
   rdfs:label "Asia" ;
 .
-<http://ikm-group.ch/archimeo/bpaas#At_most_1.5_hours>
-  rdf:type bpaas:ServiceSupportResponsiveness ;
-  rdfs:label "at_most_1.5_hours" ;
-.
 bpaas:At_most_120_hours
   rdf:type bpaas:ServiceSupportResponsiveness ;
   rdfs:label "at_most_120_hours" ;
@@ -79,9 +75,21 @@ bpaas:At_most_12_hours
   rdf:type bpaas:ServiceSupportResponsiveness ;
   rdfs:label "at_most_12_hours" ;
 .
+bpaas:At_most_13_hours
+  rdf:type bpaas:ServiceSupportResponsiveness ;
+  rdfs:label "At most 13 hours" ;
+.
 bpaas:At_most_15_minutes
   rdf:type bpaas:ServiceSupportResponsiveness ;
   rdfs:label "at most 15 minutes" ;
+.
+bpaas:At_most_16_hours
+  rdf:type bpaas:ServiceSupportResponsiveness ;
+  rdfs:label "At most 16 hours" ;
+.
+bpaas:At_most_1_5_hours
+  rdf:type bpaas:ServiceSupportResponsiveness ;
+  rdfs:label "at_most_1_5_hours" ;
 .
 bpaas:At_most_1_hour
   rdf:type bpaas:ServiceSupportResponsiveness ;
@@ -99,6 +107,10 @@ bpaas:At_most_2_working_days
   rdf:type bpaas:ServiceSupportResponsiveness ;
   rdfs:label "at_most_2_working_days" ;
 .
+bpaas:At_most_30_minutes
+  rdf:type bpaas:ServiceSupportResponsiveness ;
+  rdfs:label "30 minutes" ;
+.
 bpaas:At_most_30_working_days
   rdf:type bpaas:ServiceSupportResponsiveness ;
   rdfs:label "at_most_30_working_days" ;
@@ -111,6 +123,14 @@ bpaas:At_most_3_working_days
   rdf:type bpaas:ServiceSupportResponsiveness ;
   rdfs:label "at_most_3_working_days" ;
 .
+bpaas:At_most_40_hours
+  rdf:type bpaas:ServiceSupportResponsiveness ;
+  rdfs:label "At most 40 hours" ;
+.
+bpaas:At_most_40_minutes
+  rdf:type bpaas:ServiceSupportResponsiveness ;
+  rdfs:label "At most 40 minutes" ;
+.
 bpaas:At_most_4_hours
   rdf:type bpaas:ServiceSupportResponsiveness ;
   rdfs:label "at_most_4_hours" ;
@@ -119,6 +139,10 @@ bpaas:At_most_4_working_days
   rdf:type bpaas:ServiceSupportResponsiveness ;
   rdfs:label "at_most_4_working_days" ;
 .
+bpaas:At_most_50_hours
+  rdf:type bpaas:ServiceSupportResponsiveness ;
+  rdfs:label "bpaas:At_most_50_hours" ;
+.
 bpaas:At_most_5_hours
   rdf:type bpaas:ServiceSupportResponsiveness ;
   rdfs:label "at_most_5_hours" ;
@@ -126,6 +150,14 @@ bpaas:At_most_5_hours
 bpaas:At_most_5_working_days
   rdf:type bpaas:ServiceSupportResponsiveness ;
   rdfs:label "at_most_5_working_days" ;
+.
+bpaas:At_most_6_hours
+  rdf:type bpaas:ServiceSupportResponsiveness ;
+  rdfs:label "At most 6 hours" ;
+.
+bpaas:At_most_7_working_days
+  rdf:type bpaas:ServiceSupportResponsiveness ;
+  rdfs:label "At most 7 working days" ;
 .
 bpaas:At_most_8_hours
   rdf:type bpaas:ServiceSupportResponsiveness ;
@@ -288,6 +320,10 @@ bpaas:Defined_by_customer
   rdf:type bpaas:BackupFrequency ;
   rdfs:label "defined by customer" ;
 .
+bpaas:Denmark
+  rdf:type bpaas:StoredDataLocation ;
+  rdfs:label "Denmark" ;
+.
 bpaas:Development_Agencies
   rdf:type bpaas:TargetMarket ;
   rdfs:label "Development Agencies" ;
@@ -337,6 +373,10 @@ bpaas:Every_3_hours
   rdf:type bpaas:BackupFrequency ;
   rdfs:label "every 3 hours" ;
 .
+bpaas:Excel
+  rdf:type bpaas:MediaType ;
+  rdfs:label "Excel" ;
+.
 bpaas:FDA
   rdf:type bpaas:EncryptionType ;
   bpaas:encryptionTypeHasRequirementLevel bpaas:Medium ;
@@ -350,6 +390,10 @@ bpaas:FIPS
 bpaas:File_System
   rdf:type bpaas:DocumentManagementSystem ;
   rdfs:label "Local (File system)" ;
+.
+bpaas:Finland
+  rdf:type bpaas:StoredDataLocation ;
+  rdfs:label "Finland" ;
 .
 bpaas:Five_years
   rdf:type bpaas:BackupRetentionTime ;
@@ -404,6 +448,10 @@ bpaas:High
 bpaas:Hourly
   rdf:type bpaas:BackupFrequency ;
   rdfs:label "hourly" ;
+.
+bpaas:Html
+  rdf:type bpaas:MediaType ;
+  rdfs:label "Html" ;
 .
 bpaas:IAAS
   rdf:type bpaas:EncryptionType ;
@@ -551,6 +599,10 @@ bpaas:Not_specifiedPayment
   rdf:type bpaas:PaymentPlan ;
   rdfs:label "Not specified" ;
 .
+bpaas:Odf
+  rdf:type bpaas:MediaType ;
+  rdfs:label "Odf" ;
+.
 bpaas:On_Site_Support
   rdf:type bpaas:SupportChannel ;
   rdfs:label "On site support" ;
@@ -605,6 +657,10 @@ bpaas:Per-day
   rdf:type bpaas:PaymentPlan ;
   rdfs:label "Per-day" ;
 .
+bpaas:Per-gigabyte
+  rdf:type bpaas:PaymentPlan ;
+  rdfs:label "Per gigabyte" ;
+.
 bpaas:Per-hour
   rdf:type bpaas:PaymentPlan ;
   rdfs:label "Per-hour" ;
@@ -613,9 +669,21 @@ bpaas:Per-instance
   rdf:type bpaas:PaymentPlan ;
   rdfs:label "Per-instance" ;
 .
+bpaas:Per-minute
+  rdf:type bpaas:PaymentPlan ;
+  rdfs:label "Per minute" ;
+.
+bpaas:Per-month
+  rdf:type bpaas:PaymentPlan ;
+  rdfs:label "Per Month" ;
+.
 bpaas:Per-terabyte
   rdf:type bpaas:PaymentPlan ;
   rdfs:label "Per-terabyte" ;
+.
+bpaas:Per-unit
+  rdf:type bpaas:PaymentPlan ;
+  rdfs:label "bpaas:Per-unit" ;
 .
 bpaas:Per-user
   rdf:type bpaas:PaymentPlan ;
@@ -732,6 +800,10 @@ bpaas:RequirementLevel
   rdfs:label "RequirementLevel" ;
   rdfs:subClassOf eo:MotivationElement ;
 .
+bpaas:Resourcebasedpricing
+  rdf:type bpaas:PaymentPlan ;
+  rdfs:label "Resource based pricing " ;
+.
 bpaas:ResponseTime
   rdf:type owl:Class ;
   rdfs:label "Response Time" ;
@@ -755,6 +827,10 @@ bpaas:SSL
   rdf:type bpaas:EncryptionType ;
   bpaas:encryptionTypeHasRequirementLevel bpaas:Medium ;
   rdfs:label "SSL (Secure Sockets Layer)" ;
+.
+bpaas:School_and_Universities
+  rdf:type bpaas:TargetMarket ;
+  rdfs:label "School and Universities" ;
 .
 bpaas:SecurityIncidentManagement
   rdf:type owl:Class ;
@@ -906,12 +982,24 @@ bpaas:Up_to_6_months
   rdf:type bpaas:BackupRetentionTime ;
   rdfs:label "up to a 6 months" ;
 .
+bpaas:Up_to_four_weeks
+  rdf:type bpaas:ServiceSupportResponsiveness ;
+  rdfs:label "Up_to_four_weeks " ;
+.
+bpaas:Up_to_two_weeks
+  rdf:type bpaas:ServiceSupportResponsiveness ;
+  rdfs:label "Up to two weeks" ;
+.
 bpaas:UserInterfaceGroup
   rdf:type bpaas:BusinessProcessAnnotationGroup ;
 .
 bpaas:Utility
   rdf:type bpaas:PaymentPlan ;
   rdfs:label "Utility" ;
+.
+bpaas:VOX
+  rdf:type bpaas:MediaType ;
+  rdfs:label "VOX" ;
 .
 bpaas:Video_mp4
   rdf:type bpaas:MediaType ;
@@ -985,12 +1073,20 @@ bpaas:WorkflowTask
   rdfs:label "ApplicationActivity" ;
   rdfs:subClassOf bpaas:ApplicationActivity ;
 .
+bpaas:XLS
+  rdf:type bpaas:MediaType ;
+  rdfs:label "XLS" ;
+.
 bpaas:Yearly
   rdf:type bpaas:BackupFrequency ;
   rdfs:label "yearly" ;
 .
 bpaas:ZapierOneShotGroup
   rdf:type bpaas:WorkflowAnnotationGroup ;
+.
+bpaas:Zipped_EML
+  rdf:type bpaas:MediaType ;
+  rdfs:label "Zipped EML" ;
 .
 bpaas:auditingIncludesApplicableCertifications
   rdf:type owl:DatatypeProperty ;
@@ -1487,6 +1583,10 @@ bpaas:supportServiceHasPricingForSupport
 bpaas:totalHoursOfServiceSupport
   rdf:type owl:DatatypeProperty ;
   rdfs:range xsd:integer ;
+.
+bpaas:twenty8_days
+  rdf:type bpaas:BackupRetentionTime ;
+  rdfs:label "28 days" ;
 .
 bpaas:typeOfRaidHasRequirementLevel
   rdf:type owl:ObjectProperty ;

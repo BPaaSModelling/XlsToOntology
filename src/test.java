@@ -8,10 +8,12 @@ public class test {
 
 	public static void main(String[] args) throws FileNotFoundException {
 		//String pathExcel = ".\\resources\\ExcelFiles\\testexcel.xlsm";
-		//String pathOntology = ".\\resources\\Ontology\\old version - deprecated\\";
+		
 		
 		String pathExcel = ".\\resources\\ExcelFiles\\pluerat_latestfile.xlsx";
+		String pathExcel1 = ".\\resources\\ExcelFiles\\elena.xlsx";
 		String pathOntology = ".\\resources\\Ontology\\V3\\";
+		
 		
 		Operation op = new Operation();
 		
@@ -27,25 +29,26 @@ public class test {
 		ArrayList<OntologyInstance> instance;
 
 		op.parseExcelFile(pathExcel);
+		op.parseExcelFile(pathExcel1);
+		
 		//System.out.println(op.getServices().size());
 		PrintStream out = new PrintStream(new FileOutputStream(".\\resources\\Output\\bdata1.ttl"));
 		System.setOut(out);
 		System.out.println("# baseURI: http://ikm-group.ch/archiMEO/bdata\r\n" + 
 				"# imports: http://ikm-group.ch/archimeo/bpaas\r\n" + 
-				"# imports: http://ikm-group.ch/archimeo/questionnaire\r\n" + 
-				"\r\n" + 
+				"# imports: http://ikm-group.ch/archiMEO/questionnaire\r\n" + 
 				"# prefix: bdata\r\n" + 
 				"\r\n" + 
 				"@prefix apqc: <http://ikm-group.ch/archimeo/apqc#> .\r\n" + 
 				"@prefix bdata: <http://ikm-group.ch/archiMEO/bdata#> .\r\n" + 
 				"@prefix bpaas: <http://ikm-group.ch/archimeo/bpaas#> .\r\n" + 
 				"@prefix fbpdo: <http://ikm-group.ch/archimeo/fbpdo#> .\r\n" + 
-				"@prefix questionnaire: <http://ikm-group.ch/archimeo/questionnaire#> .\r\n" + 
 				"@prefix owl: <http://www.w3.org/2002/07/owl#> .\r\n" + 
 				"@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\r\n" + 
 				"@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\r\n" + 
 				"@prefix top: <http://ikm-group.ch/archiMEO/top#> .\r\n" + 
 				"@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\r\n" + 
+				"@prefix questionnaire: <http://ikm-group.ch/archiMEO/questionnaire#> .\r\n" + 
 				"\r\n" + 
 				"<http://ikm-group.ch/archiMEO/bdata>\r\n" + 
 				"  rdf:type owl:Ontology ;\r\n" + 
@@ -56,6 +59,11 @@ public class test {
 		for (int i = 0; i < op.getServices().size(); i++){
 			//System.out.println("bdata:" +""+op.getServices().get(i).getName());
 			String name=op.getServices().get(i).getName();
+			name=name.trim();
+			String firstLetter=name.substring(0, 1);
+			if (firstLetter.matches("\\d.*")){
+				name="cs"+name;
+			};
 			name=name.replace("\n", "");
 			name=name.replace("(", "");
 			name=name.replace(")", "");
