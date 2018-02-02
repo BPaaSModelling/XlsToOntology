@@ -61,10 +61,10 @@ questiondata:Backup_frequency_period
   rdf:type questionnaire:SingleSelection ;
   questionnaire:cloudServiceElementHasCloudServiceDomain questiondata:Security ;
   questionnaire:questionHasAnnotationRelation bpaas:cloudServiceHasBackupFrequency ;
-  questionnaire:questionHasAnswers bpaas:daily ;
-  questionnaire:questionHasAnswers bpaas:monthly ;
-  questionnaire:questionHasAnswers bpaas:weekly ;
-  questionnaire:questionHasAnswers bpaas:yearly ;
+  questionnaire:questionHasAnswers bpaas:Daily ;
+  questionnaire:questionHasAnswers bpaas:Monthly ;
+  questionnaire:questionHasAnswers bpaas:Weekly ;
+  questionnaire:questionHasAnswers bpaas:Yearly ;
   rdfs:label "Backup frequency period" ;
 .
 questiondata:Backup_retention_time_period
@@ -72,12 +72,12 @@ questiondata:Backup_retention_time_period
   rdf:type questionnaire:SingleSelection ;
   questionnaire:cloudServiceElementHasCloudServiceDomain questiondata:Security ;
   questionnaire:questionHasAnnotationRelation bpaas:cloudServiceHasBackupRetentionTime ;
-  questionnaire:questionHasAnswers bpaas:up_to_1_day ;
-  questionnaire:questionHasAnswers bpaas:up_to_1_month ;
-  questionnaire:questionHasAnswers bpaas:up_to_1_year ;
+  questionnaire:questionHasAnswers bpaas:Up_to_1_day ;
+  questionnaire:questionHasAnswers bpaas:Up_to_1_month ;
+  questionnaire:questionHasAnswers bpaas:Up_to_1_year ;
+  questionnaire:questionHasAnswers bpaas:Up_to_6_months ;
   questionnaire:questionHasAnswers bpaas:up_to_2_month ;
   questionnaire:questionHasAnswers bpaas:up_to_2_weeks ;
-  questionnaire:questionHasAnswers bpaas:up_to_6_months ;
   questionnaire:questionHasAnswers bpaas:up_to_7_days ;
   rdfs:label "Backup retention time period" ;
 .
@@ -328,34 +328,34 @@ questiondata:Select_the_desired_Service_Support_Responsiveness
   rdf:type questionnaire:MultiSelection ;
   rdf:type questionnaire:ServiceSupport ;
   questionnaire:questionHasAnnotationRelation bpaas:cloudServiceHasServiceSupportResponsiveness ;
+  questionnaire:questionHasAnswers <http://ikm-group.ch/archimeo/bpaas#At_most_1.5_hours> ;
+  questionnaire:questionHasAnswers bpaas:At_most_120_hours ;
+  questionnaire:questionHasAnswers bpaas:At_most_12_hours ;
+  questionnaire:questionHasAnswers bpaas:At_most_15_minutes ;
+  questionnaire:questionHasAnswers bpaas:At_most_1_hour ;
+  questionnaire:questionHasAnswers bpaas:At_most_1_working_day ;
+  questionnaire:questionHasAnswers bpaas:At_most_2_hours ;
+  questionnaire:questionHasAnswers bpaas:At_most_2_working_days ;
+  questionnaire:questionHasAnswers bpaas:At_most_30_working_days ;
+  questionnaire:questionHasAnswers bpaas:At_most_3_hours ;
+  questionnaire:questionHasAnswers bpaas:At_most_3_working_days ;
+  questionnaire:questionHasAnswers bpaas:At_most_4_hours ;
+  questionnaire:questionHasAnswers bpaas:At_most_4_working_days ;
+  questionnaire:questionHasAnswers bpaas:At_most_5_hours ;
+  questionnaire:questionHasAnswers bpaas:At_most_5_working_days ;
+  questionnaire:questionHasAnswers bpaas:At_most_8_hours ;
   questionnaire:questionHasAnswers bpaas:Not_specified ;
-  questionnaire:questionHasAnswers <http://ikm-group.ch/archimeo/bpaas#at_most_1.5_hours> ;
-  questionnaire:questionHasAnswers bpaas:at_most_120_hours ;
-  questionnaire:questionHasAnswers bpaas:at_most_12_hours ;
-  questionnaire:questionHasAnswers bpaas:at_most_15_minutes ;
-  questionnaire:questionHasAnswers bpaas:at_most_1_hour ;
-  questionnaire:questionHasAnswers bpaas:at_most_1_working_day ;
-  questionnaire:questionHasAnswers bpaas:at_most_2_hours ;
-  questionnaire:questionHasAnswers bpaas:at_most_2_working_days ;
-  questionnaire:questionHasAnswers bpaas:at_most_30_working_days ;
-  questionnaire:questionHasAnswers bpaas:at_most_3_hours ;
-  questionnaire:questionHasAnswers bpaas:at_most_3_working_days ;
-  questionnaire:questionHasAnswers bpaas:at_most_4_hours ;
-  questionnaire:questionHasAnswers bpaas:at_most_4_working_days ;
-  questionnaire:questionHasAnswers bpaas:at_most_5_hours ;
-  questionnaire:questionHasAnswers bpaas:at_most_5_working_days ;
-  questionnaire:questionHasAnswers bpaas:at_most_8_hours ;
   rdfs:label "Select_the_desired_Service_Support_Responsiveness" ;
 .
 questiondata:Select_the_prefered_data_type_for_import_and_export
   rdf:type questionnaire:Interoperability ;
   rdf:type questionnaire:MultiSelection ;
   questionnaire:questionHasAnnotationRelation bpaas:CloudServiceHasMediaTypeImportExport ;
+  questionnaire:questionHasAnswers bpaas:Csv ;
+  questionnaire:questionHasAnswers bpaas:Mp3 ;
+  questionnaire:questionHasAnswers bpaas:Pdf ;
+  questionnaire:questionHasAnswers bpaas:Ppt ;
   questionnaire:questionHasAnswers bpaas:Video_mp4 ;
-  questionnaire:questionHasAnswers bpaas:csv ;
-  questionnaire:questionHasAnswers bpaas:mp3 ;
-  questionnaire:questionHasAnswers bpaas:pdf ;
-  questionnaire:questionHasAnswers bpaas:ppt ;
   rdfs:label "Select the prefered data import and export" ;
 .
 questiondata:Select_your_favorite_target_market
@@ -451,11 +451,11 @@ questiondata:What_are_the_offered_support_channels
   rdf:type questionnaire:ServiceSupport ;
   questionnaire:questionHasAnnotationRelation bpaas:cloudServiceHasSupportChannel ;
   questionnaire:questionHasAnswers bpaas:Mail ;
-  questionnaire:questionHasAnswers bpaas:OnSiteSupport ;
-  questionnaire:questionHasAnswers bpaas:OnlineTicketing ;
+  questionnaire:questionHasAnswers bpaas:On_Site_Support ;
+  questionnaire:questionHasAnswers bpaas:Online_Ticketing ;
   questionnaire:questionHasAnswers bpaas:Other ;
   questionnaire:questionHasAnswers bpaas:Phone ;
-  questionnaire:questionHasAnswers bpaas:SocialMedia ;
+  questionnaire:questionHasAnswers bpaas:Social_Media ;
   rdfs:label "What are the offered support channels" ;
 .
 questiondata:What_could_be_uploaded
@@ -469,27 +469,27 @@ questiondata:What_is_the_backup_frequency
   rdf:type questionnaire:MultiSelection ;
   rdf:type questionnaire:Reliability ;
   questionnaire:questionHasAnnotationRelation bpaas:cloudServiceHasBackupFrequency ;
-  questionnaire:questionHasAnswers bpaas:daily ;
-  questionnaire:questionHasAnswers bpaas:defined_by_customer ;
-  questionnaire:questionHasAnswers bpaas:every_3_hours ;
-  questionnaire:questionHasAnswers bpaas:hourly ;
-  questionnaire:questionHasAnswers bpaas:monthly ;
+  questionnaire:questionHasAnswers bpaas:Daily ;
+  questionnaire:questionHasAnswers bpaas:Defined_by_customer ;
+  questionnaire:questionHasAnswers bpaas:Every_3_hours ;
+  questionnaire:questionHasAnswers bpaas:Hourly ;
+  questionnaire:questionHasAnswers bpaas:Monthly ;
+  questionnaire:questionHasAnswers bpaas:Weekly ;
+  questionnaire:questionHasAnswers bpaas:Yearly ;
   questionnaire:questionHasAnswers bpaas:not_specified ;
-  questionnaire:questionHasAnswers bpaas:weekly ;
-  questionnaire:questionHasAnswers bpaas:yearly ;
   rdfs:label "What's the prefered backup frequency?" ;
 .
 questiondata:What_is_the_backup_retention_time
   rdf:type questionnaire:MultiSelection ;
   rdf:type questionnaire:Reliability ;
   questionnaire:questionHasAnnotationRelation bpaas:cloudServiceHasBackupRetentionTime ;
+  questionnaire:questionHasAnswers bpaas:Longer_than_1_year ;
   questionnaire:questionHasAnswers bpaas:Not_specifiedBackupRet ;
-  questionnaire:questionHasAnswers bpaas:longer_than_1_year ;
-  questionnaire:questionHasAnswers bpaas:up_to_1_day ;
-  questionnaire:questionHasAnswers bpaas:up_to_1_month ;
-  questionnaire:questionHasAnswers bpaas:up_to_1_week ;
-  questionnaire:questionHasAnswers bpaas:up_to_1_year ;
-  questionnaire:questionHasAnswers bpaas:up_to_6_months ;
+  questionnaire:questionHasAnswers bpaas:Up_to_1_day ;
+  questionnaire:questionHasAnswers bpaas:Up_to_1_month ;
+  questionnaire:questionHasAnswers bpaas:Up_to_1_week ;
+  questionnaire:questionHasAnswers bpaas:Up_to_1_year ;
+  questionnaire:questionHasAnswers bpaas:Up_to_6_months ;
   rdfs:label "What's the prefered backup retention time?" ;
 .
 questiondata:What_is_you_favorite_restore_time_level
@@ -501,21 +501,21 @@ questiondata:What_is_you_favorite_restore_time_level
 questiondata:What_is_your_favorite_backup_frequency_period
   rdf:type questionnaire:SingleSelection ;
   questionnaire:questionHasAnnotationRelation bpaas:cloudServiceHasBackupFrequency ;
-  questionnaire:questionHasAnswers bpaas:daily ;
-  questionnaire:questionHasAnswers bpaas:monthly ;
-  questionnaire:questionHasAnswers bpaas:weekly ;
-  questionnaire:questionHasAnswers bpaas:yearly ;
+  questionnaire:questionHasAnswers bpaas:Daily ;
+  questionnaire:questionHasAnswers bpaas:Monthly ;
+  questionnaire:questionHasAnswers bpaas:Weekly ;
+  questionnaire:questionHasAnswers bpaas:Yearly ;
   rdfs:label "--What is your favorite backup frequency period?" ;
 .
 questiondata:What_is_your_favorite_backup_retention_time_period
   rdf:type questionnaire:SingleSelection ;
   questionnaire:questionHasAnnotationRelation bpaas:cloudServiceHasBackupRetentionTime ;
-  questionnaire:questionHasAnswers bpaas:up_to_1_day ;
-  questionnaire:questionHasAnswers bpaas:up_to_1_month ;
-  questionnaire:questionHasAnswers bpaas:up_to_1_year ;
+  questionnaire:questionHasAnswers bpaas:Up_to_1_day ;
+  questionnaire:questionHasAnswers bpaas:Up_to_1_month ;
+  questionnaire:questionHasAnswers bpaas:Up_to_1_year ;
+  questionnaire:questionHasAnswers bpaas:Up_to_6_months ;
   questionnaire:questionHasAnswers bpaas:up_to_2_month ;
   questionnaire:questionHasAnswers bpaas:up_to_2_weeks ;
-  questionnaire:questionHasAnswers bpaas:up_to_6_months ;
   questionnaire:questionHasAnswers bpaas:up_to_7_days ;
   rdfs:label "--What is your favorite backup retention time period?" ;
 .
@@ -561,11 +561,11 @@ questiondata:What_is_your_favorite_support_coverage
   questionnaire:questionHasAnswers bpaas:Mon-Fri ;
   questionnaire:questionHasAnswers bpaas:Mon-Sat ;
   questionnaire:questionHasAnswers bpaas:Mon-Sun ;
+  questionnaire:questionHasAnswers bpaas:NineToFive ;
   questionnaire:questionHasAnswers bpaas:NotSpecified ;
+  questionnaire:questionHasAnswers bpaas:SevenDaysAWeek ;
   questionnaire:questionHasAnswers bpaas:Twenty4Seven ;
   questionnaire:questionHasAnswers bpaas:Twenty4five ;
-  questionnaire:questionHasAnswers bpaas:nineToFive ;
-  questionnaire:questionHasAnswers bpaas:sevenDaysAWeek ;
   rdfs:label "What is your favorite support coverage?" ;
 .
 questiondata:What_is_your_favorite_support_responsiveness

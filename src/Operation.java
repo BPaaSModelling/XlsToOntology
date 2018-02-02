@@ -398,46 +398,14 @@ public class Operation {
 
 									for (int i=0; i<validatedAl.size();i++) {
 
+										String validated=validatedAl.get(i);
+										String cutted= validated.substring(validated.length()-1);
 
-										if (i==0) {
-											String validated=validatedAl.get(i);
-											String cutted= validated.substring(validated.length()-1);
+										validated= addAPQCNumber(validated);
 
-											//|| cutted =="2" ||cutted =="3" ||cutted =="4" ||cutted =="5" ||cutted =="6" ||cutted =="7" ||cutted =="8" ||cutted =="9"
-											if (cutted.contains("1")||cutted.contains("2")||cutted.contains("3")||cutted.contains("4")||cutted.contains("5")||cutted.contains("6")||cutted.contains("7")||cutted.contains("8")||cutted.contains("9")) {
-
-												validated=validated.substring(0, validated.length()-3);
-												validated= addAPQCNumber(validated);
-												validated="<http://ikm-group.ch/archimeo/apqc#"+validated;
-
-												cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasAPQC", validated +"> ;"));
-
-											}else {
-												//if there's only one apqc
-												validated= addAPQCNumber(validated);
-												validated="<http://ikm-group.ch/archimeo/apqc#"+validated;
-												cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasAPQC", validated +"> ;"));
-											}
-										}else {
-
-											String validated=validatedAl.get(i);
-
-											String cutted= validated.substring(validated.length()-1);
-											String prevCutted= validatedAl.get(i-1).substring(validatedAl.get(i-1).length()-1);
-											validated= addAPQCNumber(validated);
-											if (cutted.contains("1")||cutted.contains("2")||cutted.contains("3")||cutted.contains("4")||cutted.contains("5")||cutted.contains("6")||cutted.contains("7")||cutted.contains("8")||cutted.contains("9")) {
-
-												validated="<http://ikm-group.ch/archimeo/apqc#"+prevCutted+validated.substring(0, validated.length()-3);
-												cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasAPQC", validated +"> ;"));
-
-											}else {
-												//if there's only one apqc
-												validated= addAPQCNumber(validated);
-												validated="<http://ikm-group.ch/archimeo/apqc#"+prevCutted+validated;
-												cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasAPQC", validated +"> ;"));
-
-											}
-										}
+										cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasAPQC", validated +" ;"));
+										System.out.println(cell.toString()+" -------------------------------------->"+validated );
+										//								
 									}
 
 								}
@@ -524,7 +492,7 @@ public class Operation {
 								validatedAl=new ArrayList<String>(Arrays.asList(cellValues.split((","))));
 
 								for (int i = 0; i < validatedAl.size(); i++) {
-									String validated= validateString(validatedAl.get(i).replace(" ","_"));
+									String validated= validateString(validatedAl.get(i));
 									cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasEncryptionType", validated +" ;"));
 									//System.out.println(cell.toString()+" -------------------------------------->"+validated);
 								}
@@ -660,7 +628,7 @@ public class Operation {
 							case 22:
 								if (cell !=null) {
 									validated = validateNumeric(cell);									
-									cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasAvailabilityInPercents", validated + " ;"));
+									cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasAvailabilityInPercent", validated + " ;"));
 									//System.out.println(cell.toString()+" -------------------------------------->"+validated);
 								}					
 								break;
@@ -978,15 +946,27 @@ public class Operation {
 
 
 			//ENCRYPTION TYPE
-		}else if (cell.equals("TLS VPN")) {
+		}else if (cell.equals("TLS_VPN")) {
 			return "bpaas:TLS_VPN";
-		}else if (cell.equals("IP Filtering")) {
+		}else if (cell.equals("IP_Filtering")) {
 			return "bpaas:IP_Filtering";
-		} else if (cell.equals("SSL (Secure Sockets Layer)")) {
+		} else if (cell.equals("SSL_Secure_Sockets_Layer")) {
 			return "bpaas:SSL";
 		} else if (cell.equals("ISO:27001")) {
 			return "bpaas:ISO27001";
 		}  
+		
+		//service support responsiveness
+		else if (cell.equals("5_hours")) {
+		return "bpaas:At_most_5_hours";
+		}
+		//
+		else if (cell.equals("On-site")) {
+			return "bpaas:On_Site_Support";
+		}
+		else if (cell.equals("Online_ticketing")) {
+			return "bpaas:Online_Ticketing";
+		}
 
 
 		//STORED DATA LOCATION
@@ -994,24 +974,24 @@ public class Operation {
 			return "bpaas:European_Economic_Area_EEA";
 
 			//SERVICE SUPPORT
-		}else if (cell.equals("at_most_1_working_days")) {
-			return "bpaas:at_most_1_working_day";
+		}else if (cell.equals("At_most_1_working_days")) {
+			return "bpaas:At_most_1_working_day";
 		} else if (cell.equals("24-7")) {
 			return "bpaas:Twenty4seven";
 		}else if (cell.equals("7_days_a_week")) {
-			return "bpaas:sevenDaysAWeek";
+			return "bpaas:SevenDaysAWeek";
 		}else if (cell.equals("24-5")) {
 			return "bpaas:Twenty4five";
 		}else if (cell.equals("9_AM_-_5_PM")) {
-			return "bpaas:nineToFive";
+			return "bpaas:NineToFive";
 		}else if (cell.equals("8:30-17:00")) {
 			return "bpaas:EightThirtyToFive";
 		}
 
 		//Target Market 
 		else if (cell.equals("Culture/Archeology")) {
-			return "bpaas:cultureArcheology";
-		}else if (cell.equals("No Target")) {
+			return "bpaas:CultureArcheology";
+		}else if (cell.equals("No_Target")) {
 			return "bpaas:NoTarget";
 		}
 
@@ -1112,6 +1092,7 @@ public class Operation {
 		//PCFID Manage_IT_infrastructure_operations?
 		boolean found = false;
 		
+		String validatedOld=validated;
 		validated=validated.replace("_"," ");
 		validated=validated.replaceAll("\\d" ,"");
 		validated=validated.trim();
@@ -1128,8 +1109,9 @@ public class Operation {
 				for (int i=0; i<attributeList.size();i++) {
 					if(attributeList.get(i).getName().equals("apqc:hasPCFID") && !found) {
 
-						validated=validated+"_"+attributeList.get(i).getValue().replace("\"","");
-						validated=validated.replace(" ","_");
+						String validatedName=classes.get(j).getName();
+						//System.out.println("found label :"+ validatedName);
+						validated=validatedName;
 						//	System.out.println("found :"+ validated);
 						found=true;
 					}	
@@ -1139,7 +1121,7 @@ public class Operation {
 
 		}
 		if (!found) {
-			System.out.println("WARNING > " + validated + " CLASS NOT FOUND!");
+			System.out.println("WARNING > " + validatedOld + " CLASS NOT FOUND!");
 		}
 
 

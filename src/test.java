@@ -28,7 +28,7 @@ public class test {
 
 		op.parseExcelFile(pathExcel);
 		//System.out.println(op.getServices().size());
-		PrintStream out = new PrintStream(new FileOutputStream(".\\resources\\Output\\bdata.ttl"));
+		PrintStream out = new PrintStream(new FileOutputStream(".\\resources\\Output\\bdata1.ttl"));
 		System.setOut(out);
 		System.out.println("# baseURI: http://ikm-group.ch/archiMEO/bdata\r\n" + 
 				"# imports: http://ikm-group.ch/archimeo/bpaas\r\n" + 
@@ -55,17 +55,19 @@ public class test {
 		
 		for (int i = 0; i < op.getServices().size(); i++){
 			//System.out.println("bdata:" +""+op.getServices().get(i).getName());
-			System.out.println("bdata:"+ UUID.randomUUID());
+			String name=op.getServices().get(i).getName();
+			name=name.replace("\n", "");
+			name=name.replace("(", "");
+			name=name.replace(")", "");
+			name=name.replace(" ", "_");
+			name=name.replaceAll("\\W+","");
+			System.out.println("bdata:"+ name);
 			System.out.println("rdf:type bpaas:CloudService"+" "+";");
 			
 			for (int j = 0; j < op.getServices().get(i).getProperties().size(); j++){
 				System.out.println(op.getServices().get(i).getProperties().get(j).name + " " + op.getServices().get(i).getProperties().get(j).value);
 			}
-			String name=op.getServices().get(i).getName();
-			name=name.replace("\n", "");
-			name=name.replace("(", "");
-			name=name.replace(")", "");
-			name=name.replace("", "");
+			
 			
 			System.out.println("rdfs:label " + "\"" +name + "\" ;");
 			System.out.println(".");

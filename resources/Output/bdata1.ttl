@@ -22,7 +22,7 @@
   .
 bdata:Accellion_Mobile_Productivity_and_Collaboration_kiteworks
 rdf:type bpaas:CloudService ;
-bpaas:cloudServiceHasDescription "The Accellion kiteworks solution enables secure inter-and-intra agency collaboration, secure remote access to files and documents, as well as easy collaboration with contractors and constituents, from any device, ensuring todayâ€™s government employees are productive and agile." ;
+bpaas:cloudServiceHasDescription "The Accellion kiteworks solution enables secure inter-and-intra agency collaboration, secure remote access to files and documents, as well as easy collaboration with contractors and constituents, from any device, ensuring today’s government employees are productive and agile." ;
 bpaas:cloudServiceHasAction fbpdo:Collaborate ;
 bpaas:cloudServiceHasAction fbpdo:Access ;
 bpaas:cloudServiceHasObject fbpdo:Securely ;
@@ -108,7 +108,7 @@ rdfs:label "Agilisys_Revenue_Collection_ARC" ;
 .
 bdata:Skype_for_Business_as_a_Service
 rdf:type bpaas:CloudService ;
-bpaas:cloudServiceHasDescription "Skype for Business as a Service offers an enterpriseâ€“ready unified communications platform that connects users everywhere as part of their everyday productivity experience, providing a consistent, single client Skype for Business experience for presence, instant messaging, voice, video and meetings with the benefits of telecommunications infrastructure and external calling." ;
+bpaas:cloudServiceHasDescription "Skype for Business as a Service offers an enterprise–ready unified communications platform that connects users everywhere as part of their everyday productivity experience, providing a consistent, single client Skype for Business experience for presence, instant messaging, voice, video and meetings with the benefits of telecommunications infrastructure and external calling." ;
 bpaas:cloudServiceHasAPQC <http://ikm-group.ch/archimeo/apqc#7_8_Manage_employee_communication_17057> ;
 bpaas:cloudServiceHasAction fbpdo:Manage ;
 bpaas:cloudServiceHasObject fbpdo:Communication_channel ;
@@ -443,7 +443,7 @@ rdfs:label "Barracuda_Next_Generation_and_Web_Application_Firewall" ;
 .
 bdata:Bramble_Hub_Cauwill_Technologies__Herotext
 rdf:type bpaas:CloudService ;
-bpaas:cloudServiceHasDescription "With Herotext you finally get to measure customer experience CSAT, CES and NPS in realtime. Youâ€™ll see exactly who leaves feedback and what they have to say. Create Mobile surveys and view reportson the dashboard in realtime and you can export results to your favourite spreadsheet." ;
+bpaas:cloudServiceHasDescription "With Herotext you finally get to measure customer experience CSAT, CES and NPS in realtime. You’ll see exactly who leaves feedback and what they have to say. Create Mobile surveys and view reportson the dashboard in realtime and you can export results to your favourite spreadsheet." ;
 bpaas:cloudServiceHasAPQC <http://ikm-group.ch/archimeo/apqc#1_2_8_1_Assess_customer_experience_19960> ;
 bpaas:cloudServiceHasAction fbpdo:Manage ;
 bpaas:cloudServiceHasObject fbpdo:Experience ;
@@ -687,7 +687,7 @@ rdfs:label "Ideagen_Covalent" ;
 .
 bdata:Modules_for_the_Contensis_CMS
 rdf:type bpaas:CloudService ;
-bpaas:cloudServiceHasDescription "Contensis is a CMS used by many public-sector organisations â€“ from universities to councils, police and NHS trusts. Modules enhance the way Contensis works and include social media, form builder, blog, document channel, event, FOI, directory, forum, quality assurance/accessibility, news, multilingual, and federated search modules." ;
+bpaas:cloudServiceHasDescription "Contensis is a CMS used by many public-sector organisations – from universities to councils, police and NHS trusts. Modules enhance the way Contensis works and include social media, form builder, blog, document channel, event, FOI, directory, forum, quality assurance/accessibility, news, multilingual, and federated search modules." ;
 bpaas:cloudServiceHasAction fbpdo:Manage ;
 bpaas:cloudServiceHasObject fbpdo:Content ;
 bpaas:cloudServiceHasPaymentPlan bpaas:MonthlyFee ;
@@ -772,7 +772,7 @@ rdfs:label "Darzin_Stakeholder_Relationship_Management_Software_CRMSRMS" ;
 .
 bdata:Data_Consolidation_Data_collection_data_cleansing_data_migration
 rdf:type bpaas:CloudService ;
-bpaas:cloudServiceHasDescription "Equinitiâ€™s data management solution - DataPoint from Automated Intelligence - automates and manages the process of data cleansing, data categorising and data migration â€“ either on SaaS data management, in cloud data categorising or a hybrid data management solution. Available as Official or Official-Sensitive" ;
+bpaas:cloudServiceHasDescription "Equiniti’s data management solution - DataPoint from Automated Intelligence - automates and manages the process of data cleansing, data categorising and data migration – either on SaaS data management, in cloud data categorising or a hybrid data management solution. Available as Official or Official-Sensitive" ;
 bpaas:cloudServiceHasAPQC <http://ikm-group.ch/archimeo/apqc#2_1_4_Manage_product_and_service_master_data_11740> ;
 bpaas:cloudServiceHasAction fbpdo:Manage ;
 bpaas:cloudServiceHasObject fbpdo:Data ;
@@ -900,7 +900,7 @@ rdfs:label "Texuna_Itembank_and_eAssessment" ;
 .
 bdata:Customer_Effort_Dashboard
 rdf:type bpaas:CloudService ;
-bpaas:cloudServiceHasDescription "Our Customer Effort Dashboard is a performance management tool that will help improve the customer journey through your organisation â€“ giving you the evidence you need to improve your service. It enables you to interrogate data in four key areas â€“ customer demand; customer contact; customer satisfaction and channel analytics." ;
+bpaas:cloudServiceHasDescription "Our Customer Effort Dashboard is a performance management tool that will help improve the customer journey through your organisation – giving you the evidence you need to improve your service. It enables you to interrogate data in four key areas – customer demand; customer contact; customer satisfaction and channel analytics." ;
 bpaas:cloudServiceHasAPQC <http://ikm-group.ch/archimeo/apqc#1_2_8_2_2_Create_customer_journey_maps_19965> ;
 bpaas:cloudServiceHasAction fbpdo:Manage ;
 bpaas:cloudServiceHasObject fbpdo:Customer ;
@@ -1063,7 +1063,7 @@ rdfs:label "Debt_Management" ;
 .
 bdata:DATALYTYX_Assessmint_Shared_Services_360_Assessment
 rdf:type bpaas:CloudService ;
-bpaas:cloudServiceHasDescription "DATALYTYX Assessmint Shared Services 360 Assessment provides an online, cloud-based solution for detailed assessment of, and reporting on, an organisationâ€™s current state of shared services, in order to generate referential base-lines and compliance reports. The functionality can also be expanded to include assessments other items provided by vendors." ;
+bpaas:cloudServiceHasDescription "DATALYTYX Assessmint Shared Services 360 Assessment provides an online, cloud-based solution for detailed assessment of, and reporting on, an organisation’s current state of shared services, in order to generate referential base-lines and compliance reports. The functionality can also be expanded to include assessments other items provided by vendors." ;
 bpaas:cloudServiceHasAPQC <http://ikm-group.ch/archimeo/apqc#1_2_2_10_Develop_shared_services_strategy_19951> ;
 bpaas:cloudServiceHasAction fbpdo:Assess ;
 bpaas:cloudServiceHasObject fbpdo:Shared-services ;
@@ -1146,7 +1146,7 @@ rdfs:label "Custombuilt_elearning_content" ;
 .
 bdata:Emis_Web
 rdf:type bpaas:CloudService ;
-bpaas:cloudServiceHasDescription "EMIS Web provides health care professionals working within primary, community, childrenâ€™s, mental health, and secondary care with an Electronic Patient Record EPR and Patient Administration System PAS that they can tailor to the unique requirements of their service. Electronic sharing agreements provide a seamless integrated record across care settings." ;
+bpaas:cloudServiceHasDescription "EMIS Web provides health care professionals working within primary, community, children’s, mental health, and secondary care with an Electronic Patient Record EPR and Patient Administration System PAS that they can tailor to the unique requirements of their service. Electronic sharing agreements provide a seamless integrated record across care settings." ;
 bpaas:cloudServiceHasAction fbpdo:Administrate ;
 bpaas:cloudServiceHasAction fbpdo:Record ;
 bpaas:cloudServiceHasObject fbpdo:Patients ;
@@ -1310,7 +1310,7 @@ rdfs:label "Historic_Buildings_Sites_and_Monuments_Record_system_HBSMR" ;
 .
 bdata:IBM_Application_Server_on_Cloud_Websphere_Application_Server_in_Bluemix
 rdf:type bpaas:CloudService ;
-bpaas:cloudServiceHasDescription "IBM WebSphere Application Server serves applications from the front office to the back office -whether mobile, Web, cloud or mission-critical enterprise applications-to support seamless Systems of Interaction. IBM WAS provides you an array of successful cloud implementation modelsâ€“Hybrid, Public, Private, or on-premise based on your requirements." ;
+bpaas:cloudServiceHasDescription "IBM WebSphere Application Server serves applications from the front office to the back office -whether mobile, Web, cloud or mission-critical enterprise applications-to support seamless Systems of Interaction. IBM WAS provides you an array of successful cloud implementation models–Hybrid, Public, Private, or on-premise based on your requirements." ;
 bpaas:cloudServiceHasAPQC <http://ikm-group.ch/archimeo/apqc#8_7_4_Manage_IT_infrastructure_operations_10598> ;
 bpaas:cloudServiceHasAction fbpdo:Manage ;
 bpaas:cloudServiceHasObject fbpdo:Application ;
@@ -1446,7 +1446,7 @@ rdfs:label "Responsiv_Solutions_IBM_Business_Process_Manager_BPM" ;
 .
 bdata:IBM_BPM_Business_Process_Manager_on_Cloud_for_Process_Automation
 rdf:type bpaas:CloudService ;
-bpaas:cloudServiceHasDescription "IBM Business Process Manager is a comprehensive and consumable, business process management suite BPMS that delivers management of your business processes in a cloud environment. IBM BPM on Cloud provides a full lifecycle environment including development, test and productionâ€”with tooling and run time for process design, execution, monitoring and optimisation." ;
+bpaas:cloudServiceHasDescription "IBM Business Process Manager is a comprehensive and consumable, business process management suite BPMS that delivers management of your business processes in a cloud environment. IBM BPM on Cloud provides a full lifecycle environment including development, test and production—with tooling and run time for process design, execution, monitoring and optimisation." ;
 bpaas:cloudServiceHasAPQC <http://ikm-group.ch/archimeo/apqc#13_1_Manage_business_processes_16378> ;
 bpaas:cloudServiceHasAction fbpdo:Manage ;
 bpaas:cloudServiceHasAction fbpdo:Automate ;
@@ -1539,7 +1539,7 @@ rdfs:label "IBM_Case_Manager_on_Cloud" ;
 .
 bdata:IBM_Business_Process_Manager_on_Cloud_BPMoC_for_orchestration_and_automation_SaaS_for_OFFICIAL
 rdf:type bpaas:CloudService ;
-bpaas:cloudServiceHasDescription "A full lifecycle business process management BPM environment including development, test and productionâ€”with tooling and run time for process design, execution, monitoring and optimization. Business users can get started quickly with process improvements without the need to build and maintain an IT infrastructure. Provides visibility and management of business processes." ;
+bpaas:cloudServiceHasDescription "A full lifecycle business process management BPM environment including development, test and production—with tooling and run time for process design, execution, monitoring and optimization. Business users can get started quickly with process improvements without the need to build and maintain an IT infrastructure. Provides visibility and management of business processes." ;
 bpaas:cloudServiceHasAPQC <http://ikm-group.ch/archimeo/apqc#13_1_Manage_business_processes_16378> ;
 bpaas:cloudServiceHasAction fbpdo:Manage ;
 bpaas:cloudServiceHasAction fbpdo:Automate ;
@@ -1628,7 +1628,7 @@ rdfs:label "IBM_Operational_Decision_Manager_on_Cloud_ODMOC_SaaS_for_OFFICIAL" ;
 .
 bdata:IBM_Kenexa_Talent_Acquisition_Suite
 rdf:type bpaas:CloudService ;
-bpaas:cloudServiceHasDescription "IBMÂ® KenexaÂ® Talent Acquisition Suite is a set of products that works together to help you streamline and optimise employee recruitment and onboarding. This comprehensive hiring solution helps you hire, and onboard top talent using an automated process, incorporating the latest mobile and enterprise grade social technologies." ;
+bpaas:cloudServiceHasDescription "IBM® Kenexa® Talent Acquisition Suite is a set of products that works together to help you streamline and optimise employee recruitment and onboarding. This comprehensive hiring solution helps you hire, and onboard top talent using an automated process, incorporating the latest mobile and enterprise grade social technologies." ;
 bpaas:cloudServiceHasAPQC <http://ikm-group.ch/archimeo/apqc#7_2_Recruit_source_and_select_employees_10410> ;
 bpaas:cloudServiceHasAction fbpdo:Manage ;
 bpaas:cloudServiceHasAction fbpdo:Optimise ;
@@ -1711,7 +1711,7 @@ rdfs:label "IBM_Cloud_Object_Storage_Cleversafe_SECRET" ;
 .
 bdata:IBM_Blockchain_on_Bluemix__High_Security_Business_Network_HSBN
 rdf:type bpaas:CloudService ;
-bpaas:cloudServiceHasDescription "Blockchain on Bluemix provides Blockchain as a service SaaS in the IBM Cloud. It is accessed through IBMâ€™s Bluemix service providing an easy to use development environment for blockchain applications. The blockchain service is hosted on a highly secure LinuxONE platform in a UK based data centre for sensitive workloads." ;
+bpaas:cloudServiceHasDescription "Blockchain on Bluemix provides Blockchain as a service SaaS in the IBM Cloud. It is accessed through IBM’s Bluemix service providing an easy to use development environment for blockchain applications. The blockchain service is hosted on a highly secure LinuxONE platform in a UK based data centre for sensitive workloads." ;
 bpaas:cloudServiceHasAction fbpdo:Manage ;
 bpaas:cloudServiceHasObject fbpdo:BlockChain ;
 bpaas:cloudServiceHasPaymentPlan bpaas:Per-Item ;
@@ -1836,7 +1836,7 @@ rdfs:label "IBM_Sterling_File_Transfer_Service" ;
 .
 bdata:IBM_Enterprise_Managed_Mobility_EMM
 rdf:type bpaas:CloudService ;
-bpaas:cloudServiceHasDescription "BMÂ® MobileFirst Managed Mobility Services is focused on enabling and managing tasks on mobile devices." ;
+bpaas:cloudServiceHasDescription "BM® MobileFirst Managed Mobility Services is focused on enabling and managing tasks on mobile devices." ;
 bpaas:cloudServiceHasAction fbpdo:Manage ;
 bpaas:cloudServiceHasObject fbpdo:Tasks ;
 bpaas:cloudServiceHasPaymentPlan bpaas:Per-Item ;
@@ -1879,7 +1879,7 @@ rdfs:label "IBM_Enterprise_Managed_Mobility_EMM" ;
 .
 bdata:IBM_MobileFirst_Virtualisation_Services_MVS
 rdf:type bpaas:CloudService ;
-bpaas:cloudServiceHasDescription "IBM MVS enable enterprise clients to radically streamline and accelerate mobile adoption. IBM leverages Citrix and VMWare solutions to transform traditional environments. Clients can utilise IBMâ€™s experience and expertise of designing and implementing virtualisation solutions to provide a platform their end users with a secure, scalable and flexible virtualised platform." ;
+bpaas:cloudServiceHasDescription "IBM MVS enable enterprise clients to radically streamline and accelerate mobile adoption. IBM leverages Citrix and VMWare solutions to transform traditional environments. Clients can utilise IBM’s experience and expertise of designing and implementing virtualisation solutions to provide a platform their end users with a secure, scalable and flexible virtualised platform." ;
 bpaas:cloudServiceHasAction fbpdo:Streamline ;
 bpaas:cloudServiceHasAction fbpdo:Accelerate ;
 bpaas:cloudServiceHasObject fbpdo:MobileAdoption ;
