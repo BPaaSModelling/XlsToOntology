@@ -63,6 +63,7 @@ questiondata:Can_data_migration_be_perfomed_independently_from_the_provider
   rdf:type questionnaire:SingleSelection ;
   questionnaire:questionHasAnnotationRelation bpaas:cloudServiceHasDataMigration ;
   questionnaire:questionHasAnswers questionnaire:No ;
+  questionnaire:questionHasAnswers questionnaire:Not_Specified ;
   questionnaire:questionHasAnswers questionnaire:Yes ;
   rdfs:label "Can data migration be perfomed independently from the provider" ;
 .
@@ -111,6 +112,7 @@ questiondata:Do_you_need_API_integration
   rdf:type questionnaire:SingleSelection ;
   questionnaire:questionHasAnnotationRelation bpaas:cloudServiceHasAPI ;
   questionnaire:questionHasAnswers questionnaire:No ;
+  questionnaire:questionHasAnswers questionnaire:Not_Specified ;
   questionnaire:questionHasAnswers questionnaire:Yes ;
   rdfs:label "Do you need API integration?" ;
 .
@@ -305,6 +307,7 @@ questiondata:Select_the_desired_Service_Support_Responsiveness
   rdf:type questionnaire:MultiSelection ;
   rdf:type questionnaire:ServiceSupport ;
   questionnaire:questionHasAnnotationRelation bpaas:cloudServiceHasServiceSupportResponsiveness ;
+  questionnaire:questionHasAnswers questionnaire:Not_Specified ;
   questionnaire:questionHasAnswers bpaas:At_most_120_hours ;
   questionnaire:questionHasAnswers bpaas:At_most_12_hours ;
   questionnaire:questionHasAnswers bpaas:At_most_15_minutes ;
@@ -321,7 +324,6 @@ questiondata:Select_the_desired_Service_Support_Responsiveness
   questionnaire:questionHasAnswers bpaas:At_most_5_hours ;
   questionnaire:questionHasAnswers bpaas:At_most_5_working_days ;
   questionnaire:questionHasAnswers bpaas:At_most_8_hours ;
-  questionnaire:questionHasAnswers bpaas:Not_specified ;
   rdfs:label "Select_the_desired_Service_Support_Responsiveness" ;
 .
 questiondata:Select_the_prefered_data_type_for_import_and_export
@@ -427,6 +429,7 @@ questiondata:What_are_the_offered_support_channels
   rdf:type questionnaire:MultiSelection ;
   rdf:type questionnaire:ServiceSupport ;
   questionnaire:questionHasAnnotationRelation bpaas:cloudServiceHasSupportChannel ;
+  questionnaire:questionHasAnswers questionnaire:Not_Specified ;
   questionnaire:questionHasAnswers bpaas:Mail ;
   questionnaire:questionHasAnswers bpaas:On_Site_Support ;
   questionnaire:questionHasAnswers bpaas:Online_Ticketing ;
@@ -535,11 +538,11 @@ questiondata:What_is_your_favorite_support_coverage
   rdf:type questionnaire:MultiSelection ;
   rdf:type questionnaire:ServiceSupport ;
   questionnaire:questionHasAnnotationRelation bpaas:cloudServiceHasServiceSupport ;
+  questionnaire:questionHasAnswers questionnaire:Not_Specified ;
   questionnaire:questionHasAnswers bpaas:Mon-Fri ;
   questionnaire:questionHasAnswers bpaas:Mon-Sat ;
   questionnaire:questionHasAnswers bpaas:Mon-Sun ;
   questionnaire:questionHasAnswers bpaas:NineToFive ;
-  questionnaire:questionHasAnswers bpaas:NotSpecified ;
   questionnaire:questionHasAnswers bpaas:SevenDaysAWeek ;
   questionnaire:questionHasAnswers bpaas:Twenty4Seven ;
   questionnaire:questionHasAnswers bpaas:Twenty4five ;
