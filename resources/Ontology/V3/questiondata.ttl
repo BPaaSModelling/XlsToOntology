@@ -255,12 +255,12 @@ questiondata:PreferedAuditLogRetentionPeriodinMonths
   questionnaire:valueInsertAnswerTypeHasDatatype xsd:integer ;
   rdfs:label "Prefered Audit Log Retention Period (in Months)? (Insert 0 for any value)" ;
 .
-questiondata:PreferedAvailability_in_percentage
+questiondata:PreferedAvailability_monthly_downtime
   rdf:type questionnaire:Availability ;
   rdf:type questionnaire:ValueInsert ;
-  questionnaire:questionHasAnnotationRelation bpaas:cloudServiceHasAvailabilityInPercent ;
+  questionnaire:questionHasAnnotationRelation bpaas:cloudServiceHasMonthlyDowntimeInMinute ;
   questionnaire:valueInsertAnswerTypeHasDatatype xsd:integer ;
-  rdfs:label "Prefered availability in percentage? (Insert 0 for any value)" ;
+  rdfs:label "What is your favourite monthly downtime in minutes? (Insert 0 to skip the question)" ;
 .
 questiondata:Prefered_Data_Storage_in_GB
   rdf:type questionnaire:Performance ;

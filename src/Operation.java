@@ -448,7 +448,8 @@ public class Operation {
 							case 7:
 
 								String cellValues=cell.toString();
-								cellValues=validateFbpdo(cellValues.replace(" ",""));
+								//.replace(" ","")
+								cellValues=validateFbpdo(cellValues);
 
 								ArrayList<String> validatedAl=new ArrayList<String>(Arrays.asList(cellValues.split((","))));
 
@@ -470,7 +471,8 @@ public class Operation {
 							case 8:
 
 								cellValues=cell.toString();
-								cellValues=validateFbpdo(cellValues.replace(" ",""));
+								//.replace(" ","")
+								cellValues=validateFbpdo(cellValues);
 
 								validatedAl=new ArrayList<String>(Arrays.asList(cellValues.split((","))));
 
@@ -492,7 +494,7 @@ public class Operation {
 
 							case 9://ok
 								cellValues=cell.toString();
-								cellValues=cellValues.replace(" ","");
+								//cellValues=cellValues.replace(" ","");
 
 								validatedAl=new ArrayList<String>(Arrays.asList(cellValues.split((","))));
 
@@ -661,9 +663,28 @@ public class Operation {
 
 							case 22:
 								if (cell !=null) {
-									validated = validateNumeric(cell);									
-									cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasAvailabilityInPercent", validated + " ;"));
+									validated = validateNumeric(cell);
+									
+									//cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasAvailabilityInPercent", validated + " ;"));
 									//System.out.println(cell.toString()+" -------------------------------------->"+validated);
+									
+									if (validated.contains("bpaas:")||validated.contains("questionnaire:")) {
+										//System.out.println("no downtime set");
+									}else {
+										System.out.println(" -------------------------------------->"+validated);
+										validated=validated.replace("%"," ");
+										Float newValidated= Float.valueOf(validated);
+										if (newValidated <= (float) 100.0) {
+											if (newValidated <=(float)1.0) {
+												newValidated=newValidated*(float)100;
+											}
+										newValidated=((float) 100.0 - newValidated)*(float)43200;
+										}else {
+											System.out.println("no downtime set--> "+ cell.toString());
+										}
+										System.out.println("new validated: "+ newValidated);
+										cs.properties.add(new CloudServiceProperty("bpaas:availabilityHasDowntimePerMonthInMin", newValidated+ " ;"));
+									}
 								}					
 								break;
 
@@ -904,12 +925,13 @@ public class Operation {
 
 	private String validateNumeric(Cell cell) {
 
+
 		if (cell.toString().equals("not specified") ||cell.toString().equals("N/A") ||cell.toString().equals("not specfied") || cell.toString().equals("Not specified")|| cell.toString().equals("not_specified") || cell.toString().equals("Not_specified") || cell.equals("") ||cell.toString().equals(" ") || cell.toString().equals(null) || null_values_string.contains(cell.toString())) {
 			return "questionnaire:Not_Specified";
 		}else if (cell.toString().equals("Yes")||cell.equals("yes")||cell.equals("YES") ) {
 			return "questionnaire:Yes";
 		}
-		else if (cell.toString().equals("between 1- 6 months")||cell.toString().equals("user-defined")) {
+		else if (cell.toString().equals("between 1- 6 months")||cell.toString().equals("user-defined") || cell.toString().matches(".*[a-z].*") ) {
 			return "questionnaire:Yes";
 		}
 
@@ -973,31 +995,40 @@ public class Operation {
 			return "questionnaire:Yes";
 
 			//PAYMENT PLAN
-		}else if (cell.equals("Customizable Plan")) {
+		}else if (cell.equals("Resource_based_pricing")) {
+			return "bpaas:Resourcebasedpricing";
+		}else if (cell.equals("Try_Free_First")) {
+			return "bpaas:TryFreeFirst";
+		}else if (cell.equals("Prepaid_Annual_Plan")) {
+			return "bpaas:PrepaidAnnualPlan";
+		}else if (cell.equals("Monthly_Fee")) {
+			return "bpaas:MonthlyFee";
+		}else if (cell.equals("Customizable_Plan")) {
 			return "bpaas:CustomizablePlan";
-		}else if (cell.equals("Free of Charge")) {
+		}else if (cell.equals("Free_of_Charge")) {
 			return "bpaas:FreeofCharge";
-		}else if (cell.equals("Monthly Fee")) {
+		}else if (cell.equals("Monthly_Fee")) {
 			return "bpaas:MonthlyFee";
 		}else if (cell.equals("Any")||cell.equals("Any")) {
 			return "questionnaire:Any";
-		}else if (cell.equals("Prepaid Annual Plan")) {
-			return "bpaas:PrepaidAnnualPlan";
-		}else if (cell.equals("Try Free First")) {
-			return "bpaas:TryfreeFirst";
 		}else if (cell.equals("FixedSubscription")) {
 			return "bpaas:Fixed_Subscription";
 		}else if (cell.equals("InitialBaseFee")) {
 			return "bpaas:bpaas:Initial_Base_Fee";
 		}else if (cell.equals("Per-terrabyte")) {
 			return "bpaas:Per-terabyte";
-		}
 
 
+			//Media type
+		}else if (cell.equals("XML")) {
+			return "bpaas:Xml";
+		}else if (cell.equals("RDF")) {
+			return "bpaas:Rdf";
+		}else if (cell.equals("HTML")) {
+			return "bpaas:Html";
 
-
-		//ENCRYPTION TYPE
-		else if (cell.equals("TLS_VPN")) {
+			//ENCRYPTION TYPE
+		}else if (cell.equals("TLS_VPN")) {
 			return "bpaas:TLS_VPN";
 		}else if (cell.equals("IP_Filtering")) {
 			return "bpaas:IP_Filtering";
@@ -1124,62 +1155,62 @@ public class Operation {
 		}
 	}
 
-	private ArrayList<String> getMatchedClasses(String label) {
-		ArrayList<String> result = new ArrayList<String>();
-		String[] sublabels = label.split(", ");
-
-		for (int i = 0; i < sublabels.length; i++) {
-			boolean found = false;
-			for (int j = 0; j < classes.size(); j++) {
-				if (label.trim().equals(classes.get(j).getLabel())) {
-					result.add(classes.get(j).getName());
-					found = true;
-				}
-
-			}
-			if (!found) {
-				System.out.println("WARNING > " + sublabels[i] + " CLASS NOT FOUND!");
-			}
-		}
-
-		return result;
-	}
-
-	private ArrayList<String> getMatchedInstances(String label) {
-		ArrayList<String> result = new ArrayList<String>();
-		String[] sublabels = label.split(",");
-		for (int i = 0; i < sublabels.length; i++) {
-			boolean found = false;
-			for (int j = 0; j < instances.size(); j++) {
-				if (sublabels[i].trim().equals(instances.get(j).getLabel())) {
-					//System.out.println("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"+sublabels[i].trim().equals(instances.get(j).getLabel()));
-					result.add(instances.get(j).getName());
-					found = true;
-				}
-
-			}
-			if (!found) {
-				System.out.println("WARNING > " + sublabels[i] + " INSTANCE NOT FOUND!");
-			}
-		}
-
-		return result;
-	}
+	//	private ArrayList<String> getMatchedClasses(String label) {
+	//		ArrayList<String> result = new ArrayList<String>();
+	//		String[] sublabels = label.split(", ");
+	//
+	//		for (int i = 0; i < sublabels.length; i++) {
+	//			boolean found = false;
+	//			for (int j = 0; j < classes.size(); j++) {
+	//				if (label.trim().equals(classes.get(j).getLabel())) {
+	//					result.add(classes.get(j).getName());
+	//					found = true;
+	//				}
+	//
+	//			}
+	//			if (!found) {
+	//				System.out.println("WARNING > " + sublabels[i] + " CLASS NOT FOUND!");
+	//			}
+	//		}
+	//
+	//		return result;
+	//	}
+	//
+	//	private ArrayList<String> getMatchedInstances(String label) {
+	//		ArrayList<String> result = new ArrayList<String>();
+	//		String[] sublabels = label.split(",");
+	//		for (int i = 0; i < sublabels.length; i++) {
+	//			boolean found = false;
+	//			for (int j = 0; j < instances.size(); j++) {
+	//				if (sublabels[i].trim().equals(instances.get(j).getLabel())) {
+	//					//System.out.println("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"+sublabels[i].trim().equals(instances.get(j).getLabel()));
+	//					result.add(instances.get(j).getName());
+	//					found = true;
+	//				}
+	//
+	//			}
+	//			if (!found) {
+	//				System.out.println("WARNING > " + sublabels[i] + " INSTANCE NOT FOUND!");
+	//			}
+	//		}
+	//
+	//		return result;
+	//	}
 
 	private String addAPQCNumber(String validated) {
 
 		boolean found = false;
 
 		String validatedOld=validated;
+		validated=validated.trim();
 		validated=validated.replace("_"," ");
 		validated=validated.replaceAll("\\d" ,"");
-		validated=validated.trim();
 		//System.out.println("validated----------------"+validated);
 
 		for (int j = 0; j < classes.size(); j++) {
 
 			String name=classes.get(j).getLabel();
-			
+
 			ArrayList<OntologyAttribute> attributeList = classes.get(j).getAttributes();
 			//System.out.println(name);
 
@@ -1199,7 +1230,7 @@ public class Operation {
 
 		}
 		if (!found) {
-			System.out.println("WARNING > " + validatedOld + " CLASS NOT FOUND!");
+			System.out.println("APQC WARNING " + validatedOld +"  " + validated + " CLASS NOT FOUND!");
 		}
 
 		return validated;
@@ -1221,7 +1252,7 @@ public class Operation {
 		}else if (bpaas.containsKey(validated)) {
 			found=true;
 		}else
-			System.out.println("WARNING > " + validatedOld + " CLASS NOT FOUND!");
+			System.out.println("WARNING Check Matching> " + validatedOld + " CLASS NOT FOUND!");
 
 		return found;
 	}

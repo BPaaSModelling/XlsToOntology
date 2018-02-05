@@ -99,6 +99,10 @@ bpaas:At_most_1_working_day
   rdf:type bpaas:ServiceSupportResponsiveness ;
   rdfs:label "at_most_1_working_day" ;
 .
+bpaas:At_most_24_hours
+  rdf:type bpaas:ServiceSupportResponsiveness ;
+  rdfs:label "At most 24 hours" ;
+.
 bpaas:At_most_2_hours
   rdf:type bpaas:ServiceSupportResponsiveness ;
   rdfs:label "at_most_2_hours" ;
@@ -302,6 +306,14 @@ bpaas:CultureArcheology
 bpaas:CustomizablePlan
   rdf:type bpaas:PaymentPlan ;
   rdfs:label "Customizable Plan" ;
+.
+bpaas:DOC
+  rdf:type bpaas:MediaType ;
+  rdfs:label "DOC" ;
+.
+bpaas:DOCX
+  rdf:type bpaas:MediaType ;
+  rdfs:label "DOC" ;
 .
 bpaas:Daily
   rdf:type bpaas:BackupFrequency ;
@@ -669,6 +681,10 @@ bpaas:Per-instance
   rdf:type bpaas:PaymentPlan ;
   rdfs:label "Per-instance" ;
 .
+bpaas:Per-licence
+  rdf:type bpaas:PaymentPlan ;
+  rdfs:label "Per-licence" ;
+.
 bpaas:Per-minute
   rdf:type bpaas:PaymentPlan ;
   rdfs:label "Per minute" ;
@@ -794,6 +810,10 @@ bpaas:Raid60
   rdf:type bpaas:TypeOfRaid ;
   bpaas:typeOfRaidHasRequirementLevel bpaas:High ;
   rdfs:label "RAID 60" ;
+.
+bpaas:Rdf
+  rdf:type bpaas:MediaType ;
+  rdfs:label "Rdf" ;
 .
 bpaas:RequirementLevel
   rdf:type owl:Class ;
@@ -1077,6 +1097,10 @@ bpaas:XLS
   rdf:type bpaas:MediaType ;
   rdfs:label "XLS" ;
 .
+bpaas:Xml
+  rdf:type bpaas:MediaType ;
+  rdfs:label "Xml" ;
+.
 bpaas:Yearly
   rdf:type bpaas:BackupFrequency ;
   rdfs:label "yearly" ;
@@ -1318,6 +1342,12 @@ bpaas:cloudServiceHasEncryptionType
   rdf:type owl:ObjectProperty ;
   rdfs:domain bpaas:CloudService ;
   rdfs:range bpaas:EncryptionType ;
+.
+bpaas:cloudServiceHasMonthlyDowntimeInMinute
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain bpaas:CloudService ;
+  rdfs:label "HasMonthlyDowntimeInMinute" ;
+  rdfs:range xsd:decimal ;
 .
 bpaas:cloudServiceHasObject
   rdf:type owl:ObjectProperty ;
