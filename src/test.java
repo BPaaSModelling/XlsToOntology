@@ -7,11 +7,9 @@ import java.util.UUID;
 public class test {
 
 	public static void main(String[] args) throws FileNotFoundException {
-		//String pathExcel = ".\\resources\\ExcelFiles\\testexcel.xlsm";
+				
+		String pathExcel = ".\\resources\\ExcelFiles\\all.xlsx";
 		
-		
-		String pathExcel = ".\\resources\\ExcelFiles\\pluerat_latestfile.xlsx";
-		String pathExcel1 = ".\\resources\\ExcelFiles\\elena.xlsx";
 		String pathOntology = ".\\resources\\Ontology\\V3\\";
 		
 		
@@ -19,7 +17,6 @@ public class test {
 		
 		op.parseOntology(pathOntology + "fbpdo.ttl");
 		op.parseOntology(pathOntology + "bpaas.ttl");
-		//System.out.println(op.getClasses().toString());
 		op.parseOntology(pathOntology + "apqc.ttl");
 		op.parseOntology(pathOntology + "questionnaire.ttl");
 		op.parseOntology(pathOntology + "questiondata.ttl");
@@ -29,32 +26,34 @@ public class test {
 		ArrayList<OntologyInstance> instance;
 
 		op.parseExcelFile(pathExcel);
-		op.parseExcelFile(pathExcel1);
 		
-		//System.out.println(op.getServices().size());
-		PrintStream out = new PrintStream(new FileOutputStream(".\\resources\\Output\\bdata1.ttl"));
+		
+		PrintStream out = new PrintStream(new FileOutputStream(".\\resources\\Output\\bdata.ttl"));
 		System.setOut(out);
-		System.out.println("# baseURI: http://ikm-group.ch/archiMEO/bdata\r\n" + 
-				"# imports: http://ikm-group.ch/archimeo/bpaas\r\n" + 
-				"# imports: http://ikm-group.ch/archiMEO/questionnaire\r\n" + 
-				"# prefix: bdata\r\n" + 
-				"\r\n" + 
-				"@prefix apqc: <http://ikm-group.ch/archimeo/apqc#> .\r\n" + 
-				"@prefix bdata: <http://ikm-group.ch/archiMEO/bdata#> .\r\n" + 
-				"@prefix bpaas: <http://ikm-group.ch/archimeo/bpaas#> .\r\n" + 
-				"@prefix fbpdo: <http://ikm-group.ch/archimeo/fbpdo#> .\r\n" + 
-				"@prefix owl: <http://www.w3.org/2002/07/owl#> .\r\n" + 
-				"@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\r\n" + 
-				"@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\r\n" + 
-				"@prefix top: <http://ikm-group.ch/archiMEO/top#> .\r\n" + 
-				"@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\r\n" + 
-				"@prefix questionnaire: <http://ikm-group.ch/archiMEO/questionnaire#> .\r\n" + 
-				"\r\n" + 
-				"<http://ikm-group.ch/archiMEO/bdata>\r\n" + 
-				"  rdf:type owl:Ontology ;\r\n" + 
-				"  owl:imports <http://ikm-group.ch/archimeo/bpaas> ;\r\n" + 
-				"  owl:versionInfo \"Created with TopBraid Composer\" ;\r\n" + 
-				"  .");
+		String imports="# baseURI: http://ikm-group.ch/archiMEO/bdata\n" + 
+				"# imports: http://ikm-group.ch/archimeo/bpaas\n" +
+				"# imports: http://ikm-group.ch/archimeo/fbpdo\n" +
+				"# imports: http://ikm-group.ch/archiMEO/questionnaire\n" +
+				"# imports: http://ikm-group.ch/archimeo/apqc\n" +
+				"# prefix: bdata\n" + 
+				"\n" + 
+				"@prefix apqc: <http://ikm-group.ch/archimeo/apqc#> .\n" + 
+				"@prefix bdata: <http://ikm-group.ch/archiMEO/bdata#> .\n" + 
+				"@prefix bpaas: <http://ikm-group.ch/archimeo/bpaas#> .\n" + 
+				"@prefix fbpdo: <http://ikm-group.ch/archimeo/fbpdo#> .\n" + 
+				"@prefix owl: <http://www.w3.org/2002/07/owl#> .\n" + 
+				"@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n" + 
+				"@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n" + 
+				"@prefix top: <http://ikm-group.ch/archiMEO/top#> .\n" + 
+				"@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n" + 
+				"@prefix questionnaire: <http://ikm-group.ch/archiMEO/questionnaire#> .\n"+
+				"\n" + 
+				"<http://ikm-group.ch/archiMEO/bdata>\n" + 
+				"  rdf:type owl:Ontology ;\n" + 
+				"  owl:imports <http://ikm-group.ch/archimeo/bpaas> ;\n" + 
+				"  owl:versionInfo \"Created with TopBraid Composer\" ;\n" + 
+				".";
+		System.out.println(imports);
 		
 		for (int i = 0; i < op.getServices().size(); i++){
 			//System.out.println("bdata:" +""+op.getServices().get(i).getName());
@@ -80,7 +79,7 @@ public class test {
 			System.out.println("rdfs:label " + "\"" +name + "\" ;");
 			System.out.println(".");
 		}
-		//TODO: STORE THE DATA INTO A PHYSICAL FILE IN FOLDER  ".\\resources\\Output
+		//TODO: STORE THE DATA INTO A PHYSICAL FILE IN FOLDER  ".\esources\\Output
 		
 		
 		for(int i = 0; i < op.getInstances().size();i++)

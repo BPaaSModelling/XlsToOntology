@@ -375,7 +375,7 @@ bpaas:Europe
 .
 bpaas:European_Economic_Area_EEA
   rdf:type bpaas:StoredDataLocation ;
-  rdfs:label " European Economic Area (EEA)" ;
+  rdfs:label "European Economic Area (EEA)" ;
 .
 bpaas:European_Union
   rdf:type bpaas:StoredDataLocation ;

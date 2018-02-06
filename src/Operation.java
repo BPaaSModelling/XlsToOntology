@@ -356,14 +356,6 @@ public class Operation {
 	public void parseExcelFile(String path_file) {
 		Workbook workbook;
 
-		// TODO: REORDER AND ADJUCT CASES TO THE NEW ONTOLOGY
-		// The functional requirements should be linked to fbpdo
-		// The non functional has to be linked to bpaas
-		// any appearence of yes, no, not specified can be linked to
-		// questionnaire:Yes, questionnaire:No, questionnaire:Not_specified
-		// use the excel file "mapping for the updated excel" in folder
-		// Resources\REFERENCE as main reference.
-		// AN EXAMPLE CLOUDSERVICE is available in bdata:Drive_1 or Gmail_1
 		try {
 			workbook = WorkbookFactory.create(new File(path_file));
 			Sheet sheet = workbook.getSheetAt(0);
@@ -381,13 +373,12 @@ public class Operation {
 					}
 
 
-					//TODO: IF THE FIRST ROW IS THE MENU, IT SHOULD NOT SCAN IT AND ADD IT TO THE ONTOLOGY. CHECK IF THE CELL A1 AND B1, IF IT'S THE MENU, SKIP THE LINE
-					//TODO: bpass:cloudServiceHasProvider Bridgeway Security Solutions. THIS SHOULD BE bpass:cloudServiceHasProvider "Bridgeway Security Solutions" SAME FOR LABEL AND ALL THE TEXTUALS ATTRIBUTES
+					
 					if (row.getRowNum() > 0){
 
 						if (true) {
 							maxcount = row.getLastCellNum();
-
+							String validated="questionnaire:Not_Specified";
 							switch (cell.getColumnIndex()) {
 
 							case 0:
@@ -432,7 +423,7 @@ public class Operation {
 
 									for (int i=0; i<validatedAl.size();i++) {
 
-										String validated=validatedAl.get(i);
+										validated=validatedAl.get(i);
 										String cutted= validated.substring(validated.length()-1);
 
 										validated= addAPQCNumber(validated);
@@ -448,13 +439,16 @@ public class Operation {
 							case 7:
 
 								String cellValues=cell.toString();
-								//.replace(" ","")
-								cellValues=validateFbpdo(cellValues);
-
+								cellValues=cellValues.replace(" ","");
+								
 								ArrayList<String> validatedAl=new ArrayList<String>(Arrays.asList(cellValues.split((","))));
-
+								
+								
+								
 								for (int i = 0; i < validatedAl.size(); i++) {
-									cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasAction", "fbpdo:"+validatedAl.get(i) +" ;"));
+									validated= validateFbpdo(validatedAl.get(i));
+									
+									cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasAction", "fbpdo:"+ validated +" ;"));
 
 								}
 
@@ -471,24 +465,15 @@ public class Operation {
 							case 8:
 
 								cellValues=cell.toString();
-								//.replace(" ","")
-								cellValues=validateFbpdo(cellValues);
-
+								cellValues=cellValues.replace(" ","");
+								
 								validatedAl=new ArrayList<String>(Arrays.asList(cellValues.split((","))));
 
 								for (int i = 0; i < validatedAl.size(); i++) {
-									cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasObject", "fbpdo:"+validatedAl.get(i) +" ;"));
+									validated= validateFbpdo(validatedAl.get(i));
+									cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasObject", "fbpdo:"+ validated +" ;"));
 
 								}
-
-
-								// Here i am parsing Object
-								//								ArrayList<String> matchedClasses = new ArrayList<String>();
-								//								matchedClasses = getMatchedClasses(validateFbpdo(cell.toString()));
-								//
-								//								for (int i = 0; i < matchedClasses.size(); i++) {
-								//									cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasObject", (validateString(matchedClasses.get(i))+" ;")));
-								//								}
 
 								break;
 
@@ -528,7 +513,7 @@ public class Operation {
 								validatedAl=new ArrayList<String>(Arrays.asList(cellValues.split((","))));
 
 								for (int i = 0; i < validatedAl.size(); i++) {
-									String validated= validateString(validatedAl.get(i));
+									validated= validateString(validatedAl.get(i));
 									cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasEncryptionType", validated +" ;"));
 									//System.out.println(cell.toString()+" -------------------------------------->"+validated);
 								}
@@ -551,7 +536,7 @@ public class Operation {
 								validatedAl=new ArrayList<String>(Arrays.asList(cellValues.split((","))));
 
 								for (int i = 0; i < validatedAl.size(); i++) {
-									String validated=validateString(validatedAl.get(i));
+									validated=validateString(validatedAl.get(i));
 
 									cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasStoredDataLocation", validated +" ;"));
 									//System.out.println(cell.toString()+" -------------------------------------->"+validated);
@@ -567,7 +552,7 @@ public class Operation {
 								break;
 
 							case 13:
-								String validated=validateBooleanCellString(cell.toString());
+								validated=validateBooleanCellString(cell.toString());
 								if (cell != null) {
 									cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasSecurityStandardInPlace", validated + " ;"));
 									//System.out.println(cell.toString()+" -------------------------------------->"+validated);
@@ -671,7 +656,7 @@ public class Operation {
 									if (validated.contains("bpaas:")||validated.contains("questionnaire:")) {
 										//System.out.println("no downtime set");
 									}else {
-										System.out.println(" -------------------------------------->"+validated);
+										//System.out.println(" -------------------------------------->"+validated);
 										validated=validated.replace("%"," ");
 										Float newValidated= Float.valueOf(validated);
 										if (newValidated <= (float) 100.0) {
@@ -680,10 +665,10 @@ public class Operation {
 											}
 										newValidated=((float) 100.0 - newValidated)*(float)43200;
 										}else {
-											System.out.println("no downtime set--> "+ cell.toString());
+											//System.out.println("no downtime set--> "+ cell.toString());
 										}
-										System.out.println("new validated: "+ newValidated);
-										cs.properties.add(new CloudServiceProperty("bpaas:availabilityHasDowntimePerMonthInMin", newValidated+ " ;"));
+										//System.out.println("new validated: "+ newValidated);
+										cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasDowntimePerMonthInMin", newValidated+ " ;"));
 									}
 								}					
 								break;
@@ -814,7 +799,37 @@ public class Operation {
 								cellValues=cell.toString();
 
 								validatedAl=new ArrayList<String>(Arrays.asList(cellValues.split((","))));
-
+								
+								ArrayList<String> r= new  ArrayList<String>();
+								r.add("bpaas:At_Most_15_minutes");
+								r.add("bpaas:At_Most_30_minutes");
+								r.add("bpaas:At_Most_40_minutes");
+								r.add("bpaas:At_Most_1_hours");
+								r.add("bpaas:At_Most_1_5_hours");
+								r.add("bpaas:At_Most_2_hours");
+								r.add("bpaas:At_Most_3_hours");
+								r.add("bpaas:At_Most_4_hours");
+								r.add("bpaas:At_Most_5_hours");
+								r.add("bpaas:At_Most_6_hours");
+								r.add("bpaas:At_Most_8_hours");
+								r.add("bpaas:At_Most_12_hours");
+								r.add("bpaas:At_Most_13_hours");
+								r.add("bpaas:At_Most_16_hours");
+								r.add("bpaas:At_Most_1_working_day");
+								r.add("bpaas:At_Most_24_hours");
+								r.add("bpaas:At_Most_40_hours");
+								r.add("bpaas:At_Most_2_working_days");
+								r.add("bpaas:At_Most_50_hours");
+								r.add("bpaas:At_Most_3_working_days");
+								r.add("bpaas:At_Most_4_working_days");
+								r.add("bpaas:At_Most_5_working_days");
+								r.add("bpaas:At_Most_120_hours");
+								r.add("bpaas:At_Most_7_working_days");
+								r.add("bpaas:Up_to_two_weeks");
+								r.add("bpaas:Up_to_four_weeks");
+								r.add("bpaas:At_Most_30_working_days");
+								
+								
 								for (int i = 0; i < validatedAl.size(); i++) {
 									validated=validateString(validatedAl.get(i));
 									cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasServiceSupportResponsiveness", validated +" ;"));
@@ -901,13 +916,13 @@ public class Operation {
 			}
 
 		} catch (EncryptedDocumentException e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		} catch (InvalidFormatException e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		}
 	}
@@ -1117,9 +1132,14 @@ public class Operation {
 	}
 
 	private String validateFbpdo(String cell) {
-		if (cell.startsWith(" ")||cell.startsWith("_") ) {
-			cell=cell.substring(1,cell.length());
-		}
+		cell=cell.trim();
+		cell=cell.replace(" ", "_");
+		String start=(String) cell.subSequence(0, 1);
+		cell = cell.substring(0,1).toUpperCase() + cell.substring(1);
+		cell=cell.replace("(","");
+		cell=cell.replace(")","");
+		cell=cell.replaceAll("\\d" ,"");
+		
 		boolean result;
 		if (cell.equals("not specified") ||cell.equals("not specfied") || cell.equals("Not specified")|| cell.equals("not_specified") || cell.equals("Not_specified") || cell.equals("") ||cell.equals(" ") || cell.equals(null) || null_values_string.contains(cell.toString())) {
 			return "questionnaire:Not_Specified";
@@ -1131,26 +1151,9 @@ public class Operation {
 			return "questionnaire:Yes";
 		} else {
 			String validated=cell.toString();
-			ArrayList<String> notAllowed= new ArrayList<String>();
-			notAllowed.add("1");
-			notAllowed.add("2");
-			notAllowed.add("3");
-			notAllowed.add("4");
-			notAllowed.add("5");
-			notAllowed.add("6");
-			notAllowed.add("7");
-			notAllowed.add("8");
-			notAllowed.add("9");
-			notAllowed.add(" ");
-			notAllowed.add(".");
-
-
-			for (int i=0; i<notAllowed.size();i++) {
-				if (validated.contains(notAllowed.get(i))){
-					validated=validated.replace(notAllowed.get(i),"");
-				}	
-			}
-
+			
+			
+			checkMatching("fbpdo:"+validated);
 			return validated;
 		}
 	}
@@ -1248,7 +1251,7 @@ public class Operation {
 			found=true;
 		}else if(fbpdo.containsKey(validated)) {
 			found=true;
-			System.out.println("fbpdo----------------"+fbpdo.toString());
+			//System.out.println("fbpdo----------------"+fbpdo.toString());
 		}else if (bpaas.containsKey(validated)) {
 			found=true;
 		}else
