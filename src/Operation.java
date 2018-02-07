@@ -8,6 +8,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Scanner;
 
 import org.apache.poi.EncryptedDocumentException;
@@ -177,7 +179,7 @@ public class Operation {
 							}else if(c.getName().contains("fbpdo:")){
 								fbpdo.put(c.getName(), c);
 								//System.out.println(c.getName()+" to fbpdo");
-							}else if(c.getName().contains("APQC#")){
+							}else if(c.getName().contains("apqc#")){
 								APQC.put(c.getName(), c);
 								//System.out.println(c.getName()+" to APQC");
 							}
@@ -204,7 +206,7 @@ public class Operation {
 							}else if(i.getName().contains("fbpdo:")){
 								fbpdo.put(i.getName(), c);
 								//System.out.println(i.getName()+" to fbpdo");
-							}else if(c.getName().contains("APQC#")){
+							}else if(c.getName().contains("apqc#")){
 								APQC.put(i.getName(), c);
 								//System.out.println(i.getName()+" to APQC");
 							}
@@ -427,8 +429,13 @@ public class Operation {
 										String cutted= validated.substring(validated.length()-1);
 
 										validated= addAPQCNumber(validated);
-
-										cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasAPQC", validated +" ;"));
+										
+										
+										ArrayList<String> APQCGerarchy= addAPQCGerarchy(validated);
+										for (int j=0; j<APQCGerarchy.size();j++) {
+											cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasAPQC", APQCGerarchy.get(j) +" ;"));	
+										}
+										//cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasAPQC", validated +" ;"));
 										//System.out.println(cell.toString()+" -------------------------------------->"+validated );
 										//								
 									}
@@ -833,7 +840,7 @@ public class Operation {
 									cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasServiceSupportResponsiveness", validated +" ;"));
 									//System.out.println(cell.toString()+" -------------------------------------->"+validated);
 								}else {
-									System.out.println("\n\n"+validatedAl.toString());		
+											
 									boolean found=false;
 									int highest=0;
 									for (int i=0;i<validatedAl.size();i++) {
@@ -845,7 +852,7 @@ public class Operation {
 											if (currentR.equals(validating)&& highest<=j ) {
 												found=true;
 												highest=j;
-												System.out.println("new highest"+highest);
+												//System.out.println("new highest"+highest);
 												//System.out.println(validating+" "+currentR);
 											}
 
@@ -854,8 +861,8 @@ public class Operation {
 									if (!found) {
 										System.out.println("not found: "+validateString(validatedAl.toString()));
 									}else {
-										for (int i=0;i<highest;i++) {
-											validated=r.get(i);
+										for (int i=0;i<=highest;i++) {
+											validated=validateString(r.get(i));
 											cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasServiceSupportResponsiveness", validated +" ;"));
 											//System.out.println(cell.toString()+" -------------------------------------->"+validated);
 										}	
@@ -938,6 +945,57 @@ public class Operation {
 
 			e.printStackTrace();
 		}
+	}
+
+	private ArrayList<String> addAPQCGerarchy(String validated) {
+		
+		ArrayList<String> validatingAPQC=new ArrayList<String>(Arrays.asList(validated.split(("(?<=_[0-9])"))));
+		ArrayList<String> APQCGerarchy= new ArrayList<String>();
+		
+		String parent=validatingAPQC.get(0).replace("<http://ikm-group.ch/archimeo/apqc#", "").replace("_",".");
+		APQCGerarchy.add(parent);
+		//System.out.println("Gerarchy "+parent);
+		int size=validatingAPQC.size();
+		
+		for (int i=1; i<size-2;i++) {
+			parent=parent+validatingAPQC.get(i).replace("_",".");
+			
+			//System.out.println("Gerarchy "+ parent);
+			APQCGerarchy.add(parent);
+		}
+		//System.out.println(validated);
+		//System.out.println(APQCGerarchy.toString());
+		
+		ArrayList<String>  APQClist=getAPQCfromGerarchy(APQCGerarchy);
+		
+		return APQClist;
+	}
+
+	private ArrayList<String> getAPQCfromGerarchy(ArrayList<String> APQCGerarchy) {
+		ArrayList<String> matchingList=new ArrayList<String>();
+		//System.out.println(APQCGerarchy);
+		//System.out.println(APQC);
+		
+		for (Entry<String, OntologyClass> entry : APQC.entrySet()) {
+			OntologyClass APQCClass = entry.getValue();
+			
+			ArrayList<OntologyAttribute> attributes = APQCClass.getAttributes();
+			//System.out.println(attributes);
+			for (int i=0; i<attributes.size();i++) {
+				OntologyAttribute attributeI = attributes.get(i);
+				if (attributeI.getName().equals("apqc:hasHierarchyID")) {
+					String relativeValue = attributeI.getValue().replace("\"","");
+					for (int k=0; k<APQCGerarchy.size();k++) {
+						if (relativeValue.equals(APQCGerarchy.get(k))) {
+							//System.out.println("Entry:"+entry.getKey());
+							matchingList.add(entry.getKey());
+						}	
+					}	
+				}				
+			}
+		}		
+		//System.out.println(matchingList);
+		return matchingList;
 	}
 
 	private boolean validateNullCellString(String cell) {

@@ -705,6 +705,10 @@ bpaas:Per-user
   rdf:type bpaas:PaymentPlan ;
   rdfs:label "Per-user" ;
 .
+bpaas:Per_transaction
+  rdf:type bpaas:PaymentPlan ;
+  rdfs:label "Per_transaction" ;
+.
 bpaas:Performance
   rdf:type owl:Class ;
   rdfs:subClassOf bpaas:ServiceLevelObjective ;
@@ -913,6 +917,10 @@ bpaas:SoftCryptoToken
 bpaas:South_America
   rdf:type bpaas:StoredDataLocation ;
   rdfs:label "South America" ;
+.
+bpaas:Spreadsheet
+  rdf:type bpaas:MediaType ;
+  rdfs:label "Spreadsheet" ;
 .
 bpaas:StoragePeriodInMonths
   rdf:type owl:DatatypeProperty ;

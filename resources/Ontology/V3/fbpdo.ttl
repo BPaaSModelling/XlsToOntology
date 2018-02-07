@@ -196,6 +196,11 @@ fbpdo:Collect
   rdfs:label "Collect" ;
   rdfs:subClassOf fbpdo:Action ;
 .
+fbpdo:Communication
+  rdf:type owl:Class ;
+  rdfs:label "Communication" ;
+  rdfs:subClassOf fbpdo:General ;
+.
 fbpdo:Communication_channel
   rdf:type owl:Class ;
   rdfs:label "Communication channel" ;
@@ -364,6 +369,11 @@ fbpdo:Event
 fbpdo:Examination
   rdf:type owl:Class ;
   rdfs:label "Examination" ;
+  rdfs:subClassOf fbpdo:General ;
+.
+fbpdo:Expenses
+  rdf:type owl:Class ;
+  rdfs:label "Expenses" ;
   rdfs:subClassOf fbpdo:General ;
 .
 fbpdo:Experience
@@ -541,6 +551,11 @@ fbpdo:Letter
   rdfs:label "Letter" ;
   rdfs:subClassOf fbpdo:Document ;
 .
+fbpdo:Licences
+  rdf:type owl:Class ;
+  rdfs:label "Licences" ;
+  rdfs:subClassOf fbpdo:General ;
+.
 fbpdo:LinkedIn
   rdf:type owl:Class ;
   rdfs:label "LinkedIn" ;
@@ -681,6 +696,11 @@ fbpdo:Podcast
   rdfs:label "Podcast" ;
   rdfs:subClassOf fbpdo:ContentMessage ;
 .
+fbpdo:Portfolio
+  rdf:type owl:Class ;
+  rdfs:label "Portfolio" ;
+  rdfs:subClassOf fbpdo:General ;
+.
 fbpdo:Post
   rdf:type owl:Class ;
   rdfs:label "Post" ;
@@ -801,6 +821,11 @@ fbpdo:Risk
   rdfs:label "Risk" ;
   rdfs:subClassOf fbpdo:General ;
 .
+fbpdo:RoomReservation
+  rdf:type owl:Class ;
+  rdfs:label "RoomReservation" ;
+  rdfs:subClassOf fbpdo:General ;
+.
 fbpdo:Route
   rdf:type owl:Class ;
   rdfs:label "Route" ;
@@ -810,6 +835,11 @@ fbpdo:Schedule
   rdf:type owl:Class ;
   rdfs:label "Schedule" ;
   rdfs:subClassOf fbpdo:General ;
+.
+fbpdo:Secure
+  rdf:type owl:Class ;
+  rdfs:label "Secure" ;
+  rdfs:subClassOf fbpdo:Action ;
 .
 fbpdo:Securely
   rdf:type owl:Class ;
@@ -856,6 +886,11 @@ fbpdo:Social_media
   rdfs:label "Social media" ;
   rdfs:subClassOf fbpdo:Online ;
 .
+fbpdo:Software
+  rdf:type owl:Class ;
+  rdfs:label "Software" ;
+  rdfs:subClassOf fbpdo:General ;
+.
 fbpdo:Solutions
   rdf:type owl:Class ;
   rdfs:label "Solutions" ;
@@ -869,6 +904,11 @@ fbpdo:Solve
 fbpdo:SourcingStrategy
   rdf:type owl:Class ;
   rdfs:label "SourcingStrategy" ;
+  rdfs:subClassOf fbpdo:General ;
+.
+fbpdo:Spreadsheet
+  rdf:type owl:Class ;
+  rdfs:label "Spreadsheet" ;
   rdfs:subClassOf fbpdo:General ;
 .
 fbpdo:Stakeholders
@@ -924,6 +964,11 @@ fbpdo:Text
 fbpdo:Time
   rdf:type owl:Class ;
   rdfs:label "Time" ;
+  rdfs:subClassOf fbpdo:General ;
+.
+fbpdo:Tool
+  rdf:type owl:Class ;
+  rdfs:label "Tool" ;
   rdfs:subClassOf fbpdo:General ;
 .
 fbpdo:Track
