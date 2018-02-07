@@ -409,7 +409,7 @@ bpaas:Finland
 .
 bpaas:Five_years
   rdf:type bpaas:BackupRetentionTime ;
-  rdfs:label "up to a 6 months" ;
+  rdfs:label "up to a 5 years" ;
 .
 bpaas:Fixed_Subscription
   rdf:type bpaas:PaymentPlan ;
@@ -1355,7 +1355,7 @@ bpaas:cloudServiceHasMonthlyDowntimeInMinute
   rdf:type owl:DatatypeProperty ;
   rdfs:domain bpaas:CloudService ;
   rdfs:label "HasMonthlyDowntimeInMinute" ;
-  rdfs:range xsd:decimal ;
+  rdfs:range xsd:float ;
 .
 bpaas:cloudServiceHasObject
   rdf:type owl:ObjectProperty ;

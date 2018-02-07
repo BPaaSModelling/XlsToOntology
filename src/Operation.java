@@ -429,8 +429,8 @@ public class Operation {
 										String cutted= validated.substring(validated.length()-1);
 
 										validated= addAPQCNumber(validated);
-										
-										
+
+
 										ArrayList<String> APQCGerarchy= addAPQCGerarchy(validated);
 										for (int j=0; j<APQCGerarchy.size();j++) {
 											cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasAPQC", APQCGerarchy.get(j) +" ;"));	
@@ -602,7 +602,7 @@ public class Operation {
 								}
 								break;
 
-							case 17:
+							case 17://ok
 								// response time in millisecond
 
 								if (cell != null) {
@@ -613,7 +613,7 @@ public class Operation {
 								}
 								break;
 
-							case 18:
+							case 18: //ok
 								// computing processing power power scalable
 								if (cell != null) {
 									validated=validateBooleanCellString(cell.toString());
@@ -622,7 +622,7 @@ public class Operation {
 								}
 								break;
 
-							case 19:
+							case 19://ok
 								// data storage scalable
 
 								if (cell != null) {
@@ -632,7 +632,7 @@ public class Operation {
 								}
 								break;
 
-							case 20:
+							case 20://ok
 								// here i am parsing data storage in BG
 
 								if (cell!= null) {
@@ -655,27 +655,17 @@ public class Operation {
 
 							case 22:
 								if (cell !=null) {
-									validated = validateNumeric(cell);
+									validated = validateAvailability(cell.toString()).toString();
 
 									//cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasAvailabilityInPercent", validated + " ;"));
-									//System.out.println(cell.toString()+" -------------------------------------->"+validated);
+
 
 									if (validated.contains("bpaas:")||validated.contains("questionnaire:")) {
-										//System.out.println("no downtime set");
+										System.out.println("no downtime set");
+
 									}else {
-										//System.out.println(" -------------------------------------->"+validated);
-										validated=validated.replace("%"," ");
-										Float newValidated= Float.valueOf(validated);
-										if (newValidated <= (float) 100.0) {
-											if (newValidated <=(float)1.0) {
-												newValidated=newValidated*(float)100;
-											}
-											newValidated=((float) 100.0 - newValidated)*(float)43200;
-										}else {
-											//System.out.println("no downtime set--> "+ cell.toString());
-										}
-										//System.out.println("new validated: "+ newValidated);
-										cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasDowntimePerMonthInMin", newValidated+ " ;"));
+										cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasDowntimePerMonthInMin", validated+ " ;"));
+										//System.out.println(cell.toString()+" -------------------------------------->"+validated);
 									}
 								}					
 								break;
@@ -697,7 +687,7 @@ public class Operation {
 								if (cell !=null) {
 									validated = validateNumeric(cell);									
 									cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasAccessLogRetentionPeriodInMonths", validated + " ;"));
-									//	System.out.println(cell.toString()+" -------------------------------------->"+validated);
+									//System.out.println(cell.toString()+" -------------------------------------->"+validated);
 								}	
 								break;
 
@@ -719,7 +709,7 @@ public class Operation {
 								}	
 								break;
 
-							case 27:
+							case 27: //to discuss
 								cellValues=cell.toString();
 
 								validatedAl=new ArrayList<String>(Arrays.asList(cellValues.split((","))));
@@ -727,6 +717,7 @@ public class Operation {
 								for (int i = 0; i < validatedAl.size(); i++) {
 									validated=validateString(validatedAl.get(i));
 									cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasBackupFrequency", validated  +" ;"));
+									
 									//System.out.println(cell.toString()+" -------------------------------------->"+validated);
 								}
 
@@ -734,7 +725,7 @@ public class Operation {
 
 								break;
 
-							case 28:
+							case 28: //to discuss
 								// here I am parsing BackupRetentionTime
 								cellValues=cell.toString();
 
@@ -757,7 +748,7 @@ public class Operation {
 								//
 								//								}
 								break;
-							case 29: 
+							case 29: //ok
 								//MediaType Data Export Import format
 
 								cellValues=cell.toString();
@@ -770,19 +761,10 @@ public class Operation {
 									//System.out.println(cell.toString()+" -------------------------------------->"+validated);
 								}
 
-								//								ArrayList<String> matchInstances_exportImport = new ArrayList<String>();
-								//								matchInstances_exportImport = getMatchedInstances(cell.toString());
-								//
-								//								for (int i = 0; i < matchInstances_exportImport.size(); i++) {
-								//
-								//									cs.properties.add(new CloudServiceProperty("bpaas:CloudServiceHasMediaTypeImportExport",
-								//											validateString(matchInstances_exportImport.get(i)) + " ;"));
-								//
-								//								}
 								break;
 								//	case 30 is useless, merged into 29
 
-							case 31:
+							case 31: //ok
 								// data migration
 
 								if (cell != null) {
@@ -793,7 +775,7 @@ public class Operation {
 								break;
 
 							case 32:
-								// API
+								// API //ok
 								if (cell != null) {
 									validated=validateBooleanCellString(cell.toString());
 									cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasAPI", validated+ " ;"));
@@ -801,7 +783,7 @@ public class Operation {
 								} 
 								break;
 
-							case 33:
+							case 33://ok
 
 								cellValues=cell.toString();
 
@@ -819,33 +801,34 @@ public class Operation {
 								r.add("At_most_5_hours");
 								r.add("At_most_6_hours");
 								r.add("At_most_8_hours");
+								r.add("At_most_1_working_day");
 								r.add("At_most_12_hours");
 								r.add("At_most_13_hours");
 								r.add("At_most_16_hours");
-								r.add("At_most_1_working_day");
-								r.add("At_most_24_hours");
-								r.add("At_most_40_hours");
 								r.add("At_most_2_working_days");
-								r.add("At_most_50_hours");
+								r.add("At_most_24_hours");
 								r.add("At_most_3_working_days");
 								r.add("At_most_4_working_days");
+								r.add("At_most_40_hours");
 								r.add("At_most_5_working_days");
-								r.add("At_most_120_hours");
+								r.add("At_most_50_hours");
 								r.add("At_most_7_working_days");
+								r.add("At_most_120_hours");
+								r.add("At_most_30_working_days");
 								r.add("Up_to_two_weeks");
 								r.add("Up_to_four_weeks");
-								r.add("At_most_30_working_days");
+								//TODO INVERT THE GENERATION OF ARRAY
 
 								if (validatedAl.size()==1 && validateString(validatedAl.get(0)).equals("questionnaire:Not_Specified") ) {
 									cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasServiceSupportResponsiveness", validated +" ;"));
 									//System.out.println(cell.toString()+" -------------------------------------->"+validated);
 								}else {
-											
+
 									boolean found=false;
 									int highest=0;
 									for (int i=0;i<validatedAl.size();i++) {
 										for(int j=0; j<r.size();j++) {
-											
+
 											String validating=validateString(validatedAl.get(i).toString());
 											String currentR="bpaas:"+r.get(j);
 											//System.out.println(validating+" "+currentR);
@@ -867,13 +850,13 @@ public class Operation {
 											//System.out.println(cell.toString()+" -------------------------------------->"+validated);
 										}	
 									}
-									
+
 								}
 
 
 								break;
 
-							case 34:
+							case 34://ok
 								// service support
 								cellValues=cell.toString();
 
@@ -898,7 +881,7 @@ public class Operation {
 								//
 								break;
 
-							case 35:
+							case 35://ok
 								// SupportChannel
 								cellValues=cell.toString();
 
@@ -911,7 +894,7 @@ public class Operation {
 								}
 								break;
 
-							case 36:
+							case 36://ok
 								// TargetMarket
 								cellValues=cell.toString();
 
@@ -920,7 +903,7 @@ public class Operation {
 								for (int i = 0; i < validatedAl.size(); i++) {
 									validated= validateString(validatedAl.get(i));
 									cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasTargetMarket",	validated +" ;"));
-									//System.out.println(cellValues+" -------------------------------------->"+validated);
+									System.out.println(cellValues+" -------------------------------------->"+validated);
 								}
 
 								break;
@@ -947,27 +930,53 @@ public class Operation {
 		}
 	}
 
-	private ArrayList<String> addAPQCGerarchy(String validated) {
+	private Float validateAvailability(String cell) {
+		cell=cell.trim();
 		
+		if (cell.equals("not_specified")|| cell.equals("Not Specified") ||cell.equals("N/A") ||cell.equals("not specfied") || cell.equals("Not specified")|| cell.equals("not_specified") || cell.toString().equals("Not_specified") || cell.equals("") ||cell.toString().equals(" ") || cell.toString().equals(null) || null_values_string.contains(cell.toString())) {
+			return (float)0;
+		}else {
+		Float newValidated;
+		String validated=cell.replace("%","");
+		newValidated= Float.valueOf(validated);
+
+		if (newValidated <= (float) 100.0) {
+			if (newValidated <=(float)1.0) {
+				newValidated=newValidated*(float)100;
+			}
+			newValidated=((float) 100.0 - newValidated)*(float)43200;
+		}else {
+			System.out.println("no downtime set--> "+ cell.toString());
+		}
+
+
+		return newValidated;
+
+		}
+
+	}
+
+	private ArrayList<String> addAPQCGerarchy(String validated) {
+
 		ArrayList<String> validatingAPQC=new ArrayList<String>(Arrays.asList(validated.split(("(?<=_[0-9])"))));
 		ArrayList<String> APQCGerarchy= new ArrayList<String>();
-		
+
 		String parent=validatingAPQC.get(0).replace("<http://ikm-group.ch/archimeo/apqc#", "").replace("_",".");
 		APQCGerarchy.add(parent);
 		//System.out.println("Gerarchy "+parent);
 		int size=validatingAPQC.size();
-		
+
 		for (int i=1; i<size-2;i++) {
 			parent=parent+validatingAPQC.get(i).replace("_",".");
-			
+
 			//System.out.println("Gerarchy "+ parent);
 			APQCGerarchy.add(parent);
 		}
 		//System.out.println(validated);
 		//System.out.println(APQCGerarchy.toString());
-		
+
 		ArrayList<String>  APQClist=getAPQCfromGerarchy(APQCGerarchy);
-		
+
 		return APQClist;
 	}
 
@@ -975,10 +984,10 @@ public class Operation {
 		ArrayList<String> matchingList=new ArrayList<String>();
 		//System.out.println(APQCGerarchy);
 		//System.out.println(APQC);
-		
+
 		for (Entry<String, OntologyClass> entry : APQC.entrySet()) {
 			OntologyClass APQCClass = entry.getValue();
-			
+
 			ArrayList<OntologyAttribute> attributes = APQCClass.getAttributes();
 			//System.out.println(attributes);
 			for (int i=0; i<attributes.size();i++) {
@@ -1011,34 +1020,33 @@ public class Operation {
 
 	private String validateNumeric(Cell cell) {
 
-
-		if (cell.toString().equals("not specified") ||cell.toString().equals("N/A") ||cell.toString().equals("not specfied") || cell.toString().equals("Not specified")|| cell.toString().equals("not_specified") || cell.toString().equals("Not_specified") || cell.equals("") ||cell.toString().equals(" ") || cell.toString().equals(null) || null_values_string.contains(cell.toString())) {
-			return "questionnaire:Not_Specified";
-		}else if (cell.toString().equals("Yes")||cell.equals("yes")||cell.equals("YES") ) {
+		String validated="";
+		//System.out.println(cell.toString());
+		if (cell.toString().equals("not specified") ||cell.toString().equals("N/A") ||cell.toString().equals("not specfied") || cell.toString().equals("Not Specified")|| cell.toString().equals("not_specified") || cell.toString().equals("Not_specified") || cell.equals("") ||cell.toString().equals(" ") || cell.toString().equals(null) || null_values_string.contains(cell.toString())) {
+			return "questionnaire:Not_Specified";}
+		else if (cell.toString().equals("No")||cell.toString().equals("no")||cell.toString().equals("NO")) {
+			return "questionnaire:No";
+		}else if (cell.toString().equals("Yes")||cell.toString().equals("yes")||cell.toString().equals("YES")|| cell.toString().matches(".*[^a-z].*") ) {
 			return "questionnaire:Yes";
-		}
-		else if (cell.toString().equals("between 1- 6 months")||cell.toString().equals("user-defined") || cell.toString().matches(".*[a-z].*") ) {
+		}	else {
+			validated=cell.toString().replace("%"," ");
+			Float newValidated= Float.valueOf(validated);
+			if (newValidated <= (float) 100.0) {
+				if (newValidated <=(float)1.0) {
+					newValidated=newValidated*(float)100;
+				}
+				newValidated=((float) 100.0 - newValidated)*(float)43200;
+			}else {
+				//System.out.println("no downtime set--> "+ cell.toString());
+			}
+
+
+			//return cell.toString();
+			//System.out.println("cell.toString():"+cell.toString() );
 			return "questionnaire:Yes";
-		}
-
-		else {
-
-
-			return cell.toString();
 
 
 		}
-
-		/* what is it?
-		if (null_values_string.contains(cell.toString())) {
-			return cell.toString();
-		} else {
-			if (cell.toString().indexOf(".") > -1)
-				return cell.toString().substring(0, cell.toString().indexOf("."));
-			else
-				return cell.toString();
-
-		}*/
 	}
 
 	private String validateBooleanCellString(String cell) {
