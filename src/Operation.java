@@ -373,7 +373,7 @@ public class Operation {
 					}
 
 
-					
+
 					if (row.getRowNum() > 0){
 
 						if (true) {
@@ -440,14 +440,14 @@ public class Operation {
 
 								String cellValues=cell.toString();
 								cellValues=cellValues.replace(" ","");
-								
+
 								ArrayList<String> validatedAl=new ArrayList<String>(Arrays.asList(cellValues.split((","))));
-								
-								
-								
+
+
+
 								for (int i = 0; i < validatedAl.size(); i++) {
 									validated= validateFbpdo(validatedAl.get(i));
-									
+
 									cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasAction", "fbpdo:"+ validated +" ;"));
 
 								}
@@ -466,7 +466,7 @@ public class Operation {
 
 								cellValues=cell.toString();
 								cellValues=cellValues.replace(" ","");
-								
+
 								validatedAl=new ArrayList<String>(Arrays.asList(cellValues.split((","))));
 
 								for (int i = 0; i < validatedAl.size(); i++) {
@@ -649,10 +649,10 @@ public class Operation {
 							case 22:
 								if (cell !=null) {
 									validated = validateNumeric(cell);
-									
+
 									//cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasAvailabilityInPercent", validated + " ;"));
 									//System.out.println(cell.toString()+" -------------------------------------->"+validated);
-									
+
 									if (validated.contains("bpaas:")||validated.contains("questionnaire:")) {
 										//System.out.println("no downtime set");
 									}else {
@@ -663,7 +663,7 @@ public class Operation {
 											if (newValidated <=(float)1.0) {
 												newValidated=newValidated*(float)100;
 											}
-										newValidated=((float) 100.0 - newValidated)*(float)43200;
+											newValidated=((float) 100.0 - newValidated)*(float)43200;
 										}else {
 											//System.out.println("no downtime set--> "+ cell.toString());
 										}
@@ -799,57 +799,70 @@ public class Operation {
 								cellValues=cell.toString();
 
 								validatedAl=new ArrayList<String>(Arrays.asList(cellValues.split((","))));
-								
+
 								ArrayList<String> r= new  ArrayList<String>();
-								r.add("bpaas:At_Most_15_minutes");
-								r.add("bpaas:At_Most_30_minutes");
-								r.add("bpaas:At_Most_40_minutes");
-								r.add("bpaas:At_Most_1_hours");
-								r.add("bpaas:At_Most_1_5_hours");
-								r.add("bpaas:At_Most_2_hours");
-								r.add("bpaas:At_Most_3_hours");
-								r.add("bpaas:At_Most_4_hours");
-								r.add("bpaas:At_Most_5_hours");
-								r.add("bpaas:At_Most_6_hours");
-								r.add("bpaas:At_Most_8_hours");
-								r.add("bpaas:At_Most_12_hours");
-								r.add("bpaas:At_Most_13_hours");
-								r.add("bpaas:At_Most_16_hours");
-								r.add("bpaas:At_Most_1_working_day");
-								r.add("bpaas:At_Most_24_hours");
-								r.add("bpaas:At_Most_40_hours");
-								r.add("bpaas:At_Most_2_working_days");
-								r.add("bpaas:At_Most_50_hours");
-								r.add("bpaas:At_Most_3_working_days");
-								r.add("bpaas:At_Most_4_working_days");
-								r.add("bpaas:At_Most_5_working_days");
-								r.add("bpaas:At_Most_120_hours");
-								r.add("bpaas:At_Most_7_working_days");
-								r.add("bpaas:Up_to_two_weeks");
-								r.add("bpaas:Up_to_four_weeks");
-								r.add("bpaas:At_Most_30_working_days");
-								
-								
-								for (int i = 0; i < validatedAl.size(); i++) {
-									validated=validateString(validatedAl.get(i));
+								r.add("At_most_15_minutes");
+								r.add("At_most_30_minutes");
+								r.add("At_most_40_minutes");
+								r.add("At_most_1_hour");
+								r.add("At_most_1_5_hours");
+								r.add("At_most_2_hours");
+								r.add("At_most_3_hours");
+								r.add("At_most_4_hours");
+								r.add("At_most_5_hours");
+								r.add("At_most_6_hours");
+								r.add("At_most_8_hours");
+								r.add("At_most_12_hours");
+								r.add("At_most_13_hours");
+								r.add("At_most_16_hours");
+								r.add("At_most_1_working_day");
+								r.add("At_most_24_hours");
+								r.add("At_most_40_hours");
+								r.add("At_most_2_working_days");
+								r.add("At_most_50_hours");
+								r.add("At_most_3_working_days");
+								r.add("At_most_4_working_days");
+								r.add("At_most_5_working_days");
+								r.add("At_most_120_hours");
+								r.add("At_most_7_working_days");
+								r.add("Up_to_two_weeks");
+								r.add("Up_to_four_weeks");
+								r.add("At_most_30_working_days");
+
+								if (validatedAl.size()==1 && validateString(validatedAl.get(0)).equals("questionnaire:Not_Specified") ) {
 									cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasServiceSupportResponsiveness", validated +" ;"));
 									//System.out.println(cell.toString()+" -------------------------------------->"+validated);
+								}else {
+									System.out.println("\n\n"+validatedAl.toString());		
+									boolean found=false;
+									int highest=0;
+									for (int i=0;i<validatedAl.size();i++) {
+										for(int j=0; j<r.size();j++) {
+											
+											String validating=validateString(validatedAl.get(i).toString());
+											String currentR="bpaas:"+r.get(j);
+											//System.out.println(validating+" "+currentR);
+											if (currentR.equals(validating)&& highest<=j ) {
+												found=true;
+												highest=j;
+												System.out.println("new highest"+highest);
+												//System.out.println(validating+" "+currentR);
+											}
 
+										}
+									}
+									if (!found) {
+										System.out.println("not found: "+validateString(validatedAl.toString()));
+									}else {
+										for (int i=0;i<highest;i++) {
+											validated=r.get(i);
+											cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasServiceSupportResponsiveness", validated +" ;"));
+											//System.out.println(cell.toString()+" -------------------------------------->"+validated);
+										}	
+									}
+									
 								}
 
-
-								// ServiceSupportResponsiveness
-
-								//								ArrayList<String> matchInstance_ServiceResponsive;// = new ArrayList<String>();
-								//								matchInstance_ServiceResponsive = getMatchedInstances(cell.toString());
-								//								//System.out.println("nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn"+cell.toString());
-								//								for (int i = 0; i < matchInstance_ServiceResponsive.size(); i++) {
-								//
-								//									cs.properties.add(
-								//											new CloudServiceProperty("bpaas:cloudServiceHasServiceSupportResponsiveness",
-								//													validateString(matchInstance_ServiceResponsive.get(i)) + " ;"));
-								//
-								//								}
 
 								break;
 
@@ -916,13 +929,13 @@ public class Operation {
 			}
 
 		} catch (EncryptedDocumentException e) {
-			
+
 			e.printStackTrace();
 		} catch (InvalidFormatException e) {
-			
+
 			e.printStackTrace();
 		} catch (IOException e) {
-			
+
 			e.printStackTrace();
 		}
 	}
@@ -1056,7 +1069,7 @@ public class Operation {
 		//service support responsiveness
 		else if (cell.equals("5_hours")) {
 			return "bpaas:At_most_5_hours";
-		}else if (cell.equals("15_minutes")) {
+		}else if (cell.equals("15_minutes")||cell.equals("At_most_15_minutes")) {
 			return "bpaas:At_most_15_minutes";
 		}else if (cell.equals("30_days")) {
 			return "bpaas:At_most_30_working_days";
@@ -1139,7 +1152,7 @@ public class Operation {
 		cell=cell.replace("(","");
 		cell=cell.replace(")","");
 		cell=cell.replaceAll("\\d" ,"");
-		
+
 		boolean result;
 		if (cell.equals("not specified") ||cell.equals("not specfied") || cell.equals("Not specified")|| cell.equals("not_specified") || cell.equals("Not_specified") || cell.equals("") ||cell.equals(" ") || cell.equals(null) || null_values_string.contains(cell.toString())) {
 			return "questionnaire:Not_Specified";
@@ -1151,8 +1164,8 @@ public class Operation {
 			return "questionnaire:Yes";
 		} else {
 			String validated=cell.toString();
-			
-			
+
+
 			checkMatching("fbpdo:"+validated);
 			return validated;
 		}
