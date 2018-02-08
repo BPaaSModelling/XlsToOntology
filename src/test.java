@@ -9,6 +9,7 @@ public class test {
 	public static void main(String[] args) throws FileNotFoundException {
 				
 		String pathExcel = ".\\resources\\ExcelFiles\\all.xlsx";
+		String pathExcel1 = ".\\resources\\ExcelFiles\\oldcs.xlsx";
 		
 		String pathOntology = ".\\resources\\Ontology\\V3\\";
 		
@@ -26,6 +27,7 @@ public class test {
 		ArrayList<OntologyInstance> instance;
 
 		op.parseExcelFile(pathExcel);
+		op.parseExcelFile(pathExcel1);
 		
 		
 		PrintStream out = new PrintStream(new FileOutputStream(".\\resources\\Output\\bdata.ttl"));
@@ -53,7 +55,11 @@ public class test {
 				"  owl:imports <http://ikm-group.ch/archimeo/bpaas> ;\n" + 
 				"  owl:versionInfo \"Created with TopBraid Composer\" ;\n" + 
 				".";
+		
+		
+		
 		System.out.println(imports);
+		
 		
 		for (int i = 0; i < op.getServices().size(); i++){
 			//System.out.println("bdata:" +""+op.getServices().get(i).getName());

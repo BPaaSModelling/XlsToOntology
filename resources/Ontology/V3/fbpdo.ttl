@@ -436,6 +436,11 @@ fbpdo:General
   rdfs:label "General" ;
   rdfs:subClassOf fbpdo:Object ;
 .
+fbpdo:Generate
+  rdf:type owl:Class ;
+  rdfs:label "Generate" ;
+  rdfs:subClassOf fbpdo:Action ;
+.
 fbpdo:Googe_ads
   rdf:type owl:Class ;
   rdfs:label "Google Adwords" ;

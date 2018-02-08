@@ -119,7 +119,7 @@ questionnaire:NotEqual
 .
 questionnaire:Not_Specified
   rdf:type questionnaire:GeneralAnswers ;
-  rdfs:label "Not specified" ;
+  rdfs:label "Not important" ;
 .
 questionnaire:Payment
   rdf:type owl:Class ;

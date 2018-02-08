@@ -542,19 +542,59 @@ public class Operation {
 
 								validatedAl=new ArrayList<String>(Arrays.asList(cellValues.split((","))));
 
-								for (int i = 0; i < validatedAl.size(); i++) {
-									validated=validateString(validatedAl.get(i));
+								ArrayList<String> sd= new  ArrayList<String>();
+								sd.add("bpaas:Finland");
+								sd.add("bpaas:The_Netherlands");
+								sd.add("bpaas:Germany");
+								sd.add("bpaas:Italy");
+								sd.add("bpaas:France");
+								sd.add("bpaas:Austria");
+								sd.add("bpaas:Spain");
+								sd.add("bpaas:France");
+								sd.add("bpaas:Denmark");
 
+								Boolean foundEu=false;
+
+								if (validatedAl.size()==1 && validateString(validatedAl.get(0)).equals("questionnaire:Not_Specified") ) {
 									cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasStoredDataLocation", validated +" ;"));
-									//System.out.println(cell.toString()+" -------------------------------------->"+validated);
+									//System.out.println("###############"+cell.toString()+"###### "+validated);
+								}else {
+									//System.out.println("###############"+cell.toString()+"######");
+									boolean found=false;
+
+									for (int i=0;i<validatedAl.size();i++) {
+
+										String validating=validateString(validatedAl.get(i).toString());
+										//System.out.println("Currently validating: "+validating);
+										if (sd.contains(validating)) {
+											found=true;
+											//System.out.println("Found ="+ found);
+										}else {
+											if (validating.equals("bpaas:Europe")){
+												foundEu=true;
+												//System.out.println("FoundUE ="+ foundEu);
+											}
+										}
+									}
+									if (!foundEu && !found) {
+										//System.out.println("not in/not europe [cell value=] "+cellValues.toString());
+
+									}else {
+										if (!foundEu && found) {
+											cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasStoredDataLocation", "bpaas:Europe" +" ;"));
+											//System.out.println(" -------------------------------------->added "+"bpaas:Europe");
+										}
+									}
+									for (int i=0 ;i<validatedAl.size();i++) {
+
+										validated=validateString(validatedAl.get(i).toString());
+										cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasStoredDataLocation", validated +" ;"));
+										//System.out.println(" -------------------------------------->"+validated);
+
+
+									}
+
 								}
-								// Here I am parsing StoredDataLocation
-								//
-								//								ArrayList<String> matchClasses_location = new ArrayList<String>();
-								//								matchClasses_location = getMatchedClasses(validateString(cell.toString()));
-								//								for (int i = 0; i < matchClasses_location.size(); i++){
-								//									cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasStoredDataLocation", validateString(matchClasses_location.get(i)) + " ;"));
-								//								}
 
 								break;
 
@@ -717,7 +757,7 @@ public class Operation {
 								for (int i = 0; i < validatedAl.size(); i++) {
 									validated=validateString(validatedAl.get(i));
 									cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasBackupFrequency", validated  +" ;"));
-									
+
 									//System.out.println(cell.toString()+" -------------------------------------->"+validated);
 								}
 
@@ -817,7 +857,6 @@ public class Operation {
 								r.add("At_most_30_working_days");
 								r.add("Up_to_two_weeks");
 								r.add("Up_to_four_weeks");
-								//TODO INVERT THE GENERATION OF ARRAY
 
 								if (validatedAl.size()==1 && validateString(validatedAl.get(0)).equals("questionnaire:Not_Specified") ) {
 									cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasServiceSupportResponsiveness", validated +" ;"));
@@ -835,7 +874,7 @@ public class Operation {
 											if (currentR.equals(validating)&& highest<=j ) {
 												found=true;
 												highest=j;
-												//System.out.println("new highest"+highest);
+											//System.out.println("new highest"+highest);
 												//System.out.println(validating+" "+currentR);
 											}
 
@@ -844,7 +883,7 @@ public class Operation {
 									if (!found) {
 										System.out.println("not found: "+validateString(validatedAl.toString()));
 									}else {
-										for (int i=0;i<=highest;i++) {
+										for (int i=highest ;i<r.size();i++) {
 											validated=validateString(r.get(i));
 											cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasServiceSupportResponsiveness", validated +" ;"));
 											//System.out.println(cell.toString()+" -------------------------------------->"+validated);
@@ -903,7 +942,7 @@ public class Operation {
 								for (int i = 0; i < validatedAl.size(); i++) {
 									validated= validateString(validatedAl.get(i));
 									cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasTargetMarket",	validated +" ;"));
-									System.out.println(cellValues+" -------------------------------------->"+validated);
+									//System.out.println(cellValues+" -------------------------------------->"+validated);
 								}
 
 								break;
@@ -932,25 +971,25 @@ public class Operation {
 
 	private Float validateAvailability(String cell) {
 		cell=cell.trim();
-		
+
 		if (cell.equals("not_specified")|| cell.equals("Not Specified") ||cell.equals("N/A") ||cell.equals("not specfied") || cell.equals("Not specified")|| cell.equals("not_specified") || cell.toString().equals("Not_specified") || cell.equals("") ||cell.toString().equals(" ") || cell.toString().equals(null) || null_values_string.contains(cell.toString())) {
 			return (float)0;
 		}else {
-		Float newValidated;
-		String validated=cell.replace("%","");
-		newValidated= Float.valueOf(validated);
+			Float newValidated;
+			String validated=cell.replace("%","");
+			newValidated= Float.valueOf(validated);
 
-		if (newValidated <= (float) 100.0) {
-			if (newValidated <=(float)1.0) {
-				newValidated=newValidated*(float)100;
+			if (newValidated <= (float) 100.0) {
+				if (newValidated <=(float)1.0) {
+					newValidated=newValidated*(float)100;
+				}
+				newValidated=((float) 100.0 - newValidated)*(float)43200;
+			}else {
+				System.out.println("no downtime set--> "+ cell.toString());
 			}
-			newValidated=((float) 100.0 - newValidated)*(float)43200;
-		}else {
-			System.out.println("no downtime set--> "+ cell.toString());
-		}
 
 
-		return newValidated;
+			return newValidated;
 
 		}
 
@@ -1157,8 +1196,9 @@ public class Operation {
 
 
 		//STORED DATA LOCATION
-		else if (cell.equals("European Economic Area (EEA)")) {
-			return "bpaas:European_Economic_Area_EEA";
+		else if (cell.equals("European_Economic_Area_EEA")) {
+			return "bpaas:Europe";
+
 
 			//SERVICE SUPPORT
 		}else if (cell.equals("At_most_1_working_days")) {

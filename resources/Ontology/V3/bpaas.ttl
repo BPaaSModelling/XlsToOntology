@@ -837,6 +837,10 @@ bpaas:Romania
   rdf:type bpaas:StoredDataLocation ;
   rdfs:label "Romania" ;
 .
+bpaas:SHA256
+  rdf:type bpaas:EncryptionType ;
+  rdfs:label "SHA256" ;
+.
 bpaas:SOX
   rdf:type bpaas:EncryptionType ;
   bpaas:encryptionTypeHasRequirementLevel bpaas:Medium ;
@@ -1005,6 +1009,10 @@ bpaas:Up_to_1_week
 bpaas:Up_to_1_year
   rdf:type bpaas:BackupRetentionTime ;
   rdfs:label "up to 1 year" ;
+.
+bpaas:Up_to_2_month
+  rdf:type bpaas:BackupRetentionTime ;
+  rdfs:label "Up_to_2_month" ;
 .
 bpaas:Up_to_6_months
   rdf:type bpaas:BackupRetentionTime ;
