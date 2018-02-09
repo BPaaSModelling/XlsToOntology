@@ -65,7 +65,7 @@ questiondata:Can_data_migration_be_perfomed_independently_from_the_provider
   questionnaire:questionHasAnswers questionnaire:No ;
   questionnaire:questionHasAnswers questionnaire:Not_Specified ;
   questionnaire:questionHasAnswers questionnaire:Yes ;
-  rdfs:label "Would you like to specify the data should be indipendently able to be migrated from the provider?" ;
+  rdfs:label "Should the data be migrated indipendently from the provider?" ;
 .
 questiondata:CloudService_Physical_ID
   rdf:type questionnaire:CloudServiceElement ;
@@ -114,7 +114,7 @@ questiondata:Do_you_need_API_integration
   questionnaire:questionHasAnswers questionnaire:No ;
   questionnaire:questionHasAnswers questionnaire:Not_Specified ;
   questionnaire:questionHasAnswers questionnaire:Yes ;
-  rdfs:label "Would you require an API integration?" ;
+  rdfs:label "Do you need API integration?" ;
 .
 questiondata:Encryption_Type
   rdf:type questionnaire:MultiSelection ;
@@ -141,7 +141,7 @@ questiondata:How_many_simultaneous_users_do_you_prefer
   questionnaire:questionHasAnswers questionnaire:No ;
   questionnaire:questionHasAnswers questionnaire:Not_Specified ;
   questionnaire:questionHasAnswers questionnaire:Yes ;
-  rdfs:label "Would you like to specify the number of simultaneous users?" ;
+  rdfs:label "Do you need simultaneous users?" ;
 .
 questiondata:Monthly_downtime_in_minutes
   rdf:type questionnaire:CloudServiceElement ;
@@ -222,7 +222,7 @@ questiondata:PreferedAccess_Log_Availability_in_Months
   questionnaire:questionHasAnswers questionnaire:No ;
   questionnaire:questionHasAnswers questionnaire:Not_Specified ;
   questionnaire:questionHasAnswers questionnaire:Yes ;
-  rdfs:label "Would you like to specify the Access Log Availability in Months?" ;
+  rdfs:label "Do you need availability of access logs?" ;
 .
 questiondata:PreferedAccess_Log_Retention_Period_in_Months
   rdf:type questionnaire:Availability ;
@@ -231,7 +231,7 @@ questiondata:PreferedAccess_Log_Retention_Period_in_Months
   questionnaire:questionHasAnswers questionnaire:No ;
   questionnaire:questionHasAnswers questionnaire:Not_Specified ;
   questionnaire:questionHasAnswers questionnaire:Yes ;
-  rdfs:label "Would you like to specify the Access Log Retention Period in Months?" ;
+  rdfs:label "Do you need access log retention?" ;
 .
 questiondata:PreferedAuditLogAvailabilityInMonths
   rdf:type questionnaire:Availability ;
@@ -240,7 +240,7 @@ questiondata:PreferedAuditLogAvailabilityInMonths
   questionnaire:questionHasAnswers questionnaire:No ;
   questionnaire:questionHasAnswers questionnaire:Not_Specified ;
   questionnaire:questionHasAnswers questionnaire:Yes ;
-  rdfs:label "Would you like to specify the Audit Log Availability In Months?" ;
+  rdfs:label "Do you need availability of audit logs?" ;
 .
 questiondata:PreferedAuditLogRetentionPeriodinMonths
   rdf:type questionnaire:Availability ;
@@ -249,7 +249,7 @@ questiondata:PreferedAuditLogRetentionPeriodinMonths
   questionnaire:questionHasAnswers questionnaire:No ;
   questionnaire:questionHasAnswers questionnaire:Not_Specified ;
   questionnaire:questionHasAnswers questionnaire:Yes ;
-  rdfs:label "Would you like to specify the Audit Log Retention Period (in Months)?" ;
+  rdfs:label "Do you need to retain audit logs?" ;
 .
 questiondata:PreferedAvailability_monthly_downtime
   rdf:type questionnaire:Availability ;
@@ -259,13 +259,13 @@ questiondata:PreferedAvailability_monthly_downtime
   rdfs:label "What is your favourite monthly downtime in minutes? (Insert 0 if not required)" ;
 .
 questiondata:Prefered_Data_Storage_in_GB
-  rdf:type questionnaire:Performance ;
+  rdf:type questionnaire:Availability ;
   rdf:type questionnaire:SingleSelection ;
   questionnaire:questionHasAnnotationRelation bpaas:cloudServiceHasDataStorageInGB ;
   questionnaire:questionHasAnswers questionnaire:No ;
   questionnaire:questionHasAnswers questionnaire:Not_Specified ;
   questionnaire:questionHasAnswers questionnaire:Yes ;
-  rdfs:label "Would you like to specify the Data Storage in GB?" ;
+  rdfs:label "Do you need to know the amount of data storage capacity?" ;
 .
 questiondata:ResponseTime_High
   rdf:type questionnaire:Answer ;
@@ -332,7 +332,7 @@ questiondata:Select_the_desired_Service_Support_Responsiveness
   questionnaire:questionHasAnswers bpaas:At_most_8_hours ;
   questionnaire:questionHasAnswers bpaas:Up_to_four_weeks ;
   questionnaire:questionHasAnswers bpaas:Up_to_two_weeks ;
-  rdfs:label "What's the favourite Support Responsiveness?" ;
+  rdfs:label "What is the favourite Support Responsiveness?" ;
 .
 questiondata:Select_the_prefered_data_type_for_import_and_export
   rdf:type questionnaire:Interoperability ;
@@ -355,7 +355,7 @@ questiondata:Select_the_prefered_data_type_for_import_and_export
   questionnaire:questionHasAnswers bpaas:XLS ;
   questionnaire:questionHasAnswers bpaas:Xml ;
   questionnaire:questionHasAnswers bpaas:Zipped_EML ;
-  rdfs:label "Select the favourite data import and export media types:" ;
+  rdfs:label "What data types do you need to import/export?" ;
 .
 questiondata:Select_your_favorite_target_market
   rdf:type questionnaire:MultiSelection ;
@@ -406,7 +406,7 @@ questiondata:Select_your_preferred_payment_plan
   questionnaire:questionHasAnswers bpaas:Resourcebasedpricing ;
   questionnaire:questionHasAnswers bpaas:TryFreeFirst ;
   questionnaire:questionHasAnswers bpaas:Utility ;
-  rdfs:label "Select your favourite payment plan" ;
+  rdfs:label "What is your favourite payment plan?" ;
 .
 questiondata:ServiceSupport
   rdf:type questionnaire:CloudServiceDomain ;
@@ -465,7 +465,7 @@ questiondata:What_are_the_offered_support_channels
   questionnaire:questionHasAnswers bpaas:Phone ;
   questionnaire:questionHasAnswers bpaas:Social_Media ;
   questionnaire:questionHasAnswers bpaas:Web-support ;
-  rdfs:label "What's the favourite Support Channel?" ;
+  rdfs:label "What is the favourite support channel?" ;
 .
 questiondata:What_could_be_uploaded
   rdf:type questionnaire:CloudServiceElement ;
@@ -486,7 +486,7 @@ questiondata:What_is_the_backup_frequency
   questionnaire:questionHasAnswers bpaas:Monthly ;
   questionnaire:questionHasAnswers bpaas:Weekly ;
   questionnaire:questionHasAnswers bpaas:Yearly ;
-  rdfs:label "What's the favourite backup frequency?" ;
+  rdfs:label "What is your favourite backup frequency?" ;
 .
 questiondata:What_is_the_backup_retention_time
   rdf:type questionnaire:Reliability ;
@@ -501,7 +501,7 @@ questiondata:What_is_the_backup_retention_time
   questionnaire:questionHasAnswers bpaas:Up_to_1_year ;
   questionnaire:questionHasAnswers bpaas:Up_to_6_months ;
   questionnaire:questionHasAnswers bpaas:twenty8_days ;
-  rdfs:label "What's the favourite backup retention time?" ;
+  rdfs:label "What is your favourite backup retention period?" ;
 .
 questiondata:What_is_you_favorite_restore_time_level
   rdf:type questionnaire:SingleSelection ;
@@ -563,7 +563,7 @@ questiondata:What_is_your_favorite_stored_data_location
   questionnaire:questionHasAnswers bpaas:The_Netherlands ;
   questionnaire:questionHasAnswers bpaas:USA ;
   questionnaire:questionHasAnswers bpaas:United_Kingdom ;
-  rdfs:label "What stored data location is your favourite?" ;
+  rdfs:label "What is your favourite stored data location?" ;
 .
 questiondata:What_is_your_favorite_support_coverage
   rdf:type questionnaire:ServiceSupport ;
@@ -578,7 +578,7 @@ questiondata:What_is_your_favorite_support_coverage
   questionnaire:questionHasAnswers bpaas:SevenDaysAWeek ;
   questionnaire:questionHasAnswers bpaas:Twenty4Seven ;
   questionnaire:questionHasAnswers bpaas:Twenty4five ;
-  rdfs:label "What is your favorite Support Coverage?" ;
+  rdfs:label "What is your favorite support coverage?" ;
 .
 questiondata:What_is_your_favorite_support_responsiveness
   rdf:type questionnaire:NotSortedYet ;
@@ -591,7 +591,7 @@ questiondata:Which_APQC_category_does_reflect_the_functional_requirement_you_wan
   questionnaire:questionHasAnnotationRelation bpaas:cloudServiceHasAPQC ;
   questionnaire:searchSelectionHasSearchNamespace <http://ikm-group.ch/archimeo/apqc#AmericanProductivityAndQualityCenter> ;
   questionnaire:searchSelectionOnClassesInsteadOfInstances "true"^^xsd:boolean ;
-  rdfs:label "Which APQC category does reflect the functional requirement you want to express?" ;
+  rdfs:label "What should the service do? Please select an APQC category" ;
 .
 questiondata:Which_Action_does_reflect_the_functional_requirement_you_want_to_express
   rdf:type questionnaire:Functional ;
@@ -599,7 +599,7 @@ questiondata:Which_Action_does_reflect_the_functional_requirement_you_want_to_ex
   questionnaire:questionHasAnnotationRelation bpaas:cloudServiceHasAction ;
   questionnaire:searchSelectionHasSearchNamespace <http://ikm-group.ch/archimeo/fbpdo#Action> ;
   questionnaire:searchSelectionOnClassesInsteadOfInstances "true"^^xsd:boolean ;
-  rdfs:label "Which Action does reflect the functional requirement you want to express?" ;
+  rdfs:label "Which action should the service perform?" ;
 .
 questiondata:Which_Object_does_reflect_the_functional_requirement_you_want_to_express
   rdf:type questionnaire:Functional ;
@@ -607,7 +607,7 @@ questiondata:Which_Object_does_reflect_the_functional_requirement_you_want_to_ex
   questionnaire:questionHasAnnotationRelation bpaas:cloudServiceHasObject ;
   questionnaire:searchSelectionHasSearchNamespace <http://ikm-group.ch/archimeo/fbpdo#Object> ;
   questionnaire:searchSelectionOnClassesInsteadOfInstances "true"^^xsd:boolean ;
-  rdfs:label "Which Object does reflect the functional requirement you want to express?" ;
+  rdfs:label "Which Object does it match more with the chosen Action? (the combination Action + Object reflects the purpose of the service)  " ;
 .
 questiondata:Would_a_computing_processing_power_scalable_be_required
   rdf:type questionnaire:Performance ;
@@ -616,7 +616,7 @@ questiondata:Would_a_computing_processing_power_scalable_be_required
   questionnaire:questionHasAnswers questionnaire:No ;
   questionnaire:questionHasAnswers questionnaire:Not_Specified ;
   questionnaire:questionHasAnswers questionnaire:Yes ;
-  rdfs:label "Would you require a scalable Processing Power?" ;
+  rdfs:label "Do you need a scalable processing power for your service? (mainly to compute AI algorithms)" ;
 .
 questiondata:Would_a_data_storage_scalable_be_required
   rdf:type questionnaire:Performance ;
@@ -625,7 +625,7 @@ questiondata:Would_a_data_storage_scalable_be_required
   questionnaire:questionHasAnswers questionnaire:No ;
   questionnaire:questionHasAnswers questionnaire:Not_Specified ;
   questionnaire:questionHasAnswers questionnaire:Yes ;
-  rdfs:label "Would you require a scalable data storage ?" ;
+  rdfs:label "Do you need a scalable data storage? " ;
 .
 questiondata:Would_an_automatic_password_management_in_place_be_required
   rdf:type questionnaire:Security ;
@@ -634,7 +634,7 @@ questiondata:Would_an_automatic_password_management_in_place_be_required
   questionnaire:questionHasAnswers questionnaire:No ;
   questionnaire:questionHasAnswers questionnaire:Not_Specified ;
   questionnaire:questionHasAnswers questionnaire:Yes ;
-  rdfs:label "Would an automatic password management in place be required?" ;
+  rdfs:label "Do you need an automatic password management?" ;
 .
 questiondata:Yes
   rdf:type questionnaire:Answer ;

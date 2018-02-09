@@ -109,11 +109,11 @@ bpaas:At_most_24_hours
 .
 bpaas:At_most_2_hours
   rdf:type bpaas:ServiceSupportResponsiveness ;
-  rdfs:label "At most 2 hours" ;
+  rdfs:label "at_most_2_hours" ;
 .
 bpaas:At_most_2_working_days
   rdf:type bpaas:ServiceSupportResponsiveness ;
-  rdfs:label "At most 2 working days" ;
+  rdfs:label "at_most_2_working_days" ;
 .
 bpaas:At_most_30_minutes
   rdf:type bpaas:ServiceSupportResponsiveness ;
@@ -121,15 +121,15 @@ bpaas:At_most_30_minutes
 .
 bpaas:At_most_30_working_days
   rdf:type bpaas:ServiceSupportResponsiveness ;
-  rdfs:label "At most 30 working days" ;
+  rdfs:label "At_most_30_working_days" ;
 .
 bpaas:At_most_3_hours
   rdf:type bpaas:ServiceSupportResponsiveness ;
-  rdfs:label "At most 3 hours" ;
+  rdfs:label "at_most_3_hours" ;
 .
 bpaas:At_most_3_working_days
   rdf:type bpaas:ServiceSupportResponsiveness ;
-  rdfs:label "At most 3 working days" ;
+  rdfs:label "at_most_3_working_days" ;
 .
 bpaas:At_most_40_hours
   rdf:type bpaas:ServiceSupportResponsiveness ;
@@ -141,23 +141,23 @@ bpaas:At_most_40_minutes
 .
 bpaas:At_most_4_hours
   rdf:type bpaas:ServiceSupportResponsiveness ;
-  rdfs:label "At most 4 hours" ;
+  rdfs:label "at_most_4_hours" ;
 .
 bpaas:At_most_4_working_days
   rdf:type bpaas:ServiceSupportResponsiveness ;
-  rdfs:label "At most 4 working days" ;
+  rdfs:label "at_most_4_working_days" ;
 .
 bpaas:At_most_50_hours
   rdf:type bpaas:ServiceSupportResponsiveness ;
-  rdfs:label "At most 50 hours" ;
+  rdfs:label "bpaas:At_most_50_hours" ;
 .
 bpaas:At_most_5_hours
   rdf:type bpaas:ServiceSupportResponsiveness ;
-  rdfs:label "At most 5 hours" ;
+  rdfs:label "at_most_5_hours" ;
 .
 bpaas:At_most_5_working_days
   rdf:type bpaas:ServiceSupportResponsiveness ;
-  rdfs:label "At most 5 working days" ;
+  rdfs:label "at_most_5_working_days" ;
 .
 bpaas:At_most_6_hours
   rdf:type bpaas:ServiceSupportResponsiveness ;
@@ -169,7 +169,7 @@ bpaas:At_most_7_working_days
 .
 bpaas:At_most_8_hours
   rdf:type bpaas:ServiceSupportResponsiveness ;
-  rdfs:label "At most 8 hours" ;
+  rdfs:label "at_most_8_hours" ;
 .
 bpaas:Auditing
   rdf:type owl:Class ;
@@ -695,7 +695,7 @@ bpaas:Per-terabyte
 .
 bpaas:Per-unit
   rdf:type bpaas:PaymentPlan ;
-  rdfs:label "Per-unit" ;
+  rdfs:label "bpaas:Per-unit" ;
 .
 bpaas:Per-user
   rdf:type bpaas:PaymentPlan ;
@@ -703,7 +703,7 @@ bpaas:Per-user
 .
 bpaas:Per_transaction
   rdf:type bpaas:PaymentPlan ;
-  rdfs:label "Per transaction" ;
+  rdfs:label "Per_transaction" ;
 .
 bpaas:Performance
   rdf:type owl:Class ;
@@ -1021,11 +1021,11 @@ bpaas:Up_to_6_months
 .
 bpaas:Up_to_four_weeks
   rdf:type bpaas:ServiceSupportResponsiveness ;
-  rdfs:label "Up to four weeks " ;
+  rdfs:label "Up_to_4_weeks " ;
 .
 bpaas:Up_to_two_weeks
   rdf:type bpaas:ServiceSupportResponsiveness ;
-  rdfs:label "Up to two weeks" ;
+  rdfs:label "Up to 2 weeks" ;
 .
 bpaas:UserInterfaceGroup
   rdf:type bpaas:BusinessProcessAnnotationGroup ;
@@ -1084,7 +1084,7 @@ bpaas:Web-Developers
 .
 bpaas:Web-support
   rdf:type bpaas:SupportChannel ;
-  rdfs:label "Web-support" ;
+  rdfs:label "Online support" ;
 .
 bpaas:Weekly
   rdf:type bpaas:BackupFrequency ;
@@ -1354,11 +1354,6 @@ bpaas:cloudServiceHasDescription
   rdfs:label "CloudServiceHasDescription" ;
   rdfs:label "cloudServiceHasDescription" ;
   rdfs:range xsd:string ;
-.
-bpaas:cloudServiceHasEncryptionLevel
-  rdf:type owl:ObjectProperty ;
-  rdfs:domain bpaas:CloudService ;
-  rdfs:range bpaas:RequirementLevel ;
 .
 bpaas:cloudServiceHasEncryptionType
   rdf:type owl:ObjectProperty ;
