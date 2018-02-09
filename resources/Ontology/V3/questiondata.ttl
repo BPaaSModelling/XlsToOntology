@@ -65,7 +65,7 @@ questiondata:Can_data_migration_be_perfomed_independently_from_the_provider
   questionnaire:questionHasAnswers questionnaire:No ;
   questionnaire:questionHasAnswers questionnaire:Not_Specified ;
   questionnaire:questionHasAnswers questionnaire:Yes ;
-  rdfs:label "Can data migration be perfomed independently from the provider" ;
+  rdfs:label "Would you like to specify the data should be indipendently able to be migrated from the provider?" ;
 .
 questiondata:CloudService_Physical_ID
   rdf:type questionnaire:CloudServiceElement ;
@@ -114,31 +114,17 @@ questiondata:Do_you_need_API_integration
   questionnaire:questionHasAnswers questionnaire:No ;
   questionnaire:questionHasAnswers questionnaire:Not_Specified ;
   questionnaire:questionHasAnswers questionnaire:Yes ;
-  rdfs:label "Do you need API integration?" ;
+  rdfs:label "Would you require an API integration?" ;
 .
 questiondata:Encryption_Type
   rdf:type questionnaire:MultiSelection ;
   rdf:type questionnaire:Security ;
-  questionnaire:questionHasAnnotationRelation bpaas:cloudServiceHasEncryptionType ;
+  questionnaire:questionHasAnnotationRelation bpaas:cloudServiceHasEncryptionLevel ;
   questionnaire:questionHasAnswers questionnaire:Not_Specified ;
-  questionnaire:questionHasAnswers bpaas:AES ;
-  questionnaire:questionHasAnswers bpaas:FDA ;
-  questionnaire:questionHasAnswers bpaas:FIPS ;
-  questionnaire:questionHasAnswers bpaas:HIPAA ;
-  questionnaire:questionHasAnswers bpaas:HIPAA_and_HITECH ;
-  questionnaire:questionHasAnswers bpaas:IAAS ;
-  questionnaire:questionHasAnswers bpaas:IP_Filtering ;
-  questionnaire:questionHasAnswers bpaas:ISO27001 ;
-  questionnaire:questionHasAnswers bpaas:Ipsec ;
-  questionnaire:questionHasAnswers bpaas:PCI_DSS ;
-  questionnaire:questionHasAnswers bpaas:PSN ;
-  questionnaire:questionHasAnswers bpaas:Privacy_Shield ;
-  questionnaire:questionHasAnswers bpaas:SOX ;
-  questionnaire:questionHasAnswers bpaas:SSH ;
-  questionnaire:questionHasAnswers bpaas:SSL ;
-  questionnaire:questionHasAnswers bpaas:TLS ;
-  questionnaire:questionHasAnswers bpaas:TLS_VPN ;
-  rdfs:label "Encryption type?" ;
+  questionnaire:questionHasAnswers bpaas:High ;
+  questionnaire:questionHasAnswers bpaas:Low ;
+  questionnaire:questionHasAnswers bpaas:Medium ;
+  rdfs:label "What encryption level do you prefer?" ;
 .
 questiondata:Functional
   rdf:type questionnaire:CloudServiceDomain ;
@@ -155,7 +141,7 @@ questiondata:How_many_simultaneous_users_do_you_prefer
   questionnaire:questionHasAnswers questionnaire:No ;
   questionnaire:questionHasAnswers questionnaire:Not_Specified ;
   questionnaire:questionHasAnswers questionnaire:Yes ;
-  rdfs:label "How many simultaneous users do you prefer? (Insert 0 for any value)" ;
+  rdfs:label "Would you like to specify the number of simultaneous users?" ;
 .
 questiondata:Monthly_downtime_in_minutes
   rdf:type questionnaire:CloudServiceElement ;
@@ -236,7 +222,7 @@ questiondata:PreferedAccess_Log_Availability_in_Months
   questionnaire:questionHasAnswers questionnaire:No ;
   questionnaire:questionHasAnswers questionnaire:Not_Specified ;
   questionnaire:questionHasAnswers questionnaire:Yes ;
-  rdfs:label "Prefered Access Log Availability (in Months) (Insert 0 for any value)" ;
+  rdfs:label "Would you like to specify the Access Log Availability in Months?" ;
 .
 questiondata:PreferedAccess_Log_Retention_Period_in_Months
   rdf:type questionnaire:Availability ;
@@ -245,7 +231,7 @@ questiondata:PreferedAccess_Log_Retention_Period_in_Months
   questionnaire:questionHasAnswers questionnaire:No ;
   questionnaire:questionHasAnswers questionnaire:Not_Specified ;
   questionnaire:questionHasAnswers questionnaire:Yes ;
-  rdfs:label "Prefered Access Log Retention Period in Months? (Insert 0 for any value)" ;
+  rdfs:label "Would you like to specify the Access Log Retention Period in Months?" ;
 .
 questiondata:PreferedAuditLogAvailabilityInMonths
   rdf:type questionnaire:Availability ;
@@ -254,7 +240,7 @@ questiondata:PreferedAuditLogAvailabilityInMonths
   questionnaire:questionHasAnswers questionnaire:No ;
   questionnaire:questionHasAnswers questionnaire:Not_Specified ;
   questionnaire:questionHasAnswers questionnaire:Yes ;
-  rdfs:label "Prefered Audit Log Availability In Months? (Insert 0 for any value)" ;
+  rdfs:label "Would you like to specify the Audit Log Availability In Months?" ;
 .
 questiondata:PreferedAuditLogRetentionPeriodinMonths
   rdf:type questionnaire:Availability ;
@@ -263,14 +249,14 @@ questiondata:PreferedAuditLogRetentionPeriodinMonths
   questionnaire:questionHasAnswers questionnaire:No ;
   questionnaire:questionHasAnswers questionnaire:Not_Specified ;
   questionnaire:questionHasAnswers questionnaire:Yes ;
-  rdfs:label "Prefered Audit Log Retention Period (in Months)? (Insert 0 for any value)" ;
+  rdfs:label "Would you like to specify the Audit Log Retention Period (in Months)?" ;
 .
 questiondata:PreferedAvailability_monthly_downtime
   rdf:type questionnaire:Availability ;
   rdf:type questionnaire:ValueInsert ;
-  questionnaire:questionHasAnnotationRelation bpaas:cloudServiceHasMonthlyDowntimeInMinute ;
+  questionnaire:questionHasAnnotationRelation bpaas:availabilityHasDowntimePerMonthInMin ;
   questionnaire:valueInsertAnswerTypeHasDatatype xsd:float ;
-  rdfs:label "What is your favourite monthly downtime in minutes? (Insert 0 to skip the question)" ;
+  rdfs:label "What is your favourite monthly downtime in minutes? (Insert 0 if not required)" ;
 .
 questiondata:Prefered_Data_Storage_in_GB
   rdf:type questionnaire:Performance ;
@@ -279,7 +265,7 @@ questiondata:Prefered_Data_Storage_in_GB
   questionnaire:questionHasAnswers questionnaire:No ;
   questionnaire:questionHasAnswers questionnaire:Not_Specified ;
   questionnaire:questionHasAnswers questionnaire:Yes ;
-  rdfs:label "Select the prefered Data Storage in GB (Insert 0 for any value)" ;
+  rdfs:label "Would you like to specify the Data Storage in GB?" ;
 .
 questiondata:ResponseTime_High
   rdf:type questionnaire:Answer ;
@@ -346,7 +332,7 @@ questiondata:Select_the_desired_Service_Support_Responsiveness
   questionnaire:questionHasAnswers bpaas:At_most_8_hours ;
   questionnaire:questionHasAnswers bpaas:Up_to_four_weeks ;
   questionnaire:questionHasAnswers bpaas:Up_to_two_weeks ;
-  rdfs:label "Select_the_desired_Service_Support_Responsiveness" ;
+  rdfs:label "What's the favourite Support Responsiveness?" ;
 .
 questiondata:Select_the_prefered_data_type_for_import_and_export
   rdf:type questionnaire:Interoperability ;
@@ -369,7 +355,7 @@ questiondata:Select_the_prefered_data_type_for_import_and_export
   questionnaire:questionHasAnswers bpaas:XLS ;
   questionnaire:questionHasAnswers bpaas:Xml ;
   questionnaire:questionHasAnswers bpaas:Zipped_EML ;
-  rdfs:label "Select the prefered data import and export" ;
+  rdfs:label "Select the favourite data import and export media types:" ;
 .
 questiondata:Select_your_favorite_target_market
   rdf:type questionnaire:MultiSelection ;
@@ -390,7 +376,7 @@ questiondata:Select_your_favorite_target_market
   questionnaire:questionHasAnswers bpaas:Social_Care ;
   questionnaire:questionHasAnswers bpaas:Social_Sector ;
   questionnaire:questionHasAnswers bpaas:Web-Developers ;
-  rdfs:label "Select your favorite target market" ;
+  rdfs:label "What is your favorite target market?" ;
 .
 questiondata:Select_your_preferred_payment_plan
   rdf:type questionnaire:MultiSelection ;
@@ -403,7 +389,6 @@ questiondata:Select_your_preferred_payment_plan
   questionnaire:questionHasAnswers bpaas:Initial_Base_Fee ;
   questionnaire:questionHasAnswers bpaas:MonthlyFee ;
   questionnaire:questionHasAnswers bpaas:NoPlan ;
-  questionnaire:questionHasAnswers bpaas:Not_specifiedPayment ;
   questionnaire:questionHasAnswers bpaas:Pay-as-you-go ;
   questionnaire:questionHasAnswers bpaas:Per-Item ;
   questionnaire:questionHasAnswers bpaas:Per-day ;
@@ -421,7 +406,7 @@ questiondata:Select_your_preferred_payment_plan
   questionnaire:questionHasAnswers bpaas:Resourcebasedpricing ;
   questionnaire:questionHasAnswers bpaas:TryFreeFirst ;
   questionnaire:questionHasAnswers bpaas:Utility ;
-  rdfs:label "Select your preferred payment plan" ;
+  rdfs:label "Select your favourite payment plan" ;
 .
 questiondata:ServiceSupport
   rdf:type questionnaire:CloudServiceDomain ;
@@ -469,8 +454,8 @@ questiondata:Various
   rdfs:label "Various" ;
 .
 questiondata:What_are_the_offered_support_channels
-  rdf:type questionnaire:MultiSelection ;
   rdf:type questionnaire:ServiceSupport ;
+  rdf:type questionnaire:SingleSelection ;
   questionnaire:questionHasAnnotationRelation bpaas:cloudServiceHasSupportChannel ;
   questionnaire:questionHasAnswers questionnaire:Not_Specified ;
   questionnaire:questionHasAnswers bpaas:Mail ;
@@ -480,7 +465,7 @@ questiondata:What_are_the_offered_support_channels
   questionnaire:questionHasAnswers bpaas:Phone ;
   questionnaire:questionHasAnswers bpaas:Social_Media ;
   questionnaire:questionHasAnswers bpaas:Web-support ;
-  rdfs:label "What are the offered support channels" ;
+  rdfs:label "What's the favourite Support Channel?" ;
 .
 questiondata:What_could_be_uploaded
   rdf:type questionnaire:CloudServiceElement ;
@@ -490,8 +475,8 @@ questiondata:What_could_be_uploaded
   rdfs:label "What could be uploaded" ;
 .
 questiondata:What_is_the_backup_frequency
-  rdf:type questionnaire:MultiSelection ;
   rdf:type questionnaire:Reliability ;
+  rdf:type questionnaire:SingleSelection ;
   questionnaire:questionHasAnnotationRelation bpaas:cloudServiceHasBackupFrequency ;
   questionnaire:questionHasAnswers questionnaire:Not_Specified ;
   questionnaire:questionHasAnswers bpaas:Daily ;
@@ -502,11 +487,11 @@ questiondata:What_is_the_backup_frequency
   questionnaire:questionHasAnswers bpaas:Weekly ;
   questionnaire:questionHasAnswers bpaas:Yearly ;
   questionnaire:questionHasAnswers bpaas:not_specified ;
-  rdfs:label "What's the prefered backup frequency?" ;
+  rdfs:label "What's the favourite backup frequency?" ;
 .
 questiondata:What_is_the_backup_retention_time
-  rdf:type questionnaire:MultiSelection ;
   rdf:type questionnaire:Reliability ;
+  rdf:type questionnaire:SingleSelection ;
   questionnaire:questionHasAnnotationRelation bpaas:cloudServiceHasBackupRetentionTime ;
   questionnaire:questionHasAnswers questionnaire:Not_Specified ;
   questionnaire:questionHasAnswers bpaas:Five_years ;
@@ -517,7 +502,7 @@ questiondata:What_is_the_backup_retention_time
   questionnaire:questionHasAnswers bpaas:Up_to_1_year ;
   questionnaire:questionHasAnswers bpaas:Up_to_6_months ;
   questionnaire:questionHasAnswers bpaas:twenty8_days ;
-  rdfs:label "What's the prefered backup retention time?" ;
+  rdfs:label "What's the favourite backup retention time?" ;
 .
 questiondata:What_is_you_favorite_restore_time_level
   rdf:type questionnaire:SingleSelection ;
@@ -553,23 +538,20 @@ questiondata:What_is_your_favorite_response_time_level
   questionnaire:questionHasAnswers questionnaire:No ;
   questionnaire:questionHasAnswers questionnaire:Not_Specified ;
   questionnaire:questionHasAnswers questionnaire:Yes ;
-  rdfs:label "What is your favorite response time level? (Insert 0 for any value)" ;
+  rdfs:label "Would you like to specify the response time level?" ;
 .
 questiondata:What_is_your_favorite_stored_data_location
   rdf:type questionnaire:MultiSelection ;
   rdf:type questionnaire:Security ;
   questionnaire:questionHasAnnotationRelation bpaas:cloudServiceHasStoredDataLocation ;
+  questionnaire:questionHasAnswers questionnaire:Not_Specified ;
   questionnaire:questionHasAnswers bpaas:Africa ;
   questionnaire:questionHasAnswers bpaas:Asia ;
   questionnaire:questionHasAnswers bpaas:Austria ;
   questionnaire:questionHasAnswers bpaas:Brazil ;
   questionnaire:questionHasAnswers bpaas:China ;
   questionnaire:questionHasAnswers bpaas:Denmark ;
-  questionnaire:questionHasAnswers bpaas:EES ;
-  questionnaire:questionHasAnswers bpaas:EU-US_Privacy_Shield_agreement_locations ;
   questionnaire:questionHasAnswers bpaas:Europe ;
-  questionnaire:questionHasAnswers bpaas:European_Economic_Area_EEA ;
-  questionnaire:questionHasAnswers bpaas:European_Union ;
   questionnaire:questionHasAnswers bpaas:Finland ;
   questionnaire:questionHasAnswers bpaas:French ;
   questionnaire:questionHasAnswers bpaas:Germany ;
@@ -582,7 +564,7 @@ questiondata:What_is_your_favorite_stored_data_location
   questionnaire:questionHasAnswers bpaas:The_Netherlands ;
   questionnaire:questionHasAnswers bpaas:USA ;
   questionnaire:questionHasAnswers bpaas:United_Kingdom ;
-  rdfs:label "What is your favorite stored data location?" ;
+  rdfs:label "What stored data location is your favourite?" ;
 .
 questiondata:What_is_your_favorite_support_coverage
   rdf:type questionnaire:ServiceSupport ;
@@ -597,7 +579,7 @@ questiondata:What_is_your_favorite_support_coverage
   questionnaire:questionHasAnswers bpaas:SevenDaysAWeek ;
   questionnaire:questionHasAnswers bpaas:Twenty4Seven ;
   questionnaire:questionHasAnswers bpaas:Twenty4five ;
-  rdfs:label "What is your favorite support coverage?" ;
+  rdfs:label "What is your favorite Support Coverage?" ;
 .
 questiondata:What_is_your_favorite_support_responsiveness
   rdf:type questionnaire:NotSortedYet ;
@@ -635,7 +617,7 @@ questiondata:Would_a_computing_processing_power_scalable_be_required
   questionnaire:questionHasAnswers questionnaire:No ;
   questionnaire:questionHasAnswers questionnaire:Not_Specified ;
   questionnaire:questionHasAnswers questionnaire:Yes ;
-  rdfs:label "Would a computing processing power scalable be required?" ;
+  rdfs:label "Would you require a scalable Processing Power?" ;
 .
 questiondata:Would_a_data_storage_scalable_be_required
   rdf:type questionnaire:Performance ;
@@ -644,7 +626,7 @@ questiondata:Would_a_data_storage_scalable_be_required
   questionnaire:questionHasAnswers questionnaire:No ;
   questionnaire:questionHasAnswers questionnaire:Not_Specified ;
   questionnaire:questionHasAnswers questionnaire:Yes ;
-  rdfs:label "Would a scalable data storage be required?" ;
+  rdfs:label "Would you require a scalable data storage ?" ;
 .
 questiondata:Would_an_automatic_password_management_in_place_be_required
   rdf:type questionnaire:Security ;

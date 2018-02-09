@@ -537,13 +537,13 @@ public class Operation {
 									for (int i=0;i<validatedAl.size();i++) {
 										String validating=validateString(validatedAl.get(i).toString());
 										if (elL.contains(validating)) {
-											cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasEncryptionType", "bpaas:Low" +" ;"));
+											cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasEncryptionLevel", "bpaas:Low" +" ;"));
 											//System.out.println(validating+"---------------------> bpaas:Low");
 										}else if (elM.contains(validating)) {
-											cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasEncryptionType", "bpaas:Medium " +" ;"));
+											cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasEncryptionLevel", "bpaas:Medium " +" ;"));
 											//System.out.println(validating+"---------------------> bpaas:Medium");
 										}else if (elH.contains(validating)) {
-											cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasEncryptionType", "bpaas:Medium " +" ;"));
+											cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasEncryptionLevel", "bpaas:Medium " +" ;"));
 											//System.out.println(validating+"---------------------> bpaas:High");
 										}else {
 											System.out.println(validating+" not mapped");
