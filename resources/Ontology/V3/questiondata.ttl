@@ -326,12 +326,12 @@ questiondata:Select_the_desired_Service_Support_Responsiveness
   questionnaire:questionHasAnswers bpaas:At_most_16_hours ;
   questionnaire:questionHasAnswers bpaas:At_most_1_5_hours ;
   questionnaire:questionHasAnswers bpaas:At_most_1_hour ;
+  questionnaire:questionHasAnswers bpaas:At_most_1_month ;
   questionnaire:questionHasAnswers bpaas:At_most_1_working_day ;
   questionnaire:questionHasAnswers bpaas:At_most_24_hours ;
   questionnaire:questionHasAnswers bpaas:At_most_2_hours ;
   questionnaire:questionHasAnswers bpaas:At_most_2_working_days ;
   questionnaire:questionHasAnswers bpaas:At_most_30_minutes ;
-  questionnaire:questionHasAnswers bpaas:At_most_30_working_days ;
   questionnaire:questionHasAnswers bpaas:At_most_3_hours ;
   questionnaire:questionHasAnswers bpaas:At_most_3_working_days ;
   questionnaire:questionHasAnswers bpaas:At_most_40_hours ;

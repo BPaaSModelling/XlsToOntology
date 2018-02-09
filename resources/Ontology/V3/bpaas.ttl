@@ -95,6 +95,10 @@ bpaas:At_most_1_hour
   rdf:type bpaas:ServiceSupportResponsiveness ;
   rdfs:label "at_most_1_hours" ;
 .
+bpaas:At_most_1_month
+  rdf:type bpaas:ServiceSupportResponsiveness ;
+  rdfs:label "At_most_1_month" ;
+.
 bpaas:At_most_1_working_day
   rdf:type bpaas:ServiceSupportResponsiveness ;
   rdfs:label "at_most_1_working_day" ;
@@ -117,7 +121,7 @@ bpaas:At_most_30_minutes
 .
 bpaas:At_most_30_working_days
   rdf:type bpaas:ServiceSupportResponsiveness ;
-  rdfs:label "at_most_30_working_days" ;
+  rdfs:label "At_most_30_working_days" ;
 .
 bpaas:At_most_3_hours
   rdf:type bpaas:ServiceSupportResponsiveness ;
@@ -603,14 +607,6 @@ bpaas:North_America
   rdf:type bpaas:StoredDataLocation ;
   rdfs:label "North America" ;
 .
-bpaas:Not_specified
-  rdf:type bpaas:ServiceSupportResponsiveness ;
-  rdfs:label "Not specified" ;
-.
-bpaas:Not_specifiedPayment
-  rdf:type bpaas:PaymentPlan ;
-  rdfs:label "Not specified" ;
-.
 bpaas:Odf
   rdf:type bpaas:MediaType ;
   rdfs:label "Odf" ;
@@ -1013,6 +1009,11 @@ bpaas:Up_to_1_year
 bpaas:Up_to_2_month
   rdf:type bpaas:BackupRetentionTime ;
   rdfs:label "Up_to_2_month" ;
+.
+bpaas:Up_to_2_weeks
+  rdf:type bpaas:BackupRetentionTime ;
+  rdfs:label "up to 1 week" ;
+  rdfs:label "up to 2 weeks" ;
 .
 bpaas:Up_to_6_months
   rdf:type bpaas:BackupRetentionTime ;
