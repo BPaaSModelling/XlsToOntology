@@ -526,11 +526,6 @@ fbpdo:Invoice
   rdfs:label "Invoice" ;
   rdfs:subClassOf fbpdo:Document ;
 .
-fbpdo:Invoices
-  rdf:type owl:Class ;
-  rdfs:label "Invoices" ;
-  rdfs:subClassOf fbpdo:General ;
-.
 fbpdo:JobApplication
   rdf:type owl:Class ;
   rdfs:label "JobApplication" ;

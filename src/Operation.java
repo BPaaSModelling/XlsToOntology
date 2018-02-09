@@ -728,7 +728,7 @@ public class Operation {
 										System.out.println("no downtime set");
 
 									}else {
-										cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasDowntimePerMonthInMin", validated+ " ;"));
+										cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasMonthlyDowntimeInMinute", validated+ " ;"));
 										//System.out.println(cell.toString()+" -------------------------------------->"+validated);
 									}
 								}					

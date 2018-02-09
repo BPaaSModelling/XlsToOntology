@@ -254,7 +254,7 @@ questiondata:PreferedAuditLogRetentionPeriodinMonths
 questiondata:PreferedAvailability_monthly_downtime
   rdf:type questionnaire:Availability ;
   rdf:type questionnaire:ValueInsert ;
-  questionnaire:questionHasAnnotationRelation bpaas:availabilityHasDowntimePerMonthInMin ;
+  questionnaire:questionHasAnnotationRelation bpaas:cloudServiceHasMonthlyDowntimeInMinute ;
   questionnaire:valueInsertAnswerTypeHasDatatype xsd:float ;
   rdfs:label "What is your favourite monthly downtime in minutes? (Insert 0 if not required)" ;
 .
@@ -486,7 +486,6 @@ questiondata:What_is_the_backup_frequency
   questionnaire:questionHasAnswers bpaas:Monthly ;
   questionnaire:questionHasAnswers bpaas:Weekly ;
   questionnaire:questionHasAnswers bpaas:Yearly ;
-  questionnaire:questionHasAnswers bpaas:not_specified ;
   rdfs:label "What's the favourite backup frequency?" ;
 .
 questiondata:What_is_the_backup_retention_time
