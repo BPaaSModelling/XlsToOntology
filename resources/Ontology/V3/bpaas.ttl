@@ -19,6 +19,7 @@
 @prefix media-types: <http://www.iana.org/assignments/media-types#> .
 @prefix nco: <http://ikm-group.ch/archiMEO/NCO#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix questionnaire: <http://ikm-group.ch/archiMEO/questionnaire#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sp: <http://spinrdf.org/sp#> .
@@ -69,54 +70,67 @@ bpaas:Asia
 .
 bpaas:At_most_120_hours
   rdf:type bpaas:ServiceSupportResponsiveness ;
+  questionnaire:hasOrderNumberForVisualization 220 ;
   rdfs:label "at_most_120_hours" ;
 .
 bpaas:At_most_12_hours
   rdf:type bpaas:ServiceSupportResponsiveness ;
+  questionnaire:hasOrderNumberForVisualization 120 ;
   rdfs:label "at_most_12_hours" ;
 .
 bpaas:At_most_13_hours
   rdf:type bpaas:ServiceSupportResponsiveness ;
+  questionnaire:hasOrderNumberForVisualization 130 ;
   rdfs:label "At most 13 hours" ;
 .
 bpaas:At_most_15_minutes
   rdf:type bpaas:ServiceSupportResponsiveness ;
+  questionnaire:hasOrderNumberForVisualization 10 ;
   rdfs:label "at most 15 minutes" ;
 .
 bpaas:At_most_16_hours
   rdf:type bpaas:ServiceSupportResponsiveness ;
+  questionnaire:hasOrderNumberForVisualization 140 ;
   rdfs:label "At most 16 hours" ;
 .
 bpaas:At_most_1_5_hours
   rdf:type bpaas:ServiceSupportResponsiveness ;
+  questionnaire:hasOrderNumberForVisualization 50 ;
   rdfs:label "at_most_1_5_hours" ;
 .
 bpaas:At_most_1_hour
   rdf:type bpaas:ServiceSupportResponsiveness ;
+  questionnaire:hasOrderNumberForVisualization 40 ;
   rdfs:label "at_most_1_hours" ;
 .
 bpaas:At_most_1_month
   rdf:type bpaas:ServiceSupportResponsiveness ;
+  questionnaire:hasOrderNumberForVisualization 270 ;
   rdfs:label "At_most_1_month" ;
 .
 bpaas:At_most_1_working_day
   rdf:type bpaas:ServiceSupportResponsiveness ;
+  questionnaire:hasOrderNumberForVisualization 160 ;
   rdfs:label "at_most_1_working_day" ;
 .
 bpaas:At_most_24_hours
   rdf:type bpaas:ServiceSupportResponsiveness ;
+  questionnaire:hasOrderNumberForVisualization 150 ;
   rdfs:label "At most 24 hours" ;
 .
 bpaas:At_most_2_hours
   rdf:type bpaas:ServiceSupportResponsiveness ;
+  questionnaire:hasOrderNumberForVisualization 60 ;
   rdfs:label "At most 2 hours" ;
 .
 bpaas:At_most_2_working_days
   rdf:type bpaas:ServiceSupportResponsiveness ;
+  questionnaire:hasOrderNumberForVisualization 180 ;
   rdfs:label "At most 2 working days" ;
 .
 bpaas:At_most_30_minutes
   rdf:type bpaas:ServiceSupportResponsiveness ;
+  questionnaire:hasOrderNumberForVisualization 20 ;
   rdfs:label "30 minutes" ;
 .
 bpaas:At_most_30_working_days
@@ -125,50 +139,62 @@ bpaas:At_most_30_working_days
 .
 bpaas:At_most_3_hours
   rdf:type bpaas:ServiceSupportResponsiveness ;
+  questionnaire:hasOrderNumberForVisualization 70 ;
   rdfs:label "At most 3 hours" ;
 .
 bpaas:At_most_3_working_days
   rdf:type bpaas:ServiceSupportResponsiveness ;
+  questionnaire:hasOrderNumberForVisualization 200 ;
   rdfs:label "At most 3 working days" ;
 .
 bpaas:At_most_40_hours
   rdf:type bpaas:ServiceSupportResponsiveness ;
+  questionnaire:hasOrderNumberForVisualization 170 ;
   rdfs:label "At most 40 hours" ;
 .
 bpaas:At_most_40_minutes
   rdf:type bpaas:ServiceSupportResponsiveness ;
+  questionnaire:hasOrderNumberForVisualization 30 ;
   rdfs:label "At most 40 minutes" ;
 .
 bpaas:At_most_4_hours
   rdf:type bpaas:ServiceSupportResponsiveness ;
+  questionnaire:hasOrderNumberForVisualization 80 ;
   rdfs:label "At most 4 hours" ;
 .
 bpaas:At_most_4_working_days
   rdf:type bpaas:ServiceSupportResponsiveness ;
+  questionnaire:hasOrderNumberForVisualization 210 ;
   rdfs:label "At most 4 working days" ;
 .
 bpaas:At_most_50_hours
   rdf:type bpaas:ServiceSupportResponsiveness ;
+  questionnaire:hasOrderNumberForVisualization 190 ;
   rdfs:label "At most 50 hours" ;
 .
 bpaas:At_most_5_hours
   rdf:type bpaas:ServiceSupportResponsiveness ;
+  questionnaire:hasOrderNumberForVisualization 90 ;
   rdfs:label "At most 5 hours" ;
 .
 bpaas:At_most_5_working_days
   rdf:type bpaas:ServiceSupportResponsiveness ;
+  questionnaire:hasOrderNumberForVisualization 230 ;
   rdfs:label "At most 5 working days" ;
 .
 bpaas:At_most_6_hours
   rdf:type bpaas:ServiceSupportResponsiveness ;
+  questionnaire:hasOrderNumberForVisualization 100 ;
   rdfs:label "At most 6 hours" ;
 .
 bpaas:At_most_7_working_days
   rdf:type bpaas:ServiceSupportResponsiveness ;
+  questionnaire:hasOrderNumberForVisualization 240 ;
   rdfs:label "At most 7 working days" ;
 .
 bpaas:At_most_8_hours
   rdf:type bpaas:ServiceSupportResponsiveness ;
+  questionnaire:hasOrderNumberForVisualization 110 ;
   rdfs:label "At most 8 hours" ;
 .
 bpaas:Auditing
@@ -1021,10 +1047,12 @@ bpaas:Up_to_6_months
 .
 bpaas:Up_to_four_weeks
   rdf:type bpaas:ServiceSupportResponsiveness ;
+  questionnaire:hasOrderNumberForVisualization 250 ;
   rdfs:label "Up to four weeks " ;
 .
 bpaas:Up_to_two_weeks
   rdf:type bpaas:ServiceSupportResponsiveness ;
+  questionnaire:hasOrderNumberForVisualization 260 ;
   rdfs:label "Up to two weeks" ;
 .
 bpaas:UserInterfaceGroup
@@ -1274,7 +1302,7 @@ bpaas:cloudServiceHasAPI
   rdf:type owl:ObjectProperty ;
   rdfs:domain bpaas:CloudService ;
   rdfs:label "Cloud service Has api integration" ;
-  rdfs:range <http://ikm-group.ch/archiMEO/questionnaire#GeneralAnswers> ;
+  rdfs:range questionnaire:GeneralAnswers ;
 .
 bpaas:cloudServiceHasAPQC
   rdf:type owl:ObjectProperty ;
@@ -1315,7 +1343,7 @@ bpaas:cloudServiceHasAutomatedPasswordManagement
   rdf:type owl:ObjectProperty ;
   rdfs:domain bpaas:CloudService ;
   rdfs:label "Cloud service Has Automated Password Management system" ;
-  rdfs:range <http://ikm-group.ch/archiMEO/questionnaire#GeneralAnswers> ;
+  rdfs:range questionnaire:GeneralAnswers ;
 .
 bpaas:cloudServiceHasAvailabilityInPercent
   rdf:type owl:DatatypeProperty ;
@@ -1340,7 +1368,7 @@ bpaas:cloudServiceHasDataMigration
   rdf:type owl:ObjectProperty ;
   rdfs:domain bpaas:CloudService ;
   rdfs:label "Cloud service Has data migration can be performed independently from the provider" ;
-  rdfs:range <http://ikm-group.ch/archiMEO/questionnaire#GeneralAnswers> ;
+  rdfs:range questionnaire:GeneralAnswers ;
 .
 bpaas:cloudServiceHasDataStorageInGB
   rdf:type owl:DatatypeProperty ;
@@ -1396,13 +1424,13 @@ bpaas:cloudServiceHasScalableProcessingPower
   rdf:type owl:ObjectProperty ;
   rdfs:domain bpaas:CloudService ;
   rdfs:label "Cloud service Has scalable ProcessingPower" ;
-  rdfs:range <http://ikm-group.ch/archiMEO/questionnaire#GeneralAnswers> ;
+  rdfs:range questionnaire:GeneralAnswers ;
 .
 bpaas:cloudServiceHasScalableStorage
   rdf:type owl:ObjectProperty ;
   rdfs:domain bpaas:CloudService ;
   rdfs:label "Cloud service Has Scalable Storage" ;
-  rdfs:range <http://ikm-group.ch/archiMEO/questionnaire#GeneralAnswers> ;
+  rdfs:range questionnaire:GeneralAnswers ;
 .
 bpaas:cloudServiceHasServiceSupport
   rdf:type owl:ObjectProperty ;
