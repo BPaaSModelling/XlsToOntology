@@ -693,7 +693,7 @@ questiondata:Which_APQC_category_does_reflect_the_functional_requirement_you_wan
   questionnaire:questionHasAnnotationRelation bpaas:cloudServiceHasAPQC ;
   questionnaire:searchSelectionHasSearchNamespace <http://ikm-group.ch/archimeo/apqc#AmericanProductivityAndQualityCenter> ;
   questionnaire:searchSelectionOnClassesInsteadOfInstances "true"^^xsd:boolean ;
-  rdfs:label "What does your service do? Please select an appropriate APQC category?" ;
+  rdfs:label "What does your service do? Please select an appropriate APQC category" ;
 .
 questiondata:Which_Action_does_reflect_the_functional_requirement_you_want_to_express
   rdf:type questionnaire:Functional ;
