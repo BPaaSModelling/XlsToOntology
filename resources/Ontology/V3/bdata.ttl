@@ -16593,6 +16593,7 @@ bpaas:cloudServiceHasServiceSupport bpaas:NineToFive ;
 bpaas:cloudServiceHasSupportChannel bpaas:Web-support ;
 bpaas:cloudServiceHasSupportChannel bpaas:Mail ;
 bpaas:cloudServiceHasTargetMarket bpaas:NoTarget ;
+bpaas:cloudServiceHasTargetMarket bpaas:School_and_Universities ;
 rdfs:label "Drive" ;
 .
 bdata:Dropbox
