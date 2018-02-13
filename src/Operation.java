@@ -422,22 +422,28 @@ public class Operation {
 									cellValues=cellValues.replace(".","_");
 
 									ArrayList<String> validatedAl=new ArrayList<String>(Arrays.asList(cellValues.split(("(?<=,_[0-9])"))));
-
+									System.out.println("\n--------------------------------------\nnew apqc to be checked" +validatedAl.toString());
+									ArrayList<String> validatedAPQC = new ArrayList<String>();
 									for (int i=0; i<validatedAl.size();i++) {
 
 										validated=validatedAl.get(i);
-										String cutted= validated.substring(validated.length()-1);
 
 										validated= addAPQCNumber(validated);
 
 
 										ArrayList<String> APQCGerarchy= addAPQCGerarchy(validated);
+
 										for (int j=0; j<APQCGerarchy.size();j++) {
-											cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasAPQC", APQCGerarchy.get(j) +" ;"));	
+											//System.out.println(cell.toString()+" -------------------------------------->"+APQCGerarchy.get(j) );
+											if (!validatedAPQC.contains(APQCGerarchy.get(j))){
+												validatedAPQC.add(APQCGerarchy.get(j));
+											}
 										}
-										//cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasAPQC", validated +" ;"));
-										//System.out.println(cell.toString()+" -------------------------------------->"+validated );
-										//								
+
+									}
+									for (int i=0; i<validatedAPQC.size();i++) {
+										cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasAPQC", validatedAPQC.get(i) +" ;"));
+										System.out.println(cell.toString()+" -------------------------------------->"+validatedAPQC.get(i));
 									}
 
 								}
@@ -515,7 +521,7 @@ public class Operation {
 								elL.add("bpaas:SSL");
 								elL.add("bpaas:HIPAA");
 								elL.add("bpaas:SHA256");
-								
+
 								ArrayList<String> elM= new  ArrayList<String>();
 								elM.add("bpaas:SOX");
 								elM.add("bpaas:FDA");
@@ -523,13 +529,13 @@ public class Operation {
 								elM.add("bpaas:IAAS");
 								elM.add("bpaas:PSN");
 								elM.add("bpaas:FIPS");
-								
+
 								ArrayList<String> elH= new  ArrayList<String>();
 								elH.add("bpaas:AES");
 								elH.add("bpaas:TLS");
 								elH.add("bpaas:TLS_VPN");
 								elH.add("bpaas:Ipsec");
-								
+
 								if (validatedAl.size()==1 && validateString(validatedAl.get(0)).equals("questionnaire:Not_Specified") ) {
 									cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasStoredDataLocation", validated +" ;"));
 									//System.out.println("###############"+cell.toString()+"###### "+validated);
@@ -721,6 +727,7 @@ public class Operation {
 								if (cell !=null) {
 									validated = validateAvailability(cell.toString()).toString();
 
+									//UNCOMMENT TO ADD ALSO "IT" INFORMATION
 									//cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasAvailabilityInPercent", validated + " ;"));
 
 
@@ -773,7 +780,7 @@ public class Operation {
 								}	
 								break;
 
-							case 27: //to discuss
+							case 27: //ok
 								cellValues=cell.toString();
 								validatedAl=new ArrayList<String>(Arrays.asList(cellValues.split((","))));
 
@@ -794,8 +801,8 @@ public class Operation {
 								bf.add("Hourly");
 
 								if (validatedAl.size()==1 && validateString(validatedAl.get(0)).equals("questionnaire:Not_Specified") ) {
-									cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasBackupRetentionTime", validated +" ;"));
-									//System.out.println(cell.toString()+" -------------------------------------->"+validated);
+									cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasBackupFrequency", validated +" ;"));
+									//	System.out.println(cell.toString()+" frequency-------------------------------------->"+validated);
 								}else {
 
 									boolean found=false;
@@ -810,21 +817,21 @@ public class Operation {
 												found=true;
 												highest=j;
 												//System.out.println("new highest"+highest);
-												//System.out.println(validating+" "+currentR);
+												//	System.out.println(validating+" "+currentR);
 											}
 
 										}
 									}
 									if (!found) {
 										//System.out.println("not found: "+validateString(validatedAl.toString()));
-										cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasBackupRetentionTime", validateString(validatedAl.toString()) +" ;"));
-										//System.out.println(cell.toString()+" -------------------------------------->"+validated);
+										cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasBackupFrequency", validateString(validatedAl.toString()) +" ;"));
+										//System.out.println(cell.toString()+" frequency-------------------------------------->"+validated);
 									}else {
 										//System.out.println("highest=" + highest);
-										for (int i=highest ;i<bf.size();i++) {
+										for (int i=0 ;i<highest;i++) {
 											validated=validateString(bf.get(i));
-											cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasBackupRetentionTime", validated +" ;"));
-											//System.out.println(cell.toString()+" -------------------------------------->"+validated);
+											cs.properties.add(new CloudServiceProperty("bpaas:cloudServiceHasBackupFrequency", validated +" ;"));
+											//System.out.println(cell.toString()+" frequency-------------------------------------->"+validated);
 										}	
 									}
 
@@ -1165,7 +1172,11 @@ public class Operation {
 			parent=parent+validatingAPQC.get(i).replace("_",".");
 
 			//System.out.println("Gerarchy "+ parent);
-			APQCGerarchy.add(parent);
+			if (!APQCGerarchy.contains(parent)) {
+				APQCGerarchy.add(parent);
+				System.out.println("duplicate escluded");
+			}
+
 		}
 		//System.out.println(validated);
 		//System.out.println(APQCGerarchy.toString());
@@ -1217,7 +1228,7 @@ public class Operation {
 
 		String validated="";
 		//System.out.println(cell.toString());
-		if (cell.toString().equals("not specified") ||cell.toString().equals("N/A") ||cell.toString().equals("not specfied") || cell.toString().equals("Not Specified")|| cell.toString().equals("not_specified") || cell.toString().equals("Not_specified") || cell.equals("") ||cell.toString().equals(" ") || cell.toString().equals(null) || null_values_string.contains(cell.toString())) {
+		if (cell.toString().equals("not specified") ||cell.toString().equals("N/A") ||cell.toString().equals("not specfied") || cell.toString().equals("Not Specified")|| cell.toString().equals("not_specified") || cell.toString().equals("Not_specified") ||cell.toString().equals(" ") || cell.toString().equals(null) || null_values_string.contains(cell.toString())) {
 			return "questionnaire:Not_Specified";}
 		else if (cell.toString().equals("No")||cell.toString().equals("no")||cell.toString().equals("NO")) {
 			return "questionnaire:No";
@@ -1245,7 +1256,6 @@ public class Operation {
 	}
 
 	private String validateBooleanCellString(String cell) {
-		boolean result;
 		if (cell.equals("not specified") ||cell.equals("Not Specified") ||cell.equals("not specfied") || cell.equals("Not specified")|| cell.equals("not_specified") || cell.equals("Not_specified") || cell.equals("") ||cell.equals(" ") || cell.equals(null) || null_values_string.contains(cell.toString())) {
 			return "questionnaire:Not_Specified";
 		} else if (cell.equals("Any")||cell.equals("Any")) {
@@ -1254,14 +1264,11 @@ public class Operation {
 			return "questionnaire:No";
 		} else if (cell.equals("Yes")||cell.equals("yes")) {
 			return "questionnaire:Yes";
-		} else
-			if (checkMatching(cell.toString())) {
-				return cell.toString();	
-			}else {
-				return "questionnaire:Not_specified";
-			}
-
-
+		} else	if (checkMatching(cell.toString())) {
+			return cell.toString();	
+		}else {
+			return "questionnaire:Not_specified";
+		}
 	}
 
 	private String validateString(String cell) {
@@ -1271,11 +1278,9 @@ public class Operation {
 		cell=cell.replace("]","");
 		cell=cell.trim();
 		cell=cell.replace(" ", "_");
-		String start=(String) cell.subSequence(0, 1);
 		cell = cell.substring(0,1).toUpperCase() + cell.substring(1);
 
 
-		boolean result;
 		if (cell.equals("not_specified") || cell.equals("NotSpecified")||cell.equals("Not_Specified")||cell.equals("Not_defined") || cell.equals("Not_specified")|| cell.equals("not_specified") || cell.equals("Not_specified") || cell.equals("") ||cell.equals("_") || cell.equals(null) || null_values_string.contains(cell.toString())) {
 			return "questionnaire:Not_Specified";
 		} else if (cell.equals("Any")||cell.equals("Any")) {
@@ -1419,13 +1424,11 @@ public class Operation {
 	private String validateFbpdo(String cell) {
 		cell=cell.trim();
 		cell=cell.replace(" ", "_");
-		String start=(String) cell.subSequence(0, 1);
 		cell = cell.substring(0,1).toUpperCase() + cell.substring(1);
 		cell=cell.replace("(","");
 		cell=cell.replace(")","");
 		cell=cell.replaceAll("\\d" ,"");
 
-		boolean result;
 		if (cell.equals("not specified") ||cell.equals("not specfied") || cell.equals("Not specified")|| cell.equals("not_specified") || cell.equals("Not_specified") || cell.equals("") ||cell.equals(" ") || cell.equals(null) || null_values_string.contains(cell.toString())) {
 			return "questionnaire:Not_Specified";
 		} else if (cell.equals("Any")||cell.equals("Any")) {
