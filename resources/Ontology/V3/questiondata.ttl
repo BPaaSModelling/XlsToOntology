@@ -111,7 +111,7 @@ questiondata:DataEncryptionLevel_Medium
 .
 questiondata:Data_encryption_level
   rdf:type questionnaire:CloudServiceElement ;
-  rdf:type questionnaire:SingleSelection ;
+  rdf:type questionnaire:MultiSelection ;
   questionnaire:cloudServiceElementHasCloudServiceDomain questiondata:Security ;
   questionnaire:questionHasAnnotationRelation bpaas:cloudServiceHasEncryptionType ;
   questionnaire:questionHasAnswers bpaas:AES ;
@@ -136,7 +136,7 @@ questiondata:Data_encryption_level
 .
 questiondata:Data_location
   rdf:type questionnaire:CloudServiceElement ;
-  rdf:type questionnaire:SingleSelection ;
+  rdf:type questionnaire:MultiSelection ;
   questionnaire:cloudServiceElementHasCloudServiceDomain questiondata:Security ;
   questionnaire:questionHasAnnotationRelation bpaas:cloudServiceHasStoredDataLocation ;
   questionnaire:questionHasAnswers questionnaire:Not_Specified ;
@@ -539,7 +539,7 @@ questiondata:Storage
 .
 questiondata:SupportChannel
   rdf:type questionnaire:CloudServiceElement ;
-  rdf:type questionnaire:SingleSelection ;
+  rdf:type questionnaire:MultiSelection ;
   questionnaire:cloudServiceElementHasCloudServiceDomain questiondata:ServiceSupport ;
   questionnaire:questionHasAnnotationRelation bpaas:cloudServiceHasSupportChannel ;
   questionnaire:questionHasAnswers questionnaire:Not_Specified ;
@@ -574,7 +574,7 @@ questiondata:TargetMarket
 .
 questiondata:Target_market
   rdf:type questionnaire:CloudServiceElement ;
-  rdf:type questionnaire:SingleSelection ;
+  rdf:type questionnaire:MultiSelection ;
   questionnaire:cloudServiceElementHasCloudServiceDomain questiondata:TargetMarket ;
   questionnaire:questionHasAnnotationRelation bpaas:cloudServiceHasTargetMarket ;
   questionnaire:questionHasAnswers bpaas:App_Developers ;
@@ -596,7 +596,7 @@ questiondata:Target_market
 .
 questiondata:What_are_the_offered_support_channels
   rdf:type questionnaire:ServiceSupport ;
-  rdf:type questionnaire:SingleSelection ;
+  rdf:type questionnaire:MultiSelection ;
   questionnaire:questionHasAnnotationRelation bpaas:cloudServiceHasSupportChannel ;
   questionnaire:questionHasAnswers questionnaire:Not_Specified ;
   questionnaire:questionHasAnswers bpaas:Mail ;
@@ -670,7 +670,7 @@ questiondata:What_is_your_favorite_stored_data_location
   questionnaire:questionHasAnswers bpaas:The_Netherlands ;
   questionnaire:questionHasAnswers bpaas:USA ;
   questionnaire:questionHasAnswers bpaas:United_Kingdom ;
-  rdfs:label "What is your favourite stored data location?" ;
+  rdfs:label "What is your favorite stored data location?" ;
 .
 questiondata:What_is_your_favorite_support_coverage
   rdf:type questionnaire:ServiceSupport ;
