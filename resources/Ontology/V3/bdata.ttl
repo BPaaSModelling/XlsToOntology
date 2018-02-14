@@ -16739,7 +16739,6 @@ bpaas:cloudServiceHasTargetMarket bpaas:Businesses ;
 bpaas:cloudServiceHasTargetMarket bpaas:School_and_Universities ;
 rdfs:label "Gmail" ;
 .
-.
 bdata:YMENS_email
 rdf:type bpaas:CloudService ;
 bpaas:cloudServiceHasDescription "The eMail solution provided by Ymens allows you, through the specific features offered by the most powerful email system on the market- Exchange 2013, to increase your users’ productivity, advancing from simple communication to good collaboration between them. Moreover, now you can easily check emails, at all times and on any device with Internet access. And to enjoy a pleasant experience when using the email solution, we provide a quick and easy transition to the cloud" ;

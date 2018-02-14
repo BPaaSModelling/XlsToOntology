@@ -179,6 +179,7 @@ questiondata:Encryption_Type
   rdf:type questionnaire:MultiSelection ;
   rdf:type questionnaire:Security ;
   questionnaire:questionHasAnnotationRelation bpaas:cloudServiceHasEncryptionLevel ;
+  questionnaire:questionHasAnnotationRelation bpaas:cloudServiceHasEncryptionType ;
   questionnaire:questionHasAnswers questionnaire:Not_Specified ;
   questionnaire:questionHasAnswers bpaas:High ;
   questionnaire:questionHasAnswers bpaas:Low ;
@@ -334,6 +335,7 @@ questiondata:PreferedAvailability_monthly_downtime
   rdf:type questionnaire:Availability ;
   rdf:type questionnaire:ValueInsert ;
   questionnaire:questionHasAnnotationRelation bpaas:cloudServiceHasMonthlyDowntimeInMinute ;
+  questionnaire:questionHasAnnotationRelation bpaas:cloudServiceHasAvailabilityInPercent ;
   questionnaire:valueInsertAnswerTypeHasDatatype xsd:float ;
   rdfs:label "What is your favourite monthly downtime in minutes?  Insert 0 if not required " ;
 .
