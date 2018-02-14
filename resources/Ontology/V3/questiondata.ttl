@@ -118,14 +118,10 @@ questiondata:Data_encryption_level
   questionnaire:questionHasAnswers bpaas:FDA ;
   questionnaire:questionHasAnswers bpaas:FIPS ;
   questionnaire:questionHasAnswers bpaas:HIPAA ;
-  questionnaire:questionHasAnswers bpaas:HIPAA_and_HITECH ;
   questionnaire:questionHasAnswers bpaas:IAAS ;
-  questionnaire:questionHasAnswers bpaas:IP_Filtering ;
   questionnaire:questionHasAnswers bpaas:ISO27001 ;
   questionnaire:questionHasAnswers bpaas:Ipsec ;
-  questionnaire:questionHasAnswers bpaas:PCI_DSS ;
   questionnaire:questionHasAnswers bpaas:PSN ;
-  questionnaire:questionHasAnswers bpaas:Privacy_Shield ;
   questionnaire:questionHasAnswers bpaas:SHA256 ;
   questionnaire:questionHasAnswers bpaas:SOX ;
   questionnaire:questionHasAnswers bpaas:SSH ;
