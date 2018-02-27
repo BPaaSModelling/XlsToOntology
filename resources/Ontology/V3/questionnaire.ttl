@@ -185,6 +185,12 @@ questionnaire:cloudServiceElementHasCloudServiceDomain
   rdfs:domain questionnaire:CloudServiceElement ;
   rdfs:range questionnaire:CloudServiceDomain ;
 .
+questionnaire:hasOrderNumberForVisualization
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain owl:Thing ;
+  rdfs:label "has order number for visualization" ;
+  rdfs:range xsd:integer ;
+.
 questionnaire:questionHasAnnotationRelation
   rdf:type rdf:Property ;
   rdfs:domain questionnaire:Model ;

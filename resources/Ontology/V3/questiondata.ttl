@@ -118,14 +118,10 @@ questiondata:Data_encryption_level
   questionnaire:questionHasAnswers bpaas:FDA ;
   questionnaire:questionHasAnswers bpaas:FIPS ;
   questionnaire:questionHasAnswers bpaas:HIPAA ;
-  questionnaire:questionHasAnswers bpaas:HIPAA_and_HITECH ;
   questionnaire:questionHasAnswers bpaas:IAAS ;
-  questionnaire:questionHasAnswers bpaas:IP_Filtering ;
   questionnaire:questionHasAnswers bpaas:ISO27001 ;
   questionnaire:questionHasAnswers bpaas:Ipsec ;
-  questionnaire:questionHasAnswers bpaas:PCI_DSS ;
   questionnaire:questionHasAnswers bpaas:PSN ;
-  questionnaire:questionHasAnswers bpaas:Privacy_Shield ;
   questionnaire:questionHasAnswers bpaas:SHA256 ;
   questionnaire:questionHasAnswers bpaas:SOX ;
   questionnaire:questionHasAnswers bpaas:SSH ;
@@ -176,7 +172,7 @@ questiondata:Do_you_need_API_integration
   rdfs:label "Do you need API integration?" ;
 .
 questiondata:Encryption_Type
-  rdf:type questionnaire:MultiSelection ;
+  rdf:type questionnaire:SingleSelection ;
   rdf:type questionnaire:Security ;
   questionnaire:questionHasAnnotationRelation bpaas:cloudServiceHasEncryptionLevel ;
   questionnaire:questionHasAnnotationRelation bpaas:cloudServiceHasEncryptionType ;
@@ -750,7 +746,7 @@ questiondata:accessLogAvailability
   questionnaire:cloudServiceElementHasCloudServiceDomain questiondata:Availability ;
   questionnaire:questionHasAnnotationRelation bpaas:cloudServiceHasAccessLogAvailabilityInMonths ;
   questionnaire:valueInsertAnswerTypeHasDatatype xsd:float ;
-  rdfs:label "Enter the offered access log availability in percentage" ;
+  rdfs:label "Enter the offered access log availability in months" ;
 .
 questiondata:accessLog_Retention_period
   rdf:type questionnaire:CloudServiceElement ;
